@@ -8,10 +8,31 @@
 
     * {
       box-sizing: border-box;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.2) #000000;
     }
 
     html {
       scroll-behavior: smooth;
+    }
+
+    /* WebKit Scrollbar Styling (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.4);
     }
 
     body {
@@ -74,18 +95,18 @@
       }
 
       62% {
-        transform: translate3d(135px, 275px, 0) rotate(620deg) scale(.62);
+        transform: translate3d(135px, 275px, 0) rotate(620deg) scale(1.12);
         opacity: .96
       }
 
       72%,
       82% {
-        transform: translate3d(135px, 275px, 0) rotate(760deg) scale(.52);
+        transform: translate3d(135px, 275px, 0) rotate(760deg) scale(1.12);
         opacity: .72
       }
 
       94% {
-        transform: translate3d(55px, 100px, 0) rotate(900deg) scale(.9);
+        transform: translate3d(55px, 100px, 0) rotate(900deg) scale(1.05);
         opacity: 1
       }
 
@@ -114,18 +135,18 @@
       }
 
       62% {
-        transform: translate3d(-135px, 275px, 0) rotate(-640deg) scale(.62);
+        transform: translate3d(-135px, 275px, 0) rotate(-640deg) scale(1.12);
         opacity: .96
       }
 
       72%,
       82% {
-        transform: translate3d(-135px, 275px, 0) rotate(-780deg) scale(.52);
+        transform: translate3d(-135px, 275px, 0) rotate(-780deg) scale(1.12);
         opacity: .72
       }
 
       94% {
-        transform: translate3d(-52px, 98px, 0) rotate(-920deg) scale(.9);
+        transform: translate3d(-52px, 98px, 0) rotate(-920deg) scale(1.05);
         opacity: 1
       }
 
@@ -154,18 +175,18 @@
       }
 
       62% {
-        transform: translate3d(135px, -265px, 0) rotate(-610deg) scale(.62);
+        transform: translate3d(135px, -265px, 0) rotate(-610deg) scale(1.12);
         opacity: .96
       }
 
       72%,
       82% {
-        transform: translate3d(135px, -265px, 0) rotate(-750deg) scale(.52);
+        transform: translate3d(135px, -265px, 0) rotate(-750deg) scale(1.12);
         opacity: .72
       }
 
       94% {
-        transform: translate3d(55px, -95px, 0) rotate(-900deg) scale(.9);
+        transform: translate3d(55px, -95px, 0) rotate(-900deg) scale(1.05);
         opacity: 1
       }
 
@@ -194,18 +215,18 @@
       }
 
       62% {
-        transform: translate3d(-135px, -265px, 0) rotate(640deg) scale(.62);
+        transform: translate3d(-135px, -265px, 0) rotate(640deg) scale(1.12);
         opacity: .96
       }
 
       72%,
       82% {
-        transform: translate3d(-135px, -265px, 0) rotate(780deg) scale(.52);
+        transform: translate3d(-135px, -265px, 0) rotate(780deg) scale(1.12);
         opacity: .72
       }
 
       94% {
-        transform: translate3d(-55px, -94px, 0) rotate(920deg) scale(.9);
+        transform: translate3d(-55px, -94px, 0) rotate(920deg) scale(1.05);
         opacity: 1
       }
 
@@ -1329,8 +1350,14 @@
   .mobile-nomodel-section,
   .mobile-teams-section,
   .mobile-symphony-section,
-  .mobile-orchestrator-section {
+  .mobile-orchestrator-section,
+  .mobile-proven-score-section,
+  .mobile-footer {
     display: none !important;
+  }
+
+  .desktop-footer {
+    display: block; /* Ensure it shows on desktop */
   }
 
   body {
@@ -1366,7 +1393,10 @@
   .desktop-integrates,
   .desktop-nomodel,
   .desktop-symphony,
-  .desktop-orchestrator {
+  .desktop-orchestrator,
+  .desktop-proven-score,
+  .desktop-footer,
+  .desktop-glows {
     display: none !important;
   }
 
@@ -1390,11 +1420,17 @@
     left: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    height: 1180px !important; /* Restore height to show full TestAI content */
+  }
+
+  #stage {
+    height: 2970px !important; /* 1790px top + 1180px height */
   }
 
   /* Adjust wheel position to remove the gap left by hiding the desktop text */
   #orchestrator-container {
     top: 0 !important;
+    height: 1180px !important; /* Restore height */
   }
 
 
@@ -2795,9 +2831,11 @@
      RESPONSIVE MOBILE ORCHESTRATOR SECTION (< 768px)
      ========================================================================= */
   .mobile-orchestrator-section {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    background: linear-gradient(135deg, #1b3d5b, #122c42);
+    background: transparent;
     padding: 60px 20px;
     z-index: 10;
     box-sizing: border-box;
@@ -2807,11 +2845,13 @@
   }
 
   .mobile-orchestrator-title {
-    font-size: 32px;
+    font-size: 24px;
     color: #ffffff;
     line-height: 1.25;
     text-align: right;
-    margin: 0 0 24px 0;
+    margin: 0;
+    flex: 1;
+    order: 2; /* Move to right */
   }
   .mobile-orchestrator-title span {
     font-style: italic;
@@ -2822,11 +2862,118 @@
   }
 
   .mobile-orchestrator-desc {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.45;
     text-align: left;
+    margin: 0;
+    flex: 1;
+    padding-right: 15px;
+    order: 1; /* Move to left */
+  }
+
+  /* =========================================================================
+     RESPONSIVE MOBILE PROVEN SCORE SECTION (< 768px)
+     ========================================================================= */
+  .mobile-proven-score-section {
+    display: block;
+    background: radial-gradient(circle at center 20%, #081d33 0%, #000000 80%);
+    padding: 20px 0 60px; /* Reduced top gap */
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  .mobile-proven-header {
+    padding: 0 20px;
+    margin-bottom: 50px;
+  }
+
+  .mobile-proven-title {
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 1.15;
+    margin: 0 0 16px 0;
+  }
+  .mobile-proven-title strong {
+    font-weight: 700;
+  }
+  .mobile-proven-title span {
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .mobile-proven-desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0 0 0 auto;
+    text-align: right;
+    max-width: 85%;
+  }
+
+  .mobile-proven-subtitle {
+    font-size: 32px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 600;
+    margin: 0 0 40px 0;
+  }
+
+  /* Horizontal Slider */
+  .mobile-proven-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 0 20px;
+    /* Hide scrollbar for cleaner look */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .mobile-proven-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-proven-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    background: linear-gradient(160deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.02) 100%), rgba(12,38,78,0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+  }
+
+  .mobile-proven-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 24px;
+  }
+
+  .mobile-proven-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+  }
+
+  .mobile-proven-card-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
     margin: 0;
   }
 }

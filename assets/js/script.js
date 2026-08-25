@@ -4,7 +4,7 @@ function fitStage() {
     const scaler = document.getElementById('scaler');
     if (!stage || !scaler) return;
     const viewport = Math.max(320, window.innerWidth);
-    const scale = Math.min(1, viewport / 1512);
+    const scale = viewport / 1512;
     const isMobile = window.innerWidth <= 768;
 
     if (isMobile) {
@@ -43,7 +43,7 @@ document.querySelectorAll('.cert-scroll').forEach((strip) => {
 
     function getScale() {
         const viewport = Math.max(320, window.innerWidth);
-        return Math.min(1, viewport / 1512);
+        return viewport / 1512;
     }
 
     strip.addEventListener('mousedown', (e) => {
@@ -84,16 +84,7 @@ document.querySelectorAll('.cert-scroll').forEach((strip) => {
         lastX = currentX;
     });
 
-    // Mouse wheel horizontal scrolling
-    strip.addEventListener('wheel', (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            e.preventDefault();
-            strip.scrollBy({
-                left: e.deltaY * 1.5,
-                behavior: 'smooth'
-            });
-        }
-    }, { passive: false });
+
 });
 
 

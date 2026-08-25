@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sanciti AI — Agentic Legacy Modernization &amp; SDLC Automation</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ================= MOBILE HEADER (< 768px) ================= -->
+  <header class="mobile-header" id="mobileHeader">
+    <div class="mobile-header-inner">
+      <a class="mobile-logo" href="index.html" aria-label="Sanciti AI">
+        <img alt="Sanciti AI" src="assets/img/sancitiailogo.png" />
+      </a>
+      <div class="mobile-header-right">
+        <a class="mobile-demo-btn pill" href="#playbook" id="mobileDemoBtn" onclick="scrollToAssessment(event)">
+          <span>Demo</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false"
+          onclick="toggleMobileMenu()">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <nav class="mobile-nav-links font-disp">
+        <a href="index.html" class="mobile-nav-item active" onclick="closeMobileMenu()">Home</a>
+        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(0, event)">LegMod</a>
+        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(1, event)">RGen</a>
+        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(2, event)">CodeGen</a>
+        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(3, event)">Test AI</a>
+        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(4, event)">Deploy</a>
+        <div class="mobile-nav-cta pill" onclick="scrollToAssessment(event)">
+          <span>Get a Free Assessment</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE HERO SECTION (< 768px) ================= -->
+  <section class="mobile-hero-section">
+    <!-- Ambient Green Glow on left -->
+    <div class="mobile-hero-glow-left">
+      <img alt="" src="assets/img/greenbgglowleft.png" />
+    </div>
+
+    <div class="mobile-hero-content">
+      <div class="mobile-hero-title font-disp">
+        <div class="hero-line-italic">One Platform.</div>
+        <div class="hero-line-italic">Two Enterprise Challenges.</div>
+        <div class="hero-line-bold">One Intelligent Score.</div>
+      </div>
+
+      <div class="mobile-hero-desc font-body">
+        <p>
+          Enterprises are dealing with two pressing realities: legacy systems burdened by risk and technical debt, and
+          software delivery cycles that remain fragmented, manual, and hard to govern.
+        </p>
+        <p>
+          Sanciti AI is an agentic AI platform that resolves both — LegMod orchestrates four specialist agents, RGEN,
+          CodeGen, TestAI, and Deploy, across the full SDLC, turning end-to-end legacy modernization and delivery into
+          one governed, continuous system.
+        </p>
+      </div>
+
+      <div class="mobile-hero-cta pill" onclick="scrollToAssessment(event)">
+        <span>Get a Free Assessment</span>
+      </div>
+
+      <div class="mobile-hero-ring-card">
+        <div class="mobile-ring-container">
+          <svg viewBox="0 0 220 220" class="mobile-ring-svg">
+            <defs>
+              <linearGradient id="mobRingWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4a5060" />
+                <stop offset="40%" stop-color="#e2e6ea" />
+                <stop offset="70%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="#bcd4ff" />
+              </linearGradient>
+              <linearGradient id="mobRingTeal" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                <stop offset="45%" stop-color="#2ad6df" stop-opacity="0.75" />
+                <stop offset="100%" stop-color="#0a2530" stop-opacity="0.2" />
+              </linearGradient>
+              <linearGradient id="mobRingBlue" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#1c2a7a" stop-opacity="0.3" />
+                <stop offset="50%" stop-color="#3f6eff" stop-opacity="0.75" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+              </linearGradient>
+              <filter id="mobGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
+                <feMerge>
+                  <feMergeNode in="blur2" />
+                  <feMergeNode in="blur1" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Multi-layered glowing orbital ring animation matching screenshot -->
+            <circle cx="110" cy="110" r="74" fill="none" stroke="url(#mobRingWhite)" stroke-width="5"
+              filter="url(#mobGlow)" class="ring-spin-cw" />
+            <circle cx="110" cy="110" r="71" fill="none" stroke="url(#mobRingTeal)" stroke-width="3" opacity="0.8"
+              class="ring-spin-ccw" />
+            <circle cx="110" cy="110" r="77" fill="none" stroke="url(#mobRingBlue)" stroke-width="2.5" opacity="0.7"
+              class="ring-spin-cw-fast" />
+            <circle cx="110" cy="110" r="74" fill="none" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4 10"
+              stroke-width="1.2" class="ring-spin-ccw-slow" />
+            <circle cx="110" cy="110" r="80" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"
+              class="ring-pulse" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE PLAYBOOK SECTION (< 768px) ================= -->
+  <section class="mobile-playbook-section" id="playbook">
+    <div class="mobile-playbook-content">
+      <h2 class="mobile-playbook-title font-disp">
+        Modernizing the Systems<br />You Can't Afford to Break
+      </h2>
+      <p class="mobile-playbook-subtitle font-body">
+        A practical playbook for end-to-end legacy modernization.
+      </p>
+
+      <form class="mobile-playbook-form" onsubmit="event.preventDefault()">
+        <div class="mobile-form-group">
+          <label class="mobile-form-label font-body">Name</label>
+          <input class="mobile-form-input font-body" type="text" placeholder="" />
+        </div>
+
+        <div class="mobile-form-group">
+          <label class="mobile-form-label font-body">Title</label>
+          <input class="mobile-form-input font-body" type="text" placeholder="" />
+        </div>
+
+        <div class="mobile-form-group">
+          <label class="mobile-form-label font-body">Email</label>
+          <input class="mobile-form-input font-body" type="email" placeholder="" />
+        </div>
+
+        <div class="mobile-form-group">
+          <label class="mobile-form-label font-body">Contact number</label>
+          <input class="mobile-form-input font-body" type="tel" placeholder="" />
+        </div>
+
+        <button class="mobile-playbook-btn pill" type="submit">
+          <span>Download the Playbook</span>
+        </button>
+      </form>
+
+      <hr class="mobile-playbook-hr" />
+    </div>
+  </section>
+
+  <!-- ================= MOBILE GAPS SECTION (< 768px) ================= -->
+  <section class="mobile-gaps-section">
+    <!-- Ambient Blue Glows for Mobile -->
+    <div class="mobile-gaps-glow-left">
+      <img src="assets/img/bluebgglowleft.png" alt="" />
+    </div>
+    <div class="mobile-gaps-glow-right">
+      <img src="assets/img/bluebgglowright.png" alt="" />
+    </div>
+
+    <div class="mobile-gaps-header">
+      <h2 class="mobile-gaps-title font-disp">Two Persistent Gaps in the<br />Enterprise Stack.</h2>
+      <p class="mobile-gaps-subtitle font-body">
+        These challenges are real in their own right, often owned by different teams, with different budgets and
+        different urgency.
+      </p>
+    </div>
+
+    <!-- Legacy Modernization Card -->
+    <div class="mobile-gap-card">
+      <div class="mobile-gap-badge font-body">Legacy Modernization</div>
+      <div class="mobile-gap-slider-wrapper">
+        <div class="mobile-gap-slider">
+          <!-- Card 1 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/legacymodernizationone.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">Business logic buried in aging systems, documents, and tribal knowledge</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/legacymodernizationtwo.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">Rewrites that feel too risky to start and too costly to finish</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/legacymodernizationthree.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">Technical debt consuming roadmap capacity long before new value gets funded</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/legacymodernizationfour.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">Modernization programs forced into all-or-nothing decisions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SDLC Automation Card -->
+    <div class="mobile-gap-card">
+      <div class="mobile-gap-badge font-body">SDLC Automation</div>
+      <div class="mobile-gap-slider-wrapper">
+        <div class="mobile-gap-slider">
+          <!-- Card 1 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/sdlcautomationone.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">Requirements that decay faster than teams can maintain them</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/sdlcautomationtwo.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">Manual handoffs between build, test, and release that still depend on manual effort</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="mobile-inner-card">
+            <img src="assets/img/sdlcautomationthree.png" alt="" />
+            <div class="mobile-inner-overlay"></div>
+            <p class="font-body">AI adoption moving faster than governance, verification, and trust</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE ONE PLATFORM SECTION (< 768px) ================= -->
+  <section class="mobile-platform-section">
+    <!-- Background Purple Glows -->
+    <div class="mobile-platform-glow-left">
+      <img alt="" src="assets/img/purplebgglowleft.png" />
+    </div>
+    <div class="mobile-platform-glow-right">
+      <img alt="" src="assets/img/purplebgglowright.png" />
+    </div>
+
+    <div class="mobile-platform-header">
+      <h2 class="mobile-platform-title font-disp">One Platform for<br />Both Scores.</h2>
+      <div class="mobile-platform-subtitle font-disp">
+        Legacy Modernization<br />
+        <span style="color: rgba(255,255,255,0.7);">and SDLC Automation.</span>
+      </div>
+      <p class="mobile-platform-desc font-body">
+        Sanciti AI brings together an orchestrator and specialist agents so work moves with continuity, control, and
+        measurable progress.
+      </p>
+    </div>
+
+    <div class="mobile-platform-card">
+      <div class="mobile-platform-item">
+        <h3 class="font-disp">Legacy Modernization <span>(Enterprise Need)</span></h3>
+        <span class="mobile-platform-focus font-body">(How Sanciti AI Applies / Outcome Focus)</span>
+        <p class="font-body">LegMod governs wave-based transformation, supported by RGEN, CodeGen, and TestAI &rarr;
+          Lower cost, lower migration risk, faster modernization.</p>
+      </div>
+
+      <div class="mobile-platform-divider"></div>
+
+      <div class="mobile-platform-item">
+        <h3 class="font-disp">SDLC Automation <span>(Enterprise Need)</span></h3>
+        <span class="mobile-platform-focus font-body">(How Sanciti AI Applies / Outcome Focus)</span>
+        <p class="font-body">RGEN, CodeGen, TestAI, and Deploy streamline requirements-to-release execution &rarr;
+          Faster requirements capture, faster QA cycles, faster delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE DIFFERENT SECTION (< 768px) ================= -->
+  <section class="mobile-different-section">
+    <div class="mobile-different-header">
+      <h2 class="mobile-different-title font-disp">What Makes<br /><strong>Sanciti AI Different</strong></h2>
+      <p class="mobile-different-subtitle font-body">
+        Four capabilities generic AI<br />coding tools don't have.
+      </p>
+    </div>
+
+    <div class="mobile-different-slider-wrapper">
+      <div class="mobile-different-slider">
+        <!-- Card 1 -->
+        <div class="mobile-diff-card card-blue font-body">
+          <h3 class="font-disp">Zero-Export<br />Architecture</h3>
+          <p>Your code and data never leave your environment, even when routed to external models.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="mobile-diff-card card-purple font-body">
+          <h3 class="font-disp">Portfolio-Scale<br />Wave Planning</h3>
+          <p>LegMod plans modernization across your entire estate, not file by file.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="mobile-diff-card card-cyan font-body">
+          <h3 class="font-disp">Token Cost<br />Management</h3>
+          <p>Every task routes to the model that fits its cost and latency budget, not the most expensive default.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="mobile-diff-card card-lightblue font-body">
+          <h3 class="font-disp">One Requirements-to-<br />Production Pipeline</h3>
+          <p>RGEN's output flows straight through CodeGen, TestAI, and Deploy, with nothing re-entered by hand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE BUILT FOR ENTERPRISE SECTION (< 768px) ================= -->
+  <section class="mobile-enterprise-section">
+    <div class="mobile-enterprise-header">
+      <h2 class="mobile-enterprise-title font-disp">
+        <span style="font-style:italic; font-weight:300;">Built</span> <strong>for</strong> <span
+          style="font-style:italic; font-weight:300;">Enterprise,</span><br />
+        <strong>by Design.</strong>
+      </h2>
+      <p class="mobile-enterprise-desc font-body">
+        From data governance and human review to auditability and secure deployment, Sanciti AI is built for enterprises
+        that need progress without losing control.
+      </p>
+      <p class="mobile-enterprise-subdesc font-body">
+        Backed by V2Soft — 28 years building enterprise IT for regulated industries.
+      </p>
+    </div>
+
+    <div class="mobile-enterprise-slider-wrapper">
+      <div class="mobile-enterprise-slider">
+        <!-- 1. HIPAA Card -->
+        <div class="mobile-ent-card">
+          <img alt="HIPAA" src="assets/img/hipaa.png" />
+        </div>
+
+        <!-- 2. ISO 27001 Card -->
+        <div class="mobile-ent-card">
+          <img alt="ISO 27001" src="assets/img/iso.png" />
+        </div>
+
+        <!-- 3. CMMI Level 3 Card -->
+        <div class="mobile-ent-card">
+          <img alt="CMMI Level 3" src="assets/img/cmmi.png" />
+        </div>
+
+        <!-- 4. OWASP & NIST alignment Card -->
+        <div class="mobile-ent-card">
+          <img alt="OWASP & NIST alignment" src="assets/img/owasp_nist.png" />
+        </div>
+
+        <!-- 5. Single-tenant VPC security Card -->
+        <div class="mobile-ent-card">
+          <img alt="Single-tenant VPC security" src="assets/img/single_tenant.png" />
+        </div>
+
+        <!-- 6. Audit-grade traceability Card -->
+        <div class="mobile-ent-card">
+          <img alt="Audit-grade traceability" src="assets/img/audit_grade.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE INTEGRATES WITH SECTION (< 768px) ================= -->
+  <section class="mobile-integrates-section">
+    <h2 class="mobile-integrates-title font-disp">
+      <span>INTEGRATES</span> <strong>WITH</strong>
+    </h2>
+
+    <div class="mobile-integrates-logos">
+      <!-- Row 1: GitHub, Confluence, GitLab -->
+      <div class="mobile-integrates-row">
+        <div class="mobile-logo-github">
+          <img alt="GitHub" src="assets/img/github.png" />
+        </div>
+        <div class="mobile-logo-item">
+          <img alt="Confluence" src="assets/img/confluence.png" />
+        </div>
+        <div class="mobile-logo-item">
+          <img alt="GitLab" src="assets/img/gitlab.png" />
+        </div>
+      </div>
+
+      <!-- Row 2: SharePoint, Jira -->
+      <div class="mobile-integrates-row">
+        <div class="mobile-logo-item">
+          <img alt="SharePoint" src="assets/img/sharepoint.png" />
+        </div>
+        <div class="mobile-logo-item">
+          <img alt="Jira" src="assets/img/jira.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE NO SINGLE MODEL SECTION (< 768px) ================= -->
+  <section class="mobile-nomodel-section">
+    <!-- Blue Glow overlaying both sections -->
+    <div
+      style="position: absolute; left: -500px; top: -600px; width: 1600px; height: 1600px; z-index: -1; pointer-events: none; animation: glowFloat 8s infinite alternate ease-in-out;">
+      <img src="assets/img/bluebgglowleft.png" alt=""
+        style="width: 100%; height: 100%; object-fit: contain; opacity: 1;" />
+    </div>
+
+    <h2 class="mobile-nomodel-title font-disp">
+      <strong>No Single</strong> <span>Model</span> <strong>Conducts the</strong><br />
+      <span>Performance.</span>
+    </h2>
+    <p class="mobile-nomodel-desc font-body">
+      Sanciti AI is model-agnostic by design, routing each task to the engine best suited to it based on cost, latency,
+      and data sensitivity, giving enterprises flexibility without lock-in, and control without compromise.
+    </p>
+
+    <div class="mobile-nomodel-grid">
+      <!-- Row 1 -->
+      <div class="mobile-nomodel-cell">ChatGPT</div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell">Gemini</div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell">Cohere</div>
+      <!-- Row 2 -->
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell">Claude</div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell">Llama</div>
+      <div class="mobile-nomodel-cell"></div>
+      <!-- Row 3 -->
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell">Titan</div>
+      <!-- Row 4 -->
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell"></div>
+      <div class="mobile-nomodel-cell">Mistral</div>
+      <div class="mobile-nomodel-cell"></div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE DIFFERENT TEAMS SECTION (< 768px) ================= -->
+  <section class="mobile-teams-section">
+    <h2 class="mobile-teams-title font-disp">
+      <span>Different</span> Teams.<br />
+      <strong>Same Score.</strong>
+    </h2>
+    <p class="mobile-teams-desc font-body">
+      Architects, developers, and business stakeholders work in different environments. Sanciti AI meets each of them
+      where they already are, while keeping the underlying system aligned.
+    </p>
+
+    <div class="mobile-teams-cards">
+      <!-- Card 1: IDE Plugins -->
+      <div class="mobile-team-card">
+        <h3 class="team-card-title font-disp">
+          IDE Plugins<br />
+          <span>(Access Point)</span>
+        </h3>
+        <p class="team-card-subtitle font-body">What it supports</p>
+        <p class="team-card-desc font-body">
+          In-flow access to RGEN, CodeGen, and TestAI — including SAST, SCA, and LLM-level security scans — inside
+          IntelliJ, VS Code, Eclipse, and PyCharm.
+        </p>
+      </div>
+
+      <!-- Card 2: Desktop App -->
+      <div class="mobile-team-card">
+        <h3 class="team-card-title font-disp">
+          Desktop App<br />
+          <span>(Access Point)</span>
+        </h3>
+        <p class="team-card-subtitle font-body">What it supports</p>
+        <p class="team-card-desc font-body">
+          Local, offline access for sensitive or controlled environments — generate REST APIs from prompts, run
+          one-click Java 8/11 → 21 modernization, and produce unit tests against defined coverage targets.
+        </p>
+      </div>
+
+      <!-- Card 3: Web UI -->
+      <div class="mobile-team-card">
+        <h3 class="team-card-title font-disp">
+          Web UI<br />
+          <span>(Access Point)</span>
+        </h3>
+        <p class="team-card-subtitle font-body">What it supports</p>
+        <p class="team-card-desc font-body">
+          Oversight, approvals, wave planning, and portfolio visibility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE SYMPHONY SECTION (< 768px) ================= -->
+  <section class="mobile-symphony-section">
+    <!-- Right side glow and image -->
+    <div class="mobile-symphony-glow"></div>
+    <img src="assets/img/symphonydelivers.png" class="mobile-symphony-graphic" alt="" />
+
+    <!-- Header Content -->
+    <div class="mobile-symphony-header">
+      <h2 class="mobile-symphony-title font-disp">What the Symphony<br />Delivers</h2>
+      <p class="mobile-symphony-subtitle font-body">Sanciti AI is designed<br />to support two distinct<br />enterprise
+        priorities:</p>
+    </div>
+
+    <!-- Legacy Modernization -->
+    <div class="mobile-symphony-group">
+      <h3 class="symphony-group-title font-body">For Legacy Modernization</h3>
+
+      <div class="symphony-stat-item">
+        <p class="symphony-stat-value font-disp">50%</p>
+        <p class="symphony-stat-desc font-body">Lower modernization cost</p>
+      </div>
+
+      <div class="symphony-stat-item">
+        <p class="symphony-stat-value font-disp">25–35%</p>
+        <p class="symphony-stat-desc font-body">faster time-to-market</p>
+      </div>
+    </div>
+
+    <!-- SDLC Automation -->
+    <div class="mobile-symphony-group">
+      <h3 class="symphony-group-title font-body">For SDLC Automation</h3>
+
+      <div class="symphony-stat-item">
+        <p class="symphony-stat-value font-disp">60%</p>
+        <p class="symphony-stat-desc font-body">Up to 60% faster requirements<br />capture</p>
+      </div>
+
+      <div class="symphony-stat-item">
+        <p class="symphony-stat-value font-disp">30–50%</p>
+        <p class="symphony-stat-desc font-body">faster QA cycles</p>
+      </div>
+
+      <div class="symphony-stat-item">
+        <p class="symphony-stat-value font-disp">90–98%</p>
+        <p class="symphony-stat-desc font-body">automated test coverage</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="scaler">
+    <div id="stage">
+      <!-- ================= NAV ================= -->
+      <div class="abs desktop-nav" style="left:57px; top:38px; width:1400px; height:66px; z-index:50;">
+        <div class="abs"
+          style="left:0; top:0; width:100%; height:100%; background:rgba(30, 30, 30, 0.65); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255, 255, 255, 0.15); border-radius:4px;">
+        </div>
+        <a class="abs" href="index.html"
+          style="left:59px; top:7px; width:185px; height:52px; display:block; z-index:10;">
+          <img alt="Sanciti AI" src="assets/img/sancitiailogo.png"
+            style="width:100%; height:100%; object-fit:contain;" />
+        </a>
+        <div class="abs font-disp"
+          style="left:560px; top:23px; width:600px; font-size:16px; display:flex; gap:36px; color:#fff;">
+          <span class="nav-link" style="color:#fff;">Home</span>
+          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(0)"
+            style="color:rgba(255,255,255,.75); cursor:pointer;">LegMod</span>
+          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(1)"
+            style="color:rgba(255,255,255,.75); cursor:pointer;">RGen</span>
+          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(2)"
+            style="color:rgba(255,255,255,.75); cursor:pointer;">CodeGen</span>
+          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(3)"
+            style="color:rgba(255,255,255,.75); cursor:pointer;">Test AI</span>
+          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(4)"
+            style="color:rgba(255,255,255,.75); cursor:pointer;">Deploy</span>
+        </div>
+        <div class="abs pill"
+          style="right:22px; top:11px; width:118px; height:44px; background:var(--cyan); border-radius:999px; display:flex; align-items:center; justify-content:center; cursor:pointer;"
+          onclick="scrollToAssessment(event)">
+          <span class="font-disp" style="color:var(--ink); font-size:16px;">Demo</span>
+        </div>
+      </div>
+      <!-- ================= HERO ================= -->
+      <div class="abs desktop-hero" style="left:0; top:0; width:1512px; height:990px; z-index:1;">
+        <div class="abs glow float-slower pulse"
+          style="left:-382px; top:793px; width:569px; height:564px; background:radial-gradient(circle, rgba(115,104,255,.55), transparent 70%);">
+        </div>
+        <div class="abs glow float-slow"
+          style="right:-260px; top:120px; width:687px; height:687px; background:radial-gradient(circle, rgba(63,174,255,.35), transparent 70%);">
+        </div>
+        <div class="abs reveal hero-text-section" style="left:41px; width:800px; display:flex; flex-direction:column;">
+          <div class="font-disp" style="font-size:68px; line-height:1.12; color:#fff;">
+            <div style="font-weight:200; font-style:italic;">One Platform.</div>
+            <div style="font-weight:200; font-style:italic;">Two Enterprise Challenges.</div>
+            <div style="font-weight:700;">One Intelligent Score.</div>
+          </div>
+          <p class="font-body"
+            style="margin:24px 0 0; width:660px; font-size:16px; font-weight:300; line-height:1.5; color:rgba(255,255,255,.9);">
+            Enterprises face two challenges: legacy modernization by technical debt, and fragmented, manual software
+            delivery.Sanciti AI solves these with LegMod orchestrator and four specialist agents, RGEN, CodeGen, TestAI,
+            and Deploy, across the SDLC for continuous, governed modernization and delivery.
+          </p>
+          <div class="pill"
+            style="margin:32px 0 0; width:fit-content; border:2px solid var(--cyan); border-radius:70px; padding:12px 26px; cursor:pointer;">
+            <span class="font-disp" style="font-weight:300; font-size:16px;">Get a Free Assessment</span>
+          </div>
+        </div>
+        <div class="abs" style="left:772px; top:40px; width:545px; height:750px; overflow:visible;">
+          <!-- ring 1: blue -->
+          <div class="abs hero-ring delay1" style="left:22px; top:120px; width:230px; height:230px;">
+            <svg
+              style="width:100%; height:100%; animation: spin-cw 16s linear infinite; filter: drop-shadow(0 0 18px rgba(63,110,255,.55));"
+              viewbox="0 0 100 100">
+              <defs>
+                <lineargradient id="ringBlue" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1c2a7a"></stop>
+                  <stop offset="45%" stop-color="#3f6eff"></stop>
+                  <stop offset="100%" stop-color="#bcd0ff"></stop>
+                </lineargradient>
+              </defs>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="url(#ringBlue)" stroke-width="5.5"></circle>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="rgba(255,255,255,.35)" stroke-dasharray="4 10"
+                stroke-width="1"></circle>
+            </svg>
+          </div>
+          <!-- ring 2: teal -->
+          <div class="abs hero-ring delay2" style="left:292px; top:120px; width:230px; height:230px;">
+            <svg
+              style="width:100%; height:100%; animation: spin-ccw 20s linear infinite; filter: drop-shadow(0 0 18px rgba(42,214,223,.55));"
+              viewbox="0 0 100 100">
+              <defs>
+                <lineargradient id="ringTeal" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0d3a3c"></stop>
+                  <stop offset="45%" stop-color="#2ad6df"></stop>
+                  <stop offset="100%" stop-color="#d2fbfd"></stop>
+                </lineargradient>
+              </defs>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="url(#ringTeal)" stroke-width="5.5"></circle>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="rgba(255,255,255,.35)" stroke-dasharray="4 10"
+                stroke-width="1"></circle>
+            </svg>
+          </div>
+          <!-- ring 3: white, centre -->
+          <div class="abs hero-ring delay3" style="left:157px; top:395px; width:230px; height:230px;">
+            <svg
+              style="width:100%; height:100%; animation: spin-cw 24s linear infinite; filter: drop-shadow(0 0 20px rgba(255,255,255,.45));"
+              viewbox="0 0 100 100">
+              <defs>
+                <lineargradient id="ringWhite" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#5a5f68"></stop>
+                  <stop offset="45%" stop-color="#e8e8ea"></stop>
+                  <stop offset="100%" stop-color="#ffffff"></stop>
+                </lineargradient>
+              </defs>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="url(#ringWhite)" stroke-width="5.5"></circle>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="rgba(255,255,255,.4)" stroke-dasharray="4 10"
+                stroke-width="1"></circle>
+            </svg>
+          </div>
+          <!-- ring 4: blue, partial (bleeds below fold) -->
+          <div class="abs hero-ring delay4" style="left:22px; top:660px; width:230px; height:230px;">
+            <svg
+              style="width:100%; height:100%; animation: spin-ccw 18s linear infinite; filter: drop-shadow(0 0 18px rgba(63,110,255,.5));"
+              viewbox="0 0 100 100">
+              <circle cx="50" cy="50" fill="none" r="40" stroke="url(#ringBlue)" stroke-width="5.5"></circle>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="rgba(255,255,255,.3)" stroke-dasharray="4 10"
+                stroke-width="1"></circle>
+            </svg>
+          </div>
+          <!-- ring 5: teal, partial (bleeds below fold) -->
+          <div class="abs hero-ring delay5" style="left:292px; top:660px; width:230px; height:230px;">
+            <svg
+              style="width:100%; height:100%; animation: spin-cw 22s linear infinite; filter: drop-shadow(0 0 18px rgba(42,214,223,.5));"
+              viewbox="0 0 100 100">
+              <circle cx="50" cy="50" fill="none" r="40" stroke="url(#ringTeal)" stroke-width="5.5"></circle>
+              <circle cx="50" cy="50" fill="none" r="40" stroke="rgba(255,255,255,.3)" stroke-dasharray="4 10"
+                stroke-width="1"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- decorative blob between hero and gaps -->
+      <div class="abs glow float-slowest"
+        style="left:-494px; top:391px; width:984px; height:658px; overflow:hidden; opacity:.8;">
+        <img alt="" src="assets/img/image_2.png" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <!-- ================= TWO PERSISTENT GAPS ================= -->
+
+      <!-- ================= MODERNIZING PLAYBOOK ================= -->
+      <div id="playbook-desktop" class="abs desktop-playbook" style="left:0; top:990px; width:1512px; height:680px;">
+        <div class="abs reveal"
+          style="left:0; top:11px; width:560px; height:658px; overflow:hidden; opacity:1; display:flex; align-items:center; justify-content:flex-start;">
+          <img alt="" src="assets/img/modernizing thesystems.png"
+            style="max-width:100%; max-height:100%; object-fit:contain; object-position:left center;" />
+        </div>
+        <div class="abs reveal" style="left:643px; top:38px; width:814px;">
+          <div style="text-align:right;">
+            <p class="font-disp"
+              style="font-size:70px; font-weight:300; color:rgba(255,255,255,.9); line-height:1.07; margin:0;">
+              Modernizing the Systems<br />You Can't Afford to Break</p>
+            <p class="font-body" style="font-size:24px; font-weight:300; margin-top:24px;">A practical playbook for
+              end-to-end legacy modernization.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px 30px; margin-top:44px;">
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Name</span>
+              <input
+                style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
+                type="text" />
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Title</span>
+              <input
+                style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
+                type="text" />
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Email</span>
+              <input
+                style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
+                type="text" />
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Contact number</span>
+              <input
+                style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
+                type="text" />
+            </div>
+          </div>
+          <div class="pill"
+            style="width:295px; margin-left:auto; margin-top:32px; padding:8px 34px; background:var(--cyan); border-radius:50px; text-align:center; cursor:pointer;">
+            <span class="font-body" style="font-size:20px; color:rgba(7,7,14,.9);">Download the Playbook</span>
+          </div>
+        </div>
+      </div>
+      <div class="abs desktop-gaps" style="left:0; top:1790px; width:1512px; height:1000px;">
+        <!-- Background Ambient Blue Glows (Left and Right - Max Scope) -->
+        <div class="abs"
+          style="left:-260px; top:-260px; width:1450px; height:1550px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+          <img alt="" src="assets/img/bluebgglowleft.png" style="width:100%; height:100%; object-fit:fill;" />
+        </div>
+        <div class="abs"
+          style="right:-180px; top:-200px; width:1100px; height:1420px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+          <img alt="" src="assets/img/bluebgglowright.png" style="width:100%; height:100%; object-fit:fill;" />
+        </div>
+
+        <div class="abs reveal font-disp"
+          style="left:249px; top:0px; width:1014px; text-align:center; font-size:76px; font-weight:500; line-height:1.05; position:relative; z-index:1;">
+          Two Persistent Gaps in the Enterprise Stack.
+        </div>
+        <p class="abs reveal font-body"
+          style="left:406px; top:200px; width:700px; text-align:center; font-size:22px; font-weight:300; color:rgba(255,255,255,.8);">
+          These challenges are real in their own right, often owned by different teams, with different budgets and
+          different urgency
+        </p>
+        <!-- badges -->
+        <div class="abs reveal"
+          style="left:43px; top:420px; width:714px; height:44px; background:rgba(255,255,255,.08); border-radius:65px; display:flex; align-items:center; justify-content:center;">
+          <span class="font-disp" style="font-size:15px; font-weight:500;">Legacy Modernization</span>
+        </div>
+        <div class="abs reveal"
+          style="left:841px; top:420px; width:628px; height:44px; background:rgba(255,255,255,.08); border-radius:65px; display:flex; align-items:center; justify-content:center;">
+          <span class="font-disp" style="font-size:15px; font-weight:500;">SDLC Automation</span>
+        </div>
+        <div class="abs" style="left:787px; top:420px; width:1px; height:417px; background:rgba(255,255,255,.15);">
+        </div>
+        <!-- legacy modernization cards -->
+        <div class="abs reveal card"
+          style="left:43px; top:514px; width:220px; height:206px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/legacymodernizationone.png" style="width:100%;height:100%;object-fit:cover;" />
+          <div class="abs"
+            style="left:0;top:0;width:100%;height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,.95));">
+          </div>
+          <p class="abs font-body" style="left:12px; bottom:12px; width:180px; font-size:14px; color:#fff;">Business
+            logic buried in aging systems, documents, and tribal knowledge</p>
+        </div>
+        <div class="abs reveal card"
+          style="left:270px; top:514px; width:487px; height:206px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/legacymodernizationtwo.png" style="width:100%;height:100%;object-fit:cover;" />
+          <div class="abs" style="left:0;top:0;width:100%;height:100%; background:rgba(0,0,0,.15);"></div>
+          <p class="abs font-body"
+            style="left:16px; top:16px; width:300px; font-size:14px; text-align:left; color:#fff;">Rewrites
+            that feel too risky to start and too costly to finish</p>
+        </div>
+        <div class="abs reveal card"
+          style="left:43px; top:727px; width:354px; height:113px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/legacymodernizationthree.png"
+            style="width:100%;height:100%;object-fit:cover; position:absolute;" />
+          <div class="abs" style="left:0;top:0;width:100%;height:100%; background:rgba(0,0,0,.3);"></div>
+          <p class="abs font-body" style="left:16px; bottom:16px; width:220px; font-size:14px; color:#fff;">Technical
+            debt consuming
+            roadmap capacity long before new value gets funded</p>
+        </div>
+        <div class="abs reveal card"
+          style="left:403px; top:727px; width:354px; height:113px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/legacymodernizationfour.png"
+            style="width:100%;height:100%;object-fit:cover; position:absolute;" />
+          <div class="abs" style="left:0;top:0;width:100%;height:100%; background:rgba(0,0,0,.3);"></div>
+          <p class="abs font-body" style="left:16px; bottom:16px; width:200px; font-size:14px; color:#fff;">
+            Modernization programs
+            forced into all-or-nothing decisions</p>
+        </div>
+        <!-- SDLC automation cards -->
+        <div class="abs reveal card"
+          style="left:841px; top:514px; width:628px; height:113px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/sdlcautomationone.png" style="width:100%;height:100%;object-fit:cover;" />
+          <div class="abs" style="left:0;top:0;width:100%;height:100%; background:rgba(0,0,0,.15);"></div>
+          <p class="abs font-body"
+            style="left:16px; top:16px; width:250px; font-size:14px; text-align:left; color:#fff;">
+            Requirements that decay faster than teams can maintain them</p>
+        </div>
+        <div class="abs reveal card"
+          style="left:841px; top:637px; width:440px; height:205px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/sdlcautomationtwo.png" style="width:100%;height:100%;object-fit:cover;" />
+          <div class="abs"
+            style="left:0;top:0;width:100%;height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0) 45%, rgba(0,0,0,.7));">
+          </div>
+          <p class="abs font-body"
+            style="left:16px; bottom:16px; width:280px; font-size:14px; text-align:left; color:#fff;">
+            Manual handoffs between build, test, and release that still depend on manual effort</p>
+        </div>
+        <div class="abs reveal card"
+          style="left:1291px; top:637px; width:178px; height:205px; border-radius:8px; overflow:hidden; background:#fff;">
+          <img alt="" src="assets/img/sdlcautomationthree.png" style="width:100%;height:100%;object-fit:cover;" />
+          <div class="abs"
+            style="left:0;top:0;width:100%;height:100%; background:linear-gradient(to bottom, rgba(0,0,0,0) 25%, rgba(0,0,0,.7));">
+          </div>
+          <p class="abs font-body" style="left:12px; bottom:12px; width:150px; font-size:13px; color:#fff;">AI adoption
+            moving
+            faster than governance, verification, and trust</p>
+        </div>
+      </div>
+      <!-- ================= PURPLE AMBIENT BACKGROUND GLOWS ================= -->
+      <div class="abs"
+        style="left:-300px; top:3050px; width:1550px; height:1750px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+        <img alt="" src="assets/img/purplebgglowleft.png" style="width:100%; height:100%; object-fit:fill;" />
+      </div>
+      <div class="abs"
+        style="right:-220px; top:3050px; width:1350px; height:1750px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+        <img alt="" src="assets/img/purplebgglowright.png" style="width:100%; height:100%; object-fit:fill;" />
+      </div>
+      <!-- ================= ONE PLATFORM FOR BOTH SCORES ================= -->
+      <div class="abs desktop-platform" style="left:43px; top:2786px; width:1426px; height:920px;">
+        <p class="abs reveal font-body"
+          style="left:0; top:279px; width:334px; font-size:20px; font-weight:300; color:rgba(255,255,255,.85);">
+          Sanciti AI brings together an orchestrator and specialist agents so work moves with continuity, control, and
+          measurable progress.
+        </p>
+        <div class="abs reveal font-disp"
+          style="right:0; top:202px; width:926px; font-style:italic; font-weight:200; font-size:52px; text-align:right; color:rgba(255,255,255,.9);">
+          Legacy Modernization and SDLC Automation.
+        </div>
+        <div class="abs reveal font-disp" style="left:12px; top:0; width:634px; font-size:56px; font-weight:700;">
+          One Platform for<br />Both Scores.
+        </div>
+        <div class="abs reveal"
+          style="left:0; top:425px; width:1426px; height:491px; background:rgba(42,214,223,.10); border-radius:8px;">
+          <div class="abs"
+            style="left:44px; top:53px; height:39px; padding:0 34px; background:var(--blue); border-radius:50px; display:flex; align-items:center;">
+            <span class="font-body" style="font-size:18px; color:var(--ink);">Enterprise Need</span>
+          </div>
+          <div class="abs"
+            style="left:700px; top:56px; height:39px; padding:0 34px; background:var(--blue); border-radius:50px; display:flex; align-items:center;">
+            <span class="font-body" style="font-size:18px; color:var(--ink);">How Sanciti AI Applies / Outcome
+              Focus</span>
+          </div>
+          <div class="abs" style="left:0; top:274px; width:1426px; height:1px; background:rgba(255,255,255,.15);"></div>
+          <div class="abs" style="left:57px; top:148px; width:280px;">
+            <div class="font-disp" style="font-size:34px;">Legacy<br />modernization</div>
+          </div>
+          <p class="abs font-body"
+            style="left:700px; top:148px; width:700px; font-size:17px; color:rgba(255,255,255,.85);">LegMod governs
+            wave-based transformation, supported by RGEN, CodeGen, and TestAI → Lower cost, lower migration risk, faster
+            modernization.</p>
+          <div class="abs" style="left:57px; top:310px; width:280px;">
+            <div class="font-disp" style="font-size:34px;">SDLC automation</div>
+          </div>
+          <p class="abs font-body"
+            style="left:700px; top:310px; width:700px; font-size:17px; color:rgba(255,255,255,.85);">RGEN, CodeGen,
+            TestAI, and Deploy streamline requirements-to-release execution → Faster requirements capture, faster QA
+            cycles, faster delivery.</p>
+        </div>
+      </div>
+      <!-- ================= WHAT MAKES SANCITI AI DIFFERENT ================= -->
+      <div class="abs desktop-different" style="left:43px; top:3871px; width:1426px; height:870px;">
+        <p class="abs reveal font-disp" style="left:430px; top:280px; width:500px; font-size:54px; line-height:1.1;">
+          <span style="font-style:italic; font-weight:200;">What Makes</span><br />
+          <span style="font-weight:700;">Sanciti AI Different</span>
+        </p>
+        <p class="abs reveal font-body"
+          style="left:780px; top:460px; width:220px; font-size:16px; font-weight:300; color:rgba(255,255,255,.85); line-height:1.4;">
+          Four capabilities<br />generic AI coding<br />tools don't have.
+        </p>
+
+        <!-- card 1: Zero-Export Architecture -->
+        <div class="abs reveal card"
+          style="left:0px; top:120px; width:390px; height:270px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); background:#304373;">
+          <div
+            style="position:relative; height:60%; width:100%; padding:30px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; background:linear-gradient(135deg, #00f0ff 0%, #0022cc 100%);">
+            <video autoplay loop muted playsinline
+              style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+              <source src="assets/vids/zeroexportarchitecture.mp4" type="video/mp4" />
+            </video>
+            <div style="position:relative; z-index:2;">
+              <p class="font-disp" style="font-size:28px; line-height:1.2; color:#fff;">Zero-Export<br />Architecture
+              </p>
+            </div>
+          </div>
+          <div
+            style="height:40%; width:100%; padding:20px 30px; display:flex; flex-direction:column; justify-content:center;">
+            <p class="font-body" style="font-size:13px; color:rgba(255,255,255,.8); line-height:1.4;">your code and data
+              never leave your<br />environment, even when routed to<br />external models</p>
+          </div>
+        </div>
+
+        <!-- card 2: Portfolio-Scale Wave Planning -->
+        <div class="abs reveal card"
+          style="left:15px; top:540px; width:680px; height:180px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); display:flex;">
+          <div
+            style="position:relative; flex:1; padding:40px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; background:linear-gradient(135deg, #e6d3ff 0%, #b89aff 100%);">
+            <video autoplay loop muted playsinline
+              style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+              <source src="assets/vids/portfolioscalewaveplanning.mp4" type="video/mp4" />
+            </video>
+            <div style="position:relative; z-index:2;">
+              <p class="font-disp" style="font-size:28px; line-height:1.2; color:#000;">Portfolio-Scale<br />Wave
+                Planning
+              </p>
+            </div>
+          </div>
+          <div
+            style="flex:1; padding:40px; display:flex; flex-direction:column; justify-content:center; background:#1e1e24;">
+            <p class="font-body" style="font-size:14px; color:rgba(255,255,255,.9); line-height:1.4;">LegMod plans
+              modernization<br />across your entire estate, not<br />file by file</p>
+          </div>
+        </div>
+
+        <!-- card 3: Token Cost Management -->
+        <div class="abs reveal card"
+          style="left:980px; top:50px; width:390px; height:270px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); background:#455986;">
+          <div
+            style="position:relative; height:60%; width:100%; padding:30px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; background:linear-gradient(135deg, #106b5d 0%, #90e0d0 100%);">
+            <video autoplay loop muted playsinline
+              style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+              <source src="assets/vids/tokencostmanagement.mp4" type="video/mp4" />
+            </video>
+            <div style="position:relative; z-index:2;">
+              <p class="font-disp" style="font-size:28px; line-height:1.2; color:#fff;">Token Cost<br />Management</p>
+            </div>
+          </div>
+          <div
+            style="height:40%; width:100%; padding:20px 30px; display:flex; flex-direction:column; justify-content:center;">
+            <p class="font-body" style="font-size:13px; color:rgba(255,255,255,.8); line-height:1.4;">every task routes
+              to the model that fits<br />its cost and latency budget, not the<br />most expensive default</p>
+          </div>
+        </div>
+
+        <!-- card 4: One Requirements-to-Production Pipeline -->
+        <div class="abs reveal card"
+          style="left:1000px; top:460px; width:390px; height:290px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); background:#153d39;">
+          <div
+            style="position:relative; height:55%; width:100%; padding:30px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; background:linear-gradient(135deg, #70a9db 0%, #d0e7f9 100%);">
+            <video autoplay loop muted playsinline
+              style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1;">
+              <source src="assets/vids/requirementsroduction.mp4" type="video/mp4" />
+            </video>
+            <div style="position:relative; z-index:2;">
+              <p class="font-disp" style="font-size:28px; line-height:1.2; color:#000;">One
+                Requirements<br />-to-Production<br />Pipeline</p>
+            </div>
+          </div>
+          <div
+            style="height:45%; width:100%; padding:20px 30px; display:flex; flex-direction:column; justify-content:center;">
+            <p class="font-body" style="font-size:13px; color:rgba(255,255,255,.8); line-height:1.4;">RGEN's output
+              flows straight through<br />CodeGen, TestAI, and Deploy, with<br />nothing re-entered by hand</p>
+          </div>
+        </div>
+      </div>
+      <!-- ================= BUILT FOR ENTERPRISE ================= -->
+      <div class="abs desktop-enterprise" style="left:0; top:4850px; width:1512px; height:970px;">
+        <!-- Background Ambient Green Glows (Left and Right - Max Scope) -->
+        <div class="abs"
+          style="left:-320px; top:-200px; width:1550px; height:1400px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+          <img alt="" src="assets/img/greenbgglowleft.png" style="width:100%; height:100%; object-fit:fill;" />
+        </div>
+        <div class="abs"
+          style="right:-250px; top:-200px; width:1500px; height:1400px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+          <img alt="" src="assets/img/greenbgglowright.png" style="width:100%; height:100%; object-fit:fill;" />
+        </div>
+        <p class="abs reveal font-disp" style="left:43px; top:4px; width:907px; font-size:66px;">
+          <span style="font-style:italic; font-weight:200;">Built</span> for <span
+            style="font-style:italic; font-weight:200;">Enterprise</span>, by Design.
+        </p>
+        <p class="abs reveal font-body"
+          style="right:calc(1512px - 1457px); left:717px; top:153px; width:527px; font-size:20px; font-weight:300; color:rgba(255,255,255,.9);">
+          From data governance and human review to auditability and secure deployment, Sanciti AI is built for
+          enterprises that need progress without losing control.
+        </p>
+        <p class="abs reveal font-body"
+          style="left:43px; top:242px; width:711px; font-size:20px; font-weight:300; color:rgba(255,255,255,.8);">
+          Backed by V2Soft — 28 years building enterprise IT for regulated industries.
+        </p>
+        <div class="abs reveal cert-scroll"
+          style="left:43px; top:316px; width:1400px; height:601px; display:flex; gap:25px; overflow-x:auto; overflow-y:hidden; border-radius:12px; scroll-snap-type:x proximity; cursor:grab;">
+          <!-- 1. HIPAA Card -->
+          <div
+            style="flex:0 0 432px; height:601px; position:relative; overflow:hidden; background:#0a0a0a; scroll-snap-align:start; border-radius:12px;">
+            <img alt="HIPAA" src="assets/img/hipaa.png"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          </div>
+
+          <!-- 2. ISO 27001 Card -->
+          <div
+            style="flex:0 0 432px; height:601px; position:relative; overflow:hidden; background:#000814; scroll-snap-align:start; border-radius:12px;">
+            <img alt="ISO 27001" src="assets/img/iso.png"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          </div>
+
+          <!-- 3. CMMI Level 3 Card -->
+          <div
+            style="flex:0 0 432px; height:601px; position:relative; overflow:hidden; background:#000; scroll-snap-align:start; border-radius:12px;">
+            <img alt="CMMI Level 3" src="assets/img/cmmi.png"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          </div>
+
+          <!-- 4. OWASP & NIST alignment Card -->
+          <div
+            style="flex:0 0 432px; height:601px; position:relative; overflow:hidden; background:#000; scroll-snap-align:start; border-radius:12px;">
+            <img alt="OWASP & NIST alignment" src="assets/img/owasp_nist.png"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          </div>
+
+          <!-- 5. Single-tenant VPC security Card -->
+          <div
+            style="flex:0 0 432px; height:601px; position:relative; overflow:hidden; background:#000; scroll-snap-align:start; border-radius:12px;">
+            <img alt="Single-tenant VPC security" src="assets/img/single_tenant.png"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          </div>
+
+          <!-- 6. Audit-grade traceability Card -->
+          <div
+            style="flex:0 0 432px; height:601px; position:relative; overflow:hidden; background:#000; scroll-snap-align:start; border-radius:12px;">
+            <img alt="Audit-grade traceability" src="assets/img/audit_grade.png"
+              style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          </div>
+        </div>
+      </div>
+      <!-- ================= INTEGRATES WITH ================= -->
+      <div class="abs reveal desktop-integrates" style="left:43px; top:5817px; width:1400px; height:250px;">
+        <p class="font-disp" style="font-size:62px; line-height:1.1; margin:0 0 50px 0; color:#fff;">
+          <span style="font-style:italic; font-weight:200;">Integrates</span> <span
+            style="font-weight:600; margin-left:6px;">with</span>
+        </p>
+        <div style="display:flex; align-items:center; gap:58px;">
+          <!-- 1. GitHub with circular outline -->
+          <div
+            style="width:58px; height:58px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.85); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <img alt="GitHub" src="assets/img/github.png" style="width:40px; height:40px; object-fit:contain;" />
+          </div>
+          <!-- 2. Confluence -->
+          <img alt="Confluence" src="assets/img/confluence.png" style="height:40px; object-fit:contain;" />
+          <!-- 3. GitLab -->
+          <img alt="GitLab" src="assets/img/gitlab.png" style="height:40px; object-fit:contain;" />
+          <!-- 4. SharePoint -->
+          <img alt="SharePoint" src="assets/img/sharepoint.png" style="height:42px; object-fit:contain;" />
+          <!-- 5. Jira -->
+          <img alt="Jira" src="assets/img/jira.png" style="height:42px; object-fit:contain;" />
+        </div>
+      </div>
+      <!-- ================= NO SINGLE MODEL ================= -->
+      <div class="abs desktop-nomodel" style="left:0; top:6160px; width:1512px; height:1400px;">
+        <!-- Top-Right: Display Title -->
+        <p class="abs reveal font-disp"
+          style="right:43px; top:-30px; width:920px; font-size:72px; line-height:1.12; text-align:right; color:#fff;">
+          No Single <span style="font-style:italic; font-weight:200;">Model</span> Conducts<br />
+          <span style="font-weight:500;">the</span> <span
+            style="font-style:italic; font-weight:200;">Performance.</span>
+        </p>
+
+        <!-- Bottom-Left: 7x4 Model Matrix Grid -->
+        <div class="abs reveal"
+          style="left:43px; top:180px; width:882px; height:224px; display:grid; grid-template-columns: repeat(7, 126px); grid-template-rows: repeat(4, 56px); border-top:1px solid rgba(255,255,255,.18); border-left:1px solid rgba(255,255,255,.18);">
+          <!-- Row 1 -->
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            Gemini</div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            Mistral</div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+
+          <!-- Row 2 -->
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            ChatGPT</div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            Llama</div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            Cohere</div>
+
+          <!-- Row 3 -->
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            Claude</div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div
+            style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:22px; font-weight:500; color:#fff;">
+            Titan</div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+
+          <!-- Row 4 -->
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+          <div style="border-right:1px solid rgba(255,255,255,.18); border-bottom:1px solid rgba(255,255,255,.18);">
+          </div>
+        </div>
+
+        <!-- Bottom-Right: Description Paragraph -->
+        <p class="abs reveal font-body"
+          style="left:980px; top:190px; width:450px; text-align:left; font-size:16px; line-height:1.5; font-weight:300; color:rgba(255,255,255,.75);">
+          Sanciti AI is model-agnostic by design, routing each task to the engine best suited to it based on cost,
+          latency, and data sensitivity, giving enterprises flexibility without lock-in, and control without compromise.
+        </p>
+        <p class="abs reveal font-disp" style="left:43px; top:503px; font-size:88px; line-height:0.95;">
+          <span style="font-style:italic; font-weight:200;">Different</span><br /><span
+            style="font-weight:500;">Teams.</span>
+        </p>
+        <p class="abs reveal font-disp"
+          style="right:calc(1512px - 1473px); top:517px; font-size:88px; font-weight:500;">Same <span
+            style="font-style:italic; font-weight:200;"><br>Score.</span></p>
+        <p class="abs reveal font-body"
+          style="left:43px; top:870px; width:465px; font-size:20px; font-weight:300; color:rgba(255,255,255,.85);">
+          Architects, developers, and business stakeholders work in different environments. Sanciti AI meets each of
+          them where they already are, while keeping the underlying system aligned.
+        </p>
+        <!-- IDE / Desktop / Web UI row -->
+        <!-- 1. IDE Plugins Card -->
+        <div class="abs reveal card"
+          style="left:617px; top:870px; width:849px; height:299px; border-radius:24px; overflow:hidden; background:#184163; padding:28px 36px; box-sizing:border-box; position:absolute;">
+          <!-- Left/Bottom graphic (Enlarged) -->
+          <img alt="IDE Plugins" src="assets/img/ideplugins.png"
+            style="position:absolute; left:20px; bottom:0px; width:450px; height:auto; object-fit:contain; object-position:bottom left; pointer-events:none; z-index:1;" />
+
+          <!-- Top Left Content: Access Point badge & Title -->
+          <div style="position:relative; z-index:2;">
+            <div
+              style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:500; color:#fff;">
+              Access Point
+            </div>
+            <p class="font-disp" style="font-size:38px; font-weight:500; color:#fff; margin:14px 0 0 0;">IDE Plugins</p>
+          </div>
+
+          <!-- Top Right Content: What It Supports badge & Description -->
+          <div
+            style="position:absolute; right:36px; top:28px; width:340px; text-align:right; z-index:2; display:flex; flex-direction:column; align-items:flex-end;">
+            <div
+              style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:500; color:#fff;">
+              What It Supports
+            </div>
+            <p class="font-body"
+              style="font-size:14px; line-height:1.55; color:rgba(255,255,255,0.85); text-align:right; margin:16px 0 0 0;">
+              In-flow access to RGEN, CodeGen, and TestAI — including SAST, SCA, and LLM-level security scans — inside
+              IntelliJ, VS Code, Eclipse, and PyCharm.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Web UI Card -->
+        <div class="abs reveal card"
+          style="left:617px; top:1190px; width:280px; height:320px; border-radius:24px; overflow:hidden; background:#184163; padding:24px 24px; box-sizing:border-box; position:absolute;">
+          <!-- Top Wireframe Graphic (Touching Right & Top - Enlarged) -->
+          <img alt="Web UI" src="assets/img/webui.png"
+            style="position:absolute; top:0px; right:0px; width:275px; height:auto; object-fit:contain; object-position:top right; pointer-events:none; z-index:1;" />
+
+          <!-- Content -->
+          <div style="position:relative; z-index:2; height:100%; display:flex; flex-direction:column;">
+            <div>
+              <div
+                style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:500; color:#fff;">
+                Access Point
+              </div>
+              <p class="font-disp"
+                style="font-size:46px; font-weight:500; color:#fff; margin:14px 0 0 0; line-height:1.1;">Web UI</p>
+            </div>
+
+            <div style="margin-top:auto; text-align:right; display:flex; flex-direction:column; align-items:flex-end;">
+              <div
+                style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:500; color:#fff;">
+                What It Supports
+              </div>
+              <p class="font-body"
+                style="font-size:20px; line-height:1.35; font-weight:300; color:#fff; text-align:right; margin:16px 0 0 0;">
+                Oversight, approvals, wave planning, and portfolio visibility.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Desktop App Card -->
+        <div class="abs reveal card"
+          style="left:917px; top:1190px; width:549px; height:320px; border-radius:24px; overflow:hidden; background:#184163; padding:28px 36px; box-sizing:border-box; position:absolute;">
+          <!-- Top Left Graphic (Touching Left & Top) -->
+          <img alt="Desktop App" src="assets/img/desktopapp.png"
+            style="position:absolute; left:0px; top:0px; width:190px; height:auto; object-fit:contain; object-position:top left; pointer-events:none; z-index:1;" />
+
+          <!-- Content aligned to right -->
+          <div
+            style="position:relative; z-index:2; display:flex; flex-direction:column; align-items:flex-end; text-align:right;">
+            <div
+              style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:500; color:#fff;">
+              Access Point
+            </div>
+            <p class="font-disp" style="font-size:42px; font-weight:500; color:#fff; margin:10px 0 0 0;">Desktop App</p>
+
+            <div
+              style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:500; color:#fff; margin-top:14px;">
+              What It Supports
+            </div>
+            <p class="font-body"
+              style="font-size:14px; line-height:1.55; color:rgba(255,255,255,0.85); text-align:right; max-width:440px; margin:14px 0 0 0;">
+              Local, offline access for sensitive or controlled environments — generate REST APIs from prompts, run
+              one-click Java 8/11 → 21 modernization, and produce unit tests against defined coverage targets.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ================= WHAT THE SYMPHONY DELIVERS ================= -->
+      <div class="abs desktop-symphony" style="left:43px; top:7780px; width:1426px; height:800px;">
+        <div class="abs glow float-slow pulse"
+          style="left:1042px; top:285px; width:686px; height:673px; background:radial-gradient(circle, rgba(42,214,223,.3), transparent 65%);">
+        </div>
+        <div class="abs reveal"
+          style="left:746px; top:150px; width:723px; height:650px; display:flex; align-items:center; justify-content:flex-end;">
+          <img src="assets/img/symphonydelivers.png"
+            style="max-width:100%; max-height:100%; object-fit:contain; object-position:right center;" alt="" />
+        </div>
+        <p class="abs reveal font-disp"
+          style="left:0; top:0; width:853px; font-size:72px; line-height:1.15; font-weight:600; color:#fff; letter-spacing:-0.02em;">
+          What the Symphony<br />Delivers</p>
+        <p class="abs reveal font-body"
+          style="left:644px; top:227px; width:472px; font-size:22px; font-weight:300; color:rgba(255,255,255,.85);">
+          Sanciti AI is designed to support two distinct enterprise priorities:</p>
+        <div class="abs reveal" style="left:-6px; top:374px; width:330px;">
+          <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
+          <p class="font-body"
+            style="font-size:16px; letter-spacing:.05em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-bottom:6px;">
+            For Legacy Modernization</p>
+          <p class="font-disp" style="font-size:60px; font-style:italic; margin:0;">50%</p>
+          <p class="font-body" style="font-size:16px; font-weight:300; color:rgba(255,255,255,.85); margin-top:6px;">
+            Lower modernization cost</p>
+        </div>
+        <div class="abs reveal" style="left:373px; top:374px; width:334px;">
+          <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
+          <p class="font-body"
+            style="font-size:16px; letter-spacing:.05em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-bottom:6px;">
+            For SDLC Automation</p>
+          <p class="font-disp" style="font-size:57px; font-style:italic; margin:0;">60%</p>
+          <p class="font-body" style="font-size:13px; font-weight:300; color:rgba(255,255,255,.7);">Up to</p>
+          <p class="font-body" style="font-size:16px; font-weight:300; color:rgba(255,255,255,.85);">faster requirements
+            capture</p>
+        </div>
+        <div class="abs reveal" style="left:0; top:548px; width:330px;">
+          <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
+          <p class="font-disp" style="font-size:48px; font-style:italic; margin:0;">25–35%</p>
+          <p class="font-body" style="font-size:15px; font-weight:300; color:rgba(255,255,255,.85);">faster
+            time-to-market</p>
+        </div>
+        <div class="abs reveal" style="left:373px; top:548px; width:330px;">
+          <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
+          <p class="font-disp" style="font-size:48px; font-style:italic; margin:0;">30–50%</p>
+          <p class="font-body" style="font-size:15px; font-weight:300; color:rgba(255,255,255,.85);">faster QA cycles
+          </p>
+        </div>
+        <div class="abs reveal" style="left:0; top:684px; width:330px;">
+          <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
+          <p class="font-body" style="font-size:16px; font-weight:300; color:rgba(255,255,255,.85);">Safer migration
+            through phased, wave-based execution</p>
+        </div>
+        <div class="abs reveal" style="left:373px; top:683px; width:330px;">
+          <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
+          <p class="font-disp" style="font-size:44px; font-style:italic; margin:0;">90–98%</p>
+          <p class="font-body" style="font-size:15px; font-weight:300; color:rgba(255,255,255,.85);">automated test
+            coverage</p>
+        </div>
+      </div>
+      <!-- ================= ORCHESTRATOR / LEGMOD FEATURE ================= -->
+      <div id="orchestrator" class="abs" style="left:0; top:8613px; width:1512px; height:1514px; overflow:hidden;">
+        <!-- Right: Heading -->
+        <p class="abs reveal font-disp"
+          style="right:43px; top:0px; width:1100px; font-size:72px; line-height:1.15; text-align:right; color:#fff;">
+          <span style="font-weight:600;">An</span> <span style="font-style:italic; font-weight:200;">Orchestrator</span>
+          <span style="font-weight:700;">Backed by</span><br />
+          <span style="font-style:italic; font-weight:200;">Specialists.</span>
+        </p>
+        <p class="abs reveal font-body"
+          style="left:43px; top:120px; font-size:16px; font-weight:300; color:rgba(255,255,255,.6);">
+          one orchestration layer
+        </p>
+        <p class="abs reveal font-body"
+          style="left:43px; top:160px; width:512px; font-size:20px; font-weight:300; color:rgba(255,255,255,.85);">
+          Sanciti AI combines one orchestration layer with focused agents, each built for a specific role in
+          modernization or delivery.
+        </p>
+        <!-- auto-advancing left-to-right carousel across all 5 agents -->
+        <div id="orchestrator-container" class="abs reveal state-legmod"
+          style="left:0; top:332px; width:1512px; height:1182px; position:relative; overflow:hidden; border-radius:8px; background:linear-gradient(135deg,#0d1f45,#000 70%);">
+          <!-- Top Cyan Circle -->
+          <div id="circle-cyan" class="anim-circle" onclick="setOrchestratorState('state-rgen', event)"
+            style="position:absolute; left:650px; top:-350px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #99f6fa, #2ad6df 80%); box-shadow:0 0 150px 30px rgba(42,214,223,0.6); cursor:pointer;">
+            <div class="blink-dot"
+              style="--dot-bright: #ffffff; --dot-dim: #000000; position:absolute; bottom:80px; left:50%; transform:translateX(-50%); width:32px; height:32px; background:#fff; border-radius:50%; pointer-events:none;">
+            </div>
+          </div>
+
+          <!-- Left White Circle -->
+          <div id="circle-white" class="anim-circle" onclick="setOrchestratorState('state-deploy', event)"
+            style="position:absolute; left:-150px; top:300px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #ffffff, #d4d4d4 80%); box-shadow:0 0 150px 30px rgba(255,255,255,0.6); cursor:pointer;">
+            <div class="blink-dot"
+              style="--dot-bright: #ffffff; --dot-dim: #000000; position:absolute; right:60px; top:50%; transform:translateY(-50%); width:32px; height:32px; background:#000; border-radius:50%; pointer-events:none;">
+            </div>
+          </div>
+
+          <!-- Right Blue Circle -->
+          <div id="circle-blue" class="anim-circle" onclick="setOrchestratorState('state-codegen', event)"
+            style="position:absolute; right:-200px; top:220px; width:450px; height:450px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #6b82ff, #1020f0 80%); box-shadow:0 0 150px 30px rgba(16,32,240,0.6); cursor:pointer;">
+            <div class="blink-dot"
+              style="--dot-bright: #fff; --dot-dim: #1020f0; position:absolute; left:70px; top:50%; transform:translateY(-50%); width:32px; height:32px; background:#fff; border-radius:50%; pointer-events:none;">
+            </div>
+          </div>
+
+          <!-- Bottom Purple Circle -->
+          <div id="circle-purple" class="anim-circle" onclick="setOrchestratorState('state-testai', event)"
+            style="position:absolute; left:50%; transform:translateX(-50%); bottom:-830px; width:1000px; height:1000px; border-radius:50%; background:radial-gradient(circle at 50% 0%, #685cc7, #4b44a5 80%); cursor:pointer;">
+            <div class="blink-dot"
+              style="--dot-bright: #f0ebff; --dot-dim: #4b44a5; position:absolute; top:40px; left:50%; transform:translateX(-50%); width:32px; height:32px; background:#f0ebff; border-radius:50%; box-shadow: 0 0 15px 3px rgba(255,255,255,0.6), 0 0 250px 80px rgba(104,92,199,0.8); pointer-events:none;">
+            </div>
+          </div>
+
+          <!-- Bottom Black Gradient Overlay -->
+          <div id="gradient-overlay" class="anim-circle"
+            style="position:absolute; left:0; bottom:0; width:1512px; height:200px; background:linear-gradient(to bottom, transparent, #000); z-index:5; pointer-events:none;">
+          </div>
+
+          <!-- Content Layer -->
+          <div
+            style="position:absolute; top:270px; left:206px; display:flex; flex-direction:column; align-items:flex-start; z-index:10; pointer-events:none;">
+
+            <!-- LegMod Text Layer -->
+            <div id="text-legmod" class="anim-text"
+              style="position:absolute; top:0; left:300px; display:flex; flex-direction:column; align-items:flex-start;">
+              <p class="font-disp"
+                style="font-size:96px; font-weight:300; line-height:1; color:#fff; margin-bottom:20px;">LegMod</p>
+
+              <div style="margin-left:170px; display:flex; flex-direction:column; align-items:flex-start;">
+                <p class="font-body"
+                  style="width:500px; font-size:18px; font-weight:300; color:rgba(255,255,255,.92); line-height:1.5; margin-bottom:30px;">
+                  Plans and governs legacy modernization in<br />
+                  managed waves, helping enterprises move away<br />
+                  from risky big-bang rewrites. It sequences RGEN,<br />
+                  CodeGen, and TestAI across every wave, with<br />
+                  human review built into each handoff and full<br />
+                  audit-grade traceability throughout.
+                </p>
+                <div class="pill"
+                  style="padding:10px 34px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer;">
+                  <span class="font-body" style="font-size:18px; color:rgba(7,7,14,.9); font-weight:500;">Learn
+                    More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deploy Text Layer -->
+            <div id="text-deploy" class="anim-text"
+              style="position:absolute; top:40px; left:-110px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+              <p class="font-disp"
+                style="font-size:110px; font-weight:400; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
+                Deploy</p>
+
+              <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
+                <p class="font-body"
+                  style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
+                  Supports governed release execution<br />
+                  once testing and approvals are complete,<br />
+                  packaging production-ready code for<br />
+                  containerized deployment. Every release<br />
+                  carries a clean chain of custody back to<br />
+                  the requirement that started it.
+                </p>
+                <div class="pill"
+                  style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                  <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- RGEN Text Layer -->
+            <div id="text-rgen" class="anim-text"
+              style="position:absolute; top:40px; left:390px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+              <p class="font-disp"
+                style="font-size:110px; font-weight:500; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
+                RGEN</p>
+
+              <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
+                <p class="font-body"
+                  style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
+                  The starting point of the entire Sanciti AI<br />
+                  pipeline. RGEN turns code, documents, and<br />
+                  meetings into structured requirements, user<br />
+                  stories, and traceable source material. Every<br />
+                  downstream agent — CodeGen, TestAI, and the<br />
+                  LegMod orchestrator — builds directly on what<br />
+                  RGEN captures first.
+                </p>
+                <div class="pill"
+                  style="padding:12px 36px; background:#000; border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                  <span class="font-body" style="font-size:18px; color:var(--cyan); font-weight:600;">Learn More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CodeGen Text Layer -->
+            <div id="text-codegen" class="anim-text"
+              style="position:absolute; top:40px; left:650px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+              <p class="font-disp"
+                style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
+                CodeGen</p>
+
+              <div style="margin-left:120px; display:flex; flex-direction:column; align-items:flex-start;">
+                <p class="font-body"
+                  style="width:440px; font-size:18px; font-weight:300; color:rgba(255,255,255,0.9); line-height:1.45; margin-bottom:32px;">
+                  Generates secure, production-ready code<br />
+                  aligned to requirements, architecture, and<br />
+                  tech stack. Every line traces back to the<br />
+                  requirement it came from, scored against<br />
+                  OWASP and NIST standards, and held<br />
+                  behind a human review gate before<br />
+                  anything ships.
+                </p>
+                <div class="pill"
+                  style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                  <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- TestAI Text Layer -->
+            <div id="text-testai" class="anim-text"
+              style="position:absolute; top:360px; left:140px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+              <p class="font-disp"
+                style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
+                TestAI</p>
+
+              <div style="margin-left:120px; display:flex; flex-direction:column; align-items:flex-start;">
+                <p class="font-body"
+                  style="width:460px; font-size:18px; font-weight:300; color:rgba(255,255,255,0.9); line-height:1.45; margin-bottom:32px;">
+                  Builds and executes coverage across functional,<br />
+                  regression, performance, and security testing,<br />
+                  with governance built in, not bolted on. Self-<br />
+                  healing tests adapt automatically as the<br />
+                  codebase changes, keeping coverage current<br />
+                  release after release.
+                </p>
+                <div class="pill"
+                  style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                  <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- ================= ONE GOVERNED CORE / PROVEN SCORE / CASE STUDIES ================= -->
+      <div class="abs" style="left:0; top:10143px; width:1512px; height:1380px;">
+        <!-- Background Ambient Blue Glows (Left and Right - Ultra Wide Scope) -->
+        <div class="abs"
+          style="left:-550px; top:-100px; width:2100px; height:1950px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+          <img alt="" src="assets/img/bluebgglowleft.png" style="width:100%; height:100%; object-fit:fill;" />
+        </div>
+        <div class="abs"
+          style="right:-450px; top:-100px; width:2000px; height:1950px; pointer-events:none; z-index:0; opacity:1; overflow:hidden;">
+          <img alt="" src="assets/img/bluebgglowright.png" style="width:100%; height:100%; object-fit:fill;" />
+        </div>
+
+        <!-- Left Heading: One Governed Core, Every Agent -->
+        <p class="abs reveal font-disp"
+          style="left:43px; top:60px; width:700px; font-size:68px; font-weight:700; line-height:1.1; color:#fff;">
+          One Governed Core,<br />
+          <span style="font-style:italic; font-weight:200;">Every Agent</span>
+        </p>
+
+        <!-- Right Description: Across every component... (Bottom Aligned with Left Title) -->
+        <p class="abs reveal font-body"
+          style="left:920px; top:135px; width:450px; font-size:17px; line-height:1.55; font-weight:300; color:rgba(255,255,255,.85);">
+          Across every component, Sanciti AI maintains lineage, human review, policy enforcement, and enterprise-grade
+          controls.
+        </p>
+        <!-- Centered Heading: The Proven Score -->
+        <p class="abs reveal font-disp"
+          style="left:0; right:0; top:360px; width:100%; text-align:center; font-size:68px; font-weight:600; color:#fff; letter-spacing:-0.02em;">
+          The Proven Score
+        </p>
+
+        <!-- Case Study Cards (Staggered Glassmorphism Design - Large Gap Below Title) -->
+        <!-- Card 1: Legacy System Modernization -->
+        <div class="abs reveal card"
+          style="left:43px; top:700px; width:440px; height:500px; border-radius:28px; overflow:hidden; background:linear-gradient(160deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.02) 100%), rgba(12,38,78,0.45); backdrop-filter:blur(25px); -webkit-backdrop-filter:blur(25px); border:1px solid rgba(255,255,255,0.18); box-shadow:0 20px 50px rgba(0,0,0,0.35); position:absolute; box-sizing:border-box;">
+          <!-- Top Right Icon -->
+          <img alt="Legacy System" src="assets/img/legacysystem.png"
+            style="position:absolute; right:28px; top:28px; width:92px; height:92px; object-fit:contain; pointer-events:none;" />
+
+          <!-- Bottom Content Block -->
+          <div style="position:absolute; left:32px; bottom:36px; right:32px;">
+            <p class="font-disp"
+              style="font-size:24px; font-weight:600; line-height:1.28; color:#fff; margin:0 0 16px 0;">
+              Legacy System<br />Modernization in a<br />Healthcare Enterprise
+            </p>
+            <p class="font-body"
+              style="font-size:14px; line-height:1.52; color:rgba(255,255,255,0.85); font-weight:300; margin:0;">
+              Legacy Java platform reverse-engineered and modernized into scalable microservices with LegMod — $5M in
+              annual savings, 40% lower development cost, 95%+ code coverage, and 25% faster time-to-market. <span
+                style="cursor:pointer; color:#fff; text-decoration:underline;">Learn More.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: AI-Based Modernization Assessment (Staggered lower) -->
+        <div class="abs reveal card"
+          style="left:536px; top:770px; width:440px; height:500px; border-radius:28px; overflow:hidden; background:linear-gradient(160deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.02) 100%), rgba(12,38,78,0.45); backdrop-filter:blur(25px); -webkit-backdrop-filter:blur(25px); border:1px solid rgba(255,255,255,0.18); box-shadow:0 20px 50px rgba(0,0,0,0.35); position:absolute; box-sizing:border-box;">
+          <!-- Top Right Icon -->
+          <img alt="AI-Based Modernization" src="assets/img/aibasedmodernization.png"
+            style="position:absolute; right:28px; top:28px; width:110px; height:110px; object-fit:contain; pointer-events:none;" />
+
+          <!-- Bottom Content Block -->
+          <div style="position:absolute; left:32px; bottom:36px; right:32px;">
+            <p class="font-disp"
+              style="font-size:24px; font-weight:600; line-height:1.28; color:#fff; margin:0 0 16px 0;">
+              AI-Based Modernization<br />Assessment — Portfolio<br />Analysis &amp; Roadmap
+            </p>
+            <p class="font-body"
+              style="font-size:14px; line-height:1.52; color:rgba(255,255,255,0.85); font-weight:300; margin:0;">
+              Portfolio-level assessment and phased modernization planning across an application estate. <span
+                style="cursor:pointer; color:#fff; text-decoration:underline;">Learn More.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Automating Requirements Generation -->
+        <div class="abs reveal card"
+          style="left:1029px; top:700px; width:440px; height:500px; border-radius:28px; overflow:hidden; background:linear-gradient(160deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.02) 100%), rgba(12,38,78,0.45); backdrop-filter:blur(25px); -webkit-backdrop-filter:blur(25px); border:1px solid rgba(255,255,255,0.18); box-shadow:0 20px 50px rgba(0,0,0,0.35); position:absolute; box-sizing:border-box;">
+          <!-- Top Right Icon -->
+          <img alt="Automating Requirements" src="assets/img/automatingrequirements.png"
+            style="position:absolute; right:28px; top:28px; width:115px; height:115px; object-fit:contain; pointer-events:none;" />
+
+          <!-- Bottom Content Block -->
+          <div style="position:absolute; left:32px; bottom:36px; right:32px;">
+            <p class="font-disp"
+              style="font-size:24px; font-weight:600; line-height:1.28; color:#fff; margin:0 0 16px 0;">
+              Automating<br />Requirements Generation<br />— E Commerce
+            </p>
+            <p class="font-body"
+              style="font-size:14px; line-height:1.52; color:rgba(255,255,255,0.85); font-weight:300; margin:0;">
+              Requirements generation applied to a new e-commerce platform, turning business inputs into structured
+              delivery-ready requirements.<br />
+              <span style="cursor:pointer; color:#fff; text-decoration:underline;">Learn More</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ================= FOOTER ================= -->
+      <div class="abs"
+        style="left:0; top:11523px; width:1512px; height:430px; border-top:1px solid rgba(255,255,255,.08); background:#000; box-sizing:border-box; padding:60px 80px 40px;">
+        <!-- Top 4 Columns Row -->
+        <div style="display:grid; grid-template-columns:360px 180px 180px 240px; justify-content:space-between;">
+          <!-- 1. Branding & Mission -->
+          <div>
+            <img alt="Sanciti AI" src="assets/img/sancitiailogo.png"
+              style="height:36px; width:auto; object-fit:contain;" />
+            <p class="font-body"
+              style="margin:24px 0 20px 0; font-size:14px; font-weight:300; color:rgba(255,255,255,.65); line-height:1.65; max-width:340px;">
+              The Agentic AI SDLC platform revolutionizing software development — driving efficiency, enhancing
+              security,
+              improving code quality, and transforming how software is designed and built.
+            </p>
+            <p class="font-body" style="margin:0; font-size:13px; color:rgba(255,255,255,.5);">
+              A V2Soft Company · <a href="https://v2soft.com" target="_blank"
+                style="color:#a78bfa; text-decoration:none; font-weight:500;">v2soft.com</a>
+            </p>
+          </div>
+
+          <!-- 2. Platform Column -->
+          <div>
+            <p class="font-body"
+              style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
+              Platform
+            </p>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <span class="font-body nav-link" style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Full
+                Stack SDLC</span>
+              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(1)"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti RGEN</span>
+              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(2)"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti CodeGen</span>
+              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(3)"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti TestAI</span>
+              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(0)"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti LEGMOD</span>
+            </div>
+          </div>
+
+          <!-- 3. Company Column -->
+          <div>
+            <p class="font-body"
+              style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
+              Company
+            </p>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <span class="font-body nav-link"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">About Us</span>
+              <span class="font-body nav-link"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Leadership</span>
+              <span class="font-body nav-link"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Certifications</span>
+              <span class="font-body nav-link"
+                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Social Responsibility</span>
+            </div>
+          </div>
+
+          <!-- 4. Contact Column -->
+          <div>
+            <p class="font-body"
+              style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
+              Contact
+            </p>
+            <div style="display:flex; flex-direction:column; gap:10px; font-size:14px; color:rgba(255,255,255,.75);">
+              <span>+1 248-904-1737</span>
+              <span>info@sanciti.ai</span>
+              <span>www.sanciti.ai</span>
+              <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
+            </div>
+            <!-- Social Icons -->
+            <div style="display:flex; gap:12px; margin-top:18px;">
+              <!-- LinkedIn -->
+              <a href="#" aria-label="LinkedIn"
+                style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="#" aria-label="Facebook"
+                style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z" />
+                </svg>
+              </a>
+              <!-- Instagram -->
+              <a href="#" aria-label="Instagram"
+                style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Divider Line -->
+        <div style="width:100%; height:1px; background:rgba(255,255,255,0.08); margin:40px 0 24px 0;"></div>
+
+        <!-- Bottom Copyright & Tagline Row -->
+        <div class="font-body"
+          style="display:flex; justify-content:space-between; align-items:center; font-size:13px; color:rgba(255,255,255,.45);">
+          <span>© 2026 Sanciti AI LLC. All Rights Reserved.</span>
+          <span>Secure · Scalable · Smart · LLM-Agnostic</span>
+        </div>
+      </div>
+    </div><!-- /#stage -->
+  </div><!-- /#scaler -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>

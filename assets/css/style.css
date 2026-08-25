@@ -1321,7 +1321,15 @@
   .mobile-header,
   .mobile-hero-section,
   .mobile-playbook-section,
-  .mobile-gaps-section {
+  .mobile-gaps-section,
+  .mobile-platform-section,
+  .mobile-different-section,
+  .mobile-enterprise-section,
+  .mobile-integrates-section,
+  .mobile-nomodel-section,
+  .mobile-teams-section,
+  .mobile-symphony-section,
+  .mobile-orchestrator-section {
     display: none !important;
   }
 
@@ -1357,7 +1365,8 @@
   .desktop-enterprise,
   .desktop-integrates,
   .desktop-nomodel,
-  .desktop-symphony {
+  .desktop-symphony,
+  .desktop-orchestrator {
     display: none !important;
   }
 
@@ -1381,6 +1390,11 @@
     left: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+  }
+
+  /* Adjust wheel position to remove the gap left by hiding the desktop text */
+  #orchestrator-container {
+    top: 0 !important;
   }
 
 
@@ -2775,6 +2789,45 @@
     line-height: 1.4;
     margin: 0;
     max-width: 200px;
+  }
+
+  /* =========================================================================
+     RESPONSIVE MOBILE ORCHESTRATOR SECTION (< 768px)
+     ========================================================================= */
+  .mobile-orchestrator-section {
+    display: block;
+    position: relative;
+    background: linear-gradient(135deg, #1b3d5b, #122c42);
+    padding: 60px 20px;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .mobile-orchestrator-title {
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 1.25;
+    text-align: right;
+    margin: 0 0 24px 0;
+  }
+  .mobile-orchestrator-title span {
+    font-style: italic;
+    font-weight: 300;
+  }
+  .mobile-orchestrator-title strong {
+    font-weight: 600;
+  }
+
+  .mobile-orchestrator-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.45;
+    text-align: left;
+    margin: 0;
   }
 }
 

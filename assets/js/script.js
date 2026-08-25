@@ -282,3 +282,29 @@ window.addEventListener('resize', () => {
     }
 });
 
+
+function scrollToEntCard(index, isMobile) {
+    const containerSelector = isMobile ? '.mobile-enterprise-slider-wrapper' : '.cert-scroll';
+    const dotsSelector = isMobile ? '#mobile-ent-dots .slider-dot' : '#desktop-ent-dots .slider-dot';
+    
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    // Card widths plus gaps
+    const cardWidth = isMobile ? (195 + 16) : (432 + 25);
+    container.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+    });
+
+    const dots = document.querySelectorAll(dotsSelector);
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+            dot.style.background = '#2ad6df';
+        } else {
+            dot.classList.remove('active');
+            dot.style.background = '#105b7a';
+        }
+    });
+}

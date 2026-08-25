@@ -284,7 +284,7 @@
     #stage {
       position: relative;
       width: 1512px;
-      height: 11953px;
+      height: 11653px;
       background: #000;
       transform-origin: top left;
       overflow: hidden;
@@ -323,6 +323,12 @@
 
     .card {
       transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s ease;
+      cursor: pointer;
+    }
+
+    .card:active {
+      transform: scale(0.95);
+      transition: transform 0.1s ease;
     }
 
     .card:hover {
@@ -1241,11 +1247,11 @@
 
 /* 1. Huge Bottom Purple Circle */
 .state-testai #circle-purple {
-  width: 2100px !important;
-  height: 2100px !important;
+  width: 1500px !important;
+  height: 1500px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  bottom: -1300px !important;
+  bottom: -950px !important;
   background: radial-gradient(circle at 65% 25%, #6a5fd1, #120e3b 65%, #000000 90%) !important;
   box-shadow: 0 0 160px 40px rgba(106, 95, 209, 0.45) !important;
   z-index: 6 !important;
@@ -2096,7 +2102,8 @@
     -webkit-overflow-scrolling: touch;
     position: relative;
     width: 100%;
-    padding-bottom: 8px; /* Room for scrollbar if any */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .mobile-gap-slider-wrapper::-webkit-scrollbar {
@@ -2488,7 +2495,7 @@
     display: block;
     position: relative;
     background: transparent !important;
-    padding: 30px 20px 60px 20px;
+    padding: 80px 20px 60px 20px;
     z-index: 20;
     box-sizing: border-box;
     width: 100%;

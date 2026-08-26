@@ -529,6 +529,20 @@
         </p>
       </div>
     </div>
+
+    <!-- Dots Pagination -->
+    <div id="mobile-team-dots" class="mobile-slider-dots"
+      style="display:flex; justify-content:center; gap:8px; margin-top:24px; padding-bottom:12px;">
+      <div class="slider-dot active" onclick="scrollToTeamCard(0)"
+        style="width:12px; height:12px; border-radius:50%; background:#2ad6df; border:2px solid #00121a; cursor:pointer; transition:0.3s;">
+      </div>
+      <div class="slider-dot" onclick="scrollToTeamCard(1)"
+        style="width:12px; height:12px; border-radius:50%; background:#105b7a; border:2px solid #00121a; cursor:pointer; transition:0.3s;">
+      </div>
+      <div class="slider-dot" onclick="scrollToTeamCard(2)"
+        style="width:12px; height:12px; border-radius:50%; background:#105b7a; border:2px solid #00121a; cursor:pointer; transition:0.3s;">
+      </div>
+    </div>
   </section>
 
   <!-- ================= MOBILE SYMPHONY SECTION (< 768px) ================= -->
@@ -569,12 +583,12 @@
       </div>
 
       <div class="symphony-stat-item">
-        <p class="symphony-stat-value font-disp">30–50%</p>
+        <p class="symphony-stat-value font-disp">30-50%</p>
         <p class="symphony-stat-desc font-body">faster QA cycles</p>
       </div>
 
       <div class="symphony-stat-item">
-        <p class="symphony-stat-value font-disp">90–98%</p>
+        <p class="symphony-stat-value font-disp">90-98%</p>
         <p class="symphony-stat-desc font-body">automated test coverage</p>
       </div>
     </div>
@@ -582,12 +596,20 @@
 
   <!-- ================= MOBILE ORCHESTRATOR SECTION (< 768px) ================= -->
   <section class="mobile-orchestrator-section">
+    <!-- Ambient Blue Glows for Mobile Orchestrator Section -->
+    <div class="mobile-orch-glow-left">
+      <img src="assets/img/bluebgglowleft.png" alt="" />
+    </div>
+    <div class="mobile-orch-glow-right">
+      <img src="assets/img/bluebgglowright.png" alt="" />
+    </div>
+
     <h2 class="mobile-orchestrator-title font-disp">
       <strong>An</strong> <span>Orchestrator</span> <strong>Backed<br />by</strong> <span>Specialists.</span>
     </h2>
     <p class="mobile-orchestrator-desc font-body">
-      Sanciti AI combines one<br />orchestration layer with focused<br />agents, each built for a specific<br />role in
-      modernization or delivery.
+      Sanciti AI combines one orchestration layer with focused agents, each built for a specific role in modernization
+      or delivery.
     </p>
   </section>
 
@@ -1362,10 +1384,6 @@
           <span style="font-style:italic; font-weight:200;">Specialists.</span>
         </p>
         <p class="abs reveal font-body desktop-orchestrator"
-          style="left:43px; top:120px; font-size:16px; font-weight:300; color:rgba(255,255,255,.6);">
-          one orchestration layer
-        </p>
-        <p class="abs reveal font-body desktop-orchestrator"
           style="left:43px; top:160px; width:512px; font-size:20px; font-weight:300; color:rgba(255,255,255,.85);">
           Sanciti AI combines one orchestration layer with focused agents, each built for a specific role in
           modernization or delivery.
@@ -1373,6 +1391,22 @@
         <!-- auto-advancing left-to-right carousel across all 5 agents -->
         <div id="orchestrator-container" class="abs reveal state-legmod"
           style="left:0; top:332px; width:1512px; height:882px; position:relative; overflow:hidden; border-radius:8px; background:linear-gradient(135deg,#0d1f45,#000 70%);">
+
+          <!-- Mobile 5 Tabs Bar -->
+          <div class="orch-tabs-wrapper"
+            style="position:absolute; top:40px; left:0; width:100%; display:none; justify-content:center; align-items:center; gap:20px; z-index:50; pointer-events:auto; padding:0 30px; box-sizing:border-box;">
+            <button type="button" class="orch-tab-btn active font-body" data-state="state-legmod"
+              onclick="setOrchestratorState('state-legmod', event)">LegMod</button>
+            <button type="button" class="orch-tab-btn font-body" data-state="state-rgen"
+              onclick="setOrchestratorState('state-rgen', event)">RGen</button>
+            <button type="button" class="orch-tab-btn font-body" data-state="state-codegen"
+              onclick="setOrchestratorState('state-codegen', event)">CodeGen</button>
+            <button type="button" class="orch-tab-btn font-body" data-state="state-testai"
+              onclick="setOrchestratorState('state-testai', event)">Test AI</button>
+            <button type="button" class="orch-tab-btn font-body" data-state="state-deploy"
+              onclick="setOrchestratorState('state-deploy', event)">Deploy</button>
+          </div>
+
           <!-- Top Cyan Circle -->
           <div id="circle-cyan" class="anim-circle" onclick="setOrchestratorState('state-rgen', event)"
             style="position:absolute; left:650px; top:-350px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #99f6fa, #2ad6df 80%); box-shadow:0 0 150px 30px rgba(42,214,223,0.6); cursor:pointer;">
@@ -1410,132 +1444,150 @@
             style="position:absolute; left:0; bottom:0; width:1512px; height:200px; background:linear-gradient(to bottom, transparent, #000); z-index:5; pointer-events:none;">
           </div>
 
-          <!-- Content Layer -->
-          <div
-            style="position:absolute; top:270px; left:206px; display:flex; flex-direction:column; align-items:flex-start; z-index:10; pointer-events:none;">
-
-            <!-- LegMod Text Layer -->
-            <div id="text-legmod" class="anim-text"
-              style="position:absolute; top:-60px; left:300px; display:flex; flex-direction:column; align-items:flex-start;">
-              <p class="font-disp"
-                style="font-size:96px; font-weight:300; line-height:1; color:#fff; margin-bottom:20px;">LegMod</p>
-
-              <div style="margin-left:170px; display:flex; flex-direction:column; align-items:flex-start;">
-                <p class="font-body"
-                  style="width:500px; font-size:18px; font-weight:300; color:rgba(255,255,255,.92); line-height:1.5; margin-bottom:30px;">
-                  Plans and governs legacy modernization in<br />
-                  managed waves, helping enterprises move away<br />
-                  from risky big-bang rewrites. It sequences RGEN,<br />
-                  CodeGen, and TestAI across every wave, with<br />
-                  human review built into each handoff and full<br />
-                  audit-grade traceability throughout.
-                </p>
-                <div class="pill"
-                  style="padding:10px 34px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer;">
-                  <span class="font-body" style="font-size:18px; color:rgba(7,7,14,.9); font-weight:500;">Learn
-                    More</span>
-                </div>
-              </div>
+          <!-- Glass Container Layer for Tabs and Content with Blur Effect -->
+          <div class="orch-glass-panel">
+            <!-- Mobile 5 Tabs Bar -->
+            <div class="orch-tabs-wrapper">
+              <button type="button" class="orch-tab-btn active font-body" data-state="state-legmod"
+                onclick="setOrchestratorState('state-legmod', event)">LegMod</button>
+              <button type="button" class="orch-tab-btn font-body" data-state="state-rgen"
+                onclick="setOrchestratorState('state-rgen', event)">RGen</button>
+              <button type="button" class="orch-tab-btn font-body" data-state="state-codegen"
+                onclick="setOrchestratorState('state-codegen', event)">CodeGen</button>
+              <button type="button" class="orch-tab-btn font-body" data-state="state-testai"
+                onclick="setOrchestratorState('state-testai', event)">Test AI</button>
+              <button type="button" class="orch-tab-btn font-body" data-state="state-deploy"
+                onclick="setOrchestratorState('state-deploy', event)">Deploy</button>
             </div>
 
-            <!-- Deploy Text Layer -->
-            <div id="text-deploy" class="anim-text"
-              style="position:absolute; top:40px; left:-110px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
-              <p class="font-disp"
-                style="font-size:110px; font-weight:400; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
-                Deploy</p>
+            <!-- Content Layer -->
+            <div class="orch-content-layer"
+              style="position:absolute; top:270px; left:206px; display:flex; flex-direction:column; align-items:flex-start; z-index:10; pointer-events:none;">
 
-              <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
-                <p class="font-body"
-                  style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
-                  Supports governed release execution<br />
-                  once testing and approvals are complete,<br />
-                  packaging production-ready code for<br />
-                  containerized deployment. Every release<br />
-                  carries a clean chain of custody back to<br />
-                  the requirement that started it.
-                </p>
-                <div class="pill"
-                  style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                  <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+              <!-- LegMod Text Layer -->
+              <div id="text-legmod" class="anim-text"
+                style="position:absolute; top:-60px; left:300px; display:flex; flex-direction:column; align-items:flex-start;">
+                <p class="font-disp"
+                  style="font-size:96px; font-weight:300; line-height:1; color:#fff; margin-bottom:20px;">LegMod</p>
+
+                <div style="margin-left:170px; display:flex; flex-direction:column; align-items:flex-start;">
+                  <p class="font-body"
+                    style="width:500px; font-size:18px; font-weight:300; color:rgba(255,255,255,.92); line-height:1.5; margin-bottom:30px;">
+                    Plans and governs legacy modernization in<br />
+                    managed waves, helping enterprises move away<br />
+                    from risky big-bang rewrites. It sequences RGEN,<br />
+                    CodeGen, and TestAI across every wave, with<br />
+                    human review built into each handoff and full<br />
+                    audit-grade traceability throughout.
+                  </p>
+                  <div class="pill"
+                    style="padding:10px 34px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer;">
+                    <span class="font-body" style="font-size:18px; color:rgba(7,7,14,.9); font-weight:500;">Learn
+                      More</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- RGEN Text Layer -->
-            <div id="text-rgen" class="anim-text"
-              style="position:absolute; top:40px; left:390px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
-              <p class="font-disp"
-                style="font-size:110px; font-weight:500; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
-                RGEN</p>
+              <!-- Deploy Text Layer -->
+              <div id="text-deploy" class="anim-text"
+                style="position:absolute; top:40px; left:-110px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                <p class="font-disp"
+                  style="font-size:110px; font-weight:400; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
+                  Deploy</p>
 
-              <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
-                <p class="font-body"
-                  style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
-                  The starting point of the entire Sanciti AI<br />
-                  pipeline. RGEN turns code, documents, and<br />
-                  meetings into structured requirements, user<br />
-                  stories, and traceable source material. Every<br />
-                  downstream agent — CodeGen, TestAI, and the<br />
-                  LegMod orchestrator — builds directly on what<br />
-                  RGEN captures first.
-                </p>
-                <div class="pill"
-                  style="padding:12px 36px; background:#000; border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-                  <span class="font-body" style="font-size:18px; color:var(--cyan); font-weight:600;">Learn More</span>
+                <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
+                  <p class="font-body"
+                    style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
+                    Supports governed release execution<br />
+                    once testing and approvals are complete,<br />
+                    packaging production-ready code for<br />
+                    containerized deployment. Every release<br />
+                    carries a clean chain of custody back to<br />
+                    the requirement that started it.
+                  </p>
+                  <div class="pill"
+                    style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- CodeGen Text Layer -->
-            <div id="text-codegen" class="anim-text"
-              style="position:absolute; top:40px; left:650px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
-              <p class="font-disp"
-                style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
-                CodeGen</p>
+              <!-- RGEN Text Layer -->
+              <div id="text-rgen" class="anim-text"
+                style="position:absolute; top:40px; left:390px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                <p class="font-disp"
+                  style="font-size:110px; font-weight:500; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
+                  RGEN</p>
 
-              <div style="margin-left:120px; display:flex; flex-direction:column; align-items:flex-start;">
-                <p class="font-body"
-                  style="width:440px; font-size:18px; font-weight:300; color:rgba(255,255,255,0.9); line-height:1.45; margin-bottom:32px;">
-                  Generates secure, production-ready code<br />
-                  aligned to requirements, architecture, and<br />
-                  tech stack. Every line traces back to the<br />
-                  requirement it came from, scored against<br />
-                  OWASP and NIST standards, and held<br />
-                  behind a human review gate before<br />
-                  anything ships.
-                </p>
-                <div class="pill"
-                  style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-                  <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
+                  <p class="font-body"
+                    style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
+                    The starting point of the entire Sanciti AI<br />
+                    pipeline. RGEN turns code, documents, and<br />
+                    meetings into structured requirements, user<br />
+                    stories, and traceable source material. Every<br />
+                    downstream agent — CodeGen, TestAI, and the<br />
+                    LegMod orchestrator — builds directly on what<br />
+                    RGEN captures first.
+                  </p>
+                  <div class="pill"
+                    style="padding:12px 36px; background:#000; border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                    <span class="font-body" style="font-size:18px; color:var(--cyan); font-weight:600;">Learn
+                      More</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- TestAI Text Layer -->
-            <div id="text-testai" class="anim-text"
-              style="position:absolute; top:80px; left:200px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
-              <p class="font-disp"
-                style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
-                TestAI</p>
+              <!-- CodeGen Text Layer -->
+              <div id="text-codegen" class="anim-text"
+                style="position:absolute; top:40px; left:650px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                <p class="font-disp"
+                  style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
+                  CodeGen</p>
 
-              <div style="margin-left:120px; display:flex; flex-direction:column; align-items:flex-start;">
-                <p class="font-body"
-                  style="width:460px; font-size:18px; font-weight:300; color:rgba(255,255,255,0.9); line-height:1.45; margin-bottom:32px;">
-                  Builds and executes coverage across functional,<br />
-                  regression, performance, and security testing,<br />
-                  with governance built in, not bolted on. Self-<br />
-                  healing tests adapt automatically as the<br />
-                  codebase changes, keeping coverage current<br />
-                  release after release.
-                </p>
-                <div class="pill"
-                  style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-                  <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                <div style="margin-left:120px; display:flex; flex-direction:column; align-items:flex-start;">
+                  <p class="font-body"
+                    style="width:440px; font-size:18px; font-weight:300; color:rgba(255,255,255,0.9); line-height:1.45; margin-bottom:32px;">
+                    Generates secure, production-ready code<br />
+                    aligned to requirements, architecture, and<br />
+                    tech stack. Every line traces back to the<br />
+                    requirement it came from, scored against<br />
+                    OWASP and NIST standards, and held<br />
+                    behind a human review gate before<br />
+                    anything ships.
+                  </p>
+                  <div class="pill"
+                    style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                    <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
+              <!-- TestAI Text Layer -->
+              <div id="text-testai" class="anim-text"
+                style="position:absolute; top:80px; left:200px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                <p class="font-disp"
+                  style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
+                  TestAI</p>
+
+                <div style="margin-left:120px; display:flex; flex-direction:column; align-items:flex-start;">
+                  <p class="font-body"
+                    style="width:460px; font-size:18px; font-weight:300; color:rgba(255,255,255,0.9); line-height:1.45; margin-bottom:32px;">
+                    Builds and executes coverage across functional,<br />
+                    regression, performance, and security testing,<br />
+                    with governance built in, not bolted on. Self-<br />
+                    healing tests adapt automatically as the<br />
+                    codebase changes, keeping coverage current<br />
+                    release after release.
+                  </p>
+                  <div class="pill"
+                    style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                    <span class="font-body" style="font-size:18px; color:#000; font-weight:600;">Learn More</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -1708,30 +1760,22 @@
               <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
             </div>
             <!-- Social Icons -->
-            <div style="display:flex; gap:12px; margin-top:18px;">
+            <div style="display:flex; gap:20px; margin-top:18px;">
               <!-- LinkedIn -->
               <a href="#" aria-label="LinkedIn"
-                style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z" />
-                </svg>
+                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+                <img src="assets/img/linkedin.png" alt="LinkedIn"
+                  style="height:24px; width:auto; object-fit:contain;" />
               </a>
-              <!-- Facebook -->
-              <a href="#" aria-label="Facebook"
-                style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z" />
-                </svg>
+              <!-- X.com -->
+              <a href="#" aria-label="X"
+                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+                <img src="assets/img/x.com.png" alt="X" style="height:24px; width:auto; object-fit:contain;" />
               </a>
-              <!-- Instagram -->
-              <a href="#" aria-label="Instagram"
-                style="width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
-                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
+              <!-- Logout -->
+              <a href="#" aria-label="Logout"
+                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+                <img src="assets/img/logout.png" alt="Logout" style="height:24px; width:auto; object-fit:contain;" />
               </a>
             </div>
           </div>
@@ -1801,6 +1845,20 @@
         </p>
       </div>
     </div>
+
+    <!-- Dots Pagination -->
+    <div id="mobile-proven-dots" class="mobile-slider-dots"
+      style="display:flex; justify-content:center; gap:8px; margin-top:24px; padding-bottom:12px;">
+      <div class="slider-dot active" onclick="scrollToProvenCard(0)"
+        style="width:12px; height:12px; border-radius:50%; background:#2ad6df; border:2px solid #00121a; cursor:pointer; transition:0.3s;">
+      </div>
+      <div class="slider-dot" onclick="scrollToProvenCard(1)"
+        style="width:12px; height:12px; border-radius:50%; background:#105b7a; border:2px solid #00121a; cursor:pointer; transition:0.3s;">
+      </div>
+      <div class="slider-dot" onclick="scrollToProvenCard(2)"
+        style="width:12px; height:12px; border-radius:50%; background:#105b7a; border:2px solid #00121a; cursor:pointer; transition:0.3s;">
+      </div>
+    </div>
   </section>
 
   <!-- ================= MOBILE FOOTER (< 768px) ================= -->
@@ -1866,30 +1924,18 @@
           <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
         </div>
         <!-- Social Icons -->
-        <div style="display:flex; gap:12px; margin-top:20px;">
+        <div style="display:flex; gap:20px; margin-top:20px;">
           <!-- LinkedIn -->
-          <a href="#"
-            style="width:40px; height:40px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9m1.4 9.74v-8.37H5.06v8.37h2.8z" />
-            </svg>
+          <a href="#" style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <img src="assets/img/linkedin.png" alt="LinkedIn" style="height:24px; width:auto; object-fit:contain;" />
           </a>
-          <!-- Facebook -->
-          <a href="#"
-            style="width:40px; height:40px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z" />
-            </svg>
+          <!-- X.com -->
+          <a href="#" style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <img src="assets/img/x.com.png" alt="X" style="height:24px; width:auto; object-fit:contain;" />
           </a>
-          <!-- Instagram -->
-          <a href="#"
-            style="width:40px; height:40px; border-radius:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none;">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
+          <!-- Logout -->
+          <a href="#" style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+            <img src="assets/img/logout.png" alt="Logout" style="height:24px; width:auto; object-fit:contain;" />
           </a>
         </div>
       </div>

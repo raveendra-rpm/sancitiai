@@ -895,21 +895,113 @@
           opacity: 1 !important;
         }
       
-/* Blinking dot animation for orchestrator section */
-@keyframes blinkDot {
-  0%, 100% { 
-    background-color: var(--dot-bright, #ffffff); 
-    opacity: 1;
-    box-shadow: 0 0 16px 4px var(--dot-glow, rgba(255,255,255,0.8));
+/* Flow Animation (Ripple Effect) matching Lottie Flow-6 */
+@keyframes rippleFlow {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
   }
-  50% { 
-    background-color: var(--dot-dim, #000000); 
-    opacity: 0.3;
-    box-shadow: 0 0 4px 1px var(--dot-glow, rgba(255,255,255,0.2));
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
   }
 }
+
 .blink-dot {
-  animation: blinkDot 3.5s infinite ease-in-out !important;
+  background-color: var(--dot-bright, #ffffff) !important;
+  border-radius: 50%;
+  box-shadow: 0 0 16px 4px var(--dot-glow, rgba(255,255,255,0.6));
+}
+
+.blink-dot::before,
+.blink-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dot-bright, #ffffff);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  animation: rippleFlow 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blink-dot::after {
+  animation-delay: 1s;
+}
+
+/* Color overrides to match parent circle */
+#circle-cyan .blink-dot, #circle-cyan .blink-dot::before, #circle-cyan .blink-dot::after {
+  background-color: #0891b2 !important; /* Darker cyan for better visibility */
+}
+#circle-cyan .blink-dot {
+  box-shadow: 0 0 16px 4px rgba(8, 145, 178, 0.6) !important;
+}
+
+#circle-white .blink-dot, #circle-white .blink-dot::before, #circle-white .blink-dot::after {
+  background-color: #94a3b8 !important; /* Darker white/slate for better visibility */
+}
+#circle-white .blink-dot {
+  box-shadow: 0 0 16px 4px rgba(148, 163, 184, 0.6) !important;
+}
+
+#circle-blue .blink-dot, #circle-blue .blink-dot::before, #circle-blue .blink-dot::after {
+  background-color: #1e40af !important; /* Darker blue */
+}
+#circle-blue .blink-dot {
+  box-shadow: 0 0 16px 4px rgba(30, 64, 175, 0.6) !important;
+}
+
+#circle-purple .blink-dot, #circle-purple .blink-dot::before, #circle-purple .blink-dot::after {
+  background-color: #4c1d95 !important; /* Darker purple */
+}
+#circle-purple .blink-dot {
+  box-shadow: 0 0 16px 4px rgba(76, 29, 149, 0.6) !important;
+}
+
+/* Base styles for Orchestrator Glass Panel and Tabs */
+.orch-glass-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.orch-tabs-wrapper {
+  display: none !important;
+}
+
+.orch-tab-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  font-size: 34px;
+  font-weight: 500;
+  padding: 16px 36px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  white-space: nowrap;
+}
+
+.orch-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.orch-tab-btn.active {
+  background: var(--cyan, #2ad6df) !important;
+  color: #07070e !important;
+  border-color: var(--cyan, #2ad6df) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 25px rgba(42, 214, 223, 0.4);
 }
 
 /* --- Multi-State Transitions --- */
@@ -1424,19 +1516,147 @@
     position: absolute !important;
     top: 1790px !important;
     left: 0 !important;
+    width: 1512px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    height: 1180px !important; /* Restore height to show full TestAI content */
+    height: 1180px !important;
   }
 
   #stage {
     height: 2970px !important; /* 1790px top + 1180px height */
   }
 
-  /* Adjust wheel position to remove the gap left by hiding the desktop text */
+  /* Orchestrator Container: Floating card with rounded corners and side padding */
   #orchestrator-container {
+    position: relative !important;
     top: 0 !important;
-    height: 1180px !important; /* Restore height */
+    left: 48px !important;
+    width: 1416px !important;
+    height: 1100px !important;
+    border-radius: 56px !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-top: none !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+    background: radial-gradient(circle at 50% 25%, #0e294b 0%, #051020 60%, #000000 100%) !important;
+    overflow: hidden !important;
+  }
+
+  /* Glass panel overlay with rich blur effect on Mobile */
+  .orch-glass-panel {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: radial-gradient(circle at 50% 15%, rgba(13, 38, 74, 0.45) 0%, rgba(3, 10, 24, 0.65) 100%) !important;
+    backdrop-filter: blur(45px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(45px) saturate(180%) !important;
+    border-radius: inherit !important;
+    z-index: 20 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+  }
+
+  /* Show and style Tabs on Mobile */
+  .orch-tabs-wrapper {
+    display: flex !important;
+    position: absolute !important;
+    top: 48px !important;
+    left: 0 !important;
+    width: 100% !important;
+    gap: 16px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+    z-index: 50 !important;
+    pointer-events: auto !important;
+  }
+
+  .orch-tab-btn {
+    font-size: 36px !important;
+    padding: 18px 36px !important;
+    border-radius: 100px !important;
+  }
+
+  /* Centered Content Layer on Mobile */
+  .orch-content-layer {
+    position: absolute !important;
+    top: 300px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    pointer-events: none !important;
+    z-index: 20 !important;
+  }
+
+  .orch-content-layer .anim-text {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  .orch-content-layer .anim-text p.font-disp {
+    font-size: 88px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    margin: 0 0 28px 0 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .orch-content-layer .anim-text > div {
+    margin-left: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .orch-content-layer .anim-text p.font-body {
+    width: 1220px !important;
+    max-width: 95% !important;
+    font-size: 42px !important;
+    line-height: 1.55 !important;
+    font-weight: 300 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-align: center !important;
+    margin: 0 auto 46px auto !important;
+  }
+
+  .orch-content-layer .anim-text p.font-body br {
+    display: none !important;
+  }
+
+  .orch-content-layer .anim-text .pill {
+    padding: 22px 72px !important;
+    border-radius: 100px !important;
+    background: var(--cyan, #2ad6df) !important;
+    box-shadow: 0 8px 30px rgba(42, 214, 223, 0.35) !important;
+    margin: 0 auto !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+
+  .orch-content-layer .anim-text .pill span {
+    font-size: 38px !important;
+    font-weight: 600 !important;
+    color: #07070e !important;
   }
 
 
@@ -2322,11 +2542,12 @@
   }
 
   .mobile-different-slider-wrapper {
-    width: 100%;
+    width: calc(100% - 48px); /* 24px gap on left and right */
+    margin: 0 auto;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    padding: 0 16px 20px 16px;
+    padding: 0 0 20px 0;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
@@ -2339,7 +2560,7 @@
     display: flex;
     gap: 14px;
     width: max-content;
-    padding-right: 16px;
+    padding: 0;
   }
 
   .mobile-diff-card {
@@ -2429,29 +2650,32 @@
   }
 
   .mobile-enterprise-desc {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     text-align: left;
+    max-width: 60%;
   }
 
   .mobile-enterprise-subdesc {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
     margin: 0;
     text-align: left;
+    max-width: 60%;
   }
 
   .mobile-enterprise-slider-wrapper {
-    width: 100%;
+    width: calc(100% - 48px); /* 24px gap on left and right */
+    margin: 0 auto;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    padding: 0 20px 20px 20px;
+    padding: 0 0 20px 0;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
@@ -2464,7 +2688,7 @@
     display: flex;
     gap: 16px;
     width: max-content;
-    padding-right: 20px;
+    padding: 0;
   }
 
   .mobile-ent-card {
@@ -2736,7 +2960,7 @@
   .mobile-symphony-section {
     display: block;
     position: relative;
-    background: #020b12; /* Dark blue/black background */
+    background: linear-gradient(to bottom, #020b12 0%, #020b12 85%, #000000 100%); /* Fades to black to avoid harsh line */
     padding: 60px 20px;
     z-index: 10;
     box-sizing: border-box;
@@ -2839,26 +3063,63 @@
      ========================================================================= */
   .mobile-orchestrator-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     position: relative;
-    background: transparent;
-    padding: 60px 20px;
+    background: transparent !important;
+    padding: 30px 20px 60px;
     z-index: 10;
     box-sizing: border-box;
     width: 100%;
     max-width: 100vw;
-    overflow: hidden;
+    gap: 14px;
+  }
+
+  .mobile-orch-glow-left {
+    position: absolute;
+    left: -300px;
+    bottom: -200px;
+    width: 1000px;
+    height: 1000px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.85;
+    animation: glowFloat 5s ease-in-out infinite alternate;
+  }
+
+  .mobile-orch-glow-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+
+  .mobile-orch-glow-right {
+    position: absolute;
+    right: -450px;
+    top: -550px;
+    width: 1500px;
+    height: 1500px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.85;
+    animation: glowFloat 7s ease-in-out infinite alternate-reverse;
+  }
+
+  .mobile-orch-glow-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
   }
 
   .mobile-orchestrator-title {
-    font-size: 24px;
+    font-size: 26px;
     color: #ffffff;
-    line-height: 1.25;
+    line-height: 1.2;
     text-align: right;
     margin: 0;
-    flex: 1;
-    order: 2; /* Move to right */
+    align-self: flex-end;
+    max-width: 58%;
+    position: relative;
+    z-index: 2;
   }
   .mobile-orchestrator-title span {
     font-style: italic;
@@ -2871,13 +3132,14 @@
   .mobile-orchestrator-desc {
     font-size: 13px;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.88);
     line-height: 1.45;
     text-align: left;
     margin: 0;
-    flex: 1;
-    padding-right: 15px;
-    order: 1; /* Move to left */
+    align-self: flex-start;
+    max-width: 55%;
+    position: relative;
+    z-index: 2;
   }
 
   /* =========================================================================

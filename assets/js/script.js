@@ -83,8 +83,6 @@ document.querySelectorAll('.cert-scroll').forEach((strip) => {
         velX = -(currentX - lastX) * 1.1;
         lastX = currentX;
     });
-
-
 });
 
 
@@ -170,6 +168,11 @@ function setOrchestratorState(state, e) {
     
     container.classList.remove('state-legmod', 'state-deploy', 'state-rgen', 'state-codegen', 'state-testai');
     container.classList.add(state);
+
+    // Sync mobile tabs
+    document.querySelectorAll('.orch-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-state') === state);
+    });
 }
 
 function resetOrchestratorState() {
@@ -177,6 +180,11 @@ function resetOrchestratorState() {
     if (container && !container.classList.contains('state-legmod')) {
         container.classList.remove('state-deploy', 'state-rgen', 'state-codegen', 'state-testai');
         container.classList.add('state-legmod');
+
+        // Sync mobile tabs
+        document.querySelectorAll('.orch-tab-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-state') === 'state-legmod');
+        });
     }
 }
 
@@ -282,7 +290,6 @@ window.addEventListener('resize', () => {
     }
 });
 
-
 function scrollToEntCard(index, isMobile) {
     const containerSelector = isMobile ? '.mobile-enterprise-slider-wrapper' : '.cert-scroll';
     const dotsSelector = isMobile ? '#mobile-ent-dots .slider-dot' : '#desktop-ent-dots .slider-dot';
@@ -308,3 +315,53 @@ function scrollToEntCard(index, isMobile) {
         }
     });
 }
+
+function scrollToTeamCard(index) {
+    const container = document.querySelector('.mobile-teams-cards');
+    if (!container) return;
+
+    const cardWidth = 280 + 16; // width + gap
+    container.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+    });
+
+    const dots = document.querySelectorAll('#mobile-team-dots .slider-dot');
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+            dot.style.background = '#2ad6df';
+        } else {
+            dot.classList.remove('active');
+            dot.style.background = '#105b7a';
+        }
+    });
+}
+
+
+function scrollToProvenCard(index) {
+    const container = document.querySelector('.mobile-proven-slider');
+    if (!container) return;
+
+    const cards = container.querySelectorAll('.mobile-proven-card');
+    if (cards.length === 0) return;
+
+    // We can use the width of the card + gap
+    const cardWidth = cards[0].offsetWidth + 16;
+    container.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+    });
+
+    const dots = document.querySelectorAll('#mobile-proven-dots .slider-dot');
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+            dot.style.background = '#2ad6df';
+        } else {
+            dot.classList.remove('active');
+            dot.style.background = '#105b7a';
+        }
+    });
+}
+

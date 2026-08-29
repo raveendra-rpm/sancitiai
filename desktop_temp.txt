@@ -1,0 +1,128 @@
+﻿      <!-- ================= MAIN DESKTOP CONTENT ================= -->
+      <div class="abs desktop-hero" style="left:0; top:66px; width:1512px; display:flex; flex-direction:column; z-index:1; padding-bottom:100px;">
+        
+        <!-- Hero Section -->
+        <div style="display:flex; width:100%; height:900px; align-items:center; padding:0 80px; box-sizing:border-box;">
+            <div style="flex:1; padding-right:80px;">
+                <div class="font-disp" style="font-size: 84px; line-height: 1.1; font-weight: 500; color:#fff;">
+                    LegMod<br/>Platform
+                </div>
+                <p class="font-body" style="font-size: 24px; color:rgba(255,255,255,0.8); margin-top:30px; max-width:500px; line-height:1.5;">
+                    End-to-end legacy modernization driven by AI.
+                </p>
+                <div class="pill" onclick="scrollToAssessment(event)" style="margin-top:50px; display:inline-flex; align-items:center; justify-content:center; padding:16px 36px; background:var(--cyan); color:#000; font-weight:600; font-size:18px; border-radius:50px; cursor:pointer;">
+                    <span>Get a Free Assessment</span>
+                </div>
+            </div>
+            <div style="flex:1; border-radius:24px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+                <video src="assets/vids/ledmodbanner.aep.mp4" autoplay loop muted playsinline style="width:100%; display:block;"></video>
+            </div>
+        </div>
+
+        <!-- Legacy Complexity -->
+        <div style="padding:100px 80px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+            <h2 class="font-disp" style="font-size:56px; color:#fff; margin-bottom:60px;">When Legacy Complexity Falls Out of Sync.</h2>
+            <img src="assets/img/ledmod/legacycomplexity.png" style="width:100%; max-width:1200px; display:block; border-radius:24px;" />
+        </div>
+
+        <!-- Symphony -->
+        <div style="padding:100px 80px; text-align:center;">
+            <h2 class="font-disp" style="font-size:56px; color:#fff; margin-bottom:20px;">Plan. Analyze. Transform. Validate.</h2>
+            <h3 class="font-disp" style="font-size:48px; color:var(--cyan); margin-bottom:80px;">One Modernization Symphony.</h3>
+            
+            <div style="display:flex; justify-content:space-between; gap:30px;">
+                <!-- Plan -->
+                <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:30px; display:flex; flex-direction:column;">
+                    <h4 class="font-disp" style="font-size:32px; color:#fff; margin-bottom:20px;">Plan</h4>
+                    <div style="flex:1; display:flex; align-items:center;">
+                        <video src="assets/vids/planledmod.mp4" autoplay loop muted playsinline style="width:100%; border-radius:12px;"></video>
+                    </div>
+                </div>
+                <!-- Analyze -->
+                <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:30px; display:flex; flex-direction:column;">
+                    <h4 class="font-disp" style="font-size:32px; color:#fff; margin-bottom:20px;">Analyze</h4>
+                    <div style="flex:1; display:flex; align-items:center;">
+                        <img src="assets/img/ledmod/analyzeledmod.jpg" style="width:100%; border-radius:12px;"/>
+                    </div>
+                </div>
+                <!-- Transform -->
+                <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:30px; display:flex; flex-direction:column;">
+                    <h4 class="font-disp" style="font-size:32px; color:#fff; margin-bottom:20px;">Transform</h4>
+                    <div style="flex:1; display:flex; align-items:center;">
+                        <video src="assets/vids/transform.mp4" autoplay loop muted playsinline style="width:100%; border-radius:12px;"></video>
+                    </div>
+                </div>
+                <!-- Validate -->
+                <div style="flex:1; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:30px; display:flex; flex-direction:column;">
+                    <h4 class="font-disp" style="font-size:32px; color:#fff; margin-bottom:20px;">Validate</h4>
+                    <div style="flex:1; display:flex; align-items:center;">
+                        <img src="assets/img/ledmod/validate.jpg" style="width:100%; border-radius:12px;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Scale -->
+        <div style="padding:100px 80px; display:flex; flex-direction:column; align-items:center;">
+            <h2 class="font-disp" style="font-size:56px; color:#fff; margin-bottom:60px; text-align:center;">Modernization at Portfolio Scale.</h2>
+            <img src="assets/img/ledmod/modernizationportfolioscale.png" style="width:100%; max-width:1300px; display:block; border-radius:24px;" />
+        </div>
+
+        <!-- Better Modernization Delivers -->
+        <div style="padding:100px 80px; display:flex; flex-direction:column; align-items:center;">
+            <h2 class="font-disp" style="font-size:56px; color:#fff; margin-bottom:60px; text-align:center;">What Better Modernization Delivers.</h2>
+            <img src="assets/img/ledmod/bettermodernization.png" style="width:100%; max-width:1300px; display:block; border-radius:24px;" />
+        </div>
+
+        <!-- Governed Core -->
+        <div style="padding:120px 80px; background:#000; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); margin-top:50px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:60px;">
+                <h2 class="font-disp" style="font-size:64px; color:#fff; line-height:1.1; max-width:600px;">
+                    <span style="font-style:italic; font-weight:200;">One</span> Governed Core,<br/>Every Modernization Wave.
+                </h2>
+                <div style="max-width:500px;">
+                    <p class="font-body" style="font-size:20px; color:rgba(255,255,255,0.8); line-height:1.5;">
+                        From data governance and human review to auditability and secure deployment, Sanciti AI is built for enterprises that need progress without losing control.
+                    </p>
+                </div>
+            </div>
+            
+            <div style="display:flex; gap:25px; overflow:hidden;">
+                <!-- Reusing standard index.html cert cards -->
+                <div style="flex:0 0 432px; height:600px; border-radius:12px; overflow:hidden; background:#0a0a0a;">
+                    <img src="assets/img/hipaa.png" style="width:100%; height:100%; object-fit:cover;" />
+                </div>
+                <div style="flex:0 0 432px; height:600px; border-radius:12px; overflow:hidden; background:#000814;">
+                    <img src="assets/img/iso.png" style="width:100%; height:100%; object-fit:cover;" />
+                </div>
+                <div style="flex:0 0 432px; height:600px; border-radius:12px; overflow:hidden; background:#000;">
+                    <img src="assets/img/cmmi.png" style="width:100%; height:100%; object-fit:cover;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Can't Afford to Break -->
+        <div style="padding:120px 80px; display:flex; flex-direction:column; align-items:center;">
+            <h2 class="font-disp" style="font-size:56px; color:#fff; margin-bottom:60px; text-align:center;">Modernizing the Systems You Can't Afford to Break</h2>
+            <div style="display:flex; gap:40px; width:100%; max-width:1300px; align-items:center;">
+                <div style="flex:1;">
+                    <img src="assets/img/ledmod/modernizingtheystems.png" style="width:100%; display:block; border-radius:24px;" />
+                </div>
+                <div style="flex:1;">
+                    <img src="assets/img/ledmod/modernizingthesystemsbtm.png" style="width:100%; display:block; border-radius:24px;" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Tuned for Control -->
+        <div style="padding:100px 80px 150px; text-align:center;">
+            <h2 class="font-disp" style="font-size:56px; color:#fff; margin-bottom:60px;">Built for Enterprise, <span style="color:var(--cyan);">Tuned for Control.</span></h2>
+            <div style="display:flex; justify-content:center; gap:60px; align-items:center;">
+                <img src="assets/img/ledmod/sharepoint.png" style="height:60px; object-fit:contain;" />
+                <img src="assets/img/ledmod/confluence.png" style="height:60px; object-fit:contain;" />
+                <img src="assets/img/ledmod/github.png" style="height:60px; object-fit:contain;" />
+                <img src="assets/img/ledmod/gitlab.png" style="height:60px; object-fit:contain;" />
+                <img src="assets/img/ledmod/jira.png" style="height:60px; object-fit:contain;" />
+            </div>
+        </div>
+      </div>

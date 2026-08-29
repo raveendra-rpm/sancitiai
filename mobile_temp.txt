@@ -1,0 +1,120 @@
+﻿  <!-- ================= MOBILE HERO SECTION (< 768px) ================= -->
+  <section class="mobile-hero-section" style="padding: 120px 20px 60px; display:flex; flex-direction:column; gap:40px;">
+    <!-- Ambient Green Glow on left -->
+    <div class="mobile-hero-glow-left" style="position:absolute; top:-100px; left:-100px; width:400px; opacity:0.6; z-index:-1; pointer-events:none;">
+      <img alt="" src="assets/img/greenbgglowleft.png" style="width:100%;" />
+    </div>
+    
+    <div class="mobile-hero-content">
+      <div class="mobile-hero-title font-disp" style="font-size: 42px; line-height: 1.1; font-weight: 500;">
+        LegMod Platform
+      </div>
+      <div class="mobile-hero-desc font-body" style="margin-top:20px; font-size:16px; color:rgba(255,255,255,0.8); line-height:1.6;">
+        <p>End-to-end legacy modernization driven by AI.</p>
+      </div>
+      <div class="mobile-hero-cta pill" onclick="scrollToAssessment(event)" style="margin-top:30px; display:inline-flex; align-items:center; justify-content:center; padding:12px 24px; background:var(--cyan); color:#000; font-weight:600; border-radius:30px; cursor:pointer;">
+        <span>Get a Free Assessment</span>
+      </div>
+    </div>
+    <div style="width:100%; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+      <video src="assets/vids/ledmodbanner.aep.mp4" autoplay loop muted playsinline style="width:100%; display:block;"></video>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE LEGACY COMPLEXITY ================= -->
+  <section class="mobile-section" style="padding: 60px 20px;">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:20px;">When Legacy Complexity Falls Out of Sync.</h2>
+    <div style="width:100%; border-radius:12px; overflow:hidden;">
+      <img src="assets/img/ledmod/legacycomplexity.png" alt="Legacy Complexity" style="width:100%; display:block;"/>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE SYMPHONY ================= -->
+  <section class="mobile-section" style="padding: 60px 20px;">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:30px;">Plan. Analyze. Transform. Validate.<br/><span style="color:var(--cyan);">One Modernization Symphony.</span></h2>
+    
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <!-- Plan -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px;">
+        <h3 class="font-disp" style="font-size:24px; margin-bottom:15px;">Plan</h3>
+        <video src="assets/vids/planledmod.mp4" autoplay loop muted playsinline style="width:100%; border-radius:8px; display:block;"></video>
+      </div>
+      <!-- Analyze -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px;">
+        <h3 class="font-disp" style="font-size:24px; margin-bottom:15px;">Analyze</h3>
+        <img src="assets/img/ledmod/analyzeledmod.jpg" style="width:100%; border-radius:8px; display:block;"/>
+      </div>
+      <!-- Transform -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px;">
+        <h3 class="font-disp" style="font-size:24px; margin-bottom:15px;">Transform</h3>
+        <video src="assets/vids/transform.mp4" autoplay loop muted playsinline style="width:100%; border-radius:8px; display:block;"></video>
+      </div>
+      <!-- Validate -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px;">
+        <h3 class="font-disp" style="font-size:24px; margin-bottom:15px;">Validate</h3>
+        <img src="assets/img/ledmod/validate.jpg" style="width:100%; border-radius:8px; display:block;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE PORTFOLIO SCALE ================= -->
+  <section class="mobile-section" style="padding: 60px 20px;">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:20px;">Modernization at Portfolio Scale.</h2>
+    <div style="width:100%; border-radius:12px; overflow:hidden;">
+      <img src="assets/img/ledmod/modernizationportfolioscale.png" style="width:100%; display:block;"/>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE DELIVERS ================= -->
+  <section class="mobile-section" style="padding: 60px 20px;">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:20px;">What Better Modernization Delivers.</h2>
+    <div style="width:100%; border-radius:12px; overflow:hidden;">
+      <img src="assets/img/ledmod/bettermodernization.png" style="width:100%; display:block;"/>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE GOVERNED CORE ================= -->
+  <section class="mobile-section" style="padding: 60px 20px; background:#000; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1);">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:15px;">One Governed Core,<br/>Every Modernization Wave.</h2>
+    <p class="font-body" style="color:rgba(255,255,255,0.8); margin-bottom:30px; font-size:16px;">Built for Enterprise, by Design. From data governance and human review to auditability and secure deployment.</p>
+    
+    <div class="cert-scroll" style="display:flex; gap:15px; overflow-x:auto; padding-bottom:15px; scroll-snap-type:x proximity;">
+      <!-- HIPAA style card -->
+      <div style="flex:0 0 280px; height:380px; border-radius:12px; overflow:hidden; position:relative; scroll-snap-align:start;">
+         <img src="assets/img/hipaa.png" style="width:100%; height:100%; object-fit:cover;"/>
+      </div>
+      <!-- ISO style card -->
+      <div style="flex:0 0 280px; height:380px; border-radius:12px; overflow:hidden; position:relative; scroll-snap-align:start;">
+         <img src="assets/img/iso.png" style="width:100%; height:100%; object-fit:cover;"/>
+      </div>
+      <!-- CMMI style card -->
+      <div style="flex:0 0 280px; height:380px; border-radius:12px; overflow:hidden; position:relative; scroll-snap-align:start;">
+         <img src="assets/img/cmmi.png" style="width:100%; height:100%; object-fit:cover;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE CANT AFFORD TO BREAK ================= -->
+  <section class="mobile-section" style="padding: 60px 20px;">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:20px;">Modernizing the Systems You Can't Afford to Break</h2>
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div style="width:100%; border-radius:12px; overflow:hidden;">
+        <img src="assets/img/ledmod/modernizingtheystems.png" style="width:100%; display:block;"/>
+      </div>
+      <div style="width:100%; border-radius:12px; overflow:hidden;">
+        <img src="assets/img/ledmod/modernizingthesystemsbtm.png" style="width:100%; display:block;"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MOBILE TUNED FOR CONTROL ================= -->
+  <section class="mobile-section" style="padding: 60px 20px 100px;">
+    <h2 class="font-disp" style="font-size:32px; margin-bottom:30px; text-align:center;">Built for Enterprise,<br/><span style="color:var(--cyan);">Tuned for Control.</span></h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; align-items:center;">
+      <img src="assets/img/ledmod/sharepoint.png" style="height:40px; object-fit:contain;"/>
+      <img src="assets/img/ledmod/confluence.png" style="height:40px; object-fit:contain;"/>
+      <img src="assets/img/ledmod/github.png" style="height:40px; object-fit:contain;"/>
+      <img src="assets/img/ledmod/gitlab.png" style="height:40px; object-fit:contain;"/>
+      <img src="assets/img/ledmod/jira.png" style="height:40px; object-fit:contain;"/>
+    </div>
+  </section>

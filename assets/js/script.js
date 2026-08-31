@@ -261,15 +261,28 @@ function scrollToAssessment(e) {
     closeMobileMenu();
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
-        const playbook = document.getElementById('playbook');
-        if (playbook) {
-            const topPos = playbook.offsetTop - 70;
+        const newPlaybook = document.getElementById('mobile-playbook-bottom');
+        const oldPlaybook = document.getElementById('playbook');
+        
+        let target = newPlaybook || oldPlaybook;
+        if (target) {
+            const topPos = target.offsetTop - 70;
             window.scrollTo({ top: topPos, behavior: 'smooth' });
         }
     } else {
         const viewport = Math.max(320, window.innerWidth);
         const scale = Math.min(1, viewport / 1512);
-        const topPos = 990 * scale;
+        
+        let topPos = 990 * scale; // Default fallback to old playbook position
+        const centeredPlaybook = document.getElementById('centered-playbook');
+        const oldPlaybook = document.getElementById('playbook-desktop');
+        
+        if (centeredPlaybook) {
+            topPos = centeredPlaybook.offsetTop * scale;
+        } else if (oldPlaybook) {
+            topPos = oldPlaybook.offsetTop * scale;
+        }
+        
         window.scrollTo({ top: topPos, behavior: 'smooth' });
     }
 }

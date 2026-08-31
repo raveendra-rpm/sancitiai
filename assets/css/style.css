@@ -283,7 +283,7 @@ body {
 #stage {
   position: relative;
   width: 1512px;
-  height: 11653px;
+  height: 12253px;
   background: #000;
   transform-origin: top left;
   overflow: hidden;
@@ -1485,6 +1485,7 @@ body {
   .mobile-symphony-section,
   .mobile-orchestrator-section,
   .mobile-proven-score-section,
+  .mobile-playbook-bottom,
   .mobile-footer {
     display: none !important;
   }
@@ -2165,6 +2166,9 @@ body {
 
   /* Hide Desktop Playbook inside #stage on mobile */
   .desktop-playbook {
+    display: none !important;
+  }
+  .centered-playbook {
     display: none !important;
   }
 

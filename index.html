@@ -615,7 +615,6 @@
   </section>
 
 
-
   <div id="scaler">
     <div id="stage">
       <!-- ================= NAV ================= -->
@@ -1701,9 +1700,66 @@
           </div>
         </div>
       </div>
+      <!-- ================= CENTERED PLAYBOOK (BEFORE FOOTER) ================= -->
+      <div id="centered-playbook" class="abs centered-playbook"
+        style="left:0; top:11223px; width:1512px; height:600px; display:flex; flex-direction:column; align-items:center; justify-content:center; background: transparent; z-index:10;">
+        <div style="text-align:center; margin-bottom:40px;">
+          <p class="font-disp"
+            style="font-size:56px; font-weight:300; color:rgba(255,255,255,.9); line-height:1.1; margin:0;">
+            Modernizing the Systems<br />You Can't Afford to Break
+          </p>
+          <p class="font-body" style="font-size:20px; font-weight:300; margin-top:20px; color:rgba(255,255,255,.7);">
+            A practical playbook for end-to-end legacy modernization.
+          </p>
+        </div>
+
+        <form action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+          style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px 30px; width:900px;"
+          onsubmit="handlePlaybookDownload(event)">
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Name</span>
+            <input name="Name"
+              style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+              type="text" required />
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Title</span>
+            <input name="Title"
+              style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+              type="text" required />
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Email</span>
+            <input name="Email"
+              style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+              type="email" required />
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Contact number</span>
+            <input name="Contact number"
+              style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+              type="tel" required />
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Company</span>
+            <input name="Company"
+              style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+              type="text" required />
+          </div>
+
+          <div style="grid-column: 1 / -1; display:flex; justify-content:center; margin-top:16px;">
+            <button type="submit" class="pill"
+              style="padding:14px 40px; background:var(--cyan); border:none; border-radius:50px; text-align:center; cursor:pointer;">
+              <span class="font-body" style="font-size:16px; color:rgba(7,7,14,.9); font-weight:500;">Download the
+                Playbook</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
       <!-- ================= FOOTER ================= -->
       <div class="abs desktop-footer"
-        style="left:0; top:11223px; width:1512px; height:430px; border-top:1px solid rgba(255,255,255,.08); background:#000; box-sizing:border-box; padding:60px 80px 40px;">
+        style="left:0; top:11823px; width:1512px; height:430px; border-top:1px solid rgba(255,255,255,.08); background:#000; box-sizing:border-box; padding:60px 80px 40px;">
         <!-- Top 4 Columns Row -->
         <div style="display:grid; grid-template-columns:360px 180px 180px 240px; justify-content:space-between;">
           <!-- 1. Branding & Mission -->
@@ -1876,6 +1932,63 @@
     </div>
   </section>
 
+  <!-- ================= MOBILE PLAYBOOK SECTION ================= -->
+  <section id="mobile-playbook-bottom" class="mobile-playbook-bottom"
+    style="padding: 60px 20px 40px; background: transparent;">
+    <div style="text-align:center; margin-bottom:30px;">
+      <p class="font-disp"
+        style="font-size:32px; font-weight:300; color:rgba(255,255,255,.9); line-height:1.2; margin:0;">
+        Modernizing the Systems<br />You Can't Afford to Break
+      </p>
+      <p class="font-body" style="font-size:16px; font-weight:300; margin-top:16px; color:rgba(255,255,255,.7);">
+        A practical playbook for end-to-end legacy modernization.
+      </p>
+    </div>
+
+    <form action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+      style="display:flex; flex-direction:column; gap:16px; width:100%; max-width:400px; margin:0 auto;"
+      onsubmit="handlePlaybookDownload(event)">
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Name</span>
+        <input name="Name"
+          style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+          type="text" required />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Title</span>
+        <input name="Title"
+          style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+          type="text" required />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Email</span>
+        <input name="Email"
+          style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+          type="email" required />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Contact number</span>
+        <input name="Contact number"
+          style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+          type="tel" required />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Company</span>
+        <input name="Company"
+          style="height:48px; width:100%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px; box-sizing:border-box;"
+          type="text" required />
+      </div>
+
+      <div style="display:flex; justify-content:center; margin-top:8px;">
+        <button type="submit" class="pill"
+          style="width:100%; padding:14px 0; background:var(--cyan); border:none; border-radius:50px; text-align:center; cursor:pointer;">
+          <span class="font-body" style="font-size:16px; color:rgba(7,7,14,.9); font-weight:500;">Download the
+            Playbook</span>
+        </button>
+      </div>
+    </form>
+  </section>
+
   <!-- ================= MOBILE FOOTER (< 768px) ================= -->
   <div class="mobile-footer"
     style="background:#000; padding:60px 20px 40px; border-top:1px solid rgba(255,255,255,0.08);">
@@ -1983,6 +2096,11 @@
 
       // Reset form
       event.target.reset();
+
+      // Redirect to thank you page
+      setTimeout(() => {
+        window.location.href = 'https://www.sanciti.ai/thank-you/';
+      }, 500);
     }
   </script>
 </body>

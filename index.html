@@ -137,30 +137,31 @@
         A practical playbook for end-to-end legacy modernization.
       </p>
 
-      <form class="mobile-playbook-form" action="mailto:info@sanciti.ai" method="post" enctype="text/plain">
+      <form class="mobile-playbook-form" action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+        onsubmit="handlePlaybookDownload(event)">
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Name</label>
-          <input class="mobile-form-input font-body" name="Name" type="text" placeholder="" />
+          <input class="mobile-form-input font-body" name="Name" type="text" placeholder="" required />
         </div>
 
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Title</label>
-          <input class="mobile-form-input font-body" name="Title" type="text" placeholder="" />
+          <input class="mobile-form-input font-body" name="Title" type="text" placeholder="" required />
         </div>
 
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Email</label>
-          <input class="mobile-form-input font-body" name="Email" type="email" placeholder="" />
+          <input class="mobile-form-input font-body" name="Email" type="email" placeholder="" required />
         </div>
 
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Contact number</label>
-          <input class="mobile-form-input font-body" name="Contact number" type="tel" placeholder="" />
+          <input class="mobile-form-input font-body" name="Contact number" type="tel" placeholder="" required />
         </div>
 
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Company</label>
-          <input class="mobile-form-input font-body" name="Company" type="text" placeholder="" />
+          <input class="mobile-form-input font-body" name="Company" type="text" placeholder="" required />
         </div>
         <button class="mobile-playbook-btn pill" type="submit">
           <span>Download the Playbook</span>
@@ -726,36 +727,37 @@
               end-to-end legacy modernization.</p>
           </div>
           <form action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
-            style="display:grid; grid-template-columns:1fr 1fr; gap:15px 30px; margin-top:44px;">
+            style="display:grid; grid-template-columns:1fr 1fr; gap:15px 30px; margin-top:44px;"
+            onsubmit="handlePlaybookDownload(event)">
             <div style="display:flex; flex-direction:column; gap:8px;">
               <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Name</span>
               <input name="Name"
                 style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
-                type="text" />
+                type="text" required />
             </div>
             <div style="display:flex; flex-direction:column; gap:8px;">
               <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Title</span>
               <input name="Title"
                 style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
-                type="text" />
+                type="text" required />
             </div>
             <div style="display:flex; flex-direction:column; gap:8px;">
               <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Email</span>
               <input name="Email"
                 style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
-                type="text" />
+                type="email" required />
             </div>
             <div style="display:flex; flex-direction:column; gap:8px;">
               <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Contact number</span>
               <input name="Contact number"
                 style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
-                type="text" />
+                type="tel" required />
             </div>
             <div style="display:flex; flex-direction:column; gap:8px;">
               <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Company</span>
               <input name="Company"
                 style="height:48px; width:90%; background:rgba(255,255,255,.9); border:none; border-radius:4px; padding:0 16px; font-size:16px;"
-                type="text" />
+                type="text" required />
             </div>
             <div style="display:flex; align-items:flex-end;">
               <button type="submit" class="pill"
@@ -1967,6 +1969,22 @@
   </div>
 
   <script src="assets/js/script.js"></script>
+  <script>
+    function handlePlaybookDownload(event) {
+      event.preventDefault(); // Prevent mailto action
+
+      // Trigger the download
+      const link = document.createElement('a');
+      link.href = 'assets/Sanciti Ai _Legacy Modernization_Playbook.pdf';
+      link.download = 'Sanciti Ai _Legacy Modernization_Playbook.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Reset form
+      event.target.reset();
+    }
+  </script>
 </body>
 
 </html>

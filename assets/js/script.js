@@ -266,19 +266,21 @@ function scrollToAssessment(e) {
         
         let target = newPlaybook || oldPlaybook;
         if (target) {
-            const topPos = target.offsetTop - 70;
+            const topPos = Math.max(0, target.offsetTop - (window.innerHeight / 2) + (target.offsetHeight / 2));
             window.scrollTo({ top: topPos, behavior: 'smooth' });
         }
     } else {
         const viewport = Math.max(320, window.innerWidth);
-        const scale = Math.min(1, viewport / 1512);
+        const scale = viewport / 1512;
         
         let topPos = 990 * scale; // Default fallback to old playbook position
         const centeredPlaybook = document.getElementById('centered-playbook');
         const oldPlaybook = document.getElementById('playbook-desktop');
         
         if (centeredPlaybook) {
-            topPos = centeredPlaybook.offsetTop * scale;
+            const scaledTop = centeredPlaybook.offsetTop * scale;
+            const scaledHeight = centeredPlaybook.offsetHeight * scale;
+            topPos = Math.max(0, scaledTop - (window.innerHeight / 2) + (scaledHeight / 2));
         } else if (oldPlaybook) {
             topPos = oldPlaybook.offsetTop * scale;
         }

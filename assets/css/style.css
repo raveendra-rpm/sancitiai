@@ -1166,10 +1166,10 @@ body {
 
 /* 1. Huge Top Cyan Circle */
 .state-rgen #circle-cyan {
-  width: 1720px !important;
-  height: 1720px !important;
-  left: 190px !important;
-  top: -680px !important;
+  width: 1200px !important;
+  height: 1200px !important;
+  left: 450px !important;
+  top: -420px !important;
   background: radial-gradient(circle at 35% 45%, #99f6fa, #2ad6df 75%) !important;
   box-shadow: 0 0 120px 30px rgba(42, 214, 223, 0.4) !important;
   z-index: 6 !important;

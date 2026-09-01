@@ -131,11 +131,13 @@
   <section class="mobile-playbook-section" id="playbook">
     <div class="mobile-playbook-content">
       <h2 class="mobile-playbook-title font-disp">
-        Modernizing the Systems<br />You Can't Afford to Break
+        <span style="font-weight:200; font-style:italic;">Modernize</span> <span style="font-weight:700;">Legacy
+          Applications</span><br />
+        <span style="font-weight:200; font-style:italic;">with</span> <span style="font-weight:700;">Enterprise-Grade
+          AI,</span><br />
+        <span style="font-weight:200; font-style:italic;">Get a</span> <span style="font-weight:700;">Free
+          Assessment.</span>
       </h2>
-      <p class="mobile-playbook-subtitle font-body">
-        A practical playbook for end-to-end legacy modernization.
-      </p>
 
       <form class="mobile-playbook-form" action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
         onsubmit="handlePlaybookDownload(event)">
@@ -164,7 +166,7 @@
           <input class="mobile-form-input font-body" name="Company" type="text" placeholder="" required />
         </div>
         <button class="mobile-playbook-btn pill" type="submit">
-          <span>Download the Playbook</span>
+          <span>Book a free Assessment</span>
         </button>
       </form>
 
@@ -628,7 +630,7 @@
             style="width:100%; height:100%; object-fit:contain;" />
         </a>
         <div class="abs font-disp desktop-nav-menu"
-          style="display:flex; align-items:center; left:560px; top:23px; width:600px; font-size:16px; gap:36px; color:#fff;">
+          style="display:none; align-items:center; left:560px; top:23px; width:600px; font-size:16px; gap:36px; color:#fff;">
           <span class="nav-link" style="color:#fff; cursor:pointer;"
             onclick="window.location.href='index.html';">Home</span>
           <span class="nav-link" onclick="window.location.href='legmod.html';"
@@ -670,7 +672,7 @@
             delivery.Sanciti AI solves these with LegMod orchestrator and four specialist agents, RGEN, CodeGen, TestAI,
             and Deploy, across the SDLC for continuous, governed modernization and delivery.
           </p>
-          <div class="pill"
+          <div class="pill" onclick="scrollToAssessment(event)"
             style="margin:32px 0 0; width:fit-content; border:2px solid var(--cyan); border-radius:70px; padding:12px 26px; cursor:pointer;">
             <span class="font-disp" style="font-weight:300; font-size:16px;">Get a Free Assessment</span>
           </div>
@@ -1497,7 +1499,7 @@
 
               <!-- Deploy Text Layer -->
               <div id="text-deploy" class="anim-text"
-                style="position:absolute; top:40px; left:-110px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                style="position:absolute; top:-40px; left:-110px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
                 <p class="font-disp"
                   style="font-size:110px; font-weight:400; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
                   Deploy</p>
@@ -1515,7 +1517,7 @@
                   <div class="pill"
                     style="padding:12px 36px; background:var(--cyan); border-radius:50px; pointer-events:auto; cursor:pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"
                     onclick="scrollToAssessment(event)">
-                    <span class="font-body" style="font-size:18px; color:#000; font-weight:600; white-space:nowrap;">Get
+                    <span class="font-body" style="font-size:18px; color:#000; font-weight:600;white-space:nowrap;">Get
                       a free Assessment</span>
                   </div>
                 </div>
@@ -1523,14 +1525,14 @@
 
               <!-- RGEN Text Layer -->
               <div id="text-rgen" class="anim-text"
-                style="position:absolute; top:40px; left:390px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                style="position:absolute; top:-160px; left:600px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
                 <p class="font-disp"
-                  style="font-size:110px; font-weight:500; line-height:1; color:#000; margin-bottom:28px; letter-spacing:-1px;">
+                  style="font-size:96px; font-weight:500; line-height:1; color:#000; margin-bottom:24px; letter-spacing:-1px;">
                   RGEN</p>
 
                 <div style="margin-left:130px; display:flex; flex-direction:column; align-items:flex-start;">
                   <p class="font-body"
-                    style="width:480px; font-size:19px; font-weight:400; color:#000; line-height:1.45; margin-bottom:32px;">
+                    style="width:440px; font-size:18px; font-weight:400; color:#000; line-height:1.45; margin-bottom:28px;">
                     The starting point of the entire Sanciti AI<br />
                     pipeline. RGEN turns code, documents, and<br />
                     meetings into structured requirements, user<br />
@@ -1551,7 +1553,7 @@
 
               <!-- CodeGen Text Layer -->
               <div id="text-codegen" class="anim-text"
-                style="position:absolute; top:40px; left:650px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
+                style="position:absolute; top:-40px; left:650px; display:flex; flex-direction:column; align-items:flex-start; opacity:0; pointer-events:none;">
                 <p class="font-disp"
                   style="font-size:110px; font-weight:500; line-height:1; color:#fff; margin-bottom:28px; letter-spacing:-1px;">
                   CodeGen</p>
@@ -1704,12 +1706,13 @@
       <div id="centered-playbook" class="abs centered-playbook"
         style="left:0; top:11223px; width:1512px; height:600px; display:flex; flex-direction:column; align-items:center; justify-content:center; background: transparent; z-index:10;">
         <div style="text-align:center; margin-bottom:40px;">
-          <p class="font-disp"
-            style="font-size:56px; font-weight:300; color:rgba(255,255,255,.9); line-height:1.1; margin:0;">
-            Modernizing the Systems<br />You Can't Afford to Break
-          </p>
-          <p class="font-body" style="font-size:20px; font-weight:300; margin-top:20px; color:rgba(255,255,255,.7);">
-            A practical playbook for end-to-end legacy modernization.
+          <p class="font-disp" style="font-size:56px; line-height:1.1; margin:0; color:rgba(255,255,255,.9);">
+            <span style="font-weight:200; font-style:italic;">Modernize</span> <span style="font-weight:700;">Legacy
+              Applications</span><br />
+            <span style="font-weight:200; font-style:italic;">with</span> <span
+              style="font-weight:700;">Enterprise-Grade AI,</span><br />
+            <span style="font-weight:200; font-style:italic;">Get a</span> <span style="font-weight:700;">Free
+              Assessment.</span>
           </p>
         </div>
 
@@ -1750,8 +1753,8 @@
           <div style="grid-column: 1 / -1; display:flex; justify-content:center; margin-top:16px;">
             <button type="submit" class="pill"
               style="padding:14px 40px; background:var(--cyan); border:none; border-radius:50px; text-align:center; cursor:pointer;">
-              <span class="font-body" style="font-size:16px; color:rgba(7,7,14,.9); font-weight:500;">Download the
-                Playbook</span>
+              <span class="font-body" style="font-size:16px; color:rgba(7,7,14,.9); font-weight:500;">Book a free
+                Assessment</span>
             </button>
           </div>
         </form>
@@ -1936,12 +1939,13 @@
   <section id="mobile-playbook-bottom" class="mobile-playbook-bottom"
     style="padding: 60px 20px 40px; background: transparent;">
     <div style="text-align:center; margin-bottom:30px;">
-      <p class="font-disp"
-        style="font-size:32px; font-weight:300; color:rgba(255,255,255,.9); line-height:1.2; margin:0;">
-        Modernizing the Systems<br />You Can't Afford to Break
-      </p>
-      <p class="font-body" style="font-size:16px; font-weight:300; margin-top:16px; color:rgba(255,255,255,.7);">
-        A practical playbook for end-to-end legacy modernization.
+      <p class="font-disp" style="font-size:32px; line-height:1.2; margin:0; color:rgba(255,255,255,.9);">
+        <span style="font-weight:200; font-style:italic;">Modernize</span> <span style="font-weight:700;">Legacy
+          Applications</span><br />
+        <span style="font-weight:200; font-style:italic;">with</span> <span style="font-weight:700;">Enterprise-Grade
+          AI,</span><br />
+        <span style="font-weight:200; font-style:italic;">Get a</span> <span style="font-weight:700;">Free
+          Assessment.</span>
       </p>
     </div>
 
@@ -1982,8 +1986,8 @@
       <div style="display:flex; justify-content:center; margin-top:8px;">
         <button type="submit" class="pill"
           style="width:100%; padding:14px 0; background:var(--cyan); border:none; border-radius:50px; text-align:center; cursor:pointer;">
-          <span class="font-body" style="font-size:16px; color:rgba(7,7,14,.9); font-weight:500;">Download the
-            Playbook</span>
+          <span class="font-body" style="font-size:16px; color:rgba(7,7,14,.9); font-weight:500;">Book a free
+            Assessment</span>
         </button>
       </div>
     </form>

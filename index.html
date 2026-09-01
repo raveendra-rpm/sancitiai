@@ -139,7 +139,7 @@
           Assessment.</span>
       </h2>
 
-      <form class="mobile-playbook-form" action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+      <form class="mobile-playbook-form" action="submit_form.php" method="POST"
         onsubmit="handlePlaybookDownload(event)">
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Name</label>
@@ -727,7 +727,7 @@
             <p class="font-body" style="font-size:24px; font-weight:300; margin-top:24px;">A practical playbook for
               end-to-end legacy modernization.</p>
           </div>
-          <form action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+          <form action="submit_form.php" method="POST"
             style="display:grid; grid-template-columns:1fr 1fr; gap:15px 30px; margin-top:44px;"
             onsubmit="handlePlaybookDownload(event)">
             <div style="display:flex; flex-direction:column; gap:8px;">
@@ -1353,9 +1353,8 @@
             style="font-size:16px; letter-spacing:.05em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-bottom:6px;">
             For SDLC Automation</p>
           <p class="font-disp" style="font-size:57px; font-style:italic; margin:0;">60%</p>
-          <p class="font-body" style="font-size:13px; font-weight:300; color:rgba(255,255,255,.7);">Up to</p>
-          <p class="font-body" style="font-size:16px; font-weight:300; color:rgba(255,255,255,.85);">faster requirements
-            capture</p>
+          <p class="font-body" style="font-size:16px; font-weight:300; color:rgba(255,255,255,.85);">Up to faster
+            requirements capture</p>
         </div>
         <div class="abs reveal" style="left:0; top:548px; width:330px;">
           <div style="width:100%; height:1px; background:rgba(255,255,255,.2); margin-bottom:26px;"></div>
@@ -1716,7 +1715,7 @@
           </p>
         </div>
 
-        <form action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+        <form action="submit_form.php" method="POST"
           style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px 30px; width:900px;"
           onsubmit="handlePlaybookDownload(event)">
           <div style="display:flex; flex-direction:column; gap:8px;">
@@ -1949,7 +1948,7 @@
       </p>
     </div>
 
-    <form action="mailto:info@sanciti.ai" method="post" enctype="text/plain"
+    <form action="submit_form.php" method="POST"
       style="display:flex; flex-direction:column; gap:16px; width:100%; max-width:400px; margin:0 auto;"
       onsubmit="handlePlaybookDownload(event)">
       <div style="display:flex; flex-direction:column; gap:8px;">
@@ -2087,8 +2086,33 @@
 
   <script src="assets/js/script.js"></script>
   <script>
-    function handlePlaybookDownload(event) {
-      event.preventDefault(); // Prevent mailto action
+    async function handlePlaybookDownload(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = event.target;
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerText;
+
+      try {
+        submitBtn.innerText = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Send POST request to our PHP endpoint
+        const response = await fetch('submit_form.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+        console.log("Form submission result:", result);
+
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      } finally {
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+      }
 
       // Trigger the download
       const link = document.createElement('a');
@@ -2099,7 +2123,7 @@
       document.body.removeChild(link);
 
       // Reset form
-      event.target.reset();
+      form.reset();
 
       // Redirect to thank you page
       setTimeout(() => {

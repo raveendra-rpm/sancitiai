@@ -789,12 +789,7 @@ body.rgen-body {
 
 /* ================= TRANSITION SECTION (5083 - 5626px) ================= */
 .rgen-trans-line {
-  position: absolute;
-  width: 756px;
-  height: 1px;
-  left: 624px;
-  top: 5083px;
-  background: rgba(255, 255, 255, 0.2);
+  display: none;
 }
 
 .rgen-trans-section {
@@ -803,64 +798,60 @@ body.rgen-body {
   right: 0;
   top: 5083px;
   height: 543px;
+  background: radial-gradient(circle at 65% 90%, rgba(16, 49, 64, 0.65) 0%, rgba(0, 0, 0, 0.95) 60%, #000000 100%);
 }
 
 .rgen-trans-title {
   position: absolute;
-  width: 860px;
-  max-width: 860px;
-  right: 64px;
-  top: 240px;
-  font-family: 'Roboto', sans-serif;
+  width: 740px;
+  left: 650px;
+  top: 180px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 58px;
-  line-height: 70px;
+  font-size: 54px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
   display: block;
-  text-align: right;
+  text-align: left;
   color: #FFFFFF;
   margin: 0;
 }
 
 .rgen-trans-subtitle {
   position: absolute;
-  width: 512px;
-  height: 87px;
-  left: calc(50% - 512px / 2 - 416px);
-  top: 430px;
+  width: 440px;
+  left: 48px;
+  top: 270px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 24px;
-  line-height: 29px;
-  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
 }
 
 .rgen-trans-btn {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 24px;
-  gap: 8px;
+  padding: 10px 24px;
   position: absolute;
-  width: 134px;
-  height: 43px;
-  left: 47px;
-  top: 535px;
+  left: 48px;
+  top: 375px;
   background: #2AD6DF;
   border-radius: 99px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
   color: #000000;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.25s;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .rgen-trans-btn:hover {

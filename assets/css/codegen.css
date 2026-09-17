@@ -822,8 +822,9 @@ body.codegen-body {
   position: absolute;
   width: 778px;
   height: 500px;
-  left: 662px;
+  right: -80px;
   top: 337px;
+  overflow: visible;
 }
 
 .cg-particle-dome-img {
@@ -831,6 +832,7 @@ body.codegen-body {
   height: 100%;
   object-fit: contain;
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 /* ================= 6. CASE STUDY (5341 - 5700px) ================= */

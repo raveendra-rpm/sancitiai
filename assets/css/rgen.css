@@ -384,13 +384,25 @@ body.rgen-body {
   width: 600px;
   top: 180px;
   font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  font-weight: 300;
   font-size: 58px;
   line-height: 70px;
   text-align: right;
   color: #FFFFFF;
   margin: 0;
+}
+
+.rgen-how-italic {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.rgen-how-bold {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #FFFFFF;
 }
 
 .rgen-stage-card-wrap {
@@ -486,9 +498,9 @@ body.rgen-body {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 22px;
-  color: #E8E8E8;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
 }
 
@@ -503,32 +515,42 @@ body.rgen-body {
 
 .rgen-diff-title {
   position: absolute;
-  width: 916px;
-  height: 275px;
-  left: calc(50% - 916px / 2 - 247px);
+  width: 820px;
+  left: 47px;
   top: 47px;
   font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 66px;
-  line-height: 77px;
-  text-align: right;
+  font-size: 58px;
+  line-height: 68px;
+  text-align: left;
   color: #FFFFFF;
   margin: 0;
 }
 
+.rgen-diff-italic {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.rgen-diff-cyan {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #2AD6DF;
+}
+
 .rgen-diff-subtitle {
   position: absolute;
-  width: 440px;
-  height: 120px;
-  left: calc(50% - 440px / 2 + 239px);
-  top: 322px;
+  width: 480px;
+  right: 47px;
+  top: 260px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
 }
 
@@ -537,15 +559,15 @@ body.rgen-body {
   width: 1346px;
   height: 930px;
   left: 47px;
-  top: 513px;
-  background: rgba(142, 241, 246, 0.3);
+  top: 460px;
+  background: rgba(142, 241, 246, 0.08);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   padding: 48px 57px;
   box-sizing: border-box;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(42, 214, 223, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(42, 214, 223, 0.05);
 }
 
 .rgen-diff-header-row {
@@ -561,20 +583,20 @@ body.rgen-body {
   justify-content: center;
   background: #FFFFFF;
   border-radius: 50px;
-  padding: 7px 34px 7px 35px;
+  padding: 7px 34px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  color: rgba(16, 59, 61, 0.9);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #07070E;
 }
 
 .rgen-diff-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding: 24px 0;
 }
 
@@ -587,21 +609,21 @@ body.rgen-body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 42px;
-  color: #103B3D;
+  font-size: 32px;
+  line-height: 38px;
+  color: #FFFFFF;
   display: flex;
   align-items: center;
 }
 
 .rgen-diff-row-right {
-  width: 520px;
+  width: 560px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #103B3D;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
 }
@@ -611,7 +633,7 @@ body.rgen-body {
   width: 658px;
   height: 48px;
   left: calc(50% - 658px / 2 + 344px);
-  top: 1377px;
+  top: 1410px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 300;

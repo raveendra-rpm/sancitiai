@@ -1,0 +1,1477 @@
+/* ==========================================================================
+   Sanciti AI — TestAI Page Dedicated Stylesheet
+   Figma Specification: Width 1440px, Height 9635px, Background #000000
+   TestAI Purple Brand Theme (#7368FF / #B8B3FF / #8A38F5)
+   ========================================================================== */
+
+:root {
+  --ta-purple-primary: #7368FF;
+  --ta-purple-light: #B8B3FF;
+  --ta-purple-glow: rgba(115, 104, 255, 0.4);
+  --ta-cyan-accent: #2AD6DF;
+  --ta-bg-dark: #000000;
+  --ta-bg-navy: #060515;
+  --ta-text-white: #FFFFFF;
+  --ta-text-dim: rgba(255, 255, 255, 0.78);
+  --ta-text-sub: rgba(255, 255, 255, 0.55);
+}
+
+body.testai-body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base Stage */
+.testai-stage {
+  position: relative;
+  width: 1440px;
+  height: 9635px;
+  background: #000000;
+  margin: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transform-origin: top left;
+}
+
+/* =========================================================================
+   AMBIENT GLOW SYSTEM (Matching Figma Desktop 1:1)
+   ========================================================================= */
+.ta-ambient-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* 1. Hero Top-Right Blue Glow: width 950px, height 950px, left 939px, top -265px */
+.ta-desk-glow-1 {
+  width: 950px;
+  height: 950px;
+  left: 939px;
+  top: -265px;
+  background: #3FAEFF;
+  opacity: 0.4;
+  filter: blur(355px);
+}
+
+/* 2. Hero Mid-Right Blue Glow: width 950px, height 950px, left 776px, top 1004px */
+.ta-desk-glow-2 {
+  width: 950px;
+  height: 950px;
+  left: 776px;
+  top: 1004px;
+  background: rgba(63, 174, 255, 0.4);
+  opacity: 0.4;
+  filter: blur(355px);
+}
+
+/* 3. Hero Cyan Accent Glow: width 900px, height 900px, left 800px, top 1500px */
+.ta-desk-glow-3 {
+  width: 900px;
+  height: 900px;
+  left: 800px;
+  top: 1500px;
+  background: rgba(42, 214, 223, 0.2);
+  opacity: 0.3;
+  filter: blur(90px);
+}
+
+/* 4. Challenge Left Purple Glow: width 1465px, height 1364px, left -560px, top 783px */
+.ta-desk-glow-4 {
+  width: 1465px;
+  height: 1364px;
+  left: -560px;
+  top: 783px;
+  background: rgba(115, 104, 255, 0.5);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 5. Challenge Right Lavender Glow: width 1136px, height 1136px, left 212px, top 1231px */
+.ta-desk-glow-5 {
+  width: 1136px;
+  height: 1136px;
+  left: 212px;
+  top: 1231px;
+  background: rgba(184, 179, 255, 0.5);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 6. How It Works Left Lavender Glow: width 1383px, height 1288px, left -1027px, top 2085px */
+.ta-desk-glow-6 {
+  width: 1383px;
+  height: 1288px;
+  left: -1027px;
+  top: 2085px;
+  background: rgba(184, 179, 255, 0.8);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 7. How It Works Right Purple Glow: width 1504px, height 1667px, left 211px, top 1369px */
+.ta-desk-glow-7 {
+  width: 1504px;
+  height: 1667px;
+  left: 211px;
+  top: 1369px;
+  background: rgba(115, 104, 255, 0.8);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 8. How It Works Mid Blue Glow: width 1383px, height 1288px, left -397px, top 2361px */
+.ta-desk-glow-8 {
+  width: 1383px;
+  height: 1288px;
+  left: -397px;
+  top: 2361px;
+  background: rgba(63, 174, 255, 0.7);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 9. Differentiation Frame 171 Ellipse 1 Glow: width 687px, height 687px, left 1196px, top 3726px */
+.ta-desk-glow-9 {
+  width: 687px;
+  height: 687px;
+  left: 1196px;
+  top: 3726px;
+  background: #7368FF;
+  filter: blur(302px);
+  opacity: 0.4;
+}
+
+/* 10. Differentiation Frame 171 Ellipse 2 Glow: width 987px, height 987px, left 0px, top 3545px */
+.ta-desk-glow-10 {
+  width: 987px;
+  height: 987px;
+  left: 0px;
+  top: 3545px;
+  background: #7368FF;
+  filter: blur(302px);
+  opacity: 0.4;
+}
+
+/* 11. Trust Section Sheen Glow: width 1130px, height 963px, left 520px, top 4709px */
+.ta-desk-glow-11 {
+  width: 1130px;
+  height: 963px;
+  left: 520px;
+  top: 4709px;
+  background: #7368FF;
+  opacity: 0.25;
+  filter: blur(90px);
+}
+
+/* 12. Compliance Lavender Glow: width 891px, height 1065px, left -342px, top 4829px */
+.ta-desk-glow-12 {
+  width: 891px;
+  height: 1065px;
+  left: -342px;
+  top: 4829px;
+  background: #B8B3FF;
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 13. Compliance Deep Purple Glow: width 1236px, height 1152px, left 406px, top 5264px */
+.ta-desk-glow-13 {
+  width: 1236px;
+  height: 1152px;
+  left: 406px;
+  top: 5264px;
+  background: #8A38F5;
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 14. Compliance Violet Glow: width 1196px, height 1663px, left -134px, top 5634px */
+.ta-desk-glow-14 {
+  width: 1196px;
+  height: 1663px;
+  left: -134px;
+  top: 5634px;
+  background: #7368FF;
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 15. Playbook Frame 171 Ellipse 1 Glow: width 687px, height 687px, left 1196px, top 7411px */
+.ta-desk-glow-15 {
+  width: 687px;
+  height: 687px;
+  left: 1196px;
+  top: 7411px;
+  background: rgba(115, 104, 255, 0.5);
+  filter: blur(302px);
+  opacity: 0.4;
+}
+
+/* 16. Playbook Frame 171 Ellipse 2 Glow: width 987px, height 987px, left 0px, top 7230px */
+.ta-desk-glow-16 {
+  width: 987px;
+  height: 987px;
+  left: 0px;
+  top: 7230px;
+  background: rgba(115, 104, 255, 0.5);
+  filter: blur(302px);
+  opacity: 0.4;
+}
+
+/* 17. CTA Blue Glow: width 1334px, height 1243px, left 63px, top 7631px */
+.ta-desk-glow-17 {
+  width: 1334px;
+  height: 1243px;
+  left: 63px;
+  top: 7631px;
+  background: rgba(63, 174, 255, 0.8);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 18. CTA Purple Glow: width 1190px, height 1155px, left -161px, top 8076px */
+.ta-desk-glow-18 {
+  width: 1190px;
+  height: 1155px;
+  left: -161px;
+  top: 8076px;
+  background: rgba(115, 104, 255, 0.4);
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+/* 19. Ecosystem Bottom Glow: width 1096px, height 1484px, left 171px, top 8350px */
+.ta-desk-glow-19 {
+  width: 1096px;
+  height: 1484px;
+  left: 171px;
+  top: 8350px;
+  background: #7368FF;
+  opacity: 0.4;
+  filter: blur(300px);
+}
+
+.ta-sec-glow {
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.ta-glow-img {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Common Text Tokens */
+.font-disp {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+.bold-white {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* Reusable CTA Buttons */
+.ta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #7368FF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.ta-btn-primary:hover {
+  background: #877DFF;
+  box-shadow: 0 0 24px rgba(115, 104, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.ta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1.5px solid #7368FF;
+  border-radius: 99px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.ta-btn-secondary:hover {
+  border-color: #B8B3FF;
+  background: rgba(115, 104, 255, 0.15);
+  box-shadow: 0 0 16px rgba(115, 104, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ================= 1. NAV BAR (top: 38px) ================= */
+.testai-nav {
+  position: absolute;
+  width: 1400px;
+  height: 66px;
+  left: 20px;
+  top: 38px;
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.testai-nav-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.testai-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.testai-nav-link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.testai-nav-link:hover {
+  color: #FFFFFF;
+}
+
+.testai-nav-link.active {
+  color: #7368FF;
+  font-weight: 600;
+}
+
+.testai-nav-demo-btn {
+  padding: 8px 24px;
+  background: #2AD6DF;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(7, 7, 14, 0.9);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.testai-nav-demo-btn:hover {
+  background: #46e2eb;
+  box-shadow: 0 0 16px rgba(42, 214, 223, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ================= 1. HERO SECTION (0 - 800px) ================= */
+.ta-hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1440px;
+  height: 800px;
+  z-index: 2;
+}
+
+.ta-hero-visual {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  left: 45px;
+  top: 153px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ta-hero-circle-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.ta-hero-circle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  filter: drop-shadow(0 0 30px rgba(115, 104, 255, 0.8));
+}
+
+.ta-hero-text-block {
+  position: absolute;
+  width: 643px;
+  height: 460px;
+  left: 750px;
+  top: calc(50% - 460px / 2 + 53.5px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  z-index: 3;
+}
+
+.ta-hero-heading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 61px;
+  font-weight: 700;
+  line-height: 66px;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.ta-hero-heading .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-hero-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+  max-width: 531px;
+}
+
+.ta-hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ================= 2. CHALLENGE SECTION (800 - 1664px) ================= */
+.ta-challenge {
+  position: absolute;
+  left: 0;
+  top: 800px;
+  width: 1440px;
+  height: 864px;
+  z-index: 2;
+}
+
+.ta-challenge-left {
+  position: absolute;
+  width: 657px;
+  height: 740px;
+  left: 62px;
+  top: 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 31px;
+  z-index: 3;
+}
+
+.ta-challenge-heading {
+  width: 505px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 61px;
+  line-height: 63px;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.ta-challenge-heading .light-italic {
+  font-style: italic;
+  font-weight: 100;
+}
+
+.ta-challenge-heading .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-challenge-intro {
+  width: 520px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.ta-challenge-card {
+  box-sizing: border-box;
+  width: 562px;
+  height: 268px;
+  background: rgba(12, 14, 23, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 29px 33px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.ta-challenge-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ta-challenge-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #FFFFFF;
+  position: relative;
+  padding-left: 20px;
+}
+
+.ta-challenge-list li::before {
+  content: "•";
+  color: #7368FF;
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  top: -2px;
+}
+
+.ta-challenge-conclusion {
+  width: 594px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.ta-challenge-right {
+  position: absolute;
+  width: 777px;
+  height: 668px;
+  right: 0;
+  top: 97px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ta-challenge-sphere-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= 3. HOW IT WORKS / LIFECYCLE (1664 - 2984px) ================= */
+.ta-lifecycle {
+  position: absolute;
+  left: 0;
+  top: 1664px;
+  width: 1440px;
+  height: 1320px;
+  z-index: 2;
+}
+
+.ta-lifecycle-header {
+  position: absolute;
+  left: 880px;
+  right: 47px;
+  top: 140px;
+  text-align: right;
+  z-index: 3;
+}
+
+.ta-lifecycle-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 66px;
+  line-height: 77px;
+  margin: 0 0 28px 0;
+  color: #FFFFFF;
+}
+
+.ta-lifecycle-title .light-italic {
+  font-style: italic;
+  font-weight: 200;
+}
+
+.ta-lifecycle-title .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-lifecycle-desc {
+  width: 386px;
+  margin-left: auto;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: #E8E8E8;
+}
+
+/* 5 Stage Cards */
+.ta-stage-card {
+  position: absolute;
+  border-radius: 7px;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ta-stage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(115, 104, 255, 0.35);
+}
+
+.ta-card-banner {
+  width: 100%;
+  height: 177px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ta-card-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ta-card-body {
+  width: 100%;
+  height: 143px;
+  background: rgba(115, 104, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 18px 20px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ta-card-what-pill {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  padding: 4px 12px;
+  border: 1px solid #B8B3FF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.ta-card-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin: 30px 0 0 0;
+}
+
+.ta-stage-1 { left: 63px; top: 75px; width: 338px; height: 320px; }
+.ta-stage-2 { left: 421px; top: 75px; width: 334px; height: 320px; }
+.ta-stage-3 { left: 63px; top: 450px; width: 338px; height: 320px; }
+.ta-stage-4 { left: 421px; top: 450px; width: 334px; height: 320px; }
+.ta-stage-5 { left: 63px; top: 825px; width: 338px; height: 320px; }
+
+.ta-lifecycle-bottom-text {
+  position: absolute;
+  left: 63px;
+  bottom: 25px;
+  width: 635px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: #E8E8E8;
+  z-index: 3;
+}
+
+/* ================= 4. DIFFERENTIATION (2984 - 4530px) ================= */
+.ta-diff {
+  position: absolute;
+  left: 0;
+  top: 2984px;
+  width: 1440px;
+  height: 1546px;
+  z-index: 2;
+}
+
+.ta-diff-title-wrap {
+  position: absolute;
+  width: 1065px;
+  left: calc(50% - 1065px / 2);
+  top: 40px;
+  text-align: center;
+  z-index: 3;
+}
+
+.ta-diff-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.ta-diff-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-diff-title .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-diff-subtitle {
+  position: absolute;
+  width: 485px;
+  left: 892px;
+  top: 256px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  z-index: 3;
+}
+
+.ta-diff-glass-card {
+  position: absolute;
+  width: 1346px;
+  height: 930px;
+  left: calc(50% - 1346px / 2);
+  top: 430px;
+  background: rgba(184, 179, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 12px;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.ta-diff-headers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.ta-diff-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 32px;
+  background: #FFFFFF;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(16, 59, 61, 0.95);
+}
+
+.ta-diff-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.ta-diff-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.ta-diff-row:last-child {
+  border-bottom: none;
+}
+
+.ta-diff-col-cap {
+  width: 400px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 40px;
+  color: #FFFFFF;
+}
+
+.ta-diff-col-why {
+  width: 440px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.ta-diff-bottom-text {
+  position: absolute;
+  width: 658px;
+  right: 63px;
+  bottom: 25px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  text-align: right;
+  z-index: 3;
+}
+
+/* ================= 5. TRUST / QUALITY & METRICS (4530 - 5439px) ================= */
+.ta-trust {
+  position: absolute;
+  left: 0;
+  top: 4530px;
+  width: 1440px;
+  height: 909px;
+  z-index: 2;
+}
+
+.ta-trust-title {
+  position: absolute;
+  width: 574px;
+  left: 61px;
+  top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-trust-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-trust-title .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-trust-intro {
+  position: absolute;
+  width: 623px;
+  right: 63px;
+  top: 152px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: right;
+  color: #E8E8E8;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-trust-stats-wrap {
+  position: absolute;
+  width: 440px;
+  left: 61px;
+  top: 319px;
+  z-index: 3;
+}
+
+.ta-stat-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 22px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.ta-stat-val {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 74px;
+  line-height: 74px;
+  color: #FFFFFF;
+}
+
+.ta-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: #FFFFFF;
+  max-width: 180px;
+}
+
+.ta-stat-security-note {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 22px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.ta-trust-disclaimer {
+  position: absolute;
+  width: 440px;
+  left: 61px;
+  bottom: 25px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.65);
+  z-index: 3;
+}
+
+.ta-trust-right-visual {
+  position: absolute;
+  width: 780px;
+  height: 395px;
+  left: 660px;
+  top: 376px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ta-particle-dome-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= 6. FINTECH CASE STUDY (5439 - 5801px) ================= */
+.ta-case {
+  position: absolute;
+  left: 0;
+  top: 5439px;
+  width: 1440px;
+  height: 362px;
+  z-index: 2;
+}
+
+.ta-case-title {
+  position: absolute;
+  width: 675px;
+  right: 63px;
+  top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 77px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-case-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-case-desc {
+  position: absolute;
+  width: 524px;
+  left: 63px;
+  top: 177px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-case-btn {
+  position: absolute;
+  left: 63px;
+  top: 321px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  background: #7368FF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  z-index: 3;
+}
+
+.ta-case-btn:hover {
+  background: #877DFF;
+  box-shadow: 0 0 20px rgba(115, 104, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* ================= 7. GOVERNED CORE & COMPLIANCE (5801 - 7100px) ================= */
+.ta-compliance {
+  position: absolute;
+  left: 0;
+  top: 5801px;
+  width: 1440px;
+  height: 1299px;
+  z-index: 2;
+}
+
+.ta-compliance-title {
+  position: absolute;
+  width: 588px;
+  left: 63px;
+  top: 120px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 64px;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-compliance-title .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-compliance-intro {
+  position: absolute;
+  width: 533px;
+  right: 63px;
+  top: 190px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-compliance-scroll-wrap {
+  position: absolute;
+  width: 1440px;
+  height: 620px;
+  left: 0;
+  top: 449px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  z-index: 3;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ta-compliance-scroll-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.ta-compliance-cards-track {
+  display: flex;
+  gap: 25px;
+  padding: 0 63px;
+  width: max-content;
+}
+
+.ta-compliance-card {
+  width: 432px;
+  height: 601px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0D0E17;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ta-compliance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(115, 104, 255, 0.3);
+}
+
+.ta-compliance-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= 8. PLAYBOOK FORM (7100 - 7703px) ================= */
+.ta-playbook {
+  position: absolute;
+  left: 0;
+  top: 7100px;
+  width: 1440px;
+  height: 603px;
+  z-index: 2;
+}
+
+.ta-playbook-left-chain {
+  position: absolute;
+  left: 0;
+  top: -249px;
+  width: 600px;
+  height: 850px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ta-playbook-chain-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ta-playbook-right {
+  position: absolute;
+  width: 814px;
+  left: 579px;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 3;
+}
+
+.ta-playbook-title {
+  width: 814px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 75px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 24px 0;
+}
+
+.ta-playbook-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-playbook-desc {
+  width: 571px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0 0 36px 0;
+}
+
+.ta-playbook-form {
+  width: 670px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ta-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 30px;
+}
+
+.ta-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ta-form-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+.ta-form-input {
+  width: 100%;
+  height: 40px;
+  background: #F5F5F5;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding: 8px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #000000;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.ta-form-input:focus {
+  border-color: #7368FF;
+  box-shadow: 0 0 8px rgba(115, 104, 255, 0.4);
+}
+
+.ta-form-submit-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.ta-form-submit-btn {
+  padding: 15px 32px;
+  background: #7368FF;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ta-form-submit-btn:hover {
+  background: #877DFF;
+  box-shadow: 0 0 24px rgba(115, 104, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* ================= 9. CONVERSATION CTA (7703 - 8338px) ================= */
+.ta-cta {
+  position: absolute;
+  left: 0;
+  top: 7703px;
+  width: 1440px;
+  height: 635px;
+  z-index: 2;
+}
+
+.ta-cta-left {
+  position: absolute;
+  width: 691px;
+  left: 63px;
+  top: 130px;
+  z-index: 3;
+}
+
+.ta-cta-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 66px;
+  line-height: 77px;
+  margin: 0 0 24px 0;
+  color: #FFFFFF;
+}
+
+.ta-cta-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-cta-title .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-cta-desc {
+  width: 654px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0 0 36px 0;
+}
+
+.ta-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 34px;
+  background: #7368FF;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.ta-cta-btn:hover {
+  background: #877DFF;
+  box-shadow: 0 0 24px rgba(115, 104, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.ta-cta-right {
+  position: absolute;
+  width: 500px;
+  height: 590px;
+  right: 0;
+  top: 76px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ta-cta-loop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= 10. ECOSYSTEM / TOOLS GRID (8338 - 9427px) ================= */
+.ta-ecosystem {
+  position: absolute;
+  left: 0;
+  top: 8338px;
+  width: 1440px;
+  height: 1089px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.ta-eco-title {
+  position: absolute;
+  width: 733px;
+  height: 128px;
+  left: 654px;
+  top: 110px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 71px;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 3;
+}
+
+.ta-eco-title .bold-white {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ta-eco-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.ta-eco-left {
+  position: absolute;
+  width: 502px;
+  height: 204px;
+  left: 63px;
+  top: 357px;
+  z-index: 3;
+}
+
+.ta-eco-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+  margin: 0 0 30px 0;
+}
+
+.ta-eco-backed {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.ta-eco-right {
+  position: absolute;
+  left: 644px;
+  top: 349px;
+  width: 742px;
+  z-index: 3;
+}
+
+.ta-tools-grid-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ================= 11. FOOTER (Exact Match to index.html) ================= */
+.desktop-footer.sanciti-footer {
+  position: absolute;
+  left: 0;
+  top: 9427px;
+  width: 1440px;
+  height: 208px;
+  background: #0D0D0D;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  padding: 40px 18px 40px 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}

@@ -1,0 +1,811 @@
+/* ==========================================================================
+   Sanciti AI — Deploy Mobile Responsive Stylesheet (< 768px)
+   Fluid, clean, glassmorphic layout tailored for phones & small tablets
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Reset HTML & Body to eliminate any top/side gaps */
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+    background: #000000;
+  }
+
+  #scaler {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Container & Body */
+  #mobile-container {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background: #000000;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    padding-bottom: 0;
+  }
+
+  /* =========================================================================
+     AMBIENT GLOW SYSTEM (Exact Match to Figma Mobile Deploy-page)
+     ========================================================================= */
+  .dp-ambient-glows-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dp-mob-ambient-glow {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 0;
+    will-change: transform, opacity;
+  }
+
+  /* Glow 1 (Hero Top): 935px by 935px, top: -66px, left: calc(50% - 935px/2), rgba(232, 232, 232, 0.5), opacity: 0.4, blur(300px) */
+  .dp-mob-glow-1 {
+    width: 935px;
+    height: 935px;
+    left: calc(50% - 935px / 2);
+    top: -66px;
+    background: rgba(232, 232, 232, 0.5);
+    opacity: 0.4;
+    filter: blur(240px);
+  }
+
+  /* Glow 2 (Challenge / Spheres): 1336px by 1480px, top: 1044px, left: calc(50% - 1336px/2 + 0.5px), rgba(232, 232, 232, 0.5), opacity: 0.4, blur(300px) */
+  .dp-mob-glow-2 {
+    width: 1336px;
+    height: 1480px;
+    left: calc(50% - 1336px / 2 + 0.5px);
+    top: 1044px;
+    background: rgba(232, 232, 232, 0.5);
+    opacity: 0.4;
+    filter: blur(260px);
+  }
+
+  /* Glow 3 (Lifecycle): 1048px by 1762px, top: 2408px, left: -149px, rgba(232, 232, 232, 0.5), opacity: 0.4, blur(300px) */
+  .dp-mob-glow-3 {
+    width: 1048px;
+    height: 1762px;
+    left: -149px;
+    top: 2408px;
+    background: rgba(232, 232, 232, 0.5);
+    opacity: 0.4;
+    filter: blur(260px);
+  }
+
+  /* Glow 4 & 5 (Frame 65 - Differentiation Ellipses at 4235px): Ellipse 1 (687px, #E8E8E8, blur 302px) & Ellipse 2 (987px, #E8E8E8, blur 302px) */
+  .dp-mob-glow-4 {
+    width: 687px;
+    height: 687px;
+    right: -100px;
+    top: 4235px;
+    background: #E8E8E8;
+    filter: blur(250px);
+    opacity: 0.4;
+  }
+
+  .dp-mob-glow-5 {
+    width: 987px;
+    height: 987px;
+    left: -150px;
+    top: 4350px;
+    background: #E8E8E8;
+    filter: blur(250px);
+    opacity: 0.4;
+  }
+
+  /* Glow 6 (Case Study / Compliance / Ambient Glow): 848px by 857px, top: 6682px, left: -86px, rgba(232, 232, 232, 0.5), opacity: 0.4, blur(300px) */
+  .dp-mob-glow-6 {
+    width: 848px;
+    height: 857px;
+    left: -86px;
+    top: 6682px;
+    background: rgba(232, 232, 232, 0.5);
+    opacity: 0.4;
+    filter: blur(250px);
+  }
+
+  /* Glow 7 & 8 (Frame 136 - Playbook & CTA Ellipses at 7828px): Ellipse 1 (687px, #474747, blur 302px) & Ellipse 2 (987px, #474747, blur 302px) */
+  .dp-mob-glow-7 {
+    width: 687px;
+    height: 687px;
+    right: -100px;
+    top: 7828px;
+    background: #474747;
+    filter: blur(250px);
+    opacity: 0.4;
+  }
+
+  .dp-mob-glow-8 {
+    width: 987px;
+    height: 987px;
+    left: -100px;
+    top: 7950px;
+    background: #474747;
+    filter: blur(250px);
+    opacity: 0.4;
+  }
+
+  /* Glow 9 (Bottom Ecosystem / Ambient Glow): 1196px by 1326px, top: 8918px, left: calc(50% - 1196px/2 + 0.5px), rgba(232, 232, 232, 0.5), opacity: 0.4, blur(300px) */
+  .dp-mob-glow-9 {
+    width: 1196px;
+    height: 1326px;
+    left: calc(50% - 1196px / 2 + 0.5px);
+    top: 8918px;
+    background: rgba(232, 232, 232, 0.5);
+    opacity: 0.4;
+    filter: blur(260px);
+  }
+
+  /* 0. Sticky Header */
+  .dp-mob-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.101961);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  .dp-mob-logo img {
+    height: 25px;
+    width: auto;
+    display: block;
+  }
+
+  .dp-mob-actions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  .dp-mob-demo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background: #E8E8E8;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+    color: rgba(7, 7, 14, 0.898039);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .dp-mob-demo-btn:hover {
+    background: #FFFFFF;
+    transform: translateY(-1px);
+  }
+
+  .dp-mob-menu-toggle {
+    background: transparent;
+    border: none;
+    padding: 8px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .dp-mob-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Drawer Menu */
+  .dp-mob-drawer {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: rgba(12, 12, 20, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(232, 232, 232, 0.25);
+    display: flex;
+    flex-direction: column;
+    padding: 18px 24px 28px;
+    gap: 18px;
+    box-sizing: border-box;
+    z-index: 999;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .dp-mob-drawer.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .dp-mob-drawer a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 6px 0;
+    transition: color 0.2s ease;
+  }
+
+  .dp-mob-drawer a:hover,
+  .dp-mob-drawer a.active {
+    color: #2AD6DF;
+  }
+
+  /* General Section Spacing */
+  .dp-mob-section {
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .dp-mob-title {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    color: #FFFFFF;
+  }
+
+  .dp-mob-title .light-italic {
+    font-style: italic;
+    font-weight: 200;
+  }
+
+  .dp-mob-title .bold-white {
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .dp-mob-desc {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+    font-weight: 300;
+  }
+
+  /* 1. Mobile Hero */
+  .dp-mob-hero {
+    padding: 32px 20px 30px;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .dp-mob-btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .dp-mob-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background: #E8E8E8;
+    border-radius: 99px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #000000;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background 0.2s ease;
+  }
+
+  .dp-mob-btn-primary:hover {
+    background: #FFFFFF;
+  }
+
+  .dp-mob-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: 1.5px solid #E8E8E8;
+    border-radius: 99px;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .dp-mob-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFFFFF;
+  }
+
+  .dp-mob-hero-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .dp-mob-hero-circle-vid {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .dp-mob-hero-circle-canvas {
+    width: 280px;
+    height: 280px;
+    filter: drop-shadow(0 0 25px rgba(232, 232, 232, 0.3)) drop-shadow(0 0 50px rgba(42, 214, 223, 0.2));
+  }
+
+  /* 2. Mobile Challenge */
+  .dp-mob-card {
+    background: rgba(12, 14, 23, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    padding: 22px 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  }
+
+  .dp-mob-list {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .dp-mob-img-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+  }
+
+  .dp-mob-img-wrap img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(63, 174, 255, 0.15));
+  }
+
+  /* 3. Mobile Lifecycle */
+  .dp-mob-stage-card {
+    width: 100%;
+    background: #14151B;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .dp-mob-stage-banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .dp-mob-stage-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .dp-mob-stage-body {
+    padding: 16px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #14151B;
+    align-items: flex-start;
+  }
+
+  .dp-mob-what-pill {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 99px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: 0.1px;
+  }
+
+  .dp-mob-stage-body p {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 400;
+  }
+
+  /* 4. Mobile Differentiation (Frame 133 / Frame 132 / Frame 113) */
+  .dp-mob-diff-section {
+    position: relative;
+    background: radial-gradient(circle at 60% 35%, rgba(232, 232, 232, 0.12) 0%, rgba(200, 200, 200, 0.03) 50%, transparent 75%);
+    overflow: hidden;
+    gap: 18px;
+  }
+
+  .dp-mob-diff-table-card {
+    width: 100%;
+    background: #E0E0DF;
+    color: #000000;
+    border-radius: 14px;
+    padding: 24px 16px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55);
+    box-sizing: border-box;
+    margin: 4px 0 0;
+  }
+
+  /* Frame 119: Header Pills */
+  .dp-mob-diff-table-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    width: 100%;
+  }
+
+  .dp-mob-diff-pill {
+    background: #FFFFFF;
+    border-radius: 50px;
+    padding: 8px 14px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgba(7, 7, 14, 0.9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+  }
+
+  .dp-pill-cap {
+    width: 45%;
+    flex-shrink: 0;
+  }
+
+  .dp-pill-why {
+    width: 55%;
+    flex-grow: 1;
+  }
+
+  /* Frame 123: Table Rows */
+  .dp-mob-diff-table-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dp-mob-diff-trow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
+  }
+
+  .dp-mob-diff-trow:first-child {
+    padding-top: 0;
+  }
+
+  .dp-mob-diff-trow:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .dp-mob-diff-tcol-cap {
+    width: 44%;
+    flex-shrink: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 19px;
+    color: #000000;
+    letter-spacing: -0.1px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dp-mob-diff-tcol-why {
+    width: 56%;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 17px;
+    color: #000000;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+  }
+
+  /* 5. Mobile Trust */
+  .dp-mob-trust-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .dp-mob-trust-item {
+    border-left: 3px solid #2AD6DF;
+    padding-left: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(42, 214, 223, 0.2);
+  }
+
+  /* 6. Mobile Case Study */
+  .dp-mob-case-card {
+    background: linear-gradient(180deg, rgba(232, 232, 232, 0.1) 0%, rgba(12, 20, 35, 0.45) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* 7. Mobile Compliance Carousel */
+  .dp-mob-compliance-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+    padding-bottom: 12px;
+    scrollbar-width: none;
+  }
+
+  .dp-mob-compliance-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dp-mob-comp-card {
+    width: 240px;
+    height: 334px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .dp-mob-comp-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(100%);
+  }
+
+  #deploy-compliance-mob {
+    padding-bottom: 20px;
+  }
+
+  /* Unified Section 8 (Playbook) & 9 (CTA) Wrapper */
+  .dp-mob-playbook-cta-wrap {
+    position: relative;
+    background: radial-gradient(circle at 62% 48%, rgba(42, 75, 105, 0.45) 0%, rgba(20, 35, 50, 0.22) 45%, #000000 80%);
+    overflow: hidden;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  /* 8. Mobile Vertical Chain */
+  .dp-mob-chain-vertical-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+    text-align: center;
+  }
+
+  .dp-mob-chain-vertical-img {
+    width: 78%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    pointer-events: none;
+    filter: drop-shadow(0 0 24px rgba(42, 214, 223, 0.3));
+  }
+
+  .dp-mob-playbook-section {
+    padding-top: 16px !important;
+    padding-bottom: 24px !important;
+    background: transparent !important;
+  }
+
+  /* 9. Mobile CTA */
+  .dp-mob-cta-section {
+    padding-top: 24px !important;
+    padding-bottom: 36px !important;
+    background: transparent !important;
+  }
+
+  .dp-mob-cta-section .dp-mob-btn-primary {
+    width: fit-content;
+    padding: 8px 34px;
+    background: #E8E8E8;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 6px;
+    transition: background 0.2s ease;
+  }
+
+  .dp-mob-cta-section .dp-mob-btn-primary:hover {
+    background: #FFFFFF;
+  }
+
+  .dp-mob-cta-loop-wrap {
+    width: 100%;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .dp-mob-cta-loop-img {
+    width: 82%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 24px rgba(42, 214, 223, 0.25));
+  }
+
+  .dp-mob-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .dp-mob-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dp-mob-input-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    font-weight: 300;
+  }
+
+  .dp-mob-input {
+    width: 100%;
+    height: 45px;
+    background: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #000000;
+    box-sizing: border-box;
+  }
+
+  .dp-mob-submit-btn {
+    width: 100%;
+    max-width: 295px;
+    height: 45px;
+    padding: 7px 34px;
+    background: #FFFFFF;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #000000;
+    border: none;
+    margin: 12px auto 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .dp-mob-submit-btn:hover {
+    background: #E8E8E8;
+    transform: translateY(-1px);
+  }
+
+  /* 11. Mobile Footer (Styled globally via .sanciti-footer.mobile-footer in style.css) */
+  .sanciti-footer.mobile-footer {
+    position: relative;
+    z-index: 1;
+  }
+}
+

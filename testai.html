@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test AI — Autonomous Testing &amp; Continuous Trust | Sanciti AI</title>
+  <meta name="description"
+    content="Test AI generates, executes, and self-heals tests across unit, integration, API, UI, performance, and security—keeping quality synchronized with rapid delivery." />
+
+  <!-- Google Fonts: Inter & Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Core & Page Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/testai.css?v=20260917-figmaglow1" />
+  <link rel="stylesheet" href="assets/css/testai-mobile.css?v=20260917-figmaglow1" />
+
+  <style>
+    /* Prevent FOUC during scale computation */
+    #scaler {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    #stage {
+      transform-origin: top left;
+      margin: 0;
+      left: 0;
+      top: 0;
+    }
+
+    @media (max-width: 768px) {
+      #scaler {
+        display: none !important;
+      }
+      #mobile-container {
+        display: block !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      #mobile-container {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="testai-body">
+
+  <!-- ================= DESKTOP VIEW WITH SCALER (Width 1440px, Height 9635px) ================= -->
+  <div id="scaler">
+    <div id="stage" class="testai-stage" data-width="1440" style="height: 9635px;">
+
+      <!-- ================= AMBIENT GLOWS (Matching Figma 1:1) ================= -->
+      <!-- Hero Glows -->
+      <div class="ta-ambient-glow ta-desk-glow-1"></div>
+      <div class="ta-ambient-glow ta-desk-glow-2"></div>
+      <div class="ta-ambient-glow ta-desk-glow-3"></div>
+      
+      <!-- Challenge Section Glows -->
+      <div class="ta-ambient-glow ta-desk-glow-4"></div>
+      <div class="ta-ambient-glow ta-desk-glow-5"></div>
+      
+      <!-- How-It-Works Glows -->
+      <div class="ta-ambient-glow ta-desk-glow-6"></div>
+      <div class="ta-ambient-glow ta-desk-glow-7"></div>
+      <div class="ta-ambient-glow ta-desk-glow-8"></div>
+      
+      <!-- Differentiation Frame 171 Glow Ellipses -->
+      <div class="ta-ambient-glow ta-desk-glow-9"></div>
+      <div class="ta-ambient-glow ta-desk-glow-10"></div>
+      
+      <!-- Trust Section Ambient Glow -->
+      <div class="ta-ambient-glow ta-desk-glow-11"></div>
+      
+      <!-- Measured Outcomes & Compliance Ambient Glows -->
+      <div class="ta-ambient-glow ta-desk-glow-12"></div>
+      <div class="ta-ambient-glow ta-desk-glow-13"></div>
+      <div class="ta-ambient-glow ta-desk-glow-14"></div>
+      
+      <!-- CTA & Playbook Frame 171 Glows -->
+      <div class="ta-ambient-glow ta-desk-glow-15"></div>
+      <div class="ta-ambient-glow ta-desk-glow-16"></div>
+      <div class="ta-ambient-glow ta-desk-glow-17"></div>
+      <div class="ta-ambient-glow ta-desk-glow-18"></div>
+      <div class="ta-ambient-glow ta-desk-glow-19"></div>
+
+      <!-- ================= 0. DESKTOP NAV BAR ================= -->
+      <nav class="testai-nav" aria-label="Main Navigation">
+        <a class="testai-nav-logo" href="index.html" aria-label="Sanciti AI Home">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </a>
+        <div class="testai-nav-menu">
+          <a class="testai-nav-link" href="index.html">Home</a>
+          <a class="testai-nav-link" href="legmod.html">LegMod</a>
+          <a class="testai-nav-link" href="rgen.html">RGen</a>
+          <a class="testai-nav-link" href="codegen.html">CodeGen</a>
+          <a class="testai-nav-link active" href="testai.html">Test AI</a>
+          <a class="testai-nav-link" href="deploy.html">Deploy</a>
+        </div>
+        <a class="testai-nav-demo-btn" href="#testai-playbook">Get a Free Assessment</a>
+      </nav>
+
+      <!-- ================= 1. HERO SECTION (0 - 800px) ================= -->
+      <section class="ta-hero" id="hero">
+        <div class="ta-hero-visual">
+          <video class="ta-hero-circle-vid" id="taHeroVidDesk" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti Test AI Logic Ring Video">
+            <source src="assets/vids/circle-animation.webm" type="video/webm">
+            <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+          </video>
+          <canvas id="taHeroCanvasDesk" class="ta-hero-circle-canvas" width="550" height="550"></canvas>
+        </div>
+
+        <div class="ta-hero-text-block">
+          <h1 class="ta-hero-heading">
+            <span class="light-italic">Autonomous Testing.</span><br />
+            <span class="bold-white">Continuous Trust.</span>
+          </h1>
+          <p class="ta-hero-desc">
+            Fast releases mean nothing if defects slip through to production.
+          </p>
+          <p class="ta-hero-desc">
+            Test AI generates, executes, and self-heals tests across unit, integration, API, UI, performance, and security—keeping quality synchronized with rapid delivery.
+          </p>
+          <div class="ta-hero-cta-row">
+            <a class="ta-btn-primary" href="#testai-playbook">Book a Demo &rarr;</a>
+            <a class="ta-btn-secondary" href="#testai-playbook">Download the Playbook</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. CHALLENGE SECTION (800 - 1664px) ================= -->
+      <section class="ta-challenge" id="challenge">
+        <div class="ta-challenge-left">
+          <h2 class="ta-challenge-heading">
+            <span class="light-italic">When Testing Can’t</span><br />
+            <span class="bold-white">Keep Pace With Code.</span>
+          </h2>
+          <p class="ta-challenge-intro">
+            As development accelerates, testing becomes the bottleneck that either slows delivery or gets compromised to meet deadlines.
+          </p>
+          <div class="ta-challenge-card">
+            <ul class="ta-challenge-list">
+              <li>Manual test creation falls behind continuous deployment cycles</li>
+              <li>Test suites become brittle, requiring constant maintenance as code evolves</li>
+              <li>Coverage gaps appear between unit tests and end-to-end user journeys</li>
+              <li>Security and performance testing are treated as late-stage gates rather than continuous controls</li>
+            </ul>
+          </div>
+          <p class="ta-challenge-conclusion">
+            Test AI closes the gap between code velocity and quality assurance—turning testing from a bottleneck into an accelerator.
+          </p>
+        </div>
+
+        <div class="ta-challenge-right">
+          <img class="ta-challenge-sphere-img" src="assets/img/TestAI/ChatGPT Image Aug 25, 2026, 03_34_46 PM 1.png" alt="TestAI Autonomous Sphere Visual" />
+        </div>
+      </section>
+
+      <!-- ================= 3. HOW IT WORKS / LIFECYCLE (1664 - 2984px) ================= -->
+      <section class="ta-lifecycle" id="how-it-works">
+        <div class="ta-lifecycle-header">
+          <h2 class="ta-lifecycle-title">
+            <span class="light-italic">Generate. Prioritize.</span><br />
+            <span class="bold-white">Execute. Heal.</span><br />
+            <span class="bold-white">Govern.</span>
+          </h2>
+          <p class="ta-lifecycle-desc">
+            Test AI automates the full testing lifecycle—from intelligent test generation through autonomous execution, continuous self-healing, and governed auditability.
+          </p>
+        </div>
+
+        <!-- Stage 1: Generate -->
+        <div class="ta-stage-card ta-stage-1">
+          <div class="ta-card-banner">
+            <img class="ta-card-banner-img" src="assets/img/TestAI/ta_stage_generate.png" alt="Generate Test Suites" />
+          </div>
+          <div class="ta-card-body">
+            <span class="ta-card-what-pill">Generate</span>
+            <p class="ta-card-text">
+              Analyzes requirements, code changes, and user flows to automatically generate comprehensive test suites across API, UI, unit, and performance layers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 2: Prioritize -->
+        <div class="ta-stage-card ta-stage-2">
+          <div class="ta-card-banner">
+            <img class="ta-card-banner-img" src="assets/img/TestAI/ta_stage_prioritize.png" alt="Prioritize Test Runs" />
+          </div>
+          <div class="ta-card-body">
+            <span class="ta-card-what-pill">Prioritize</span>
+            <p class="ta-card-text">
+              Risk-based test selection runs the most critical tests first based on code changes, defect history, and business impact—optimizing execution time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 3: Execute -->
+        <div class="ta-stage-card ta-stage-3">
+          <div class="ta-card-banner">
+            <img class="ta-card-banner-img" src="assets/img/TestAI/ta_stage_execute.png" alt="Autonomous Test Execution" />
+          </div>
+          <div class="ta-card-body">
+            <span class="ta-card-what-pill">Execute</span>
+            <p class="ta-card-text">
+              Autonomous multi-environment execution across browsers, devices, and operating systems with parallel processing and intelligent orchestration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 4: Heal -->
+        <div class="ta-stage-card ta-stage-4">
+          <div class="ta-card-banner">
+            <img class="ta-card-banner-img" src="assets/img/TestAI/ta_stage_heal.png" alt="Self-Healing Tests" />
+          </div>
+          <div class="ta-card-body">
+            <span class="ta-card-what-pill">Self-Heal</span>
+            <p class="ta-card-text">
+              Dynamic locator updating and ML-driven selector repair automatically fix broken tests when UI changes occur—slashing maintenance overhead by up to 80%.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 5: Govern -->
+        <div class="ta-stage-card ta-stage-5">
+          <div class="ta-card-banner">
+            <img class="ta-card-banner-img" src="assets/img/TestAI/ta_stage_govern.png" alt="Govern and Compliance" />
+          </div>
+          <div class="ta-card-body">
+            <span class="ta-card-what-pill">Govern</span>
+            <p class="ta-card-text">
+              Continuous compliance validation, traceability mapping from requirement to test execution, and tamper-proof audit trails for enterprise regulatory assurance.
+            </p>
+          </div>
+        </div>
+
+        <p class="ta-lifecycle-bottom-text">
+          From code commit to production release, every test run is orchestrated, verified, and continuously optimized.
+        </p>
+      </section>
+
+      <!-- ================= 4. DIFFERENTIATION (2984 - 4530px) ================= -->
+      <section class="ta-diff" id="differentiation">
+        <div class="ta-diff-title-wrap">
+          <h2 class="ta-diff-title">
+            <span class="light-italic">Coverage That</span><br />
+            <span class="bold-white">Carries Through Every Change</span>
+          </h2>
+        </div>
+        <p class="ta-diff-subtitle">
+          Traditional test automation breaks with change. Test AI adapts with it.
+        </p>
+
+        <div class="ta-diff-glass-card">
+          <div class="ta-diff-headers">
+            <span class="ta-diff-badge">Capability</span>
+            <span class="ta-diff-badge">Why It Matters</span>
+          </div>
+
+          <div class="ta-diff-rows">
+            <!-- Row 1 -->
+            <div class="ta-diff-row">
+              <div class="ta-diff-col-cap">Autonomous Test Generation</div>
+              <div class="ta-diff-col-why">
+                Generates tests from specs, user stories, and code changes—eliminating manual test authoring delays.
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="ta-diff-row">
+              <div class="ta-diff-col-cap">Self-Healing Test Suites</div>
+              <div class="ta-diff-col-why">
+                Automatically repairs flaky and broken tests caused by UI or API changes—reducing maintenance by up to 80%.
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="ta-diff-row">
+              <div class="ta-diff-col-cap">Full-Stack Quality Verification</div>
+              <div class="ta-diff-col-why">
+                Covers unit, integration, UI, API, performance, and security testing in a single unified execution fabric.
+              </div>
+            </div>
+            <!-- Row 4 -->
+            <div class="ta-diff-row">
+              <div class="ta-diff-col-cap">Risk-Based Test Prioritization</div>
+              <div class="ta-diff-col-why">
+                Executes high-impact test cases first based on code churn and defect correlation—reducing pipeline wait times.
+              </div>
+            </div>
+            <!-- Row 5 -->
+            <div class="ta-diff-row">
+              <div class="ta-diff-col-cap">Enterprise Audit &amp; Traceability</div>
+              <div class="ta-diff-col-why">
+                Every test run, result, and defect is logged with full bidirectional traceability to requirements and regulatory frameworks.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="ta-diff-bottom-text">
+          Quality is no longer an afterthought or a final barrier—it is continuously woven into every build.
+        </p>
+      </section>
+
+      <!-- ================= 5. TRUST & METRICS (4530 - 5439px) ================= -->
+      <section class="ta-trust" id="trust">
+        <h2 class="ta-trust-title">
+          <span class="light-italic">Quality That</span><br />
+          <span class="bold-white">Keeps Pace With</span><br />
+          <span class="bold-white">Performance.</span>
+        </h2>
+        <p class="ta-trust-intro">
+          Designed for enterprise teams who cannot afford to choose between release speed and software reliability.
+        </p>
+
+        <div class="ta-trust-stats-wrap">
+          <div class="ta-stat-item">
+            <span class="ta-stat-val">30-50%</span>
+            <span class="ta-stat-label">faster QA cycles through autonomous test orchestration</span>
+          </div>
+          <div class="ta-stat-item">
+            <span class="ta-stat-val">90-98%</span>
+            <span class="ta-stat-label">automated test coverage across critical user journeys</span>
+          </div>
+          <div class="ta-stat-security-note">
+            Zero data leakage: Tests execute within your security perimeter. Sensitive data is synthesized or masked automatically.
+          </div>
+        </div>
+
+        <p class="ta-trust-disclaimer">
+          *Metrics reflect observed outcomes across enterprise deployments. Results vary by codebase complexity and test maturity.
+        </p>
+
+        <div class="ta-trust-right-visual">
+          <img class="ta-particle-dome-img" src="assets/img/TestAI/ta_particle_dome.png" alt="TestAI Continuous Quality Engine Visualization" />
+        </div>
+      </section>
+
+      <!-- ================= 6. FINTECH CASE STUDY (5439 - 5801px) ================= -->
+      <section class="ta-case" id="case-study">
+        <h2 class="ta-case-title">
+          <span class="light-italic">Intelligent Test</span><br />
+          <span class="light-italic">Automation —</span> <span class="bold-white">FinTech</span>
+        </h2>
+        <p class="ta-case-desc">
+          Tier-1 financial institution replaced fragile legacy Selenium suites with Test AI—cutting QA cycle times by 45% and reaching 96% automated coverage across trading workflows.
+        </p>
+        <a class="ta-case-btn" href="#testai-playbook">Learn More &rarr;</a>
+      </section>
+
+      <!-- ================= 7. GOVERNED CORE & COMPLIANCE (5801 - 7100px) ================= -->
+      <section class="ta-compliance" id="compliance">
+        <h2 class="ta-compliance-title">
+          One Governed Core,<br />
+          <span class="bold-white">Every Test Run.</span>
+        </h2>
+        <p class="ta-compliance-intro">
+          Enterprise testing requires verifiable controls. Test AI ensures every test artifact, result, and metric adheres to industry compliance frameworks.
+        </p>
+
+        <div class="ta-compliance-scroll-wrap">
+          <div class="ta-compliance-cards-track">
+            <!-- Card 1: HIPAA -->
+            <div class="ta-compliance-card">
+              <img src="assets/img/TestAI/ta_hipaa.png" alt="HIPAA Compliant Testing &amp; Data Masking" />
+            </div>
+            <!-- Card 2: ISO -->
+            <div class="ta-compliance-card">
+              <img src="assets/img/TestAI/ta_iso.png" alt="ISO 27001 Certified QA Processes" />
+            </div>
+            <!-- Card 3: CMMI -->
+            <div class="ta-compliance-card">
+              <img src="assets/img/TestAI/ta_cmmi.png" alt="CMMI Level 3 Quality Framework" />
+            </div>
+            <!-- Card 4: OWASP & NIST -->
+            <div class="ta-compliance-card">
+              <img src="assets/img/TestAI/ta_owasp_nist.png" alt="OWASP &amp; NIST Security Automation" />
+            </div>
+            <!-- Card 5: Single Tenant -->
+            <div class="ta-compliance-card">
+              <img src="assets/img/TestAI/ta_single_tenant.png" alt="Single-Tenant Isolated Execution Perimeter" />
+            </div>
+            <!-- Card 6: Audit Grade -->
+            <div class="ta-compliance-card">
+              <img src="assets/img/TestAI/ta_audit_grade.png" alt="Audit-Grade Full Lifecycle Traceability" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 8. PLAYBOOK FORM (7100 - 7703px) ================= -->
+      <section class="ta-playbook" id="testai-playbook">
+        <div class="ta-playbook-left-chain">
+          <img class="ta-playbook-chain-img" src="assets/img/TestAI/ChatGPT Image Aug 18, 2026, 10_59_49 AM 1.png" alt="Quality Chain Link" />
+        </div>
+
+        <div class="ta-playbook-right">
+          <h2 class="ta-playbook-title">
+            <span class="light-italic">Download the</span><br />
+            <span class="bold-white">Test AI Playbook</span>
+          </h2>
+          <p class="ta-playbook-desc">
+            See how autonomous testing accelerates release velocity while raising quality standards across the enterprise.
+          </p>
+
+          <form class="ta-playbook-form" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+            <input type="hidden" name="source" value="testai" />
+            <div class="ta-form-grid">
+              <div class="ta-form-group">
+                <label class="ta-form-label" for="ta-form-name">Name</label>
+                <input class="ta-form-input" id="ta-form-name" name="Name" type="text" required />
+              </div>
+              <div class="ta-form-group">
+                <label class="ta-form-label" for="ta-form-title">Title</label>
+                <input class="ta-form-input" id="ta-form-title" name="Title" type="text" required />
+              </div>
+              <div class="ta-form-group">
+                <label class="ta-form-label" for="ta-form-email">Work Email</label>
+                <input class="ta-form-input" id="ta-form-email" name="Email" type="email" required />
+              </div>
+              <div class="ta-form-group">
+                <label class="ta-form-label" for="ta-form-phone">Phone Number</label>
+                <input class="ta-form-input" id="ta-form-phone" name="Contact number" type="tel" required />
+              </div>
+              <div class="ta-form-group" style="grid-column: 1 / -1;">
+                <label class="ta-form-label" for="ta-form-company">Company</label>
+                <input class="ta-form-input" id="ta-form-company" name="Company" type="text" required />
+              </div>
+            </div>
+            <div class="ta-form-submit-wrap">
+              <button class="ta-form-submit-btn" type="submit">Download the Playbook &rarr;</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= 9. CONVERSATION CTA (7703 - 8338px) ================= -->
+      <section class="ta-cta" id="cta">
+        <div class="ta-cta-left">
+          <h2 class="ta-cta-title">
+            <span class="light-italic">Ready to</span><br />
+            <span class="bold-white">Accelerate Testing?</span>
+          </h2>
+          <p class="ta-cta-desc">
+            Talk with our testing specialists about transforming your QA organization with autonomous test generation, execution, and healing.
+          </p>
+          <a class="ta-cta-btn" href="#testai-playbook">Book a Demo &rarr;</a>
+        </div>
+
+        <div class="ta-cta-right">
+          <img class="ta-cta-loop-img" src="assets/img/TestAI/ta_chain_loop_cta.png?v=20260907-2" alt="TestAI Connected Chain Loop Visual" />
+        </div>
+      </section>
+
+      <!-- ================= 10. ECOSYSTEM / TOOLS GRID (8338 - 9427px) ================= -->
+      <section class="ta-ecosystem" id="ecosystem">
+        <h2 class="ta-eco-title">
+          <span class="bold-white">Built Into the Workflow</span><br />
+          <span class="light-italic">Your Teams Already Use.</span>
+        </h2>
+        <div class="ta-eco-left">
+          <p class="ta-eco-desc">
+            Test AI integrates seamlessly with your CI/CD pipelines, issue trackers, version control, and test reporting tools—enhancing existing workflows without disruption.
+          </p>
+          <p class="ta-eco-backed">
+            Backed by V2Soft—28 years building enterprise IT for regulated industries.
+          </p>
+        </div>
+
+        <div class="ta-eco-right">
+          <img class="ta-tools-grid-img" src="assets/img/TestAI/ta_tools_grid.png" alt="TestAI Supported Developer Tools and Workflows" />
+        </div>
+      </section>
+
+      <!-- ================= 11. FOOTER (Exact Match to index.html) ================= -->
+      <footer class="abs desktop-footer sanciti-footer">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+          </div>
+          <p class="footer-desc">
+            Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+          </p>
+        </div>
+
+        <div class="footer-frame179">
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Portal" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-copyright">
+            &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /#stage -->
+  </div><!-- /#scaler -->
+
+  <!-- ================= MOBILE CONTAINER (<= 768px Fluid Responsive) ================= -->
+  <div id="mobile-container">
+    <!-- ================= AMBIENT GLOWS (Matching Figma Mobile 1:1) ================= -->
+    <div class="ta-ambient-glows-container">
+      <div class="ta-mob-ambient-glow ta-mob-glow-1"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-2"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-3"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-4"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-5"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-6"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-7"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-8"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-9"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-10"></div>
+      <div class="ta-mob-ambient-glow ta-mob-glow-11"></div>
+    </div>
+
+    <!-- Sticky Mobile Header -->
+    <header class="ta-mob-header">
+      <a class="ta-mob-logo" href="index.html" aria-label="Sanciti AI">
+        <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+      </a>
+      <div class="ta-mob-actions">
+        <a class="ta-mob-demo-btn" href="#testai-playbook-mob">Demo</a>
+        <button class="ta-mob-menu-toggle" aria-label="Toggle navigation" onclick="toggleTaDrawer()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Drawer -->
+    <div class="ta-mob-drawer" id="taDrawer">
+      <a href="index.html">Home</a>
+      <a href="legmod.html">LegMod</a>
+      <a href="rgen.html">RGen</a>
+      <a href="codegen.html">CodeGen</a>
+      <a href="testai.html" class="active">Test AI</a>
+      <a href="deploy.html">Deploy</a>
+      <a href="#testai-playbook-mob" style="color:#7368FF; font-weight:600;" onclick="toggleTaDrawer()">Get a Free Assessment</a>
+    </div>
+
+    <!-- 1. Mobile Hero -->
+    <section class="ta-mob-section ta-mob-hero">
+      <h1 class="ta-mob-title">
+        <span class="light-italic">Autonomous Testing.</span><br />
+        <span class="bold-white">Continuous Trust.</span>
+      </h1>
+      <p class="ta-mob-desc">
+        Fast releases mean nothing if defects slip through to production.
+      </p>
+      <p class="ta-mob-desc">
+        Test AI generates, executes, and self-heals tests across unit, integration, API, UI, performance, and security—keeping quality synchronized with rapid delivery.
+      </p>
+      <div class="ta-mob-btn-row">
+        <a class="ta-mob-btn-primary" href="#testai-playbook-mob">Book a Demo &rarr;</a>
+        <a class="ta-mob-btn-secondary" href="#testai-playbook-mob">Download the Playbook</a>
+      </div>
+      <div class="ta-mob-hero-visual">
+        <video class="ta-mob-hero-circle-vid" id="taHeroVidMob" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti Test AI Logic Ring Video">
+          <source src="assets/vids/circle-animation.webm" type="video/webm">
+          <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+        </video>
+        <canvas id="taHeroCanvasMob" class="ta-mob-hero-circle-canvas" width="320" height="320"></canvas>
+      </div>
+    </section>
+
+    <!-- 2. Mobile Challenge -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">When Testing Can’t</span><br />
+        <span class="bold-white">Keep Pace With Code.</span>
+      </h2>
+      <p class="ta-mob-desc">
+        As development accelerates, testing becomes the bottleneck that either slows delivery or gets compromised to meet deadlines.
+      </p>
+      <div class="ta-mob-card">
+        <ul class="ta-challenge-list">
+          <li>Manual test creation falls behind continuous deployment cycles</li>
+          <li>Test suites become brittle, requiring constant maintenance as code evolves</li>
+          <li>Coverage gaps appear between unit tests and end-to-end user journeys</li>
+          <li>Security and performance testing are treated as late-stage gates rather than continuous controls</li>
+        </ul>
+      </div>
+      <p class="ta-mob-desc">
+        Test AI closes the gap between code velocity and quality assurance—turning testing from a bottleneck into an accelerator.
+      </p>
+      <div class="ta-mob-spheres-wrap">
+        <img class="ta-mob-spheres-img" src="assets/img/TestAI/ChatGPT Image Aug 25, 2026, 03_34_46 PM 1.png" alt="TestAI Autonomous Sphere Visual" />
+      </div>
+    </section>
+
+    <!-- 3. Mobile How It Works -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">Generate. Prioritize.</span><br />
+        <span class="bold-white">Execute. Heal.</span><br />
+        <span class="bold-white">Govern.</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Test AI automates the full testing lifecycle—from intelligent test generation through autonomous execution, continuous self-healing, and governed auditability.
+      </p>
+
+      <div class="ta-mob-stages-list">
+        <!-- Stage 1 -->
+        <div class="ta-mob-stage-card">
+          <div class="ta-mob-stage-banner">
+            <img src="assets/img/TestAI/ta_stage_generate.png" alt="Generate Test Suites" />
+          </div>
+          <div class="ta-mob-stage-body">
+            <span class="ta-mob-stage-pill">Generate</span>
+            <p class="ta-mob-stage-text">
+              Analyzes requirements, code changes, and user flows to automatically generate comprehensive test suites across API, UI, unit, and performance layers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="ta-mob-stage-card">
+          <div class="ta-mob-stage-banner">
+            <img src="assets/img/TestAI/ta_stage_prioritize.png" alt="Prioritize Test Runs" />
+          </div>
+          <div class="ta-mob-stage-body">
+            <span class="ta-mob-stage-pill">Prioritize</span>
+            <p class="ta-mob-stage-text">
+              Risk-based test selection runs the most critical tests first based on code changes, defect history, and business impact—optimizing execution time.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="ta-mob-stage-card">
+          <div class="ta-mob-stage-banner">
+            <img src="assets/img/TestAI/ta_stage_execute.png" alt="Autonomous Test Execution" />
+          </div>
+          <div class="ta-mob-stage-body">
+            <span class="ta-mob-stage-pill">Execute</span>
+            <p class="ta-mob-stage-text">
+              Autonomous multi-environment execution across browsers, devices, and operating systems with parallel processing and intelligent orchestration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="ta-mob-stage-card">
+          <div class="ta-mob-stage-banner">
+            <img src="assets/img/TestAI/ta_stage_heal.png" alt="Self-Healing Tests" />
+          </div>
+          <div class="ta-mob-stage-body">
+            <span class="ta-mob-stage-pill">Self-Heal</span>
+            <p class="ta-mob-stage-text">
+              Dynamic locator updating and ML-driven selector repair automatically fix broken tests when UI changes occur—slashing maintenance overhead by up to 80%.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="ta-mob-stage-card">
+          <div class="ta-mob-stage-banner">
+            <img src="assets/img/TestAI/ta_stage_govern.png" alt="Govern and Compliance" />
+          </div>
+          <div class="ta-mob-stage-body">
+            <span class="ta-mob-stage-pill">Govern</span>
+            <p class="ta-mob-stage-text">
+              Continuous compliance validation, traceability mapping from requirement to test execution, and tamper-proof audit trails for enterprise regulatory assurance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p class="ta-mob-desc" style="margin-top:20px;">
+        From code commit to production release, every test run is orchestrated, verified, and continuously optimized.
+      </p>
+    </section>
+
+    <!-- 4. Mobile Differentiation -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">Coverage That</span><br />
+        <span class="bold-white">Carries Through Every Change</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Traditional test automation breaks with change. Test AI adapts with it.
+      </p>
+
+      <div class="ta-mob-diff-card">
+        <div class="ta-mob-diff-item">
+          <span class="ta-mob-diff-badge">Autonomous Test Generation</span>
+          <p class="ta-mob-diff-text">
+            Generates tests from specs, user stories, and code changes—eliminating manual test authoring delays.
+          </p>
+        </div>
+        <div class="ta-mob-diff-item">
+          <span class="ta-mob-diff-badge">Self-Healing Test Suites</span>
+          <p class="ta-mob-diff-text">
+            Automatically repairs flaky and broken tests caused by UI or API changes—reducing maintenance by up to 80%.
+          </p>
+        </div>
+        <div class="ta-mob-diff-item">
+          <span class="ta-mob-diff-badge">Full-Stack Quality Verification</span>
+          <p class="ta-mob-diff-text">
+            Covers unit, integration, UI, API, performance, and security testing in a single unified execution fabric.
+          </p>
+        </div>
+        <div class="ta-mob-diff-item">
+          <span class="ta-mob-diff-badge">Risk-Based Test Prioritization</span>
+          <p class="ta-mob-diff-text">
+            Executes high-impact test cases first based on code churn and defect correlation—reducing pipeline wait times.
+          </p>
+        </div>
+        <div class="ta-mob-diff-item">
+          <span class="ta-mob-diff-badge">Enterprise Audit &amp; Traceability</span>
+          <p class="ta-mob-diff-text">
+            Every test run, result, and defect is logged with full bidirectional traceability to requirements and regulatory frameworks.
+          </p>
+        </div>
+      </div>
+
+      <p class="ta-mob-desc" style="margin-top:20px;">
+        Quality is no longer an afterthought or a final barrier—it is continuously woven into every build.
+      </p>
+    </section>
+
+    <!-- 5. Mobile Trust & Metrics -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">Quality That</span><br />
+        <span class="bold-white">Keeps Pace With</span><br />
+        <span class="bold-white">Performance.</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Designed for enterprise teams who cannot afford to choose between release speed and software reliability.
+      </p>
+
+      <div class="ta-mob-stats-list">
+        <div class="ta-mob-stat-box">
+          <span class="ta-mob-stat-val">30-50%</span>
+          <span class="ta-mob-stat-label">faster QA cycles through autonomous test orchestration</span>
+        </div>
+        <div class="ta-mob-stat-box">
+          <span class="ta-mob-stat-val">90-98%</span>
+          <span class="ta-mob-stat-label">automated test coverage across critical user journeys</span>
+        </div>
+      </div>
+
+      <div class="ta-mob-card" style="margin-top:20px;">
+        <p class="ta-mob-desc" style="margin:0;">
+          <strong>Zero data leakage:</strong> Tests execute within your security perimeter. Sensitive data is synthesized or masked automatically.
+        </p>
+      </div>
+
+      <div class="ta-mob-visual-wrap" style="margin-top:24px;">
+        <img class="ta-mob-img" src="assets/img/TestAI/ta_particle_dome.png" alt="TestAI Continuous Quality Engine Visualization" />
+      </div>
+
+      <p class="ta-mob-disclaimer">
+        *Metrics reflect observed outcomes across enterprise deployments. Results vary by codebase complexity and test maturity.
+      </p>
+    </section>
+
+    <!-- 6. Mobile FinTech Case Study -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">Intelligent Test</span><br />
+        <span class="light-italic">Automation —</span> <span class="bold-white">FinTech</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Tier-1 financial institution replaced fragile legacy Selenium suites with Test AI—cutting QA cycle times by 45% and reaching 96% automated coverage across trading workflows.
+      </p>
+      <a class="ta-mob-btn-primary" href="#testai-playbook-mob">Learn More &rarr;</a>
+    </section>
+
+    <!-- 7. Mobile Governed Core & Compliance -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        One Governed Core,<br />
+        <span class="bold-white">Every Test Run.</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Enterprise testing requires verifiable controls. Test AI ensures every test artifact, result, and metric adheres to industry compliance frameworks.
+      </p>
+
+      <div class="ta-mob-compliance-scroll">
+        <div class="ta-mob-compliance-card">
+          <img src="assets/img/TestAI/ta_hipaa.png" alt="HIPAA Compliant Testing &amp; Data Masking" />
+        </div>
+        <div class="ta-mob-compliance-card">
+          <img src="assets/img/TestAI/ta_iso.png" alt="ISO 27001 Certified QA Processes" />
+        </div>
+        <div class="ta-mob-compliance-card">
+          <img src="assets/img/TestAI/ta_cmmi.png" alt="CMMI Level 3 Quality Framework" />
+        </div>
+        <div class="ta-mob-compliance-card">
+          <img src="assets/img/TestAI/ta_owasp_nist.png" alt="OWASP &amp; NIST Security Automation" />
+        </div>
+        <div class="ta-mob-compliance-card">
+          <img src="assets/img/TestAI/ta_single_tenant.png" alt="Single-Tenant Isolated Execution Perimeter" />
+        </div>
+        <div class="ta-mob-compliance-card">
+          <img src="assets/img/TestAI/ta_audit_grade.png" alt="Audit-Grade Full Lifecycle Traceability" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Mobile Playbook Form & Chain Link Graphic -->
+    <div class="ta-mob-chain-vertical-wrap">
+      <img class="ta-mob-chain-vertical-img" src="assets/img/TestAI/ChatGPT Image Aug 18, 2026, 10_59_49 AM 1.png" alt="TestAI Connected Quality Chain" />
+    </div>
+
+    <section class="ta-mob-section ta-mob-playbook-section" id="testai-playbook-mob">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">Download the</span><br />
+        <span class="bold-white">Test AI Playbook</span>
+      </h2>
+      <p class="ta-mob-desc">
+        See how autonomous testing accelerates release velocity while raising quality standards across the enterprise.
+      </p>
+
+      <form class="ta-mob-form" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+        <input type="hidden" name="source" value="testai-mobile" />
+        <div class="ta-mob-form-group">
+          <label class="ta-mob-form-label" for="ta-mob-name">Name</label>
+          <input class="ta-mob-form-input" id="ta-mob-name" name="Name" type="text" required />
+        </div>
+        <div class="ta-mob-form-group">
+          <label class="ta-mob-form-label" for="ta-mob-title">Title</label>
+          <input class="ta-mob-form-input" id="ta-mob-title" name="Title" type="text" required />
+        </div>
+        <div class="ta-mob-form-group">
+          <label class="ta-mob-form-label" for="ta-mob-email">Work Email</label>
+          <input class="ta-mob-form-input" id="ta-mob-email" name="Email" type="email" required />
+        </div>
+        <div class="ta-mob-form-group">
+          <label class="ta-mob-form-label" for="ta-mob-phone">Phone Number</label>
+          <input class="ta-mob-form-input" id="ta-mob-phone" name="Contact number" type="tel" required />
+        </div>
+        <div class="ta-mob-form-group">
+          <label class="ta-mob-form-label" for="ta-mob-company">Company</label>
+          <input class="ta-mob-form-input" id="ta-mob-company" name="Company" type="text" required />
+        </div>
+        <button class="ta-mob-submit-btn" type="submit">Download the Playbook &rarr;</button>
+      </form>
+    </section>
+
+    <!-- 9. Mobile Conversation CTA -->
+    <section class="ta-mob-section ta-mob-cta-section" id="cta-mob">
+      <h2 class="ta-mob-title">
+        <span class="light-italic">Ready to</span><br />
+        <span class="bold-white">Accelerate Testing?</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Talk with our testing specialists about transforming your QA organization with autonomous test generation, execution, and healing.
+      </p>
+      <a class="ta-mob-btn-primary" href="#testai-playbook-mob">Book a Demo &rarr;</a>
+      <div class="ta-mob-visual-wrap" style="margin-top:28px;">
+        <img class="ta-mob-img" src="assets/img/TestAI/ta_chain_loop_cta.png?v=20260907-2" alt="TestAI Connected Chain Loop Visual" />
+      </div>
+    </section>
+
+    <!-- 10. Mobile Ecosystem -->
+    <section class="ta-mob-section">
+      <h2 class="ta-mob-title">
+        <span class="bold-white">Built Into the Workflow</span><br />
+        <span class="light-italic">Your Teams Already Use.</span>
+      </h2>
+      <p class="ta-mob-desc">
+        Test AI integrates seamlessly with your CI/CD pipelines, issue trackers, version control, and test reporting tools—enhancing existing workflows without disruption.
+      </p>
+      <p class="ta-mob-backed">
+        Backed by V2Soft—28 years building enterprise IT for regulated industries.
+      </p>
+      <div class="ta-mob-visual-wrap" style="margin-top:24px;">
+        <img class="ta-mob-img" src="assets/img/TestAI/ta_tools_grid.png" alt="TestAI Supported Developer Tools and Workflows" />
+      </div>
+    </section>
+
+    <!-- 11. Mobile Footer (Identical to index.html) -->
+    <footer class="sanciti-footer mobile-footer">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </div>
+        <p class="footer-desc">
+          Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+        </p>
+      </div>
+
+      <div class="footer-frame179">
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Portal" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div><!-- /#mobile-container -->
+
+  <!-- ================= Shared Global Scripts & Helpers ================= -->
+  <script src="assets/js/script.js?v=2.5"></script>
+  <script>
+    // Scale desktop 1440px canvas precisely
+    function updateScale() {
+      var stage = document.getElementById('stage');
+      var scaler = document.getElementById('scaler');
+      if (!stage || !scaler) return;
+      if (window.innerWidth <= 768) {
+        scaler.style.display = 'none';
+        var mob = document.getElementById('mobile-container');
+        if (mob) mob.style.display = 'block';
+        return;
+      }
+      var mob = document.getElementById('mobile-container');
+      if (mob) mob.style.display = 'none';
+      scaler.style.display = 'block';
+      var viewport = Math.max(320, document.documentElement.clientWidth || window.innerWidth);
+      var scale = viewport / 1440;
+      stage.style.transform = 'scale(' + scale + ')';
+      stage.style.transformOrigin = 'top left';
+      stage.style.margin = '0';
+      stage.style.left = '0';
+      stage.style.top = '0';
+      scaler.style.height = (9635 * scale) + 'px';
+      scaler.style.width = '100%';
+    }
+
+    window.addEventListener('resize', updateScale);
+    window.addEventListener('load', updateScale);
+    document.addEventListener('DOMContentLoaded', updateScale);
+
+    // Mobile Drawer Toggle
+    function toggleTaDrawer() {
+      var drawer = document.getElementById('taDrawer');
+      if (drawer) {
+        drawer.classList.toggle('open');
+      }
+    }
+
+    // Playbook Form Handler with Corporate Email Validation
+    async function handlePlaybookDownload(event) {
+      event.preventDefault();
+      var form = event.target;
+      if (window.validateCorporateEmailForm && !window.validateCorporateEmailForm(form)) {
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Please use a valid corporate/business email address.');
+        }
+        return;
+      }
+
+      var formData = new FormData(form);
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
+
+      try {
+        if (submitBtn) {
+          submitBtn.innerText = 'Sending...';
+          submitBtn.disabled = true;
+        }
+
+        var response = await fetch('submit_form.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        var result = await response.json();
+        console.log("Form submission result:", result);
+
+        if (!result.success) {
+          var emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+          if (emailInput && window.showEmailError) {
+            window.showEmailError(emailInput, '✕ Must be a Business email.');
+            emailInput.focus();
+          }
+          if (window.showFormSubmitError) {
+            window.showFormSubmitError(form, '✕ Submission failed. Please verify your business email.');
+          }
+          return;
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Error processing request. Please try again.');
+        }
+        return;
+      } finally {
+        if (submitBtn) {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      if (window.clearFormSubmitError) {
+        window.clearFormSubmitError(form);
+      }
+
+      // Trigger download
+      var link = document.createElement('a');
+      link.href = 'assets/Sanciti Ai _Legacy Modernization_Playbook.pdf';
+      link.download = 'Sanciti Ai _Legacy Modernization_Playbook.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      form.reset();
+
+      setTimeout(function() {
+        window.location.href = 'https://www.sanciti.ai/thank-you/';
+      }, 500);
+    }
+
+    // ================= Hero Circle Animation Transparent Canvas Renderer =================
+    // Removes black background and renders radiant purple glowing circle matching TestAI brand (#7368FF)
+    (function() {
+      function setupHeroRingCanvas(videoId, canvasId) {
+        var video = document.getElementById(videoId);
+        var canvas = document.getElementById(canvasId);
+        if (!video || !canvas) return;
+        var ctx = canvas.getContext('2d', { willReadFrequently: true });
+        var isRunning = false;
+
+        function renderFrame() {
+          if (!video.paused && !video.ended && video.readyState >= 2) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+              var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+              var d = imgData.data;
+              var len = d.length;
+              for (var i = 0; i < len; i += 4) {
+                var r = d[i], g = d[i + 1], b = d[i + 2];
+                var max = r > g ? (r > b ? r : b) : (g > b ? g : b);
+                if (max < 16) {
+                  d[i + 3] = 0;
+                } else if (max < 40) {
+                  d[i + 3] = Math.round((max - 16) * (255 / 24));
+                }
+                // Shift hue to vibrant electric purple (#7368FF / #8A38F5)
+                if (d[i + 3] > 0) {
+                  d[i] = Math.min(255, Math.round(d[i] * 1.15)); // boost red
+                  d[i + 1] = Math.round(d[i + 1] * 0.72); // moderate green
+                  d[i + 2] = Math.min(255, Math.round(d[i + 2] * 1.35)); // boost purple/blue
+                }
+              }
+              ctx.putImageData(imgData, 0, 0);
+              video.style.opacity = '0';
+            } catch (e) {
+              video.style.opacity = '1';
+            }
+          }
+          requestAnimationFrame(renderFrame);
+        }
+
+        video.addEventListener('play', function() {
+          if (!isRunning) {
+            isRunning = true;
+            requestAnimationFrame(renderFrame);
+          }
+        });
+
+        if (!video.paused) {
+          isRunning = true;
+          requestAnimationFrame(renderFrame);
+        }
+
+        ['touchstart', 'click', 'scroll'].forEach(function(evt) {
+          window.addEventListener(evt, function() {
+            if (video.paused) {
+              video.play().catch(function() {});
+            }
+          }, { once: true, passive: true });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setupHeroRingCanvas('taHeroVidDesk', 'taHeroCanvasDesk');
+          setupHeroRingCanvas('taHeroVidMob', 'taHeroCanvasMob');
+        });
+      } else {
+        setupHeroRingCanvas('taHeroVidDesk', 'taHeroCanvasDesk');
+        setupHeroRingCanvas('taHeroVidMob', 'taHeroCanvasMob');
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+.vscode/
+.idea/
+
+# Scratch & temporary debug files
+scratch_*.png
+test_*.png
+thumb_*.png
+slice_*.png
+*.tmp

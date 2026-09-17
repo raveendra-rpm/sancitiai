@@ -3,6 +3,13 @@
 <html lang="en">
 
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WQG8M7VG');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Sanciti AI — Agentic Legacy Modernization &amp; SDLC Automation</title>
@@ -15,6 +22,10 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQG8M7VG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- ================= MOBILE HEADER (< 768px) ================= -->
   <header class="mobile-header" id="mobileHeader">
     <div class="mobile-header-inner">
@@ -38,10 +49,10 @@
       <nav class="mobile-nav-links font-disp">
         <a href="index.html" class="mobile-nav-item active">Home</a>
         <a href="legmod.html" class="mobile-nav-item">LegMod</a>
-        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(1, event)">RGen</a>
-        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(2, event)">CodeGen</a>
-        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(3, event)">Test AI</a>
-        <a href="#orchestrator" class="mobile-nav-item" onclick="mobileAgentClick(4, event)">Deploy</a>
+        <a href="rgen.html" class="mobile-nav-item">RGen</a>
+        <a href="codegen.html" class="mobile-nav-item">CodeGen</a>
+        <a href="testai.html" class="mobile-nav-item">Test AI</a>
+        <a href="deploy.html" class="mobile-nav-item">Deploy</a>
         <div class="mobile-nav-cta pill" onclick="scrollToAssessment(event)">
           <span>Get a Free Assessment</span>
         </div>
@@ -79,50 +90,8 @@
         <span>Get a Free Assessment</span>
       </div>
 
-      <div class="mobile-hero-ring-card">
-        <div class="mobile-ring-container">
-          <svg viewBox="0 0 220 220" class="mobile-ring-svg">
-            <defs>
-              <linearGradient id="mobRingWhite" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#4a5060" />
-                <stop offset="40%" stop-color="#e2e6ea" />
-                <stop offset="70%" stop-color="#ffffff" />
-                <stop offset="100%" stop-color="#bcd4ff" />
-              </linearGradient>
-              <linearGradient id="mobRingTeal" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-                <stop offset="45%" stop-color="#2ad6df" stop-opacity="0.75" />
-                <stop offset="100%" stop-color="#0a2530" stop-opacity="0.2" />
-              </linearGradient>
-              <linearGradient id="mobRingBlue" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#1c2a7a" stop-opacity="0.3" />
-                <stop offset="50%" stop-color="#3f6eff" stop-opacity="0.75" />
-                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
-              </linearGradient>
-              <filter id="mobGlow" x="-30%" y="-30%" width="160%" height="160%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
-                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
-                <feMerge>
-                  <feMergeNode in="blur2" />
-                  <feMergeNode in="blur1" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            <!-- Multi-layered glowing orbital ring animation matching screenshot -->
-            <circle cx="110" cy="110" r="74" fill="none" stroke="url(#mobRingWhite)" stroke-width="5"
-              filter="url(#mobGlow)" class="ring-spin-cw" />
-            <circle cx="110" cy="110" r="71" fill="none" stroke="url(#mobRingTeal)" stroke-width="3" opacity="0.8"
-              class="ring-spin-ccw" />
-            <circle cx="110" cy="110" r="77" fill="none" stroke="url(#mobRingBlue)" stroke-width="2.5" opacity="0.7"
-              class="ring-spin-cw-fast" />
-            <circle cx="110" cy="110" r="74" fill="none" stroke="rgba(255,255,255,0.4)" stroke-dasharray="4 10"
-              stroke-width="1.2" class="ring-spin-ccw-slow" />
-            <circle cx="110" cy="110" r="80" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"
-              class="ring-pulse" />
-          </svg>
-        </div>
+      <div class="mobile-hero-circle-wrap">
+        <img class="mobile-hero-circle-img" src="assets/img/bluecirclespin.png" alt="Sanciti Ring" />
       </div>
     </div>
   </section>
@@ -141,6 +110,7 @@
 
       <form class="mobile-playbook-form" action="submit_form.php" method="POST"
         onsubmit="handlePlaybookDownload(event)">
+        <input type="hidden" name="source" value="index" />
         <div class="mobile-form-group">
           <label class="mobile-form-label font-body">Name</label>
           <input class="mobile-form-input font-body" name="Name" type="text" placeholder="" required />
@@ -635,13 +605,13 @@
             onclick="window.location.href='index.html';">Home</span>
           <span class="nav-link" onclick="window.location.href='legmod.html';"
             style="color:rgba(255,255,255,.75); cursor:pointer;">LegMod</span>
-          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(1)"
+          <span class="nav-link" onclick="window.location.href='rgen.html';"
             style="color:rgba(255,255,255,.75); cursor:pointer;">RGen</span>
-          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(2)"
+          <span class="nav-link" onclick="window.location.href='codegen.html';"
             style="color:rgba(255,255,255,.75); cursor:pointer;">CodeGen</span>
-          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(3)"
+          <span class="nav-link" onclick="window.location.href='testai.html';"
             style="color:rgba(255,255,255,.75); cursor:pointer;">Test AI</span>
-          <span class="nav-link" onclick="window.goToAgentSlide && window.goToAgentSlide(4)"
+          <span class="nav-link" onclick="window.location.href='deploy.html';"
             style="color:rgba(255,255,255,.75); cursor:pointer;">Deploy</span>
         </div>
         <div class="abs pill"
@@ -730,6 +700,7 @@
           <form action="submit_form.php" method="POST"
             style="display:grid; grid-template-columns:1fr 1fr; gap:15px 30px; margin-top:44px;"
             onsubmit="handlePlaybookDownload(event)">
+            <input type="hidden" name="source" value="index" />
             <div style="display:flex; flex-direction:column; gap:8px;">
               <span class="font-body" style="font-size:16px; color:rgba(255,255,255,.75);">Name</span>
               <input name="Name"
@@ -1717,7 +1688,8 @@
 
         <form action="submit_form.php" method="POST"
           style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px 30px; width:900px;"
-          onsubmit="handlePlaybookDownload(event)">
+          onsubmit="handleAssessmentSubmit(event)">
+          <input type="hidden" name="source" value="index" />
           <div style="display:flex; flex-direction:column; gap:8px;">
             <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Name</span>
             <input name="Name"
@@ -1760,110 +1732,45 @@
       </div>
 
       <!-- ================= FOOTER ================= -->
-      <div class="abs desktop-footer"
-        style="left:0; top:11823px; width:1512px; height:430px; border-top:1px solid rgba(255,255,255,.08); background:#000; box-sizing:border-box; padding:60px 80px 40px;">
-        <!-- Top 4 Columns Row -->
-        <div style="display:grid; grid-template-columns:360px 180px 180px 240px; justify-content:space-between;">
-          <!-- 1. Branding & Mission -->
-          <div>
-            <img alt="Sanciti AI" src="assets/img/sancitiailogo.png"
-              style="height:36px; width:auto; object-fit:contain;" />
-            <p class="font-body"
-              style="margin:24px 0 20px 0; font-size:14px; font-weight:300; color:rgba(255,255,255,.65); line-height:1.65; max-width:340px;">
-              The Agentic AI SDLC platform revolutionizing software development — driving efficiency, enhancing
-              security,
-              improving code quality, and transforming how software is designed and built.
-            </p>
-            <p class="font-body" style="margin:0; font-size:13px; color:rgba(255,255,255,.5);">
-              A V2Soft Company · <a href="https://v2soft.com" target="_blank"
-                style="color:#a78bfa; text-decoration:none; font-weight:500;">v2soft.com</a>
-            </p>
+      <footer class="abs desktop-footer sanciti-footer"
+        style="left:0; top:11823px; width:1512px; height:200px; background:#0D0D0D; border-top:1px solid rgba(255, 255, 255, 0.101961); box-sizing:border-box; padding:40px 18px 40px 43px; display:flex; flex-direction:row; align-items:center; justify-content:space-between;">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
           </div>
-
-          <!-- 2. Platform Column -->
-          <div>
-            <p class="font-body"
-              style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
-              Platform
-            </p>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <span class="font-body nav-link" style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Full
-                Stack SDLC</span>
-              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(1)"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti RGEN</span>
-              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(2)"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti CodeGen</span>
-              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(3)"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti TestAI</span>
-              <span class="font-body nav-link" onclick="window.goToAgentSlide &amp;&amp; window.goToAgentSlide(0)"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti LEGMOD</span>
-            </div>
-          </div>
-
-          <!-- 3. Company Column -->
-          <div>
-            <p class="font-body"
-              style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
-              Company
-            </p>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <span class="font-body nav-link"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">About Us</span>
-              <span class="font-body nav-link"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Leadership</span>
-              <span class="font-body nav-link"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Certifications</span>
-              <span class="font-body nav-link"
-                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Social Responsibility</span>
-            </div>
-          </div>
-
-          <!-- 4. Contact Column -->
-          <div>
-            <p class="font-body"
-              style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
-              Contact
-            </p>
-            <div style="display:flex; flex-direction:column; gap:10px; font-size:14px; color:rgba(255,255,255,.75);">
-              <span>+1 248-904-1737</span>
-              <span>info@sanciti.ai</span>
-              <span>www.sanciti.ai</span>
-              <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
-            </div>
-            <!-- Social Icons -->
-            <div style="display:flex; gap:20px; margin-top:18px;">
-              <!-- LinkedIn -->
-              <a href="#" aria-label="LinkedIn"
-                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                <img src="assets/img/linkedin.png" alt="LinkedIn"
-                  style="height:24px; width:auto; object-fit:contain;" />
-              </a>
-              <!-- Facebook -->
-              <a href="#" aria-label="Facebook"
-                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                <img src="assets/img/facebook.svg" alt="Facebook"
-                  style="height:24px; width:auto; object-fit:contain;" />
-              </a>
-              <!-- Instagram -->
-              <a href="#" aria-label="Instagram"
-                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                <img src="assets/img/instagram.svg" alt="Instagram"
-                  style="height:24px; width:auto; object-fit:contain;" />
-              </a>
-            </div>
-          </div>
+          <p class="footer-desc">
+            Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+          </p>
         </div>
 
-        <!-- Horizontal Divider Line -->
-        <div style="width:100%; height:1px; background:rgba(255,255,255,0.08); margin:40px 0 24px 0;"></div>
+        <div class="footer-frame179">
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Portal" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </a>
+          </div>
 
-        <!-- Bottom Copyright & Tagline Row -->
-        <div class="font-body"
-          style="display:flex; justify-content:space-between; align-items:center; font-size:13px; color:rgba(255,255,255,.45);">
-          <span>© 2026 Sanciti AI LLC. All Rights Reserved.</span>
-          <span>Secure · Scalable · Smart · LLM-Agnostic</span>
+          <div class="footer-copyright">
+            &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+          </div>
         </div>
-      </div>
+      </footer>
     </div><!-- /#stage -->
   </div><!-- /#scaler -->
 
@@ -1950,7 +1857,8 @@
 
     <form action="submit_form.php" method="POST"
       style="display:flex; flex-direction:column; gap:16px; width:100%; max-width:400px; margin:0 auto;"
-      onsubmit="handlePlaybookDownload(event)">
+      onsubmit="handleAssessmentSubmit(event)">
+      <input type="hidden" name="source" value="index" />
       <div style="display:flex; flex-direction:column; gap:8px;">
         <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Name</span>
         <input name="Name"
@@ -1993,110 +1901,67 @@
   </section>
 
   <!-- ================= MOBILE FOOTER (< 768px) ================= -->
-  <div class="mobile-footer"
-    style="background:#000; padding:60px 20px 40px; border-top:1px solid rgba(255,255,255,0.08);">
-    <div style="display:flex; flex-direction:column; gap:40px;">
-      <!-- Branding & Mission -->
-      <div>
-        <img alt="Sanciti AI" src="assets/img/sancitiailogo.png" style="height:32px; width:auto; object-fit:contain;" />
-        <p class="font-body"
-          style="margin:20px 0; font-size:14px; font-weight:300; color:rgba(255,255,255,.65); line-height:1.6;">
-          The Agentic AI SDLC platform revolutionizing software development — driving efficiency, enhancing security,
-          improving code quality, and transforming how software is designed and built.
-        </p>
-        <p class="font-body" style="margin:0; font-size:13px; color:rgba(255,255,255,.5);">
-          A V2Soft Company · <a href="https://v2soft.com" target="_blank"
-            style="color:#a78bfa; text-decoration:none; font-weight:500;">v2soft.com</a>
-        </p>
+  <footer class="sanciti-footer mobile-footer">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
       </div>
-
-      <!-- Links Grid -->
-      <div style="display:flex; flex-wrap:wrap; gap:40px;">
-        <!-- Platform Column -->
-        <div style="flex: 1 1 40%;">
-          <p class="font-body"
-            style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 16px 0;">
-            Platform
-          </p>
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Full Stack SDLC</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Sanciti RGEN</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Sanciti CodeGen</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Sanciti TestAI</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Sanciti LEGMOD</span>
-          </div>
-        </div>
-
-        <!-- Company Column -->
-        <div style="flex: 1 1 40%;">
-          <p class="font-body"
-            style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 16px 0;">
-            Company
-          </p>
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">About Us</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Leadership</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Certifications</span>
-            <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Social Responsibility</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Column -->
-      <div>
-        <p class="font-body"
-          style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 16px 0;">
-          Contact
-        </p>
-        <div style="display:flex; flex-direction:column; gap:8px; font-size:14px; color:rgba(255,255,255,.75);">
-          <span>+1 248-904-1737</span>
-          <span>info@sanciti.ai</span>
-          <span>www.sanciti.ai</span>
-          <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
-        </div>
-        <!-- Social Icons -->
-        <div style="display:flex; gap:20px; margin-top:20px;">
-          <!-- LinkedIn -->
-          <a href="#" aria-label="LinkedIn"
-            style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-            <img src="assets/img/linkedin.png" alt="LinkedIn" style="height:24px; width:auto; object-fit:contain;" />
-          </a>
-          <!-- Facebook -->
-          <a href="#" aria-label="Facebook"
-            style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-            <img src="assets/img/facebook.svg" alt="Facebook" style="height:24px; width:auto; object-fit:contain;" />
-          </a>
-          <!-- Instagram -->
-          <a href="#" aria-label="Instagram"
-            style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-            <img src="assets/img/instagram.svg" alt="Instagram" style="height:24px; width:auto; object-fit:contain;" />
-          </a>
-        </div>
-      </div>
+      <p class="footer-desc">
+        Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+      </p>
     </div>
 
-    <div style="width:100%; height:1px; background:rgba(255,255,255,0.08); margin:32px 0 24px 0;"></div>
+    <div class="footer-frame179">
+      <div class="footer-socials">
+        <a href="#" aria-label="LinkedIn" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+          </svg>
+        </a>
+        <a href="#" aria-label="Portal" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
 
-    <div class="font-body"
-      style="display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center; font-size:12px; color:rgba(255,255,255,.45);">
-      <span>© 2026 Sanciti AI LLC. All Rights Reserved.</span>
-      <span>Secure · Scalable · Smart · LLM-Agnostic</span>
+      <div class="footer-copyright">
+        &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js?v=2.5"></script>
   <script>
     async function handlePlaybookDownload(event) {
       event.preventDefault(); // Prevent default form submission
 
       const form = event.target;
+      if (window.validateCorporateEmailForm && !window.validateCorporateEmailForm(form)) {
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      }
+
       const formData = new FormData(form);
       const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerText;
+      const originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
 
       try {
-        submitBtn.innerText = 'Sending...';
-        submitBtn.disabled = true;
+        if (submitBtn) {
+          submitBtn.innerText = 'Sending...';
+          submitBtn.disabled = true;
+        }
 
         // Send POST request to our PHP endpoint
         const response = await fetch('submit_form.php', {
@@ -2107,11 +1972,33 @@
         const result = await response.json();
         console.log("Form submission result:", result);
 
+        if (!result.success) {
+          const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+          if (emailInput && window.showEmailError) {
+            window.showEmailError(emailInput, '✕ Must be Business email.');
+            emailInput.focus();
+          }
+          if (window.showFormSubmitError) {
+            window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+          }
+          return;
+        }
+
       } catch (error) {
         console.error("Error submitting form:", error);
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
       } finally {
-        submitBtn.innerText = originalBtnText;
-        submitBtn.disabled = false;
+        if (submitBtn) {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      if (window.clearFormSubmitError) {
+        window.clearFormSubmitError(form);
       }
 
       // Trigger the download
@@ -2126,6 +2013,74 @@
       form.reset();
 
       // Redirect to thank you page
+      setTimeout(() => {
+        window.location.href = 'https://www.sanciti.ai/thank-you/';
+      }, 500);
+    }
+
+    async function handleAssessmentSubmit(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = event.target;
+      if (window.validateCorporateEmailForm && !window.validateCorporateEmailForm(form)) {
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      }
+
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+      const originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
+
+      try {
+        if (submitBtn) {
+          submitBtn.innerText = 'Sending...';
+          submitBtn.disabled = true;
+        }
+
+        // Send POST request to our PHP endpoint
+        const response = await fetch('submit_form.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+        console.log("Form submission result:", result);
+
+        if (!result.success) {
+          const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+          if (emailInput && window.showEmailError) {
+            window.showEmailError(emailInput, '✕ Must be Business email.');
+            emailInput.focus();
+          }
+          if (window.showFormSubmitError) {
+            window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+          }
+          return;
+        }
+
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      } finally {
+        if (submitBtn) {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      if (window.clearFormSubmitError) {
+        window.clearFormSubmitError(form);
+      }
+
+      // Reset form
+      form.reset();
+
+      // Redirect to thank you page (NO PDF DOWNLOAD)
       setTimeout(() => {
         window.location.href = 'https://www.sanciti.ai/thank-you/';
       }, 500);

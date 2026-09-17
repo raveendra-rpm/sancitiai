@@ -1,16 +1,26 @@
-// Scale the fixed 1512px stage to fit any viewport, preserving 1:1 fidelity of the Figma design.
+// Scale the fixed stage (1512px default or data-width such as 1440px / 393px) to fit any viewport, preserving 1:1 fidelity of the Figma design.
 function fitStage() {
+    const isMobile = window.innerWidth <= 768;
+    const mobileContainer = document.getElementById('mobile-container');
     const stage = document.getElementById('stage');
     const scaler = document.getElementById('scaler');
-    if (!stage || !scaler) return;
-    const viewport = Math.max(320, window.innerWidth);
-    const scale = viewport / 1512;
-    const isMobile = window.innerWidth <= 768;
 
-    if (isMobile) {
-        stage.style.transform = 'scale(' + scale + ') translateY(-1790px)';
+    if (isMobile && mobileContainer) {
+        if (scaler) scaler.style.display = 'none';
+        return;
+    }
+
+    if (scaler) scaler.style.display = 'block';
+    if (!stage || !scaler) return;
+    const viewport = Math.max(320, document.documentElement.clientWidth || window.innerWidth);
+    const designWidth = stage.dataset.width ? parseFloat(stage.dataset.width) : 1512;
+    const scale = viewport / designWidth;
+    const mobileOffset = stage.dataset.mobileOffset !== undefined ? parseFloat(stage.dataset.mobileOffset) : (stage.dataset.width ? 0 : 1790);
+
+    if (isMobile && mobileOffset > 0) {
+        stage.style.transform = 'scale(' + scale + ') translateY(-' + mobileOffset + 'px)';
         stage.style.transformOrigin = 'top left';
-        scaler.style.height = (Math.max(0, stage.getBoundingClientRect().height - (1790 * scale))) + 'px';
+        scaler.style.height = (Math.max(0, stage.getBoundingClientRect().height - (mobileOffset * scale))) + 'px';
     } else {
         stage.style.transform = 'scale(' + scale + ')';
         stage.style.transformOrigin = 'top left';
@@ -379,4 +389,253 @@ function scrollToProvenCard(index) {
         }
     });
 }
+
+function toggleMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    if (drawer) {
+        drawer.classList.toggle('active');
+    }
+}
+
+function toggleLmDrawer() {
+    const drawer = document.getElementById('lmDrawer');
+    if (drawer) {
+        drawer.classList.toggle('active');
+    }
+}
+
+
+
+
+
+// RGen Mobile Cert Scroll Handler
+function handleMobileCertScroll(container) {
+    const dots = document.querySelectorAll('#mobile-cert-dots .slider-dot');
+    if (!dots.length) return;
+    
+    // Calculate which card is most visible
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = 280 + 16; // width + gap
+    const index = Math.round(scrollLeft / cardWidth);
+    
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+            dot.style.background = '#2ad6df';
+        } else {
+            dot.classList.remove('active');
+            dot.style.background = '#105b7a';
+        }
+    });
+}
+
+// =========================================================================
+// Corporate / Business Email Validation System
+// Blocks personal/consumer email providers (Gmail, Yahoo, Hotmail, Outlook, etc.)
+// =========================================================================
+
+const PERSONAL_EMAIL_DOMAINS = [
+    'gmail.com', 'googlemail.com',
+    'yahoo.com', 'yahoo.co.in', 'yahoo.co.uk', 'yahoo.ca', 'yahoo.fr', 'yahoo.de', 'yahoo.it', 'yahoo.es', 'yahoo.com.br', 'yahoo.co.jp', 'ymail.com', 'rocketmail.com',
+    'hotmail.com', 'outlook.com', 'live.com', 'msn.com', 'passport.com', 'hotmail.co.uk', 'hotmail.fr', 'hotmail.de', 'hotmail.it', 'hotmail.es',
+    'outlook.co.uk', 'outlook.fr', 'outlook.de', 'outlook.in', 'live.co.uk',
+    'icloud.com', 'me.com', 'mac.com',
+    'aol.com', 'aim.com',
+    'protonmail.com', 'proton.me', 'pm.me',
+    'zoho.com', 'zohomail.com',
+    'mail.com', 'email.com', 'usa.com', 'post.com',
+    'gmx.com', 'gmx.net', 'gmx.de', 'gmx.at', 'gmx.ch',
+    'yandex.com', 'yandex.ru', 'ya.ru',
+    'tutanota.com', 'tuta.io', 'tuta.com',
+    'fastmail.com', 'fastmail.fm',
+    'rediffmail.com',
+    'inbox.com', 'qq.com', '163.com', '126.com', 'sina.com',
+    'sbcglobal.net', 'att.net', 'verizon.net', 'comcast.net', 'cox.net', 'charter.net', 'bellsouth.net', 'earthlink.net', 'juno.com',
+    'tempmail.com', 'guerrillamail.com', '10minutemail.com', 'mailinator.com', 'throwawaymail.com', 'trashmail.com', 'yopmail.com'
+];
+
+window.isCorporateEmail = function (email) {
+    if (!email || typeof email !== 'string') return false;
+    email = email.trim().toLowerCase();
+    const parts = email.split('@');
+    if (parts.length !== 2) return false;
+    const domain = parts[1].trim();
+    if (!domain || domain.indexOf('.') === -1) return false;
+    for (let i = 0; i < PERSONAL_EMAIL_DOMAINS.length; i++) {
+        const p = PERSONAL_EMAIL_DOMAINS[i];
+        if (domain === p || domain.endsWith('.' + p)) {
+            return false;
+        }
+    }
+    return true;
+};
+
+window.validateEmailField = function (input, isBlur) {
+    if (!input) return true;
+    const val = input.value.trim();
+    if (!val) {
+        if (isBlur && input.hasAttribute('required')) {
+            window.showEmailError(input, 'Work email address is required.');
+            return false;
+        }
+        window.clearEmailError(input);
+        return true;
+    }
+
+    const basicEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!basicEmailRegex.test(val)) {
+        if (isBlur) {
+            window.showEmailError(input, 'Please enter a valid email address.');
+        }
+        return false;
+    }
+
+    if (!window.isCorporateEmail(val)) {
+        window.showEmailError(input, '✕ Must be Business email.');
+        return false;
+    }
+
+    window.clearEmailError(input);
+    return true;
+};
+
+window.showEmailError = function (input, msg) {
+    input.classList.add('corp-email-invalid');
+    input.style.setProperty('border', '1.5px solid #ff5252', 'important');
+    input.style.setProperty('box-shadow', '0 0 10px rgba(255, 82, 82, 0.45)', 'important');
+
+    let errorEl = input.parentNode.querySelector('.corp-email-error-msg');
+    if (!errorEl) {
+        errorEl = document.createElement('div');
+        errorEl.className = 'corp-email-error-msg';
+        errorEl.style.color = '#ff6b6b';
+        errorEl.style.fontSize = '13px';
+        errorEl.style.marginTop = '6px';
+        errorEl.style.fontFamily = "'Inter', sans-serif";
+        errorEl.style.lineHeight = '1.35';
+        errorEl.style.textAlign = 'left';
+        errorEl.style.fontWeight = '400';
+        input.parentNode.appendChild(errorEl);
+    }
+    errorEl.textContent = msg;
+    errorEl.style.display = 'block';
+};
+
+window.clearEmailError = function (input) {
+    input.classList.remove('corp-email-invalid');
+    input.style.removeProperty('border');
+    input.style.removeProperty('box-shadow');
+    const errorEl = input.parentNode.querySelector('.corp-email-error-msg');
+    if (errorEl) {
+        errorEl.style.display = 'none';
+    }
+};
+
+window.showFormSubmitError = function (form, msg) {
+    if (!form) return;
+    const message = msg || '✕ Your submission failed because of an error.';
+    let errBox = form.querySelector('.form-submit-error-msg');
+    if (!errBox) {
+        errBox = document.createElement('div');
+        errBox.className = 'form-submit-error-msg';
+        errBox.style.color = '#ff6b6b';
+        errBox.style.fontSize = '13.5px';
+        errBox.style.marginTop = '10px';
+        errBox.style.fontFamily = "'Inter', sans-serif";
+        errBox.style.fontWeight = '400';
+        errBox.style.lineHeight = '1.4';
+        errBox.style.textAlign = 'left';
+        errBox.style.width = '100%';
+
+        const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+        if (submitBtn) {
+            if (submitBtn.parentElement && submitBtn.parentElement !== form) {
+                submitBtn.parentElement.style.flexDirection = 'column';
+                submitBtn.parentElement.style.alignItems = 'flex-start';
+                submitBtn.parentElement.appendChild(errBox);
+            } else {
+                submitBtn.insertAdjacentElement('afterend', errBox);
+            }
+        } else {
+            form.appendChild(errBox);
+        }
+    }
+    errBox.textContent = message;
+    errBox.style.display = 'block';
+};
+
+window.clearFormSubmitError = function (form) {
+    if (!form) return;
+    const errBox = form.querySelector('.form-submit-error-msg');
+    if (errBox) {
+        errBox.style.display = 'none';
+    }
+};
+
+window.validateCorporateEmailForm = function (form) {
+    if (!form) return true;
+    const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+    if (emailInput) {
+        if (!window.validateEmailField(emailInput, true)) {
+            window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+            emailInput.focus();
+            return false;
+        }
+    }
+    window.clearFormSubmitError(form);
+    return true;
+};
+
+// Auto-initialize corporate email listeners on ALL pages and forms
+function initCorporateEmailValidation() {
+    const emailInputs = document.querySelectorAll('input[type="email"], input[name="Email"], input[name="email"]');
+    emailInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            const form = input.closest('form');
+            if (input.value.trim() !== '') {
+                const isValid = window.validateEmailField(input, false);
+                if (isValid && form) {
+                    window.clearFormSubmitError(form);
+                }
+            } else {
+                window.clearEmailError(input);
+                if (form) {
+                    window.clearFormSubmitError(form);
+                }
+            }
+        });
+
+        input.addEventListener('blur', () => {
+            if (input.value.trim() !== '') {
+                const isValid = window.validateEmailField(input, true);
+                const form = input.closest('form');
+                if (!isValid && form) {
+                    window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+                }
+            }
+        });
+    });
+
+    // Also attach a global capture submit listener for forms
+    document.addEventListener('submit', (e) => {
+        const form = e.target;
+        if (form && form.tagName === 'FORM') {
+            const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+            if (emailInput && !window.validateEmailField(emailInput, true)) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+                emailInput.focus();
+                return false;
+            }
+        }
+    }, true);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCorporateEmailValidation);
+} else {
+    initCorporateEmailValidation();
+}
+
 

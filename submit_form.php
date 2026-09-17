@@ -13,14 +13,55 @@ header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
-    $name = isset($_POST['Name']) ? htmlspecialchars(trim($_POST['Name'])) : '';
-    $title = isset($_POST['Title']) ? htmlspecialchars(trim($_POST['Title'])) : '';
-    $email = isset($_POST['Email']) ? htmlspecialchars(trim($_POST['Email'])) : '';
-    $contact = isset($_POST['Contact_number']) ? htmlspecialchars(trim($_POST['Contact_number'])) : (isset($_POST['Contact number']) ? htmlspecialchars(trim($_POST['Contact number'])) : '');
-    $company = isset($_POST['Company']) ? htmlspecialchars(trim($_POST['Company'])) : '';
+    $name = isset($_POST['Name']) ? htmlspecialchars(trim($_POST['Name'])) : (isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '');
+    $title = isset($_POST['Title']) ? htmlspecialchars(trim($_POST['Title'])) : (isset($_POST['title']) ? htmlspecialchars(trim($_POST['title'])) : '');
+    $email = isset($_POST['Email']) ? htmlspecialchars(trim($_POST['Email'])) : (isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '');
+    $contact = isset($_POST['Contact_number']) ? htmlspecialchars(trim($_POST['Contact_number'])) : (isset($_POST['Contact number']) ? htmlspecialchars(trim($_POST['Contact number'])) : (isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : ''));
+    $company = isset($_POST['Company']) ? htmlspecialchars(trim($_POST['Company'])) : (isset($_POST['company']) ? htmlspecialchars(trim($_POST['company'])) : '');
 
     if(empty($name) || empty($email)) {
         echo json_encode(["success" => false, "message" => "Name and Email are required."]);
+        exit;
+    }
+
+    // List of personal/consumer and temporary email domains
+    $personalDomains = [
+        'gmail.com', 'googlemail.com',
+        'yahoo.com', 'yahoo.co.in', 'yahoo.co.uk', 'yahoo.ca', 'yahoo.fr', 'yahoo.de', 'yahoo.it', 'yahoo.es', 'yahoo.com.br', 'yahoo.co.jp', 'ymail.com', 'rocketmail.com',
+        'hotmail.com', 'outlook.com', 'live.com', 'msn.com', 'passport.com', 'hotmail.co.uk', 'hotmail.fr', 'hotmail.de', 'hotmail.it', 'hotmail.es',
+        'outlook.co.uk', 'outlook.fr', 'outlook.de', 'outlook.in', 'live.co.uk',
+        'icloud.com', 'me.com', 'mac.com',
+        'aol.com', 'aim.com',
+        'protonmail.com', 'proton.me', 'pm.me',
+        'zoho.com', 'zohomail.com',
+        'mail.com', 'email.com', 'usa.com', 'post.com',
+        'gmx.com', 'gmx.net', 'gmx.de', 'gmx.at', 'gmx.ch',
+        'yandex.com', 'yandex.ru', 'ya.ru',
+        'tutanota.com', 'tuta.io', 'tuta.com',
+        'fastmail.com', 'fastmail.fm',
+        'rediffmail.com',
+        'inbox.com', 'qq.com', '163.com', '126.com', 'sina.com',
+        'sbcglobal.net', 'att.net', 'verizon.net', 'comcast.net', 'cox.net', 'charter.net', 'bellsouth.net', 'earthlink.net', 'juno.com',
+        'tempmail.com', 'guerrillamail.com', '10minutemail.com', 'mailinator.com', 'throwawaymail.com', 'trashmail.com', 'yopmail.com'
+    ];
+
+    $source = isset($_POST['source']) ? trim($_POST['source']) : '';
+
+    // Enforce corporate email validation across all form submissions
+    $emailDomain = strtolower(substr(strrchr($email, "@"), 1));
+    $isPersonal = false;
+    foreach ($personalDomains as $pDomain) {
+        if ($emailDomain === $pDomain || substr($emailDomain, -strlen('.' . $pDomain)) === '.' . $pDomain) {
+            $isPersonal = true;
+            break;
+        }
+    }
+
+    if ($isPersonal || empty($emailDomain) || strpos($emailDomain, '.') === false) {
+        echo json_encode([
+            "success" => false,
+            "message" => "✕ Must be Business email."
+        ]);
         exit;
     }
 

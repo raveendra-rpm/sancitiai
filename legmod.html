@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WQG8M7VG');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Sanciti AI — LegMod</title>
@@ -10,47 +20,461 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&amp;display=swap"
         rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/style.css?v=20260903" rel="stylesheet" />
+    <link href="assets/css/legmod-mobile.css?v=20260904-9" rel="stylesheet" />
 </head>
 
-<body style="background:#000; margin:0; padding:0; overflow-x:hidden;">
-    <!-- ================= MOBILE HEADER (< 768px) ================= -->
-    <header class="mobile-header" id="mobileHeader">
-        <div class="mobile-header-inner">
-            <a class="mobile-logo" href="index.html" aria-label="Sanciti AI">
-                <img alt="Sanciti AI" src="assets/img/sancitiailogo.png" />
+<body style="background:#000; margin:0; padding:0; overflow-x:hidden;" class="has-mobile-stage">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQG8M7VG" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ================= MOBILE CONTAINER (<= 768px Fluid Responsive) ================= -->
+    <div id="mobile-container">
+        <!-- Ambient Glows -->
+        <div class="lm-ambient-glow lm-glow-top"></div>
+        <div class="lm-ambient-glow lm-glow-mid">
+            <img src="assets/img/ledmod/Ellipse2.png" alt="" />
+        </div>
+        <div class="lm-ambient-glow lm-glow-bottom"></div>
+
+        <!-- Header Navigation (Sticky 64px) -->
+        <header class="lm-nav">
+            <a class="lm-nav-logo" href="index.html" aria-label="Sanciti AI">
+                <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
             </a>
-            <div class="mobile-header-right">
-                <a class="mobile-demo-btn pill" href="#playbook" id="mobileDemoBtn" onclick="scrollToAssessment(event)">
-                    <span>Get a free Assessment</span>
-                </a>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation"
-                    aria-expanded="false" onclick="toggleMobileMenu()" style="display:none;">
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
-                    <span class="hamburger-bar"></span>
+            <div class="lm-nav-actions">
+                <a class="lm-nav-demo-btn" href="#lm-playbook">Demo</a>
+                <button class="lm-nav-menu-toggle" aria-label="Toggle navigation" onclick="toggleLmDrawer()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <div class="lm-drawer" id="lmDrawer">
+            <a href="index.html">Home</a>
+            <a href="legmod.html" class="active">LegMod</a>
+            <a href="rgen.html">RGen</a>
+            <a href="codegen.html">CodeGen</a>
+            <a href="testai.html">Test AI</a>
+            <a href="deploy.html">Deploy</a>
+            <a href="#lm-playbook" style="color:#2AD6DF; font-weight:600;" onclick="toggleLmDrawer()">Get a Free
+                Assessment</a>
         </div>
-        <!-- Mobile Navigation Drawer -->
-        <div class="mobile-nav-drawer" id="mobileNavDrawer">
-            <nav class="mobile-nav-links font-disp">
-                <a href="index.html" class="mobile-nav-item">Home</a>
-                <a href="legmod.html" class="mobile-nav-item active">LegMod</a>
-                <a href="index.html#orchestrator" class="mobile-nav-item" onclick="closeMobileMenu()">RGen</a>
-                <a href="index.html#orchestrator" class="mobile-nav-item" onclick="closeMobileMenu()">CodeGen</a>
-                <a href="index.html#orchestrator" class="mobile-nav-item" onclick="closeMobileMenu()">Test AI</a>
-                <a href="index.html#orchestrator" class="mobile-nav-item" onclick="closeMobileMenu()">Deploy</a>
-                <div class="mobile-nav-cta pill" onclick="scrollToAssessment(event)">
-                    <span>Get a Free Assessment</span>
+
+        <!-- Hero Section -->
+        <section class="lm-section lm-hero">
+            <h1 class="lm-hero-title">
+                <span class="blue-bold">Modernize</span> <span class="white-italic">Legacy Systems. Bring Your</span>
+                <span class="blue-bold">Whole Estate into Score.</span>
+            </h1>
+            <p class="lm-hero-desc">
+                Legacy systems hold critical business logic and years of technical debt. Rewriting is risky, leaving
+                them untouched compounds the cost. LegMod orchestrates RGEN, CodeGen, and TestAI across every
+                modernization wave from legacy understanding to validated transformation, with human oversight and
+                audit-grade traceability.
+            </p>
+            <div class="lm-hero-buttons">
+                <a class="lm-btn-primary" href="#lm-playbook">Get a Free Assessment &rarr;</a>
+                <a class="lm-btn-secondary" href="#lm-playbook">Download the Playbook</a>
+            </div>
+            <div class="lm-hero-graphic-wrap">
+                <video class="lm-hero-graphic-vid" src="assets/vids/video%20(LEGMOD).aep.mp4" autoplay loop muted playsinline aria-label="Sanciti Ring"></video>
+            </div>
+        </section>
+
+        <!-- The Challenge Section -->
+        <section class="lm-section lm-challenge">
+            <h2 class="lm-challenge-title">
+                <span class="thin-italic">When</span> <span class="bold">Legacy Complexity</span><br />
+                <span class="thin-italic">Falls</span> <span class="bold">Out of Sync.</span>
+            </h2>
+            <p class="lm-challenge-intro">
+                Modernization is rarely a code problem alone. The real challenge is knowing what to preserve, what to
+                change, what depends on what, and how to prove the modernized system still performs as intended.
+            </p>
+            <div class="lm-challenge-card">
+                <ul class="lm-challenge-list">
+                    <li>Business logic is buried in aging code, stored procedures, documents, and tribal knowledge</li>
+                    <li>Technical debt consumes capacity long before teams can fund new value</li>
+                    <li>Application dependencies make isolated, file-by-file upgrades difficult to govern</li>
+                    <li>Big-bang rewrites force all-or-nothing decisions around systems the business cannot afford to
+                        disrupt</li>
+                </ul>
+            </div>
+            <p class="lm-challenge-footnote">
+                LegMod turns that uncertainty into a modernization plan built around managed waves, not one high-risk
+                leap.
+            </p>
+            <div class="lm-spheres-wrap">
+                <img class="lm-spheres-img" src="assets/img/ledmod/legacycomplexity.png" alt="Legacy Complexity" />
+            </div>
+        </section>
+
+        <!-- Symphony Section (4 Stages) -->
+        <section class="lm-section lm-symphony">
+            <h2 class="lm-symphony-title">
+                <span class="thin-italic">Plan.</span><br />
+                <span class="thin-italic">Analyze.</span><br />
+                <span class="thin-italic">Transform.</span><br />
+                <span class="thin-italic">Validate.</span><br />
+                <span class="bold">One Modernization</span><br />
+                <span class="bold">Symphony.</span>
+            </h2>
+
+            <div class="lm-stages-list">
+                <!-- Stage 1: Plan -->
+                <div class="lm-stage-card stage-cyan">
+                    <div class="lm-stage-banner">
+                        <video src="assets/vids/planledmod.mp4" autoplay loop muted playsinline
+                            style="width:100%; height:100%; object-fit:cover;"></video>
+                        <span class="lm-stage-badge">Stage</span>
+                        <div class="lm-stage-name">Plan</div>
+                    </div>
+                    <div class="lm-stage-content">
+                        <span class="lm-stage-subbadge">What Happens</span>
+                        <p class="lm-stage-desc">
+                            LegMod assesses risk, cost-benefit, technical debt, and modernization impact across the
+                            application portfolio. It sequences the work into managed waves rather than treating every
+                            application as the same problem.
+                        </p>
+                    </div>
                 </div>
-            </nav>
+
+                <!-- Stage 2: Analyze -->
+                <div class="lm-stage-card stage-blue">
+                    <div class="lm-stage-banner" style="background-image: url('assets/img/ledmod/analyzeledmod.jpg');">
+                        <span class="lm-stage-badge">Stage</span>
+                        <div class="lm-stage-name">Analyze</div>
+                    </div>
+                    <div class="lm-stage-content">
+                        <span class="lm-stage-subbadge">What Happens</span>
+                        <p class="lm-stage-desc">
+                            RGEN performs deep code and architecture analysis, extracts business logic and requirements,
+                            maps dependencies, and creates a traceable view of the current state before anything
+                            changes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stage 3: Transform -->
+                <div class="lm-stage-card stage-cyan">
+                    <div class="lm-stage-banner" style="background: #000; overflow: hidden;">
+                        <video src="assets/vids/transform.mp4" autoplay loop muted playsinline
+                            style="width:100%; height:100%; object-fit:cover;"></video>
+                        <span class="lm-stage-badge">Stage</span>
+                        <div class="lm-stage-name">Transform</div>
+                    </div>
+                    <div class="lm-stage-content">
+                        <span class="lm-stage-subbadge">What Happens</span>
+                        <p class="lm-stage-desc">
+                            CodeGen generates secure, architecture-aligned code in the target stack, with every output
+                            tied back to the requirements and modernization plan that informed it.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stage 4: Validate -->
+                <div class="lm-stage-card stage-blue">
+                    <div class="lm-stage-banner" style="background-image: url('assets/img/ledmod/validate.jpg');">
+                        <span class="lm-stage-badge">Stage</span>
+                        <div class="lm-stage-name">Validate</div>
+                    </div>
+                    <div class="lm-stage-content">
+                        <span class="lm-stage-subbadge">What Happens</span>
+                        <p class="lm-stage-desc">
+                            TestAI validates functional equivalence through automated functional, regression,
+                            performance, and security testing before an application moves forward.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lm-symphony-note">
+                One orchestrator. The right specialist at each stage. One governed path from legacy estate to modern
+                release.
+            </p>
+        </section>
+
+        <!-- Modernization at Portfolio Scale -->
+        <section class="lm-section lm-portfolio">
+            <h2 class="lm-portfolio-title">
+                Modernization <span class="thin-italic">at</span><br />
+                Portfolio Scale.
+            </h2>
+            <p class="lm-portfolio-desc">
+                Most modernization tools focus on one part of the work: code conversion, testing, or cloud migration.
+                LegMod governs the full modernization motion, so planning, analysis, transformation, and validation stay
+                connected.
+            </p>
+
+            <div class="lm-portfolio-card">
+                <div class="lm-portfolio-headers">
+                    <div class="lm-cap-pill">Capability</div>
+                    <div class="lm-why-pill">Why It Matters</div>
+                </div>
+
+                <div class="lm-table-row">
+                    <div class="lm-table-name">Portfolio-scale wave planning</div>
+                    <div class="lm-table-value">Prioritizes applications based on risk, complexity, cost-benefit, and
+                        business impact—not simply what is easiest to convert first.</div>
+                </div>
+
+                <div class="lm-table-row">
+                    <div class="lm-table-name">RGEN-led system understanding</div>
+                    <div class="lm-table-value">Recovers requirements and business logic hidden in code, documents, and
+                        institutional knowledge before transformation begins.</div>
+                </div>
+
+                <div class="lm-table-row">
+                    <div class="lm-table-name">Human review at every handoff</div>
+                    <div class="lm-table-value">Keeps experts in control of modernization decisions, generated output,
+                        and release readiness.</div>
+                </div>
+
+                <div class="lm-table-row">
+                    <div class="lm-table-name">Full modernization traceability</div>
+                    <div class="lm-table-value">Recovers requirements and business logic hidden in code, documents, and
+                        institutional knowledge before transformation begins.</div>
+                </div>
+
+                <div class="lm-table-row">
+                    <div class="lm-table-name">Zero-export architecture</div>
+                    <div class="lm-table-value">Keeps code and data within the enterprise environment, including when
+                        tasks are routed across approved models.</div>
+                </div>
+            </div>
+
+            <p class="lm-portfolio-note">
+                One orchestrator. The right specialist at each stage. One governed path from legacy estate to modern
+                release.
+            </p>
+        </section>
+
+        <!-- Outcomes Section -->
+        <section class="lm-section lm-outcomes">
+            <h2 class="lm-outcomes-title">
+                <span class="thin-italic">What</span> <span class="bold">Better Modernization</span><br />
+                <span class="thin-italic">Delivers.</span>
+            </h2>
+            <p class="lm-outcomes-desc">
+                These are reference outcomes from modernization engagements where transformation was planned and
+                executed in managed waves. They are shared as context for evaluating your own program—not as a universal
+                guarantee.
+            </p>
+
+            <div class="lm-stat-block">
+                <div class="lm-stat-number">50%</div>
+                <div class="lm-stat-label">Lower modernization cost versus manual re-platforming, based on fully loaded
+                    engineering hours</div>
+            </div>
+
+            <div class="lm-stat-block">
+                <div class="lm-stat-number">25–35%</div>
+                <div class="lm-stat-label">faster time-to-market across requirements-to-release cycle time versus prior
+                    release cadence</div>
+            </div>
+
+            <div class="lm-stat-footnote">
+                Safer migration through phased, wave-based execution rather than a single cutover
+            </div>
+
+            <div class="lm-dome-wrap">
+                <img class="lm-dome-img" src="assets/img/ledmod/bettermodernization.png" alt="Better Modernization" />
+            </div>
+        </section>
+
+        <!-- Built for Enterprise & Governed Core -->
+        <section class="lm-section lm-enterprise">
+            <h2 class="lm-enterprise-title">
+                <span class="thin-italic">One</span> <span class="cyan-bold">Governed</span> Core,<br />
+                <span class="cyan-bold">Every</span> Modernization <span class="thin-italic">Wave.</span>
+            </h2>
+            <p class="lm-enterprise-desc">
+                From data protection and human review to auditability and secure delivery, LegMod operates under the
+                same enterprise controls as every Sanciti AI component. Governance begins at the requirement, not after
+                code is written.
+            </p>
+
+            <div class="lm-cert-scroll-track">
+                <div class="lm-cert-card">
+                    <img src="assets/img/hipaa.png" alt="HIPAA" />
+                </div>
+                <div class="lm-cert-card">
+                    <img src="assets/img/iso.png" alt="ISO 27001" />
+                </div>
+                <div class="lm-cert-card">
+                    <img src="assets/img/cmmi.png" alt="CMMI Level 3" />
+                </div>
+                <div class="lm-cert-card">
+                    <img src="assets/img/owasp_nist.png" alt="OWASP & NIST" />
+                </div>
+                <div class="lm-cert-card">
+                    <img src="assets/img/single_tenant.png" alt="Single-tenant VPC" />
+                </div>
+                <div class="lm-cert-card">
+                    <img src="assets/img/audit_grade.png" alt="Audit-grade traceability" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Frame 136 Sequence: Playbook, Book a Demo, Built for Enterprise -->
+        <div class="lm-frame136-wrapper">
+            <div class="lm-frame136-glow">
+                <img src="assets/img/ledmod/frame136_gradient.png" alt="" />
+            </div>
+
+            <!-- Playbook Section -->
+            <section class="lm-section lm-playbook" id="lm-playbook">
+                <div class="lm-playbook-graphic-wrap">
+                    <img class="lm-playbook-graphic-img" src="assets/img/ledmod/modernizingtheystems.png"
+                        alt="Modernizing Systems" />
+                </div>
+
+                <div class="lm-playbook-card">
+                    <h2 class="lm-playbook-heading">
+                        <span class="bold">Modernizing</span> <span class="thin-italic">the</span> <span
+                            class="bold">Systems</span><br />
+                        <span class="thin-italic">You Can't</span> <span class="bold">Afford</span> <span
+                            class="thin-italic">to</span> <span class="bold">Break</span>
+                    </h2>
+                    <p class="lm-playbook-sub">
+                        A practical playbook for end-to-end legacy modernization.
+                    </p>
+
+                    <form class="lm-form-fields" id="lmPlaybookForm" action="submit_form.php" method="POST"
+                        onsubmit="handleAssessmentSubmit(event)">
+                        <div class="lm-field">
+                            <label for="lmName">Name</label>
+                            <input type="text" id="lmName" name="Name" required placeholder="" />
+                        </div>
+                        <div class="lm-field">
+                            <label for="lmTitle">Title</label>
+                            <input type="text" id="lmTitle" name="Title" required placeholder="" />
+                        </div>
+                        <div class="lm-field">
+                            <label for="lmEmail">Email</label>
+                            <input type="email" id="lmEmail" name="Email" required placeholder="" />
+                        </div>
+                        <div class="lm-field">
+                            <label for="lmPhone">Contact number</label>
+                            <input type="tel" id="lmPhone" name="Contact number" required placeholder="" />
+                        </div>
+                        <button type="submit" class="lm-btn-submit">
+                            Download the Playbook
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Book a Demo Section -->
+            <section class="lm-section lm-demo">
+                <div class="lm-demo-content">
+                    <h2 class="lm-demo-title">
+                        <span class="thin-italic">See Your</span><br />
+                        <span class="bold">Modernization</span><br />
+                        <span class="bold">Path</span> <span class="thin-italic">in Full.</span>
+                    </h2>
+                    <p class="lm-demo-desc">
+                        Bring a legacy application or portfolio challenge to the conversation. See how LegMod can assess
+                        the estate, identify the right modernization approach, and coordinate the work from analysis
+                        through validation.
+                    </p>
+                    <a class="lm-demo-btn" href="#lm-playbook">Book a Demo</a>
+
+                    <div class="lm-demo-img-wrap">
+                        <img src="assets/img/ledmod/modernizingthesystemsbtm.png" alt="Modernization Path" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Integrations Section -->
+            <section class="lm-section lm-integ">
+                <h2 class="lm-integ-title">
+                    <span class="thin-italic">Built </span><span class="bold-blue">for</span> <span
+                        class="thin-italic">Enterprise,</span><br />
+                    <span class="bold-blue">Tuned for Control.</span>
+                </h2>
+                <p class="lm-integ-desc">
+                    LegMod is built for organizations that need to modernize critical systems without compromising
+                    security, governance, or business continuity. Unlike point tools that upgrade file by file, it plans
+                    and governs modernization across the full portfolio.
+                </p>
+                <p class="lm-integ-backed">
+                    Backed by V2Soft—28 years building enterprise IT for regulated industries.
+                </p>
+
+                <div class="lm-integ-grid">
+                    <div class="lm-integ-row">
+                        <div class="lm-logo-circle" title="GitHub">
+                            <img src="assets/img/github.png" alt="GitHub" />
+                        </div>
+                        <img src="assets/img/jira.png" alt="Jira" style="height: 22px;" />
+                    </div>
+                    <div class="lm-integ-row">
+                        <img src="assets/img/confluence.png" alt="Confluence" style="height: 20px;" />
+                        <img src="assets/img/gitlab.png" alt="GitLab" style="height: 20px;" />
+                        <img src="assets/img/sharepoint.png" alt="SharePoint" style="height: 20px;" />
+                    </div>
+                </div>
+            </section>
         </div>
-    </header>
+
+        <!-- Mobile Footer -->
+        <footer class="sanciti-footer">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+                </div>
+                <p class="footer-desc">
+                    Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with
+                    enterprise-grade controls.
+                </p>
+            </div>
+
+            <div class="footer-frame179">
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Portal" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-copyright">
+                    &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <!-- ================= SCALER FOR DESKTOP ================= -->
     <div id="scaler">
-        <div id="stage" style="height: 8880px;">
+        <div id="stage" data-width="1512" style="height: 8650px;">
             <div class="abs desktop-nav" style="left:57px; top:38px; width:1400px; height:66px; z-index:50;">
                 <div class="abs"
                     style="left:0; top:0; width:100%; height:100%; background:rgba(30, 30, 30, 0.65); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255, 255, 255, 0.15); border-radius:4px;">
@@ -66,13 +490,13 @@
                         onclick="window.location.href='index.html';">Home</span>
                     <span class="nav-link" onclick="window.location.href='legmod.html';"
                         style="color:#fff; cursor:pointer;">LegMod</span>
-                    <span class="nav-link" onclick="window.location.href='index.html#orchestrator';"
+                    <span class="nav-link" onclick="window.location.href='rgen.html';"
                         style="color:rgba(255,255,255,.75); cursor:pointer;">RGen</span>
-                    <span class="nav-link" onclick="window.location.href='index.html#orchestrator';"
+                    <span class="nav-link" onclick="window.location.href='codegen.html';"
                         style="color:rgba(255,255,255,.75); cursor:pointer;">CodeGen</span>
-                    <span class="nav-link" onclick="window.location.href='index.html#orchestrator';"
+                    <span class="nav-link" onclick="window.location.href='testai.html';"
                         style="color:rgba(255,255,255,.75); cursor:pointer;">Test AI</span>
-                    <span class="nav-link" onclick="window.location.href='index.html#orchestrator';"
+                    <span class="nav-link" onclick="window.location.href='deploy.html';"
                         style="color:rgba(255,255,255,.75); cursor:pointer;">Deploy</span>
                 </div>
                 <div class="abs pill"
@@ -702,33 +1126,34 @@
                         </div>
 
                         <!-- Form Grid -->
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom:40px;">
+                        <form action="submit_form.php" method="POST" onsubmit="handleAssessmentSubmit(event)"
+                            style="display:grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom:40px;">
                             <!-- Name -->
                             <div>
                                 <label class="font-body"
                                     style="font-size:14px; color:rgba(255,255,255,0.8); display:block; margin-bottom:8px;">Name</label>
-                                <input type="text"
+                                <input type="text" name="Name" required
                                     style="width:100%; height:45px; background:rgba(255,255,255,0.9); border:none; border-radius:4px; padding:0 15px; font-family:'Inter',sans-serif; box-sizing:border-box;" />
                             </div>
                             <!-- Title -->
                             <div>
                                 <label class="font-body"
                                     style="font-size:14px; color:rgba(255,255,255,0.8); display:block; margin-bottom:8px;">Title</label>
-                                <input type="text"
+                                <input type="text" name="Title" required
                                     style="width:100%; height:45px; background:rgba(255,255,255,0.9); border:none; border-radius:4px; padding:0 15px; font-family:'Inter',sans-serif; box-sizing:border-box;" />
                             </div>
                             <!-- Company -->
                             <div>
                                 <label class="font-body"
                                     style="font-size:14px; color:rgba(255,255,255,0.8); display:block; margin-bottom:8px;">Company</label>
-                                <input type="text"
+                                <input type="text" name="Company" required
                                     style="width:100%; height:45px; background:rgba(255,255,255,0.9); border:none; border-radius:4px; padding:0 15px; font-family:'Inter',sans-serif; box-sizing:border-box;" />
                             </div>
                             <!-- Email -->
                             <div>
                                 <label class="font-body"
                                     style="font-size:14px; color:rgba(255,255,255,0.8); display:block; margin-bottom:8px;">Email</label>
-                                <input type="email"
+                                <input type="email" name="Email" required
                                     style="width:100%; height:45px; background:rgba(255,255,255,0.9); border:none; border-radius:4px; padding:0 15px; font-family:'Inter',sans-serif; box-sizing:border-box;" />
                             </div>
                             <!-- Contact Number -->
@@ -736,17 +1161,17 @@
                                 <label class="font-body"
                                     style="font-size:14px; color:rgba(255,255,255,0.8); display:block; margin-bottom:8px;">Contact
                                     number</label>
-                                <input type="tel"
+                                <input type="tel" name="Contact number" required
                                     style="width:100%; height:45px; background:rgba(255,255,255,0.9); border:none; border-radius:4px; padding:0 15px; font-family:'Inter',sans-serif; box-sizing:border-box;" />
                             </div>
                             <!-- Button -->
                             <div style="display:flex; justify-content:flex-end; align-items:flex-end;">
-                                <button class="font-body"
+                                <button type="submit" class="font-body"
                                     style="background:#3baeff; color:#000; font-size:18px; font-weight:600; padding:15px 40px; border-radius:999px; border:none; cursor:pointer; transition:background 0.3s; height:45px;">
                                     Download the Playbook
                                 </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -874,231 +1299,136 @@
             </div>
             <!-- ================= TUNED FOR CONTROL SECTION END ================= -->
 
-            <!-- ================= DESKTOP FOOTER ================= -->
-            <div class="abs desktop-footer"
-                style="left:0; top:8450px; width:1512px; height:430px; border-top:1px solid rgba(255,255,255,.08); background:#000; box-sizing:border-box; padding:60px 80px 40px;">
-                <!-- Top 4 Columns Row -->
-                <div
-                    style="display:grid; grid-template-columns:360px 180px 180px 240px; justify-content:space-between;">
-                    <!-- 1. Branding & Mission -->
-                    <div>
-                        <img alt="Sanciti AI" src="assets/img/sancitiailogo.png"
-                            style="height:36px; width:auto; object-fit:contain;" />
-                        <p class="font-body"
-                            style="margin:24px 0 20px 0; font-size:14px; font-weight:300; color:rgba(255,255,255,.65); line-height:1.65; max-width:340px;">
-                            The Agentic AI SDLC platform revolutionizing software development — driving efficiency,
-                            enhancing
-                            security,
-                            improving code quality, and transforming how software is designed and built.
-                        </p>
-                        <p class="font-body" style="margin:0; font-size:13px; color:rgba(255,255,255,.5);">
-                            A V2Soft Company · <a href="https://v2soft.com" target="_blank"
-                                style="color:#a78bfa; text-decoration:none; font-weight:500;">v2soft.com</a>
-                        </p>
+            <!-- ================= FOOTER ================= -->
+            <footer class="abs desktop-footer sanciti-footer"
+                style="left:0; top:8450px; width:1512px; height:200px; background:#0D0D0D; border-top:1px solid rgba(255, 255, 255, 0.101961); box-sizing:border-box; padding:40px 18px 40px 43px; display:flex; flex-direction:row; align-items:center; justify-content:space-between;">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
                     </div>
-
-                    <!-- 2. Platform Column -->
-                    <div>
-                        <p class="font-body"
-                            style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
-                            Platform
-                        </p>
-                        <div style="display:flex; flex-direction:column; gap:12px;">
-                            <span class="font-body nav-link" onclick="window.location.href='index.html';"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Full
-                                Stack SDLC</span>
-                            <span class="font-body nav-link" onclick="window.location.href='index.html#orchestrator';"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti RGEN</span>
-                            <span class="font-body nav-link" onclick="window.location.href='index.html#orchestrator';"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti
-                                CodeGen</span>
-                            <span class="font-body nav-link" onclick="window.location.href='index.html#orchestrator';"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Sanciti
-                                TestAI</span>
-                            <span class="font-body nav-link" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-                                style="font-size:14px; color:#fff; cursor:pointer;">Sanciti
-                                LEGMOD</span>
-                        </div>
-                    </div>
-
-                    <!-- 3. Company Column -->
-                    <div>
-                        <p class="font-body"
-                            style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
-                            Company
-                        </p>
-                        <div style="display:flex; flex-direction:column; gap:12px;">
-                            <span class="font-body nav-link"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">About Us</span>
-                            <span class="font-body nav-link"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Leadership</span>
-                            <span class="font-body nav-link"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Certifications</span>
-                            <span class="font-body nav-link"
-                                style="font-size:14px; color:rgba(255,255,255,.75); cursor:pointer;">Social
-                                Responsibility</span>
-                        </div>
-                    </div>
-
-                    <!-- 4. Contact Column -->
-                    <div>
-                        <p class="font-body"
-                            style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 20px 0;">
-                            Contact
-                        </p>
-                        <div
-                            style="display:flex; flex-direction:column; gap:10px; font-size:14px; color:rgba(255,255,255,.75);">
-                            <span>+1 248-904-1737</span>
-                            <span>info@sanciti.ai</span>
-                            <span>www.sanciti.ai</span>
-                            <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
-                        </div>
-                        <!-- Social Icons -->
-                        <div style="display:flex; gap:20px; margin-top:18px;">
-                            <!-- LinkedIn -->
-                            <a href="#" aria-label="LinkedIn"
-                                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                                <img src="assets/img/linkedin.png" alt="LinkedIn"
-                                    style="height:24px; width:auto; object-fit:contain;" />
-                            </a>
-                            <!-- Facebook -->
-                            <a href="#" aria-label="Facebook"
-                                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                                <img src="assets/img/facebook.svg" alt="Facebook"
-                                    style="height:24px; width:auto; object-fit:contain;" />
-                            </a>
-                            <!-- Instagram -->
-                            <a href="#" aria-label="Instagram"
-                                style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                                <img src="assets/img/instagram.svg" alt="Instagram"
-                                    style="height:24px; width:auto; object-fit:contain;" />
-                            </a>
-                        </div>
-                    </div>
+                    <p class="footer-desc">
+                        Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation
+                        with enterprise-grade controls.
+                    </p>
                 </div>
 
-                <!-- Horizontal Divider Line -->
-                <div style="width:100%; height:1px; background:rgba(255,255,255,0.08); margin:40px 0 24px 0;"></div>
+                <div class="footer-frame179">
+                    <div class="footer-socials">
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Portal" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </a>
+                    </div>
 
-                <!-- Bottom Copyright & Tagline Row -->
-                <div class="font-body"
-                    style="display:flex; justify-content:space-between; align-items:center; font-size:13px; color:rgba(255,255,255,.45);">
-                    <span>© 2026 Sanciti AI LLC. All Rights Reserved.</span>
-                    <span>Secure · Scalable · Smart · LLM-Agnostic</span>
+                    <div class="footer-copyright">
+                        &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+                    </div>
                 </div>
-            </div>
+            </footer>
         </div><!-- /#stage -->
     </div><!-- /#scaler -->
+    <script src="assets/js/script.js?v=2.5"></script>
+    <script>
+        async function handleAssessmentSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
 
-    <!-- ================= MOBILE FOOTER ================= -->
-    <div class="mobile-footer"
-        style="background:#000; padding:60px 20px 40px; border-top:1px solid rgba(255,255,255,0.08);">
-        <div style="display:flex; flex-direction:column; gap:40px;">
-            <!-- Branding & Mission -->
-            <div>
-                <img alt="Sanciti AI" src="assets/img/sancitiailogo.png"
-                    style="height:32px; width:auto; object-fit:contain;" />
-                <p class="font-body"
-                    style="margin:20px 0; font-size:14px; font-weight:300; color:rgba(255,255,255,.65); line-height:1.6;">
-                    The Agentic AI SDLC platform revolutionizing software development — driving efficiency, enhancing
-                    security,
-                    improving code quality, and transforming how software is designed and built.
-                </p>
-                <p class="font-body" style="margin:0; font-size:13px; color:rgba(255,255,255,.5);">
-                    A V2Soft Company · <a href="https://v2soft.com" target="_blank"
-                        style="color:#a78bfa; text-decoration:none; font-weight:500;">v2soft.com</a>
-                </p>
-            </div>
+            const form = event.target;
+            if (window.validateCorporateEmailForm && !window.validateCorporateEmailForm(form)) {
+                if (window.showFormSubmitError) {
+                    window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+                }
+                return;
+            }
 
-            <!-- Links Grid -->
-            <div style="display:flex; flex-wrap:wrap; gap:40px;">
-                <!-- Platform Column -->
-                <div style="flex: 1 1 40%;">
-                    <p class="font-body"
-                        style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 16px 0;">
-                        Platform
-                    </p>
-                    <div style="display:flex; flex-direction:column; gap:12px;">
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);"
-                            onclick="window.location.href='index.html';">Full Stack
-                            SDLC</span>
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);"
-                            onclick="window.location.href='index.html#orchestrator';">Sanciti RGEN</span>
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);"
-                            onclick="window.location.href='index.html#orchestrator';">Sanciti
-                            CodeGen</span>
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);"
-                            onclick="window.location.href='index.html#orchestrator';">Sanciti
-                            TestAI</span>
-                        <span class="font-body" style="font-size:14px; color:#fff;"
-                            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Sanciti
-                            LEGMOD</span>
-                    </div>
-                </div>
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+            const originalBtnText = submitBtn ? submitBtn.innerText : 'Download the Playbook';
 
-                <!-- Company Column -->
-                <div style="flex: 1 1 40%;">
-                    <p class="font-body"
-                        style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 16px 0;">
-                        Company
-                    </p>
-                    <div style="display:flex; flex-direction:column; gap:12px;">
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">About Us</span>
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Leadership</span>
-                        <span class="font-body"
-                            style="font-size:14px; color:rgba(255,255,255,.75);">Certifications</span>
-                        <span class="font-body" style="font-size:14px; color:rgba(255,255,255,.75);">Social
-                            Responsibility</span>
-                    </div>
-                </div>
-            </div>
+            try {
+                if (submitBtn) {
+                    submitBtn.innerText = 'Sending...';
+                    submitBtn.disabled = true;
+                }
 
-            <!-- Contact Column -->
-            <div>
-                <p class="font-body"
-                    style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.45); margin:0 0 16px 0;">
-                    Contact
-                </p>
-                <div style="display:flex; flex-direction:column; gap:8px; font-size:14px; color:rgba(255,255,255,.75);">
-                    <span>+1 248-904-1737</span>
-                    <span>info@sanciti.ai</span>
-                    <span>www.sanciti.ai</span>
-                    <span style="line-height:1.45;">300 Enterprise Ct, Bloomfield Hills,<br />MI 48302</span>
-                </div>
-                <!-- Social Icons -->
-                <div style="display:flex; gap:20px; margin-top:20px;">
-                    <!-- LinkedIn -->
-                    <a href="#" aria-label="LinkedIn"
-                        style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                        <img src="assets/img/linkedin.png" alt="LinkedIn"
-                            style="height:24px; width:auto; object-fit:contain;" />
-                    </a>
-                    <!-- Facebook -->
-                    <a href="#" aria-label="Facebook"
-                        style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                        <img src="assets/img/facebook.svg" alt="Facebook"
-                            style="height:24px; width:auto; object-fit:contain;" />
-                    </a>
-                    <!-- Instagram -->
-                    <a href="#" aria-label="Instagram"
-                        style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
-                        <img src="assets/img/instagram.svg" alt="Instagram"
-                            style="height:24px; width:auto; object-fit:contain;" />
-                    </a>
-                </div>
-            </div>
-        </div>
+                // Send POST request to our PHP endpoint
+                const response = await fetch('submit_form.php', {
+                    method: 'POST',
+                    body: formData
+                });
 
-        <div style="width:100%; height:1px; background:rgba(255,255,255,0.08); margin:32px 0 24px 0;"></div>
+                const result = await response.json();
+                console.log("Form submission result:", result);
 
-        <div class="font-body"
-            style="display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center; font-size:12px; color:rgba(255,255,255,.45);">
-            <span>© 2026 Sanciti AI LLC. All Rights Reserved.</span>
-            <span>Secure · Scalable · Smart · LLM-Agnostic</span>
-        </div>
-    </div>
+                if (!result.success) {
+                    const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+                    if (emailInput && window.showEmailError) {
+                        window.showEmailError(emailInput, '✕ Must be Business email.');
+                        emailInput.focus();
+                    }
+                    if (window.showFormSubmitError) {
+                        window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+                    }
+                    return;
+                }
 
-    <script src="assets/js/script.js"></script>
+            } catch (error) {
+                console.error("Error submitting form:", error);
+                if (window.showFormSubmitError) {
+                    window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+                }
+                return;
+            } finally {
+                if (submitBtn) {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            }
+
+            if (window.clearFormSubmitError) {
+                window.clearFormSubmitError(form);
+            }
+
+            // Trigger the download
+            const link = document.createElement('a');
+            link.href = 'assets/Sanciti%20Ai%20_Legacy%20Modernization_Playbook.pdf';
+            link.download = 'Sanciti_Ai_Legacy_Modernization_Playbook.pdf';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Reset form
+            form.reset();
+
+            // Redirect to thank you page
+            setTimeout(() => {
+                window.location.href = 'https://www.sanciti.ai/thank-you/';
+            }, 500);
+        }
+        window.handlePlaybookDownload = handleAssessmentSubmit;
+    </script>
 </body>
 
 </html>

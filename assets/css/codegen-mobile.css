@@ -1,0 +1,644 @@
+/* =========================================================================
+   Sanciti AI — CodeGen Mobile Stylesheet (Fluid Responsive < 768px)
+   ========================================================================= */
+
+/* Hide mobile container on desktop */
+@media (min-width: 769px) {
+  #mobile-container {
+    display: none !important;
+  }
+}
+
+/* On mobile devices (<= 768px) */
+@media (max-width: 768px) {
+  /* Hide desktop scaler */
+  #scaler,
+  .mobile-header-hidden {
+    display: none !important;
+  }
+
+  html {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body.codegen-body {
+    padding-top: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    background: #000000 !important;
+    overflow-x: hidden !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #FFFFFF !important;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box !important;
+  }
+
+  #mobile-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    background: #000000 !important;
+    position: relative !important;
+    overflow-x: hidden !important;
+    min-height: 100vh;
+    box-sizing: border-box !important;
+  }
+
+  /* Mobile Sticky Header */
+  .cg-mob-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: rgba(7, 7, 14, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 999;
+  }
+
+  .cg-mob-logo img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  .cg-mob-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cg-mob-demo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    padding: 0 18px;
+    background: #2AD6DF;
+    border: none;
+    border-radius: 50px;
+    color: rgba(7, 7, 14, 0.9);
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 0 12px rgba(42, 214, 223, 0.4);
+  }
+
+  .cg-mob-menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .cg-mob-menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Navigation Drawer */
+  .cg-mob-drawer {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: rgba(7, 7, 14, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 24px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 998;
+  }
+
+  .cg-mob-drawer.open {
+    display: flex;
+  }
+
+  .cg-mob-drawer a {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .cg-mob-drawer a.active {
+    color: #2AD6DF;
+    font-weight: 600;
+  }
+
+  /* Common Mobile Section */
+  .cg-mob-section {
+    width: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cg-mob-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px 0;
+    color: #FFFFFF;
+  }
+
+  .cg-mob-title .light-italic {
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .cg-mob-title .bold-white {
+    font-style: normal;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .cg-mob-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 16px 0;
+  }
+
+  /* 1. Mobile Hero */
+  .cg-mob-hero {
+    padding-top: 30px;
+    text-align: left;
+  }
+
+  .cg-mob-hero-visual {
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    margin: 30px auto 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cg-mob-hero-circle-vid {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cg-mob-hero-circle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+    filter: drop-shadow(0 0 25px rgba(1, 4, 225, 0.8));
+  }
+
+  .cg-mob-btn-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .cg-mob-btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    background: #0104E1;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(1, 4, 225, 0.5);
+  }
+
+  .cg-mob-btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    background: transparent;
+    border: 1.5px solid #0104E1;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  /* 2. Mobile Challenge */
+  .cg-mob-card {
+    padding: 20px;
+    background: rgba(0, 26, 255, 0.08);
+    border: 1px solid rgba(36, 88, 255, 0.3);
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+
+  .cg-mob-spheres-wrap {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .cg-mob-spheres-img {
+    width: 112%;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin-left: 16px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* 3. Mobile Stages */
+  .cg-mob-stages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  .cg-mob-stage-card {
+    width: 100%;
+    background: rgba(10, 25, 49, 0.4);
+    border: 1px solid rgba(36, 88, 255, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .cg-mob-stage-banner {
+    width: 100%;
+    height: 160px;
+  }
+
+  .cg-mob-stage-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .cg-mob-stage-content {
+    padding: 16px;
+    background: rgba(0, 26, 255, 0.12);
+  }
+
+  /* 4. Mobile Differentiation Table (Figma Frame 133) */
+  .cg-mob-diff-section {
+    padding: 30px 10px !important;
+  }
+
+  .cg-mob-diff-frame-wrap {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cg-mob-diff-frame-img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.7));
+  }
+
+  /* 5. Mobile Outcomes */
+  .cg-mob-metric-number {
+    font-size: 54px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .cg-mob-dome-wrap {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .cg-mob-dome-img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+  }
+
+  /* 6. Mobile Case Study */
+  .cg-mob-case-card {
+    padding: 24px 20px;
+    background: rgba(0, 26, 255, 0.08);
+    border: 1px solid rgba(36, 88, 255, 0.25);
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cg-mob-case-card .cg-btn-learn-more {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 134px !important;
+    height: 42px !important;
+    padding: 0 24px !important;
+    background: #0104E1 !important;
+    border-radius: 99px !important;
+    color: #FFFFFF !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    box-shadow: 0 0 16px rgba(1, 4, 225, 0.5) !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .cg-mob-case-card .cg-btn-learn-more:hover {
+    background: #1014F0 !important;
+    box-shadow: 0 0 25px rgba(1, 4, 225, 0.8) !important;
+    transform: translateY(-2px);
+  }
+
+  /* 7. Mobile Trust */
+  .cg-mob-trust-section {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .cg-mob-trust-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 10px 0 0 0 !important;
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+    scrollbar-width: none;
+  }
+
+  .cg-mob-trust-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cg-mob-trust-card {
+    flex: 0 0 240px;
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(36, 88, 255, 0.35);
+    margin-bottom: 0 !important;
+  }
+
+  .cg-mob-trust-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(45deg) saturate(1.3);
+    display: block;
+  }
+
+  /* Frame 76 Sequence: Playbook Form + CTA + Vertical Chain */
+  .cg-mob-frame76-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: #000000;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .cg-mob-frame76-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+  }
+
+  .cg-mob-frame76-glow img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+  }
+
+  .cg-mob-chain-vertical-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    line-height: 0 !important;
+  }
+
+  .cg-mob-chain-vertical-img {
+    width: 82%;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .cg-mob-playbook-section {
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
+    padding-top: 10px !important;
+  }
+
+  .cg-mob-cta-section {
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
+    padding-top: 20px !important;
+  }
+
+  /* Playbook Download button matching Image 2 */
+  .cg-mob-playbook-section .cg-mob-btn-primary,
+  .cg-mob-playbook-submit {
+    background: #FFFFFF !important;
+    color: #0104E1 !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.35) !important;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .cg-mob-playbook-section .cg-mob-btn-primary:hover,
+  .cg-mob-playbook-submit:hover {
+    background: #F0F4FF !important;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.55) !important;
+  }
+
+  /* 8. Mobile Playbook Form */
+  .cg-mob-chain-wrap {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .cg-mob-chain-img {
+    width: 80%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .cg-mob-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .cg-mob-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+  }
+
+  .cg-mob-input {
+    height: 48px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 15px;
+    color: #07070E;
+    outline: none;
+  }
+
+  .cg-mob-input:focus {
+    background: #FFFFFF;
+    border-color: #001AFF;
+    box-shadow: 0 0 10px rgba(0, 26, 255, 0.35);
+  }
+
+  /* 9. Mobile CTA */
+  .cg-mob-cta-loop {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: 32px;
+    margin-bottom: -50px;
+    overflow: hidden;
+    line-height: 0;
+    display: block;
+  }
+
+  .cg-mob-cta-loop img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  /* 10. Mobile Ecosystem */
+  .cg-mob-tools-wrap {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .cg-mob-tools-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* 11. Mobile Footer */
+  .cg-mob-footer {
+    padding: 40px 20px;
+    background: #07070E;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .cg-mob-footer .footer-brand {
+    margin-bottom: 24px;
+  }
+
+  .cg-mob-footer .footer-logo img {
+    height: 32px;
+    margin-bottom: 12px;
+  }
+
+  .cg-mob-footer .footer-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .cg-mob-footer .footer-socials {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .cg-mob-footer .footer-copyright {
+    font-size: 12.5px;
+    color: rgba(255, 255, 255, 0.45);
+  }
+}

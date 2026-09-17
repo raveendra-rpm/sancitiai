@@ -1,0 +1,1299 @@
+/* ==========================================================================
+   Sanciti AI — Deploy Page Dedicated Stylesheet
+   Figma Specification: Width 1440px, Height 9391px, Background #000000
+   Brand Theme: Platinum / Oyster White (#E8E8E8 / #FFFFFF) & Cool Cyan (#2AD6DF)
+   ========================================================================== */
+
+:root {
+  --dp-white: #FFFFFF;
+  --dp-platinum: #E8E8E8;
+  --dp-cyan: #2AD6DF;
+  --dp-blue-glow: rgba(63, 174, 255, 0.6);
+  --dp-bg-dark: #000000;
+  --dp-bg-card: rgba(12, 14, 23, 0.2);
+  --dp-card-border: rgba(255, 255, 255, 0.121569);
+  --dp-text-white: #FFFFFF;
+  --dp-text-dim: rgba(255, 255, 255, 0.85);
+  --dp-text-sub: rgba(255, 255, 255, 0.65);
+}
+
+body.deploy-body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base Stage - Exactly 1440px by 9177px */
+.deploy-stage {
+  position: relative;
+  width: 1440px;
+  height: 9177px;
+  background: #000000;
+  margin: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transform-origin: top left;
+}
+
+/* Ambient Glows per Figma Coordinates */
+.dp-ambient-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Common Text Tokens */
+.font-disp {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+}
+
+.bold-white {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.light-italic {
+  font-style: italic;
+  font-weight: 200;
+}
+
+/* Reusable CTA Buttons */
+.dp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #E8E8E8;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.dp-btn-primary:hover {
+  background: #FFFFFF;
+  box-shadow: 0 0 24px rgba(232, 232, 232, 0.7);
+  transform: translateY(-2px);
+}
+
+.dp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1.5px solid #E8E8E8;
+  border-radius: 99px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.dp-btn-secondary:hover {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 16px rgba(232, 232, 232, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ================= 0. DESKTOP NAV BAR (top: 38px) ================= */
+.deploy-nav {
+  position: absolute;
+  width: 1400px;
+  height: 66px;
+  left: 20px;
+  top: 38px;
+  background: rgba(217, 217, 217, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.deploy-nav-logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.deploy-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.deploy-nav-link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.deploy-nav-link:hover,
+.deploy-nav-link.active {
+  color: #2AD6DF;
+}
+
+.deploy-nav-demo-btn {
+  padding: 10px 24px;
+  background: #2AD6DF;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(7, 7, 14, 0.9);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.deploy-nav-demo-btn:hover {
+  background: #46e2ea;
+  box-shadow: 0 0 20px rgba(42, 214, 223, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ================= 1. HERO SECTION (0 - 800px) ================= */
+.dp-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 800px;
+  z-index: 2;
+}
+
+.dp-hero-visual {
+  position: absolute;
+  width: 956px;
+  height: 538px;
+  left: -159px;
+  top: 161px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.dp-hero-circle-vid {
+  position: absolute;
+  width: 538px;
+  height: 538px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dp-hero-circle-canvas {
+  width: 538px;
+  height: 538px;
+  filter: drop-shadow(0 0 35px rgba(232, 232, 232, 0.35)) drop-shadow(0 0 70px rgba(42, 214, 223, 0.25));
+}
+
+.dp-hero-text-block {
+  position: absolute;
+  width: 652px;
+  height: 479px;
+  left: 750px;
+  top: calc(50% - 479px / 2 + 54px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.dp-hero-heading {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 66px;
+  line-height: 66px;
+  color: #FFFFFF;
+}
+
+.dp-hero-heading .bold-white {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.dp-hero-desc {
+  margin: 0;
+  width: 519px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.dp-hero-cta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ================= 2. CHALLENGE SECTION (800 - 1664px, Height 864px) ================= */
+.dp-challenge {
+  position: absolute;
+  top: 800px;
+  left: 0;
+  width: 1440px;
+  height: 864px;
+  z-index: 2;
+}
+
+.dp-challenge-left {
+  position: absolute;
+  width: 667px;
+  height: 749px;
+  left: 40px;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.dp-challenge-heading {
+  margin: 0;
+  width: 554px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 66px;
+  line-height: 66px;
+  color: #FFFFFF;
+}
+
+.dp-challenge-heading .bold-white {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.dp-challenge-intro {
+  margin: 0;
+  width: 600px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.dp-challenge-card {
+  box-sizing: border-box;
+  width: 562px;
+  height: 268px;
+  background: rgba(12, 14, 23, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.121569);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dp-challenge-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.dp-challenge-conclusion {
+  margin: 0;
+  width: 562px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.dp-challenge-right {
+  position: absolute;
+  width: 721px;
+  height: 620px;
+  right: 0px;
+  top: 121px;
+  pointer-events: none;
+}
+
+.dp-challenge-spheres-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= 3. HOW IT WORKS / LIFECYCLE (1664 - 2550px, Height 886px) ================= */
+.dp-lifecycle {
+  position: absolute;
+  top: 1664px;
+  left: 0;
+  width: 1440px;
+  height: 886px;
+  z-index: 2;
+}
+
+.dp-lifecycle-heading {
+  position: absolute;
+  width: 435px;
+  height: 532px;
+  left: 965px;
+  top: 75px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 66px;
+  line-height: 76px;
+  text-align: right;
+  color: #FFFFFF;
+}
+
+.dp-lifecycle-heading .bold-white {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.dp-lifecycle-desc {
+  position: absolute;
+  width: 435px;
+  height: 110px;
+  left: 965px;
+  top: 660px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  color: #E8E8E8;
+  text-align: right;
+}
+
+.dp-lifecycle-bottom-text {
+  position: absolute;
+  width: 656px;
+  height: 44px;
+  left: 42px;
+  top: 842px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: #E8E8E8;
+}
+
+/* 4 Stage Cards (2x2 Grid) */
+.dp-stage-card {
+  position: absolute;
+  width: 340px;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dp-stage-1 { left: 38px; top: 75px; }
+.dp-stage-2 { left: 398px; top: 75px; }
+.dp-stage-3 { left: 40px; top: 451px; }
+.dp-stage-4 { left: 398px; top: 451px; }
+
+.dp-card-banner {
+  width: 340px;
+  height: 177px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.dp-card-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dp-card-stage-pill {
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  padding: 4px 12px;
+  border: 1.5px solid #E8E8E8;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.dp-card-title {
+  position: absolute;
+  left: 20px;
+  bottom: 12px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 39px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.dp-card-body {
+  width: 340px;
+  height: 143px;
+  background: rgba(232, 232, 232, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0 0 7px 7px;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dp-card-what-pill {
+  align-self: flex-start;
+  padding: 3px 12px;
+  border: 1.5px solid #E8E8E8;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+.dp-card-text {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+/* ================= 4. DIFFERENTIATION (2550 - 4098px, Height 1548px) ================= */
+.dp-diff {
+  position: absolute;
+  top: 2550px;
+  left: 0;
+  width: 1440px;
+  height: 1548px;
+  z-index: 2;
+}
+
+.dp-diff-title-wrap {
+  position: absolute;
+  width: 1065px;
+  height: 164px;
+  left: calc(50% - 1065px / 2 + 0.5px);
+  top: 111px;
+  text-align: center;
+}
+
+.dp-diff-title {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+}
+
+.dp-diff-title .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.dp-diff-subtitle {
+  position: absolute;
+  width: 544px;
+  height: 120px;
+  left: calc(50% - 544px / 2 + 292px);
+  top: 334px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.dp-diff-glass-card {
+  position: absolute;
+  width: 1360px;
+  height: 930px;
+  left: calc(50% - 1360px / 2);
+  top: 513px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.dp-diff-card-img {
+  width: 1360px;
+  height: 930px;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.dp-diff-bottom-text {
+  position: absolute;
+  width: 658px;
+  height: 48px;
+  left: calc(50% - 658px / 2 + 344px);
+  top: 1475px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  text-align: right;
+}
+
+/* ================= 5. TRUST & METRICS (4098 - 4935px, Height 837px) ================= */
+.dp-trust {
+  position: absolute;
+  top: 4098px;
+  left: 0;
+  width: 1440px;
+  height: 837px;
+  z-index: 2;
+  background: radial-gradient(circle at 18% 25%, #565656 0%, #3a3b3b 40%, #26292d 70%, #0d1216 100%);
+  overflow: hidden;
+}
+
+.dp-trust-heading {
+  position: absolute;
+  width: 580px;
+  left: 63px;
+  top: 48px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 74px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.dp-trust-heading .bold-white {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dp-trust-heading .light-italic {
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Inter', sans-serif;
+}
+
+.dp-trust-intro {
+  position: absolute;
+  width: 635px;
+  right: 63px;
+  top: 135px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: right;
+  color: #E8E8E8;
+  margin: 0;
+}
+
+.dp-trust-items {
+  position: absolute;
+  width: 440px;
+  left: 63px;
+  top: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dp-trust-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dp-trust-divider {
+  width: 440px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.dp-trust-item-text {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dp-trust-right-visual {
+  position: absolute;
+  width: 738px;
+  height: 426px;
+  right: 0px;
+  top: 262px;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.dp-trust-dome-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* ================= 6. CASE STUDY (4935 - 5801px, Height 866px) ================= */
+.dp-case {
+  position: absolute;
+  top: 4935px;
+  left: 0;
+  width: 1440px;
+  height: 866px;
+  background: linear-gradient(180deg, #0d1216 0%, #171b1f 40%, #0c0f12 80%, #000000 100%);
+  z-index: 2;
+}
+
+.dp-case-heading {
+  position: absolute;
+  width: 806px;
+  height: 154px;
+  left: calc(50% - 806px / 2 + 270px);
+  top: 80px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 77px;
+  text-align: right;
+  color: #FFFFFF;
+}
+
+.dp-case-desc {
+  position: absolute;
+  width: 663px;
+  height: 116px;
+  left: calc(50% - 663px / 2 - 346.5px);
+  top: 250px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+.dp-case-btn {
+  position: absolute;
+  width: 134px;
+  height: 43px;
+  left: 40px;
+  top: 420px;
+  background: #E8E8E8;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.dp-case-btn:hover {
+  background: #FFFFFF;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ================= 7. GOVERNED CORE & COMPLIANCE (5801 - 6798px, Height 997px) ================= */
+.dp-compliance {
+  position: absolute;
+  top: 5801px;
+  left: 0;
+  width: 1440px;
+  height: 997px;
+  z-index: 2;
+}
+
+.dp-compliance-heading {
+  position: absolute;
+  width: 601px;
+  height: 128px;
+  left: 63px;
+  top: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 68px;
+  color: #FFFFFF;
+}
+
+.dp-compliance-heading .bold-white {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.dp-compliance-desc {
+  position: absolute;
+  width: 638px;
+  height: 145px;
+  left: 773px;
+  top: 40px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+
+.dp-compliance-scroll-wrap {
+  position: absolute;
+  width: 1440px;
+  height: 620px;
+  left: 0px;
+  top: 240px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.dp-compliance-scroll-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.dp-compliance-cards-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 40px;
+  gap: 25px;
+  width: max-content;
+}
+
+.dp-compliance-card {
+  width: 432px;
+  height: 601px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dp-compliance-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%);
+}
+
+/* ================= 8. PLAYBOOK & 9. CTA UNIFIED SECTION (6798 - 8098px, Height 1300px) ================= */
+.dp-playbook-cta-wrapper {
+  position: absolute;
+  top: 6798px;
+  left: 0;
+  width: 1440px;
+  height: 1300px;
+  background: radial-gradient(circle at 62% 48%, rgba(42, 75, 105, 0.45) 0%, rgba(20, 35, 50, 0.22) 45%, #000000 80%);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* 8. Playbook Form */
+.dp-playbook {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 1440px;
+  height: 600px;
+}
+
+.dp-playbook-left-chain {
+  position: absolute;
+  width: 440px;
+  height: 520px;
+  left: 20px;
+  top: 0px;
+  pointer-events: none;
+}
+
+.dp-playbook-chain-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top left;
+}
+
+.dp-playbook-right {
+  position: absolute;
+  width: 760px;
+  right: 40px;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.dp-playbook-heading {
+  margin: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 68px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.dp-playbook-heading .bold-white {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.dp-playbook-desc {
+  margin: 0;
+  max-width: 580px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.dp-playbook-form {
+  width: 668px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.dp-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+}
+
+.dp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dp-form-label {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.dp-form-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  padding: 0 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #000000;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.dp-form-input:focus {
+  box-shadow: 0 0 10px rgba(42, 214, 223, 0.5);
+}
+
+.dp-form-submit-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.dp-form-submit-btn {
+  padding: 14px 34px;
+  background: #FFFFFF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dp-form-submit-btn:hover {
+  background: #E8E8E8;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* 9. Conversation CTA */
+.dp-cta {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  width: 1440px;
+  height: 700px;
+}
+
+.dp-cta-left {
+  position: absolute;
+  width: 650px;
+  left: 40px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.dp-cta-heading {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 58px;
+  line-height: 66px;
+  color: #FFFFFF;
+}
+
+.dp-cta-heading .bold-white {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.dp-cta-desc {
+  margin: 0;
+  max-width: 580px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.dp-cta-btn {
+  padding: 14px 36px;
+  background: #FFFFFF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.dp-cta-btn:hover {
+  background: #E8E8E8;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.dp-cta-right {
+  position: absolute;
+  width: 480px;
+  height: 520px;
+  right: 0px;
+  top: 80px;
+  pointer-events: none;
+}
+
+.dp-cta-loop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+}
+
+/* ================= 10. ECOSYSTEM / WORKFLOW TOOLS (8098 - 8977px, Height 879px) ================= */
+.dp-ecosystem {
+  position: absolute;
+  top: 8098px;
+  left: 0;
+  width: 1440px;
+  height: 879px;
+  background: radial-gradient(circle at 35% 55%, #5a5f65 0%, #3b3f43 35%, #232629 65%, #101214 85%, #000000 100%);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.dp-eco-ambient-glow {
+  position: absolute;
+  width: 1096px;
+  height: 1484px;
+  left: 171px;
+  top: 12px;
+  background: #E8E8E8;
+  opacity: 0.35;
+  filter: blur(300px);
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.dp-eco-heading {
+  position: absolute;
+  width: 733px;
+  height: 128px;
+  left: 660px;
+  top: 110px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 71px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+  z-index: 2;
+}
+
+.dp-eco-heading .bold-white {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.dp-eco-heading .light-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.dp-eco-left {
+  position: absolute;
+  width: 502px;
+  height: 378px;
+  left: 63px;
+  top: 357px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 2;
+}
+
+.dp-eco-desc {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+
+.dp-eco-backed {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+
+.dp-eco-tools-list {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+
+.dp-eco-right {
+  position: absolute;
+  width: 743px;
+  height: 348px;
+  left: 634px;
+  top: 340px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.dp-eco-tools-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ================= 11. FOOTER (Exact Match to index.html, 8977px - 9177px, Height 200px) ================= */
+.deploy-footer,
+.sanciti-footer.deploy-footer {
+  position: absolute;
+  top: 8977px;
+  left: 0;
+  width: 1440px;
+  height: 200px;
+  background: #0D0D0D;
+  border-top: 1px solid rgba(255, 255, 255, 0.101961);
+  box-sizing: border-box;
+  padding: 40px 18px 40px 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+.sanciti-footer.deploy-footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 8px;
+  width: 462px;
+  max-width: 100%;
+}
+
+.sanciti-footer.deploy-footer .footer-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  width: 185.12px;
+  height: 52.42px;
+}
+
+.sanciti-footer.deploy-footer .footer-logo img {
+  width: 185.12px;
+  height: 52.42px;
+  object-fit: contain;
+  display: block;
+}
+
+.sanciti-footer.deploy-footer .footer-desc {
+  width: 345px;
+  max-width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #B0B3B8;
+  margin: 0;
+}
+
+.sanciti-footer.deploy-footer .footer-frame179 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 28px;
+  width: 324px;
+  max-width: 100%;
+}
+
+.sanciti-footer.deploy-footer .footer-socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 16px;
+  width: 92px;
+  height: 20px;
+}
+
+.sanciti-footer.deploy-footer .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.sanciti-footer.deploy-footer .social-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.sanciti-footer.deploy-footer .footer-copyright {
+  width: 322px;
+  max-width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #B0B3B8;
+  margin: 0;
+}
+

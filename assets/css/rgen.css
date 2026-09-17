@@ -1,0 +1,1397 @@
+/* ==========================================================================
+   Sanciti AI — RGen Page Dedicated Stylesheet
+   Figma Specification: Width 1440px, Height 9361px, Background #000000
+   ========================================================================== */
+
+:root {
+  --cyan: #2AD6DF;
+  --blue: #3FAEFF;
+  --purple: #7368FF;
+  --ink: #07070E;
+  --teal-dark: #103B3D;
+  --gray-sub: #A3B3CC;
+}
+
+body.rgen-body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Base Stage */
+.rgen-stage {
+  position: relative;
+  width: 1440px;
+  height: 9361px;
+  background: #000000;
+  margin: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transform-origin: top left;
+}
+
+/* Ambient Glows */
+.rgen-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  will-change: transform, opacity;
+}
+
+/* Nav Bar */
+.rgen-nav {
+  position: absolute;
+  width: 1400px;
+  height: 66px;
+  left: 20px;
+  top: 38px;
+  background: rgba(217, 217, 217, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px 0 24px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.rgen-nav-logo {
+  width: 185.12px;
+  height: 52.42px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.rgen-nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rgen-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.rgen-nav-link {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+
+.rgen-nav-link:hover,
+.rgen-nav-link.active {
+  color: #2AD6DF;
+}
+
+.rgen-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  background: #2AD6DF;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(7, 7, 14, 0.9);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.rgen-nav-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(42, 214, 223, 0.6);
+}
+
+/* ================= HERO SECTION (0 - 800px) ================= */
+.rgen-hero {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 800px;
+}
+
+.rgen-hero-visual {
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  left: 50px;
+  top: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  mask-image: radial-gradient(circle at center, #000000 48%, rgba(0, 0, 0, 0.85) 58%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, #000000 48%, rgba(0, 0, 0, 0.85) 58%, transparent 70%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.rgen-hero-circle-vid,
+.rgen-hero-circle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  display: block;
+  pointer-events: none;
+}
+
+.rgen-hero-text-block {
+  position: absolute;
+  width: 643px;
+  height: 474px;
+  left: 750px;
+  top: 216px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  z-index: 10;
+}
+
+.rgen-hero-heading {
+  width: 643px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-hero-desc {
+  width: 531px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-hero-cta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.rgen-btn-primary {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  width: 173px;
+  height: 43px;
+  background: #2AD6DF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.25s;
+}
+
+.rgen-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(42, 214, 223, 0.7);
+}
+
+.rgen-btn-secondary {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  width: 227px;
+  height: 43px;
+  border: 1.5px solid #2AD6DF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.rgen-btn-secondary:hover {
+  background: rgba(42, 214, 223, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ================= CHALLENGE SECTION (800 - 1664px) ================= */
+.rgen-challenge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 800px;
+  height: 864px;
+}
+
+.rgen-challenge-left {
+  position: absolute;
+  width: 657px;
+  height: 724px;
+  left: 46px;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 31px;
+  z-index: 10;
+}
+
+.rgen-challenge-heading {
+  width: 776px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-challenge-desc {
+  width: 520px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-challenge-card {
+  box-sizing: border-box;
+  width: 620px;
+  height: 268px;
+  background: rgba(12, 14, 23, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 31px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.rgen-challenge-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rgen-challenge-list li {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.rgen-challenge-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2AD6DF;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.rgen-challenge-foot {
+  width: 594px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-challenge-right {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  left: 650px;
+  top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* ================= HOW-IT-WORKS SECTION (1664 - 2700px) ================= */
+.rgen-how-it-works {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1664px;
+  height: 1036px;
+}
+
+.rgen-how-title {
+  position: absolute;
+  height: 462px;
+  right: 64px;
+  width: 600px;
+  top: 180px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 58px;
+  line-height: 70px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-stage-card-wrap {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.rgen-stage-card-wrap:hover {
+  transform: translateY(-4px);
+  border-color: rgba(42, 214, 223, 0.4);
+}
+
+.rgen-stage-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 13px 15px;
+  box-sizing: border-box;
+}
+
+.rgen-pill-stage {
+  border: 1.5px solid #3FAEFF;
+  border-radius: 99px;
+  padding: 4px 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.rgen-stage-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 39px;
+  line-height: 46px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-stage-content {
+  position: relative;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.rgen-pill-happens {
+  border: 1.5px solid #3FAEFF;
+  border-radius: 99px;
+  padding: 4px 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 9px;
+  line-height: 11px;
+  color: #FFFFFF;
+  background: rgba(7, 7, 14, 0.6);
+  display: inline-flex;
+  align-self: flex-end;
+  margin-bottom: 12px;
+}
+
+.rgen-stage-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-how-foot {
+  position: absolute;
+  width: 635px;
+  height: 66px;
+  left: 43px;
+  top: 864px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: #E8E8E8;
+  margin: 0;
+}
+
+/* ================= DIFFERENTIATION SECTION (2700 - 4246px) ================= */
+.rgen-diff {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2700px;
+  height: 1546px;
+}
+
+.rgen-diff-title {
+  position: absolute;
+  width: 916px;
+  height: 275px;
+  left: calc(50% - 916px / 2 - 247px);
+  top: 47px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 77px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-diff-subtitle {
+  position: absolute;
+  width: 440px;
+  height: 120px;
+  left: calc(50% - 440px / 2 + 239px);
+  top: 322px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-diff-table {
+  position: absolute;
+  width: 1346px;
+  height: 930px;
+  left: 47px;
+  top: 513px;
+  background: rgba(142, 241, 246, 0.3);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 48px 57px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(42, 214, 223, 0.1);
+}
+
+.rgen-diff-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.rgen-diff-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border-radius: 50px;
+  padding: 7px 34px 7px 35px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(16, 59, 61, 0.9);
+}
+
+.rgen-diff-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 24px 0;
+}
+
+.rgen-diff-row:last-child {
+  border-bottom: none;
+}
+
+.rgen-diff-row-left {
+  width: 480px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #103B3D;
+  display: flex;
+  align-items: center;
+}
+
+.rgen-diff-row-right {
+  width: 520px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #103B3D;
+  display: flex;
+  align-items: center;
+}
+
+.rgen-diff-foot {
+  position: absolute;
+  width: 658px;
+  height: 48px;
+  left: calc(50% - 658px / 2 + 344px);
+  top: 1377px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* ================= TRUST SECTION (4246 - 5083px) ================= */
+.rgen-trust {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4246px;
+  height: 837px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+
+.rgen-trust-img {
+  width: 100%;
+  max-width: 1360px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.rgen-trust-title {
+  position: absolute;
+  width: 738px;
+  height: 154px;
+  left: calc(50% - 738px / 2 - 304px);
+  top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-trust-top-desc {
+  position: absolute;
+  width: 566px;
+  height: 112px;
+  left: 823px;
+  top: 162px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: right;
+  color: #E8E8E8;
+  margin: 0;
+}
+
+.rgen-trust-left-stats {
+  position: absolute;
+  width: 437px;
+  left: 47px;
+  top: 281px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rgen-stat-divider {
+  width: 434px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 18px 0;
+}
+
+.rgen-stat-row-1 {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.rgen-stat-big {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 74px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  margin: 0;
+  max-width: 171px;
+}
+
+.rgen-stat-text-large {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-stat-basis {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0;
+  max-width: 452px;
+}
+
+.rgen-trust-right-visual {
+  position: absolute;
+  width: 790px;
+  height: 546.86px;
+  left: 599px;
+  top: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* ================= TRANSITION SECTION (5083 - 5626px) ================= */
+.rgen-trans-line {
+  position: absolute;
+  width: 756px;
+  height: 1px;
+  left: 624px;
+  top: 5083px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.rgen-trans-section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5083px;
+  height: 543px;
+}
+
+.rgen-trans-title {
+  position: absolute;
+  width: 860px;
+  max-width: 860px;
+  right: 64px;
+  top: 240px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 58px;
+  line-height: 70px;
+  display: block;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-trans-subtitle {
+  position: absolute;
+  width: 512px;
+  height: 87px;
+  left: calc(50% - 512px / 2 - 416px);
+  top: 430px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-trans-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 8px;
+  position: absolute;
+  width: 134px;
+  height: 43px;
+  left: 47px;
+  top: 535px;
+  background: #2AD6DF;
+  border-radius: 99px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.25s;
+}
+
+.rgen-trans-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(42, 214, 223, 0.7);
+}
+
+/* ================= GOVERNED CORE SECTION (5626 - 6803px) ================= */
+.rgen-governed {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5626px;
+  height: 1057px;
+  background: #000000;
+}
+
+.rgen-gov-title {
+  position: absolute;
+  width: 588px;
+  height: 128px;
+  left: 46px;
+  top: 120px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 64px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-gov-desc {
+  position: absolute;
+  width: 614px;
+  height: 145px;
+  left: 779px;
+  top: 258px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-cert-scroll-track {
+  position: absolute;
+  width: 1440px;
+  height: 601px;
+  left: 0;
+  top: 456px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 0 46px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.rgen-cert-card {
+  flex: none;
+  width: 432px;
+  height: 601px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+  border: 1px solid rgba(63, 174, 255, 0.5);
+  box-shadow: 0 4px 16px rgba(63, 174, 255, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.rgen-cert-card.cert-iso::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 62.73%;
+  bottom: 0;
+  background: linear-gradient(181.66deg, rgba(0, 0, 0, 0) 1.41%, rgba(0, 0, 0, 0.5) 86.27%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.rgen-cert-card.cert-owasp {
+  background: #2A2A2A;
+}
+
+.rgen-cert-card.cert-owasp::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(181.66deg, rgba(0, 0, 0, 0) 1.41%, #2AD6DF 86.27%);
+  pointer-events: none;
+}
+
+.rgen-cert-card.card-wide {
+  width: 435px;
+}
+
+.rgen-cert-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(42, 214, 223, 0.5);
+  box-shadow: 0 10px 30px rgba(42, 214, 223, 0.2);
+}
+
+.rgen-cert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= ECOSYSTEM & PLAYBOOK SECTION (6803 - 7479px) ================= */
+.rgen-frame-50-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6683px;
+  height: 1349px;
+  background: url('../img/Rgen/Frame 50.png') no-repeat center top / cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.rgen-ecosystem {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6683px;
+  height: 676px;
+  z-index: 1;
+}
+
+.rgen-eco-left-visual {
+  position: absolute;
+  width: 674.2px;
+  height: 641px;
+  left: 0;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.rgen-eco-left-visual img {
+  width: 674.2px;
+  height: 641px;
+  object-fit: contain;
+}
+
+.rgen-eco-right-content {
+  position: absolute;
+  width: 814px;
+  left: 579px;
+  top: 73px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  z-index: 10;
+}
+
+.rgen-eco-title {
+  width: 814px;
+  height: 150px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 75px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.rgen-eco-desc {
+  width: 571px;
+  height: 145px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: right;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-form-grid {
+  width: 670px;
+  display: grid;
+  grid-template-columns: 320px 320px;
+  gap: 15px 30px;
+}
+
+.rgen-form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 3px;
+  width: 320px;
+}
+
+.rgen-form-field label {
+  width: 320px;
+  height: 24px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.rgen-form-field input {
+  box-sizing: border-box;
+  width: 320px;
+  height: 40px;
+  background: #F5F5F5;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 0 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #000;
+  outline: none;
+}
+
+.rgen-form-field input:focus {
+  border-color: #2AD6DF;
+  box-shadow: 0 0 10px rgba(42, 214, 223, 0.5);
+}
+
+.rgen-eco-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 10px;
+  width: 288px;
+  height: 54px;
+  background: #2AD6DF;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(7, 7, 14, 0.9);
+  border: none;
+  cursor: pointer;
+  margin-top: 24px;
+  align-self: flex-end;
+  transition: transform 0.2s, box-shadow 0.25s;
+}
+
+.rgen-eco-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(42, 214, 223, 0.8);
+}
+
+/* ================= CASE STUDIES & CONVERSATION (7479 - 8152px) ================= */
+.rgen-case-studies {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7359px;
+  height: 673px;
+  z-index: 1;
+}
+
+.rgen-case-left {
+  position: absolute;
+  width: 691px;
+  height: 372px;
+  left: 47px;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.rgen-case-title {
+  width: 691px;
+  height: 154px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 66px;
+  line-height: 77px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-case-desc {
+  width: 691px;
+  height: 116px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-case-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 10px;
+  width: 187px;
+  height: 54px;
+  background: #2AD6DF;
+  border-radius: 50px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(7, 7, 14, 0.9);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.25s;
+}
+
+.rgen-case-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(42, 214, 223, 0.7);
+}
+
+.rgen-case-right {
+  position: absolute;
+  width: 512px;
+  height: 574px;
+  left: 967px;
+  top: 50px;
+}
+
+.rgen-case-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= TOOL INTEGRATIONS (8152 - 8947px) ================= */
+.rgen-integrations {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8032px;
+  height: 795px;
+}
+
+.rgen-integ-title {
+  position: absolute;
+  width: 715px;
+  height: 128px;
+  left: 701px;
+  top: 110px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 71px;
+  text-align: right;
+  color: #2AD6DF;
+  margin: 0;
+}
+
+.rgen-integ-left {
+  position: absolute;
+  width: 564px;
+  left: 47px;
+  top: 344px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.rgen-integ-desc {
+  width: 564px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-integ-v2soft {
+  width: 485px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.rgen-integ-grid {
+  position: absolute;
+  left: 670px;
+  top: 340px;
+  width: 720px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 36px 48px;
+  padding: 20px 0;
+}
+
+.rgen-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.rgen-logo-item:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 16px rgba(42, 214, 223, 0.4));
+}
+
+.rgen-logo-item.logo-circle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rgen-logo-item.logo-circle img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.rgen-logo-item img {
+  max-height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ================= ENTERPRISE FOOTER (8947 - 9361px) ================= */
+.rgen-footer,
+.sanciti-footer {
+  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 40px 18px 40px 43px !important;
+  position: absolute;
+  width: 1440px !important;
+  height: 200px !important;
+  left: 0px;
+  top: 8827px;
+  background: #0D0D0D !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.101961) !important;
+}
+
+.rgen-footer .footer-brand,
+.sanciti-footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 462px;
+}
+
+.rgen-footer .footer-logo,
+.sanciti-footer .footer-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  width: 185.12px;
+  height: 52.42px;
+}
+
+.rgen-footer .footer-logo img,
+.sanciti-footer .footer-logo img {
+  width: 185.12px;
+  height: 52.42px;
+  object-fit: contain;
+  display: block;
+}
+
+.rgen-footer .footer-desc,
+.sanciti-footer .footer-desc {
+  width: 345px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #B0B3B8;
+  margin: 0;
+}
+
+.rgen-footer .footer-frame179,
+.sanciti-footer .footer-frame179 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 28px;
+  width: 324px;
+}
+
+.rgen-footer .footer-socials,
+.sanciti-footer .footer-socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  width: 92px;
+  height: 20px;
+}
+
+.rgen-footer .social-link,
+.sanciti-footer .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  opacity: 0.95;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.rgen-footer .social-link:hover,
+.sanciti-footer .social-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.rgen-footer .footer-copyright,
+.sanciti-footer .footer-copyright {
+  width: 322px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #B0B3B8;
+  margin: 0;
+}
+

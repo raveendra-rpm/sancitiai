@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sanciti AI — RGen: Autonomous Requirements Generation</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/rgen.css?v=20260905-3" rel="stylesheet" />
+  <link href="assets/css/rgen-mobile.css?v=20260905-8" rel="stylesheet" />
+</head>
+
+<body class="rgen-body">
+
+  <!-- ================= SCALER FOR DESKTOP (1440px Figma Base) ================= -->
+  <div id="scaler">
+    <div id="stage" class="rgen-stage" data-width="1440" style="height: 9027px;">
+
+      <!-- ================= AMBIENT GLOWS ================= -->
+      <div class="rgen-glow glow-1" style="width:1136px; height:1136px; left:-200px; top:280px; background:rgba(42,214,223,0.4); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow glow-2" style="width:1157px; height:1157px; left:505px; top:-458px; background:rgba(42,214,223,0.3); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow glow-3" style="width:900px; height:900px; left:800px; top:1500px; background:rgba(42,214,223,0.2); opacity:0.3; filter:blur(90px);"></div>
+      <div class="rgen-glow" style="width:1383px; height:1288px; left:-560px; top:859px; background:rgba(42,214,223,0.35); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:1136px; height:1136px; left:212px; top:1141px; background:rgba(42,214,223,0.5); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:1383px; height:1288px; left:-1027px; top:2085px; background:rgba(42,214,223,0.4); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:1504px; height:1667px; left:211px; top:1369px; background:rgba(42,214,223,0.4); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:687px; height:687px; left:1196px; top:2881px; background:#2AD6DF; filter:blur(302px); opacity:0.35;"></div>
+      <div class="rgen-glow" style="width:987px; height:987px; left:0px; top:2700px; background:#2AD6DF; filter:blur(302px); opacity:0.35;"></div>
+      <div class="rgen-glow" style="width:1017px; height:948px; left:549px; top:5391px; background:rgba(42,214,223,0.4); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:1196px; height:1326px; left:-134px; top:5796px; background:#2AD6DF; opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:1190px; height:1155px; left:-161px; top:7792px; background:rgba(42,214,223,0.4); opacity:0.35; filter:blur(300px);"></div>
+      <div class="rgen-glow" style="width:979px; height:1326px; left:288px; top:8322px; background:#2AD6DF; opacity:0.35; filter:blur(300px);"></div>
+
+      <!-- ================= NAV BAR (top: 38px, width: 1400px) ================= -->
+      <nav class="rgen-nav" id="desktopNav">
+        <a class="rgen-nav-logo" href="index.html" aria-label="Sanciti AI">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </a>
+        <div class="rgen-nav-menu font-disp">
+          <a class="rgen-nav-link" href="index.html">Home</a>
+          <a class="rgen-nav-link" href="legmod.html">LegMod</a>
+          <a class="rgen-nav-link active" href="rgen.html">RGen</a>
+          <a class="rgen-nav-link" href="codegen.html">CodeGen</a>
+          <a class="rgen-nav-link" href="testai.html">Test AI</a>
+          <a class="rgen-nav-link" href="deploy.html">Deploy</a>
+        </div>
+        <a class="rgen-nav-btn" href="#lead-form">Demo</a>
+      </nav>
+
+      <!-- ================= 1. HERO SECTION (0 - 800px) ================= -->
+      <section class="rgen-hero">
+        <!-- Left Visual: Glowing Orbital Cadenza Graphic -->
+        <div class="rgen-hero-visual">
+          <video class="rgen-hero-circle-vid" id="rgHeroVidDesk" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti Logic Ring Video">
+            <source src="assets/vids/circle-animation.webm" type="video/webm">
+            <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+          </video>
+          <canvas id="rgHeroCanvasDesk" class="rgen-hero-circle-canvas" width="540" height="540"></canvas>
+        </div>
+
+        <!-- Right: Hero Text Block -->
+        <div class="rgen-hero-text-block">
+          <h1 class="rgen-hero-heading">
+            Turn Silent Logic<br />
+            into a Cadenza<br />
+            Everyone Can Follow.
+          </h1>
+          <p class="rgen-hero-desc">
+            Somewhere between the last release and the next rewrite, requirements drift out of date, get buried in tribal knowledge, or disappear with the people who wrote the code. &nbsp;RGEN is the starting point of the Sanciti AI pipeline. It reads code, documents, meeting notes, and JIRA stories together, turning what the business and the system know into structured, traceable requirements that LegMod, CodeGen, and TestAI can act on.
+          </p>
+          <div class="rgen-hero-cta-row">
+            <a class="rgen-btn-primary" href="#lead-form">
+              <span>Book a Demo</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left:2px;">
+                <path d="M6 3L11 8L6 13" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a class="rgen-btn-secondary" href="#lead-form">
+              <span>Download the Playbook</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. CHALLENGE SECTION (800 - 1664px) ================= -->
+      <section class="rgen-challenge">
+        <!-- Left Content Block -->
+        <div class="rgen-challenge-left">
+          <h2 class="rgen-challenge-heading">
+            When the Tune No Longer<br />
+            Matches the System.
+          </h2>
+          <p class="rgen-challenge-desc">
+            Systems evolve through years of patches, releases, and quick fixes until what is documented no longer reflects what is running. The knowledge needed to close that gap is often scattered across codebases, documents, meeting minutes, and the people who remember why a decision was made. &nbsp;Without a current source of truth, every downstream decision: modernization, code generation, testing, compliance, and release, starts with avoidable guesswork.
+          </p>
+          <!-- Challenge Card -->
+          <div class="rgen-challenge-card">
+            <ul class="rgen-challenge-list">
+              <li>Requirements are fragmented across code, documents, meetings, and ticketing systems</li>
+              <li>Critical business logic is implicit, undocumented, or retained only as tribal knowledge</li>
+              <li>Manual requirements capture slows delivery and creates inconsistent interpretation</li>
+              <li>Disconnected requirements break traceability between business intent, code, testing, and release</li>
+            </ul>
+          </div>
+          <p class="rgen-challenge-foot">
+            RGEN reads these sources together, turning silent logic and scattered inputs into a current score the whole delivery system can follow.
+          </p>
+        </div>
+
+        <!-- Right Graphic: Legacy Complexity Graphic with 90deg Rotation -->
+        <div class="rgen-challenge-right">
+          <img src="assets/img/ledmod/legacycomplexity.png" alt="Legacy Complexity Architecture"
+            style="width:780px; height:780px; object-fit:contain; mix-blend-mode:screen; transform:rotate(-90deg);" />
+        </div>
+      </section>
+
+      <!-- ================= 3. HOW IT WORKS SECTION (1664 - 2700px) ================= -->
+      <section class="rgen-how-it-works">
+        <!-- Right Heading -->
+        <h2 class="rgen-how-title">
+          Ingest.<br />
+          Extract.<br />
+          Structure.<br />
+          Sync. One Source<br />
+          of Truth.
+        </h2>
+
+        <!-- Left: 4 Stage Cards Grid (2x2) -->
+        <!-- Card 1: Ingest (top: 127px, left: 43px) -->
+        <div class="rgen-stage-card-wrap" style="width:338px; height:320px; left:43px; top:127px;">
+          <div class="rgen-stage-banner" style="height:177px; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/img/ledmod/analyzeledmod.jpg') center/cover;">
+            <div class="rgen-pill-stage">Stage</div>
+            <h3 class="rgen-stage-title">Ingest</h3>
+          </div>
+          <div class="rgen-stage-content" style="height:143px; background:rgba(42, 214, 223, 0.25);">
+            <div class="rgen-pill-happens">What Happens</div>
+            <p class="rgen-stage-desc">
+              Reads legacy code, documents, meeting minutes, and JIRA stories together as connected sources of context.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Extract (top: 127px, left: 401px) -->
+        <div class="rgen-stage-card-wrap" style="width:334px; height:320px; left:401px; top:127px;">
+          <div class="rgen-stage-banner" style="height:175px; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/img/ledmod/validate.jpg') center/cover;">
+            <div class="rgen-pill-stage">Stage</div>
+            <h3 class="rgen-stage-title">Extract</h3>
+          </div>
+          <div class="rgen-stage-content" style="height:145px; background:rgba(63, 174, 255, 0.25);">
+            <div class="rgen-pill-happens">What Happens</div>
+            <p class="rgen-stage-desc">
+              Identifies explicit and implicit requirements, then categorizes them as functional, non-functional, or technical.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Structure (top: 502px, left: 43px) -->
+        <div class="rgen-stage-card-wrap" style="width:338px; height:320px; left:43px; top:502px;">
+          <div class="rgen-stage-banner" style="height:177px; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/img/automatingrequirements.png') center/cover;">
+            <div class="rgen-pill-stage">Stage</div>
+            <h3 class="rgen-stage-title">Structure</h3>
+          </div>
+          <div class="rgen-stage-content" style="height:143px; background:rgba(42, 214, 223, 0.25);">
+            <div class="rgen-pill-happens">What Happens</div>
+            <p class="rgen-stage-desc" style="font-size:13.5px; line-height:19px;">
+              Converts findings into a structured Business Requirements Document, Jira-ready epics, user stories, acceptance criteria, and executive summaries with key decisions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: Sync (top: 502px, left: 401px) -->
+        <div class="rgen-stage-card-wrap" style="width:334px; height:320px; left:401px; top:502px;">
+          <div class="rgen-stage-banner" style="height:175px; background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('assets/img/desktopapp.png') center/cover;">
+            <div class="rgen-pill-stage">Stage</div>
+            <h3 class="rgen-stage-title">Sync</h3>
+          </div>
+          <div class="rgen-stage-content" style="height:145px; background:rgba(63, 174, 255, 0.25);">
+            <div class="rgen-pill-happens">What Happens</div>
+            <p class="rgen-stage-desc">
+              Delivers requirements into JIRA and Confluence, with a live dashboard tracking progress from capture to implementation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Takeaway Note -->
+        <p class="rgen-how-foot">
+          RGEN does not rely on stakeholder interviews or old wikis alone. It reads the system and its history as they stand today, then turns what it finds into actionable, traceable requirements.
+        </p>
+      </section>
+
+      <!-- ================= 4. DIFFERENTIATION SECTION (2700 - 4246px) ================= -->
+      <section class="rgen-diff">
+        <!-- Title and Subtitle -->
+        <h2 class="rgen-diff-title">
+          The First Movement of Every Modernization and Delivery Program.
+        </h2>
+        <p class="rgen-diff-subtitle">
+          RGEN is more than a requirements tool. Its output becomes the shared foundation for the rest of the Sanciti AI platform, reducing rework and keeping business intent connected to what gets built, tested, and released.
+        </p>
+
+        <!-- Glass Comparison Table -->
+        <div class="rgen-diff-table">
+          <div class="rgen-diff-header-row">
+            <div class="rgen-diff-pill">Capability</div>
+            <div class="rgen-diff-pill">Why It Matters</div>
+          </div>
+
+          <!-- Row 1 -->
+          <div class="rgen-diff-row">
+            <div class="rgen-diff-row-left">Code-to-requirements intelligence</div>
+            <div class="rgen-diff-row-right">
+              Recovers business logic and requirements from live code rather than relying on documentation that may no longer be current.
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="rgen-diff-row">
+            <div class="rgen-diff-row-left">Executive-ready summaries</div>
+            <div class="rgen-diff-row-right">
+              Gives leadership a concise view of key requirements, decisions, risks, and action items—not just developer-level artifacts.
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="rgen-diff-row">
+            <div class="rgen-diff-row-left">Cross-agent continuity</div>
+            <div class="rgen-diff-row-right">
+              Feeds structured requirements directly into CodeGen for implementation, TestAI for test creation, and LegMod for modernization planning.
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="rgen-diff-row">
+            <div class="rgen-diff-row-left">Source-level traceability</div>
+            <div class="rgen-diff-row-right">
+              Links requirements back to the code, document, meeting, or story they came from, creating a defensible audit trail.
+            </div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="rgen-diff-row">
+            <div class="rgen-diff-row-left">Workflow-native delivery</div>
+            <div class="rgen-diff-row-right">
+              Syncs to JIRA and Confluence so teams can adopt structured outputs inside the tools they already use.
+            </div>
+          </div>
+        </div>
+
+        <p class="rgen-diff-foot">
+          One orchestrator. The right specialist at each stage. One governed path from legacy estate to modern release.
+        </p>
+      </section>
+
+      <!-- ================= 5. TRUST / VALUE METRICS SECTION (4246 - 5083px) ================= -->
+      <section class="rgen-trust">
+        <img src="assets/img/Rgen/trust-section.png" alt="Trust Section" class="rgen-trust-img" />
+      </section>
+
+      <!-- ================= 6. AUTOMATING REQUIREMENTS TRANSITION (5083 - 5626px) ================= -->
+      <div class="rgen-trans-line"></div>
+      <section class="rgen-trans-section">
+        <h2 class="rgen-trans-title">
+          Automating Requirements<br />Generation — <span style="font-style:italic; font-weight:300;">E-Commerce</span>
+        </h2>
+        <p class="rgen-trans-subtitle">
+          Sanciti AI combines one orchestration layer with focused agents, each built for a specific role in modernization or delivery.
+        </p>
+        <a class="rgen-trans-btn" href="#lead-form">Learn More</a>
+      </section>
+
+      <!-- ================= 7. GOVERNED CORE & CERTIFICATIONS (5626 - 6803px) ================= -->
+      <section class="rgen-governed">
+        <h2 class="rgen-gov-title">
+          <span style="font-style:italic; font-weight:300;">One </span><span style="color:#2AD6DF; font-style:normal; font-weight:400;">Governed</span> Core,<br />
+          <span style="color:#2AD6DF; font-style:normal; font-weight:400;">Every</span> <span style="font-style:italic; font-weight:300;">Requirement.</span>
+        </h2>
+        <p class="rgen-gov-desc">
+          From data protection and human review to auditability and secure delivery, RGEN operates under the same enterprise controls as every Sanciti AI component. Governance begins at the requirement, not after code is written.
+        </p>
+
+        <!-- Horizontal Draggable/Scrollable Certifications Strip -->
+        <div class="rgen-cert-scroll-track cert-scroll">
+          <div class="rgen-cert-card">
+            <img src="assets/img/hipaa.png" alt="HIPAA Compliance" />
+          </div>
+          <div class="rgen-cert-card cert-iso">
+            <img src="assets/img/iso.png" alt="ISO 27001 Certified" />
+          </div>
+          <div class="rgen-cert-card card-wide">
+            <img src="assets/img/cmmi.png" alt="CMMI Level 3" />
+          </div>
+          <div class="rgen-cert-card card-wide cert-owasp">
+            <img src="assets/img/owasp_nist.png" alt="OWASP & NIST Alignment" />
+          </div>
+          <div class="rgen-cert-card">
+            <img src="assets/img/single_tenant.png" alt="Single-Tenant VPC Security" />
+          </div>
+          <div class="rgen-cert-card">
+            <img src="assets/img/audit_grade.png" alt="Audit-Grade Traceability" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 8. ECOSYSTEM & 9. CASE STUDIES BACKGROUND (6803 - 8152px) ================= -->
+      <div class="rgen-frame-50-bg"></div>
+
+      <!-- ================= 8. ECOSYSTEM & PLAYBOOK DOWNLOAD (6803 - 7479px) ================= -->
+      <section class="rgen-ecosystem" id="lead-form">
+        <!-- Left: System Graphic -->
+        <div class="rgen-eco-left-visual">
+          <img src="assets/img/Rgen/image.png" alt="System" />
+        </div>
+
+        <!-- Right: Form Content -->
+        <div class="rgen-eco-right-content">
+          <h2 class="rgen-eco-title">
+            Modernizing the Systems You Can't Afford to Break
+          </h2>
+          <p class="rgen-eco-desc">
+            A practical playbook for end-to-end legacy modernization, covering how to assess risk, recover hidden logic, reduce technical debt, plan modernization waves, and validate the journey from legacy code to modern release.
+          </p>
+
+          <!-- 4-field Form -->
+          <form class="rgen-form-grid" id="playbookForm" action="submit_form.php" method="POST"
+            onsubmit="handlePlaybookDownload(event)">
+            <div class="rgen-form-field">
+              <label for="leadName">Name</label>
+              <input type="text" id="leadName" name="name" required placeholder="Your full name" />
+            </div>
+            <div class="rgen-form-field">
+              <label for="leadTitle">Title</label>
+              <input type="text" id="leadTitle" name="title" required placeholder="Role / Designation" />
+            </div>
+            <div class="rgen-form-field">
+              <label for="leadEmail">Email</label>
+              <input type="email" id="leadEmail" name="email" required placeholder="" />
+            </div>
+            <div class="rgen-form-field">
+              <label for="leadContact">Contact number</label>
+              <input type="tel" id="leadContact" name="phone" required placeholder="+1 (555) 000-0000" />
+            </div>
+            <button type="submit" class="rgen-eco-btn" style="grid-column: 1 / -1;">
+              Download the Playbook
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= 9. CASE STUDIES / CONVERSATION CTA (7479 - 8152px) ================= -->
+      <section class="rgen-case-studies">
+        <div class="rgen-case-left">
+          <h2 class="rgen-case-title">
+            Start With What Your Systems Know.
+          </h2>
+          <p class="rgen-case-desc">
+            Bring a codebase, document set, or requirements challenge to the conversation. See how RGEN can turn scattered information into a traceable source of truth—and give every downstream decision a stronger starting point.
+          </p>
+          <a class="rgen-case-btn" href="#lead-form">Book a Demo</a>
+        </div>
+
+        <div class="rgen-case-right">
+          <img src="assets/img/Rgen/image copy.png" alt="RGen AI System" />
+        </div>
+      </section>
+
+      <!-- ================= 10. TOOL INTEGRATIONS SECTION (8152 - 8947px) ================= -->
+      <section class="rgen-integrations">
+        <h2 class="rgen-integ-title">
+          Built to Fit the Tools Your Teams Already Use.
+        </h2>
+
+        <div class="rgen-integ-left">
+          <p class="rgen-integ-desc">
+            RGEN works with the systems and workflows your teams already trust. It brings code, documents, and meeting intelligence together without forcing teams to replace the tools they rely on every day.<br /><br />
+            Every requirement remains traceable to its source and mapped to the projects, stakeholders, and delivery work it affects.
+          </p>
+          <p class="rgen-integ-v2soft">
+            Backed by V2Soft—28 years building enterprise IT for regulated industries.
+          </p>
+        </div>
+
+        <!-- Right: Integrations Grid -->
+        <div class="rgen-integ-grid">
+          <div class="rgen-logo-item logo-circle" title="GitHub">
+            <img src="assets/img/github.png" alt="GitHub" />
+          </div>
+          <div class="rgen-logo-item" title="Confluence">
+            <img src="assets/img/confluence.png" alt="Confluence" />
+          </div>
+          <div class="rgen-logo-item" title="Jira">
+            <img src="assets/img/jira.png" alt="Jira" />
+          </div>
+          <div class="rgen-logo-item" title="GitLab">
+            <img src="assets/img/gitlab.png" alt="GitLab" />
+          </div>
+          <div class="rgen-logo-item" title="SharePoint">
+            <img src="assets/img/sharepoint.png" alt="SharePoint" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 11. ENTERPRISE FOOTER ================= -->
+      <footer class="abs desktop-footer sanciti-footer"
+        style="left:0; top:8827px; width:1440px; height:200px; background:#0D0D0D; border-top:1px solid rgba(255, 255, 255, 0.101961); box-sizing:border-box; padding:40px 18px 40px 43px; display:flex; flex-direction:row; align-items:center; justify-content:space-between;">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+          </div>
+          <p class="footer-desc">
+            Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+          </p>
+        </div>
+
+        <div class="footer-frame179">
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Portal" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-copyright">
+            &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /#stage -->
+  </div><!-- /#scaler -->
+
+  <!-- ================= MOBILE CONTAINER (<= 768px Fluid Responsive) ================= -->
+  <div id="mobile-container">
+    <!-- ================= AMBIENT GLOWS (Matching Desktop System 1:1) ================= -->
+    <div class="rg-ambient-glows-container">
+      <div class="rg-ambient-glow rg-glow-1"></div>
+      <div class="rg-ambient-glow rg-glow-2"></div>
+      <div class="rg-ambient-glow rg-glow-3"></div>
+      <div class="rg-ambient-glow rg-glow-4"></div>
+      <div class="rg-ambient-glow rg-glow-5"></div>
+      <div class="rg-ambient-glow rg-glow-6"></div>
+      <div class="rg-ambient-glow rg-glow-7"></div>
+      <div class="rg-ambient-glow rg-glow-8"></div>
+      <div class="rg-ambient-glow rg-glow-9"></div>
+      <div class="rg-ambient-glow rg-glow-10"></div>
+      <div class="rg-ambient-glow rg-glow-11"></div>
+      <div class="rg-ambient-glow rg-glow-12"></div>
+      <div class="rg-ambient-glow rg-glow-13"></div>
+    </div>
+
+    <!-- Header Navigation (Sticky) -->
+    <header class="rg-nav">
+      <a class="rg-nav-logo" href="index.html" aria-label="Sanciti AI">
+        <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+      </a>
+      <div class="rg-nav-actions">
+        <a class="rg-nav-demo-btn" href="#rg-playbook">Demo</a>
+        <button class="rg-nav-menu-toggle" aria-label="Toggle navigation" onclick="toggleRgDrawer()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Drawer -->
+    <div class="rg-drawer" id="rgDrawer">
+      <a href="index.html">Home</a>
+      <a href="legmod.html">LegMod</a>
+      <a href="rgen.html" class="active">RGen</a>
+      <a href="codegen.html">CodeGen</a>
+      <a href="testai.html">Test AI</a>
+      <a href="deploy.html">Deploy</a>
+      <a href="#rg-playbook" style="color:#2AD6DF; font-weight:600;" onclick="toggleRgDrawer()">Get a Free Assessment</a>
+    </div>
+
+    <!-- 1. Hero Section (Matching Figma Hero Section) -->
+    <section class="rg-section rg-hero">
+      <h1 class="rg-hero-title">
+        <span class="rg-hero-italic">Turn</span> <span class="rg-hero-cyan">Silent Logic</span><br />
+        <span class="rg-hero-italic">into a Cadenza</span><br />
+        <span class="rg-hero-cyan">Everyone Can Follow.</span>
+      </h1>
+      <p class="rg-hero-desc">
+        Somewhere between the last release and the next rewrite, requirements drift out of date, get buried in tribal knowledge, or disappear with the people who wrote the code.
+      </p>
+      <p class="rg-hero-desc">
+        RGEN is the starting point of the Sanciti AI pipeline. It reads code, documents, meeting notes, and JIRA stories together, turning what the business and the system know into structured, traceable requirements that LegMod, CodeGen, and TestAI can act on.
+      </p>
+      <div class="rg-hero-buttons">
+        <a class="rg-btn-primary" href="#rg-playbook">Get a Free Assessment &rarr;</a>
+        <a class="rg-btn-secondary" href="#rg-playbook">Download the Playbook</a>
+      </div>
+      <div class="rg-hero-circle-wrap">
+        <video class="rg-hero-circle-vid" id="rgHeroVidMob" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti Logic Ring Video">
+          <source src="assets/vids/circle-animation.webm" type="video/webm">
+          <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+        </video>
+        <canvas id="rgHeroCanvasMob" class="rg-hero-circle-canvas" width="320" height="320"></canvas>
+      </div>
+    </section>
+
+    <!-- ================= AMBIENT GLOW BLOCK (Matching Figma ambient-glow 2: Challenge + Spheres + Stages) ================= -->
+    <div class="rg-ambient-challenge-block">
+      <!-- 2. Challenge Section (Matching Figma Frame 115) -->
+      <section class="rg-section rg-challenge">
+        <h2 class="rg-challenge-title">
+          <span class="rg-italic-light">When the</span><br />
+          <span class="rg-white-bold">Tune No Longer</span><br />
+          <span class="rg-italic-light">Matches</span> <span class="rg-white-bold">the System.</span>
+        </h2>
+        <p class="rg-challenge-p">
+          Systems evolve through years of patches, releases, and quick fixes until what is documented no longer reflects what is running. The knowledge needed to close that gap is often scattered across codebases, documents, meeting minutes, and the people who remember why a decision was made.
+        </p>
+        <p class="rg-challenge-p">
+          Without a current source of truth, every downstream decision: modernization, code generation, testing, compliance, and release, starts with avoidable guesswork.
+        </p>
+        <div class="rg-challenge-card">
+          <ul class="rg-challenge-list">
+            <li>Requirements are fragmented across code, documents, meetings, and ticketing systems</li>
+            <li>Critical business logic is implicit, undocumented, or retained only as tribal knowledge</li>
+            <li>Manual requirements capture slows delivery and creates inconsistent interpretation</li>
+            <li>Disconnected requirements break traceability between business intent, code, testing, and release</li>
+          </ul>
+        </div>
+        <p class="rg-challenge-p rg-challenge-after">
+          RGEN reads these sources together, turning silent logic and scattered inputs into a current score the whole delivery system can follow.
+        </p>
+        <!-- Image uploaded by user after Frame 115 -->
+        <div class="rg-spheres-wrap">
+          <img class="rg-spheres-img" src="assets/img/Rgen/spheres.png?v=20260905-7" alt="Legacy Complexity Spheres" />
+        </div>
+      </section>
+
+      <!-- 3. How It Works (Matching Figma Frame 134) -->
+      <section class="rg-section rg-symphony">
+        <h2 class="rg-symphony-title">
+          <span class="rg-italic-light">Ingest.</span><br />
+          <span class="rg-italic-light">Extract.</span><br />
+          <span class="rg-italic-light">Structure.</span><br />
+          <span class="rg-italic-light">Sync.</span><br />
+          <span class="rg-white-bold">One Source of Truth.</span>
+        </h2>
+
+        <!-- 4 Stages Cards (Figma Frame 134) -->
+        <div class="rg-stages-list">
+          <!-- Stage 1: Ingest -->
+          <div class="rg-stage-card stage-cyan">
+            <div class="rg-stage-banner">
+              <img src="assets/img/Rgen/stage_banner_1.png" alt="Stage Ingest" />
+            </div>
+            <div class="rg-stage-content">
+              <div class="rg-stage-badge-row">
+                <span class="rg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="rg-stage-desc">
+                Reads legacy code, documents, meeting minutes, and JIRA stories together as connected sources of context.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 2: Extract -->
+          <div class="rg-stage-card stage-blue">
+            <div class="rg-stage-banner">
+              <img src="assets/img/Rgen/stage_banner_2.png" alt="Stage Extract" />
+            </div>
+            <div class="rg-stage-content">
+              <div class="rg-stage-badge-row">
+                <span class="rg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="rg-stage-desc">
+                Identifies explicit and implicit requirements, then categorizes them as functional, non-functional, or technical.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 3: Structure -->
+          <div class="rg-stage-card stage-cyan">
+            <div class="rg-stage-banner">
+              <img src="assets/img/Rgen/stage_banner_3.png" alt="Stage Structure" />
+            </div>
+            <div class="rg-stage-content">
+              <div class="rg-stage-badge-row">
+                <span class="rg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="rg-stage-desc">
+                Converts findings into a structured Business Requirements Document, Jira-ready epics, user stories, acceptance criteria, and executive summaries with key decisions and action items.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 4: Sync -->
+          <div class="rg-stage-card stage-blue">
+            <div class="rg-stage-banner">
+              <img src="assets/img/Rgen/stage_banner_4.png" alt="Stage Sync" />
+            </div>
+            <div class="rg-stage-content">
+              <div class="rg-stage-badge-row">
+                <span class="rg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="rg-stage-desc">
+                Delivers requirements into JIRA and Confluence, with a live dashboard tracking progress from capture to implementation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="rg-symphony-footnote">
+          RGEN does not rely on stakeholder interviews or old wikis alone. It reads the system and its history as they stand today, then turns what it finds into actionable, traceable requirements.
+        </p>
+      </section>
+    </div><!-- /.rg-ambient-challenge-block -->
+
+    <!-- 4. Differentiation Section (Matching Figma Frame 133) -->
+    <section class="rg-section rg-diff">
+      <h2 class="rg-diff-title">
+        <span class="rg-diff-italic">The</span> <span class="rg-diff-cyan">First Movement</span> <span class="rg-diff-italic">of</span><br />
+        <span class="rg-diff-cyan">Every Modernization</span><br />
+        <span class="rg-diff-italic">and</span> <span class="rg-diff-cyan">Delivery Program.</span>
+      </h2>
+      <p class="rg-diff-subtitle">
+        RGEN is more than a requirements tool. Its output becomes the shared foundation for the rest of the Sanciti AI platform, reducing rework and keeping business intent connected to what gets built, tested, and released.
+      </p>
+
+      <!-- Frame 133 Card: Capability vs Why It Matters -->
+      <div class="rg-diff-card-wrap">
+        <img class="rg-diff-card-img" src="assets/img/Rgen/diff_table_card.png" alt="RGen Capabilities vs Why It Matters" />
+      </div>
+    </section>
+
+    <!-- 5. Value Metrics Section (Matching Figma Frame 130) -->
+    <section class="rg-section rg-rhythm">
+      <h2 class="rg-rhythm-title">
+        <span class="rg-rhythm-bold">Requirements</span> <span class="rg-rhythm-italic">That Keep</span><br />
+        <span class="rg-rhythm-italic">the</span> <span class="rg-rhythm-bold">Work in Rhythm.</span>
+      </h2>
+      <div class="rg-rhythm-intro-wrap">
+        <p class="rg-rhythm-intro">
+          When requirements are generated from the real system instead of reconstructed from memory, teams can move faster with a clearer basis for modernization and delivery.
+        </p>
+      </div>
+
+      <div class="rg-rhythm-metrics">
+        <!-- Metric 1: 50% -->
+        <div class="rg-rhythm-divider"></div>
+        <div class="rg-rhythm-row">
+          <div class="rg-rhythm-stat">50%</div>
+          <div class="rg-rhythm-stat-desc">
+            Lower modernization cost versus manual re-platforming, based on fully loaded engineering hours
+          </div>
+        </div>
+
+        <!-- Metric 2: 25-35% -->
+        <div class="rg-rhythm-divider"></div>
+        <div class="rg-rhythm-row">
+          <div class="rg-rhythm-stat">25–35%</div>
+          <div class="rg-rhythm-stat-desc">
+            faster time-to-market across requirements-to-release cycle time versus prior release cadence
+          </div>
+        </div>
+
+        <!-- Metric 3: Safer migration -->
+        <div class="rg-rhythm-divider"></div>
+        <div class="rg-rhythm-statement">
+          Safer migration through phased, wave-based execution rather than a single cutover
+        </div>
+      </div>
+    </section>
+
+    <!-- Glowing Particle Dome Graphic (ChatGPT Image Aug 17, 2026) -->
+    <div class="rg-dome-wrap">
+      <img class="rg-dome-img" src="assets/img/Rgen/particle_dome.png" alt="Governed Core Particle Dome" />
+    </div>
+
+    <!-- 6. Built for Enterprise Section (Matching Figma Built for Enterprise Section) -->
+    <section class="rg-section rg-governed">
+      <h2 class="rg-governed-title">
+        <span class="rg-gov-italic">One</span> <span class="rg-gov-cyan">Governed</span> <span class="rg-gov-italic">Core,</span><br />
+        <span class="rg-gov-cyan">Every</span> <span class="rg-gov-italic">Modernization</span><br />
+        <span class="rg-gov-cyan rg-gov-wave">Wave.</span>
+      </h2>
+      <p class="rg-governed-desc">
+        From data protection and human review to auditability and secure deployment, every agent working under LegMod follows the same enterprise controls. Governance travels with the work; it is not added at the end.
+      </p>
+
+      <!-- Certifications Horizontal Scroll -->
+      <div class="rg-cert-scroll">
+        <div class="rg-cert-card">
+          <img src="assets/img/hipaa.png" alt="HIPAA Compliance" />
+        </div>
+        <div class="rg-cert-card cert-iso">
+          <img src="assets/img/iso.png" alt="ISO 27001" />
+        </div>
+        <div class="rg-cert-card">
+          <img src="assets/img/cmmi.png" alt="CMMI Level 3" />
+        </div>
+        <div class="rg-cert-card cert-owasp">
+          <img src="assets/img/owasp_nist.png" alt="OWASP & NIST" />
+        </div>
+        <div class="rg-cert-card">
+          <img src="assets/img/single_tenant.png" alt="Single-Tenant VPC" />
+        </div>
+        <div class="rg-cert-card">
+          <img src="assets/img/audit_grade.png" alt="Audit-Grade Traceability" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Frame 136 Sequence: Vertical Chain, Playbook, Start With What Your Systems Know, Chain Loop, Tool Integrations -->
+    <div class="rg-frame136-wrapper">
+      <div class="rg-frame136-glow">
+        <img src="assets/img/Rgen/frame136_gradient.png?v=20260905-7" alt="" />
+      </div>
+
+      <!-- Vertical Chain Graphic (Figma Frame 136 Top) -->
+      <div class="rg-chain-vertical-wrap">
+        <img class="rg-chain-vertical-img" src="assets/img/Rgen/chain_vertical.png?v=20260905-7" alt="Sanciti Modernization Chain" />
+      </div>
+
+      <!-- 7. Frame 75: Modernizing the Systems Playbook Form -->
+      <section class="rg-section rg-playbook-section" id="rg-playbook">
+        <h2 class="rg-playbook-title">
+          <span class="rg-pb-bold">Modernizing</span> <span class="rg-pb-italic">the</span> <span class="rg-pb-bold">Systems</span><br />
+          <span class="rg-pb-italic">You Can't</span> <span class="rg-pb-bold">Afford</span> <span class="rg-pb-italic">to</span> <span class="rg-pb-bold">Break</span>
+        </h2>
+        <div class="rg-playbook-desc-wrap">
+          <p class="rg-playbook-desc">
+            A practical playbook for end-to-end legacy modernization, covering how to assess risk, recover hidden logic, reduce technical debt, plan modernization waves, and validate the journey from legacy code to modern release.
+          </p>
+        </div>
+        <form class="rg-form" id="rgPlaybookForm" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+          <div class="rg-form-field">
+            <label for="rgLeadName">Name</label>
+            <input type="text" id="rgLeadName" name="name" required />
+          </div>
+          <div class="rg-form-field">
+            <label for="rgLeadTitle">Title</label>
+            <input type="text" id="rgLeadTitle" name="title" required />
+          </div>
+          <div class="rg-form-field">
+            <label for="rgLeadEmail">Email</label>
+            <input type="email" id="rgLeadEmail" name="email" required />
+          </div>
+          <div class="rg-form-field">
+            <label for="rgLeadContact">Contact number</label>
+            <input type="tel" id="rgLeadContact" name="phone" required />
+          </div>
+          <button type="submit" class="rg-btn-primary rg-pb-submit-btn">Download the Playbook</button>
+        </form>
+      </section>
+
+      <!-- 8. Frame 135: Start With What Your Systems Know -->
+      <section class="rg-section rg-systems-section">
+        <h2 class="rg-systems-title">
+          <span class="rg-sys-italic">Start With What</span> <span class="rg-sys-bold">Your</span><br />
+          <span class="rg-sys-bold">Systems</span> <span class="rg-sys-italic">Know.</span>
+        </h2>
+        <p class="rg-systems-desc">
+          Bring a codebase, document set, or requirements challenge to the conversation. See how RGEN can turn scattered information into a traceable source of truth—and give every downstream decision a stronger starting point.
+        </p>
+        <a class="rg-btn-primary rg-demo-cta-btn" href="#rg-playbook">Book a Demo</a>
+      </section>
+
+      <!-- Attached Chain Loop Graphic (User Uploaded before Frame 142) -->
+      <div class="rg-chain-loop-wrap">
+        <img class="rg-chain-loop-img" src="assets/img/Rgen/chain_loop_user.png?v=20260905-6" alt="Sanciti AI Chain Integration" />
+      </div>
+
+      <!-- 9. Frame 142: Built to Fit the Tools Your Teams Already Use -->
+      <section class="rg-section rg-tools-section">
+        <h2 class="rg-tools-title">
+          <span class="rg-tools-cyan">Built</span> <span class="rg-tools-italic">to</span> <span class="rg-tools-cyan">Fit the Tools</span><br />
+          <span class="rg-tools-italic">Your Teams Already Use.</span>
+        </h2>
+        <p class="rg-tools-desc">
+          RGEN works with the systems and workflows your teams already trust. It brings code, documents, and meeting intelligence together without forcing teams to replace the tools they rely on every day.
+        </p>
+        <p class="rg-tools-desc">
+          Every requirement remains traceable to its source and mapped to the projects, stakeholders, and delivery work it affects.
+        </p>
+        <p class="rg-tools-backed">
+          Backed by V2Soft—28 years building enterprise IT for regulated industries.
+        </p>
+
+        <!-- Frame 142 Tool Logos (3 rows: GitHub & Confluence, GitLab & SharePoint & Jira, IntelliJ & VS Code & Eclipse & PyCharm) -->
+        <div class="rg-tools-logos">
+          <img class="rg-tools-logos-img" src="assets/img/Rgen/tools_logos_all.png" alt="Supported tool integrations: GitHub, Confluence, GitLab, SharePoint, Jira, IntelliJ IDEA, Visual Studio, Eclipse, PyCharm" />
+        </div>
+      </section>
+    </div>
+
+    <!-- Mobile Footer -->
+    <footer class="rg-footer">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </div>
+        <p class="footer-desc">
+          Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+        </p>
+      </div>
+      <div class="footer-frame179">
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Portal" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div><!-- /#mobile-container -->
+
+  <script src="assets/js/script.js?v=2.5"></script>
+  <script>
+    async function handlePlaybookDownload(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = event.target;
+      if (window.validateCorporateEmailForm && !window.validateCorporateEmailForm(form)) {
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      }
+
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+      const originalBtnText = submitBtn ? submitBtn.innerText : 'Download the Playbook';
+
+      try {
+        if (submitBtn) {
+          submitBtn.innerText = 'Sending...';
+          submitBtn.disabled = true;
+        }
+
+        // Send POST request to our PHP endpoint
+        const response = await fetch('submit_form.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+        console.log("Form submission result:", result);
+
+        if (!result.success) {
+          const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+          if (emailInput && window.showEmailError) {
+            window.showEmailError(emailInput, '✕ Must be Business email.');
+            emailInput.focus();
+          }
+          if (window.showFormSubmitError) {
+            window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+          }
+          return;
+        }
+
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      } finally {
+        if (submitBtn) {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      if (window.clearFormSubmitError) {
+        window.clearFormSubmitError(form);
+      }
+
+      // Trigger the download
+      const link = document.createElement('a');
+      link.href = 'assets/Sanciti%20Ai%20_Legacy%20Modernization_Playbook.pdf';
+      link.download = 'Sanciti_Ai_Legacy_Modernization_Playbook.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Reset form
+      form.reset();
+
+      // Redirect to thank you page
+      setTimeout(() => {
+        window.location.href = 'https://www.sanciti.ai/thank-you/';
+      }, 500);
+    }
+
+    function toggleRgDrawer() {
+      const drawer = document.getElementById('rgDrawer');
+      if (drawer) {
+        drawer.classList.toggle('open');
+      }
+    }
+
+    // ================= Hero Circle Animation Transparent Canvas Renderer =================
+    // Removes any black rectangle/background and renders purely the glowing circle
+    (function() {
+      function setupHeroRingCanvas(videoId, canvasId) {
+        const video = document.getElementById(videoId);
+        const canvas = document.getElementById(canvasId);
+        if (!video || !canvas) return;
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        let isRunning = false;
+
+        function renderFrame() {
+          if (!video.paused && !video.ended && video.readyState >= 2) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+              const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+              const d = imgData.data;
+              const len = d.length;
+              for (let i = 0; i < len; i += 4) {
+                const r = d[i], g = d[i + 1], b = d[i + 2];
+                const max = r > g ? (r > b ? r : b) : (g > b ? g : b);
+                if (max < 16) {
+                  d[i + 3] = 0;
+                } else if (max < 40) {
+                  d[i + 3] = Math.round((max - 16) * (255 / 24));
+                }
+              }
+              ctx.putImageData(imgData, 0, 0);
+              video.style.opacity = '0';
+            } catch (e) {
+              video.style.opacity = '1';
+            }
+          }
+          requestAnimationFrame(renderFrame);
+        }
+
+        video.addEventListener('play', () => {
+          if (!isRunning) {
+            isRunning = true;
+            requestAnimationFrame(renderFrame);
+          }
+        });
+
+        if (!video.paused) {
+          isRunning = true;
+          requestAnimationFrame(renderFrame);
+        }
+
+        ['touchstart', 'click', 'scroll'].forEach(evt => {
+          window.addEventListener(evt, () => {
+            if (video.paused) {
+              video.play().catch(() => {});
+            }
+          }, { once: true, passive: true });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setupHeroRingCanvas('rgHeroVidDesk', 'rgHeroCanvasDesk');
+          setupHeroRingCanvas('rgHeroVidMob', 'rgHeroCanvasMob');
+        });
+      } else {
+        setupHeroRingCanvas('rgHeroVidDesk', 'rgHeroCanvasDesk');
+        setupHeroRingCanvas('rgHeroVidMob', 'rgHeroCanvasMob');
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploy — Governed Release &amp; Continuous Delivery | Sanciti AI</title>
+  <meta name="description"
+    content="Deploy takes validated, approved output from the pipeline and supports governed release execution, packaging production-ready code with end-to-end traceability." />
+
+  <!-- Google Fonts: Inter & Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Core & Page Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/deploy.css?v=20260917-gapfix1" />
+  <link rel="stylesheet" href="assets/css/deploy-mobile.css?v=20260917-gapfix1" />
+
+  <style>
+    /* Prevent FOUC during scale computation */
+    #scaler {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #000000;
+    }
+
+    #stage {
+      transform-origin: top left;
+      margin: 0;
+      left: 0;
+      top: 0;
+    }
+
+    @media (max-width: 768px) {
+      #scaler {
+        display: none !important;
+      }
+      #mobile-container {
+        display: block !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      #mobile-container {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="deploy-body">
+
+  <!-- ================= DESKTOP VIEW WITH SCALER (Width 1440px, Height 9391px) ================= -->
+  <div id="scaler">
+    <div id="stage" class="deploy-stage" data-width="1440" style="height: 9177px;">
+
+      <!-- ================= AMBIENT GLOWS (Matching Figma 1:1) ================= -->
+      <!-- Hero Glows -->
+      <div class="dp-ambient-glow" style="width:1092px; height:1092px; left:797px; top:-265px; background:rgba(63, 174, 255, 0.5); opacity:0.4; filter:blur(355px);"></div>
+      <div class="dp-ambient-glow" style="width:900px; height:900px; left:800px; top:1500px; background:rgba(42, 214, 223, 0.2); opacity:0.3; filter:blur(90px);"></div>
+      
+      <!-- Challenge Section Glows -->
+      <div class="dp-ambient-glow" style="width:1695px; height:1637px; left:-560px; top:510px; background:rgba(63, 174, 255, 0.4); opacity:0.4; filter:blur(300px);"></div>
+      <div class="dp-ambient-glow" style="width:1136px; height:1136px; left:212px; top:1231px; background:rgba(184, 179, 255, 0.5); opacity:0.4; filter:blur(300px);"></div>
+      
+      <!-- How-It-Works Glows -->
+      <div class="dp-ambient-glow" style="width:1383px; height:1288px; left:-1027px; top:2085px; background:rgba(63, 174, 255, 0.6); opacity:0.4; filter:blur(300px);"></div>
+      <div class="dp-ambient-glow" style="width:1504px; height:1667px; left:211px; top:1369px; background:rgba(232, 232, 232, 0.8); opacity:0.4; filter:blur(300px);"></div>
+      
+      <!-- Differentiation Frame 171 Glow Ellipses -->
+      <div class="dp-ambient-glow" style="width:687px; height:687px; left:1196px; top:3292px; background:#E8E8E8; filter:blur(302px); opacity:0.35;"></div>
+      <div class="dp-ambient-glow" style="width:987px; height:987px; left:0px; top:3111px; background:#E8E8E8; filter:blur(302px); opacity:0.35;"></div>
+      
+      <!-- Trust Section Ambient Glow -->
+      <div class="dp-ambient-glow" style="width:1389px; height:1629px; left:261px; top:4098px; background:rgba(63, 174, 255, 0.6); mix-blend-mode:exclusion; opacity:0.19; filter:blur(200px);"></div>
+      
+      <!-- Measured Outcomes & Compliance Ambient Glows -->
+      <div class="dp-ambient-glow" style="width:1469px; height:1429px; left:-546px; top:4216px; background:#E8E8E8; opacity:0.3; filter:blur(300px);"></div>
+      <div class="dp-ambient-glow" style="width:1236px; height:1152px; left:330px; top:5113px; opacity:0.2; border:1px solid #000000; filter:blur(300px);"></div>
+      <div class="dp-ambient-glow" style="width:1460px; height:2030px; left:-134px; top:5018px; background:#3D3D3D; opacity:0.4; filter:blur(300px);"></div>
+      
+      <!-- CTA & Playbook Frame 171 Glows -->
+      <div class="dp-ambient-glow" style="width:687px; height:687px; left:1196px; top:6979px; background:rgba(99, 99, 99, 0.5); filter:blur(302px); opacity:0.4;"></div>
+      <div class="dp-ambient-glow" style="width:987px; height:987px; left:0px; top:6798px; background:rgba(99, 99, 99, 0.5); filter:blur(302px); opacity:0.4;"></div>
+      <div class="dp-ambient-glow" style="width:1383px; height:1288px; left:30px; top:6829px; background:rgba(63, 174, 255, 0.5); opacity:0.4; filter:blur(300px);"></div>
+      
+      <!-- Ecosystem Section Ambient Glows -->
+      <div class="dp-ambient-glow" style="width:1190px; height:1155px; left:-161px; top:8076px; background:#F5F5F5; opacity:0.35; filter:blur(300px);"></div>
+      <div class="dp-ambient-glow" style="width:1096px; height:1484px; left:171px; top:8110px; background:#E8E8E8; opacity:0.35; filter:blur(300px);"></div>
+
+      <!-- ================= 0. DESKTOP NAV BAR ================= -->
+      <nav class="deploy-nav" aria-label="Main Navigation">
+        <a class="deploy-nav-logo" href="index.html" aria-label="Sanciti AI Home">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </a>
+        <div class="deploy-nav-menu">
+          <a class="deploy-nav-link" href="index.html">Home</a>
+          <a class="deploy-nav-link" href="legmod.html">LegMod</a>
+          <a class="deploy-nav-link" href="rgen.html">RGen</a>
+          <a class="deploy-nav-link" href="codegen.html">CodeGen</a>
+          <a class="deploy-nav-link" href="testai.html">Test AI</a>
+          <a class="deploy-nav-link active" href="deploy.html">Deploy</a>
+        </div>
+        <a class="deploy-nav-demo-btn" href="#deploy-playbook">Get a Free Assessment</a>
+      </nav>
+
+      <!-- ================= 1. HERO SECTION (0 - 800px) ================= -->
+      <section class="dp-hero" id="hero">
+        <div class="dp-hero-visual">
+          <video class="dp-hero-circle-vid" id="dpHeroVidDesk" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti Deploy Logic Ring Video">
+            <source src="assets/vids/circle-animation.webm" type="video/webm">
+            <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+          </video>
+          <canvas id="dpHeroCanvasDesk" class="dp-hero-circle-canvas" width="550" height="550"></canvas>
+        </div>
+
+        <div class="dp-hero-text-block">
+          <h1 class="dp-hero-heading">
+            <span class="light-italic">Take Every</span> <span class="bold-white">Validated</span><br />
+            <span class="bold-white">Build Through</span> <span class="light-italic">Its</span><br />
+            <span class="light-italic">Final</span> <span class="bold-white">Movement.</span>
+          </h1>
+          <p class="dp-hero-desc">
+            The last mile of delivery is often the most fragile: manual checks, late approvals, and handoffs between teams that were never fully in sync. A release can be technically ready and still lose momentum at the point it matters most.
+          </p>
+          <p class="dp-hero-desc">
+            Deploy is Sanciti AI’s release specialist. It takes validated, approved output from the pipeline and supports governed release execution, packaging production-ready code for containerized deployment with a clear chain of custody back to the requirement that started it.
+          </p>
+          <div class="dp-hero-cta-row">
+            <a class="dp-btn-primary" href="#deploy-playbook">Book a Demo &rarr;</a>
+            <a class="dp-btn-secondary" href="#deploy-playbook">Download the Playbook</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. CHALLENGE SECTION (800 - 1664px) ================= -->
+      <section class="dp-challenge" id="challenge">
+        <div class="dp-challenge-left">
+          <h2 class="dp-challenge-heading">
+            <span class="light-italic">When the Final</span><br />
+            <span class="bold-white">Handoff Breaks</span><br />
+            <span class="light-italic">the</span> <span class="bold-white">Rhythm.</span>
+          </h2>
+          <p class="dp-challenge-intro">
+            Release cycles slow down when build, test, approvals, and deployment operate as disconnected steps. Manual coordination makes release readiness difficult to see, creates unnecessary waiting, and increases the chance that issues are discovered too late.
+          </p>
+          <div class="dp-challenge-card">
+            <ul class="dp-challenge-list">
+              <li>Build, test, security, and release evidence are often spread across separate tools and teams</li>
+              <li>Late approvals and manual handoffs create avoidable release friction</li>
+              <li>Teams need a clear view of whether a build is ready, approved, and safe to promote</li>
+              <li>Release decisions must remain traceable for operational, security, and audit requirements</li>
+            </ul>
+          </div>
+          <p class="dp-challenge-conclusion">
+            Deploy keeps the final handoff connected to the work that came before it, so the release follows through rather than falling out of sync.
+          </p>
+        </div>
+
+        <div class="dp-challenge-right">
+          <img class="dp-challenge-spheres-img" src="assets/img/Deploy/deploy_challenge_spheres.png" alt="Governed Release Mechanics Visual" />
+        </div>
+      </section>
+
+      <!-- ================= 3. HOW IT WORKS / LIFECYCLE (1664 - 2550px) ================= -->
+      <section class="dp-lifecycle" id="how-it-works">
+        <h2 class="dp-lifecycle-heading">
+          <span class="light-italic">Package.</span><br />
+          <span class="light-italic">Check.</span><br />
+          <span class="light-italic">Approve.</span><br />
+          <span class="light-italic">Release.</span><br />
+          <span class="bold-white">One Governed Path to Production.</span>
+        </h2>
+
+        <!-- Stage 1: Package -->
+        <div class="dp-stage-card dp-stage-1">
+          <div class="dp-card-banner">
+            <img class="dp-card-banner-img" src="assets/img/Deploy/deploy_stage_package.png" alt="Package Stage" />
+            <span class="dp-card-stage-pill">Stage</span>
+            <span class="dp-card-title">Package</span>
+          </div>
+          <div class="dp-card-body">
+            <span class="dp-card-what-pill">What Happens</span>
+            <p class="dp-card-text">
+              Prepares approved, production-ready code and deployment assets for containerized release, preserving the connection to the build and requirement context.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 2: Check -->
+        <div class="dp-stage-card dp-stage-2">
+          <div class="dp-card-banner">
+            <img class="dp-card-banner-img" src="assets/img/Deploy/deploy_stage_check.png" alt="Check Stage" />
+            <span class="dp-card-stage-pill">Stage</span>
+            <span class="dp-card-title">Check</span>
+          </div>
+          <div class="dp-card-body">
+            <span class="dp-card-what-pill">What Happens</span>
+            <p class="dp-card-text">
+              Confirms the release has completed the required testing, security, and quality checks before it progresses.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 3: Approve -->
+        <div class="dp-stage-card dp-stage-3">
+          <div class="dp-card-banner">
+            <img class="dp-card-banner-img" src="assets/img/Deploy/deploy_stage_approve.png" alt="Approve Stage" />
+            <span class="dp-card-stage-pill">Stage</span>
+            <span class="dp-card-title">Approve</span>
+          </div>
+          <div class="dp-card-body">
+            <span class="dp-card-what-pill">What Happens</span>
+            <p class="dp-card-text">
+              Applies human oversight and governance gates so accountable teams can review release readiness with the right evidence in view.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stage 4: Release -->
+        <div class="dp-stage-card dp-stage-4">
+          <div class="dp-card-banner">
+            <img class="dp-card-banner-img" src="assets/img/Deploy/deploy_stage_release.png" alt="Release Stage" />
+            <span class="dp-card-stage-pill">Stage</span>
+            <span class="dp-card-title">Release</span>
+          </div>
+          <div class="dp-card-body">
+            <span class="dp-card-what-pill">What Happens</span>
+            <p class="dp-card-text">
+              Coordinates promotion through existing CI/CD pipelines, creating a clear, auditable record from validated build to production deployment.
+            </p>
+          </div>
+        </div>
+
+        <p class="dp-lifecycle-desc">
+          Deploy does more than push code live. It uses the validated outputs from CodeGen and TestAI, coordinates the release gates around them, and supports a controlled handoff into the environment where the application will run.
+        </p>
+
+        <p class="dp-lifecycle-bottom-text">
+          The result is a release process that is easier to govern, easier to explain, and better connected to the standards that define readiness.
+        </p>
+      </section>
+
+      <!-- ================= 4. DIFFERENTIATION (2550 - 4098px) ================= -->
+      <section class="dp-diff" id="differentiation">
+        <div class="dp-diff-title-wrap">
+          <h2 class="dp-diff-title">
+            <span class="bold-white">Release Is Not a Final Step.</span><br />
+            <span class="light-italic">It Is Part of the Same Score.</span>
+          </h2>
+        </div>
+        <p class="dp-diff-subtitle">
+          Deploy closes the loop between the work generated upstream and the environment where it creates value. It ensures that release execution is not an isolated operational event, but a governed continuation of the requirement, code, and test evidence already in place.
+        </p>
+
+        <div class="dp-diff-glass-card">
+          <img src="assets/img/Deploy/deploy_diff_frame113.png" alt="Deploy Differentiation Capability Table" class="dp-diff-card-img" />
+        </div>
+
+        <p class="dp-diff-bottom-text">
+          One orchestrator. The right specialist at each stage. One governed path from legacy estate to modern release.
+        </p>
+      </section>
+
+      <!-- ================= 5. TRUST & METRICS (4098 - 4935px) ================= -->
+      <section class="dp-trust" id="trust">
+        <h2 class="dp-trust-heading">
+          <span class="bold-white">A Better</span> <span class="light-italic">Basis for</span><br />
+          <span class="light-italic">Every</span> <span class="bold-white">Release</span><br />
+          <span class="bold-white">Decision.</span>
+        </h2>
+        <p class="dp-trust-intro">
+          Deploy is designed to make release readiness visible and governed. Rather than presenting unsupported speed or defect claims, this section focuses on the controls that give teams a more defensible path to production.
+        </p>
+
+        <div class="dp-trust-items">
+          <div class="dp-trust-item">
+            <div class="dp-trust-divider"></div>
+            <p class="dp-trust-item-text">
+              Validated output from CodeGen and TestAI before release promotion
+            </p>
+          </div>
+          <div class="dp-trust-item">
+            <div class="dp-trust-divider"></div>
+            <p class="dp-trust-item-text">
+              Human approval gates supported by traceable build, test, and security evidence
+            </p>
+          </div>
+          <div class="dp-trust-item">
+            <div class="dp-trust-divider"></div>
+            <p class="dp-trust-item-text">
+              Release execution integrated with existing CI/CD pipelines and containerized deployment workflows
+            </p>
+          </div>
+        </div>
+
+        <div class="dp-trust-right-visual">
+          <img class="dp-trust-dome-img" src="assets/img/Deploy/deploy_trust_dome.png" alt="Deploy Traceability Visualization" />
+        </div>
+      </section>
+
+      <!-- ================= 6. CASE STUDY (4935 - 5801px) ================= -->
+      <section class="dp-case" id="case-study">
+        <h2 class="dp-case-heading">
+          Legacy Modernization —<br />
+          Monolith to Microservices
+        </h2>
+        <p class="dp-case-desc">
+          Sanciti AI supported the modernization of a monolithic application into independently deployable microservices, with governed release practices helping teams move from legacy delivery constraints to a CI/CD-ready architecture.
+        </p>
+        <a class="dp-case-btn" href="#deploy-playbook">Learn More &rarr;</a>
+      </section>
+
+      <!-- ================= 7. GOVERNED CORE & COMPLIANCE (5801 - 6798px) ================= -->
+      <section class="dp-compliance" id="compliance">
+        <h2 class="dp-compliance-heading">
+          <span class="light-italic">One Governed Core,</span><br />
+          <span class="bold-white">Every Release.</span>
+        </h2>
+        <p class="dp-compliance-desc">
+          From data protection and human review to auditability and secure deployment, Deploy operates under the same enterprise controls as every Sanciti AI component. Release evidence stays connected to the work that produced it.
+        </p>
+
+        <div class="dp-compliance-scroll-wrap">
+          <div class="dp-compliance-cards-track">
+            <!-- Card 1: HITRUST -->
+            <div class="dp-compliance-card">
+              <img src="assets/img/Deploy/deploy_comp_hitrust.png?v=20260907-4" alt="HITRUST Compliance" />
+            </div>
+            <!-- Card 2: ISO 27001 -->
+            <div class="dp-compliance-card">
+              <img src="assets/img/Deploy/deploy_comp_iso.png?v=20260907-4" alt="ISO 27001 Certified Processes" />
+            </div>
+            <!-- Card 3: CMMI Level 3 -->
+            <div class="dp-compliance-card">
+              <img src="assets/img/Deploy/deploy_comp_cmmi.png?v=20260907-4" alt="CMMI Level 3 Quality Framework" />
+            </div>
+            <!-- Card 4: OWASP & NIST -->
+            <div class="dp-compliance-card">
+              <img src="assets/img/Deploy/deploy_comp_owasp.png?v=20260907-4" alt="OWASP &amp; NIST Alignment" />
+            </div>
+            <!-- Card 5: Single Tenant -->
+            <div class="dp-compliance-card">
+              <img src="assets/img/Deploy/deploy_comp_single_tenant.png?v=20260907-4" alt="Single-Tenant VPC Security" />
+            </div>
+            <!-- Card 6: Audit Grade -->
+            <div class="dp-compliance-card">
+              <img src="assets/img/Deploy/deploy_comp_audit_grade.png?v=20260907-4" alt="Audit-Grade Traceability" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 8. PLAYBOOK & 9. CTA UNIFIED SECTION (6798 - 8098px) ================= -->
+      <div class="dp-playbook-cta-wrapper" id="deploy-playbook-cta-wrap">
+        <!-- 8. Playbook Form -->
+        <section class="dp-playbook" id="deploy-playbook">
+          <div class="dp-playbook-left-chain">
+            <img class="dp-playbook-chain-img" src="assets/img/Deploy/deploy_chain_link.png?v=20260907-3" alt="Governed Pipeline Chain Link" />
+          </div>
+
+          <div class="dp-playbook-right">
+            <h2 class="dp-playbook-heading">
+              Modernizing the <span class="bold-white">Systems</span><br />
+              You Can't <span class="bold-white">Afford to Break</span>
+            </h2>
+            <p class="dp-playbook-desc">
+              A practical playbook for end-to-end legacy modernization—covering how to assess risk, recover hidden logic, reduce technical debt, plan modernization waves, and validate the journey from legacy code to modern release.
+            </p>
+
+            <form class="dp-playbook-form" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+              <input type="hidden" name="source" value="deploy" />
+              <div class="dp-form-grid">
+                <div class="dp-form-group">
+                  <label class="dp-form-label" for="dp-form-name">Name</label>
+                  <input class="dp-form-input" id="dp-form-name" name="Name" type="text" required />
+                </div>
+                <div class="dp-form-group">
+                  <label class="dp-form-label" for="dp-form-title">Title</label>
+                  <input class="dp-form-input" id="dp-form-title" name="Title" type="text" required />
+                </div>
+                <div class="dp-form-group">
+                  <label class="dp-form-label" for="dp-form-email">Email</label>
+                  <input class="dp-form-input" id="dp-form-email" name="Email" type="email" required />
+                </div>
+                <div class="dp-form-group">
+                  <label class="dp-form-label" for="dp-form-phone">Contact number</label>
+                  <input class="dp-form-input" id="dp-form-phone" name="Contact number" type="tel" required />
+                </div>
+              </div>
+              <div class="dp-form-submit-wrap">
+                <button class="dp-form-submit-btn" type="submit">Download the Playbook</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 9. Conversation CTA -->
+        <section class="dp-cta" id="cta">
+          <div class="dp-cta-left">
+            <h2 class="dp-cta-heading">
+              See What It Takes<br />
+              To <span class="bold-white">Release</span> in <span class="bold-white">Full</span><br />
+              <span class="bold-white">Control.</span>
+            </h2>
+            <p class="dp-cta-desc">
+              Bring a release-readiness or deployment challenge to the conversation. See how Deploy can connect validated builds, approval gates, and CI/CD execution into one governed path to production.
+            </p>
+            <a class="dp-cta-btn" href="#deploy-playbook">Book a Demo</a>
+          </div>
+
+          <div class="dp-cta-right">
+            <img class="dp-cta-loop-img" src="assets/img/Deploy/deploy_cta_loop_transparent.png?v=20260907-3" alt="Connected Release Loop Visual" />
+          </div>
+        </section>
+      </div>
+
+      <!-- ================= 10. ECOSYSTEM / WORKFLOW TOOLS (7961 - 8840px, Height 879px) ================= -->
+      <section class="dp-ecosystem" id="ecosystem">
+        <!-- Figma Ambient Glow 1096x1484px #E8E8E8 -->
+        <div class="dp-eco-ambient-glow"></div>
+
+        <h2 class="dp-eco-heading">
+          <span class="bold-white">Built</span> <span class="light-italic">Into the</span> <span class="bold-white">Workflow</span><br />
+          <span class="light-italic">Your</span> <span class="bold-white">Teams</span> <span class="light-italic">Already</span> <span class="bold-white">Use.</span>
+        </h2>
+        <div class="dp-eco-left">
+          <p class="dp-eco-desc">
+            Deploy integrates with the pipelines your teams already run, keeping release execution connected to the checks, approvals, and evidence that define readiness.
+          </p>
+          <p class="dp-eco-backed">
+            Backed by V2Soft—28 years building enterprise IT for regulated industries.
+          </p>
+          <p class="dp-eco-tools-list">
+            Integrates with existing CI/CD pipelines &middot; JIRA &middot; GitHub &middot; GitLab &middot; AWS S3 &middot; SharePoint &middot; Confluence &middot; Single-tenant VPC security &middot; Audit trails
+          </p>
+        </div>
+
+        <div class="dp-eco-right">
+          <img class="dp-eco-tools-img" src="assets/img/Deploy/deploy_tools_grid.png?v=20260917-nobg" alt="Deploy Supported Developer Tools and CI/CD Workflows" />
+        </div>
+      </section>
+
+      <!-- ================= 11. FOOTER (Exact Match to index.html) ================= -->
+      <footer class="abs desktop-footer sanciti-footer deploy-footer"
+        style="left:0; top:8977px; width:1440px; height:200px; background:#0D0D0D; border-top:1px solid rgba(255, 255, 255, 0.101961); box-sizing:border-box; padding:40px 18px 40px 43px; display:flex; flex-direction:row; align-items:center; justify-content:space-between; z-index:50;">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+          </div>
+          <p class="footer-desc">
+            Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+          </p>
+        </div>
+
+        <div class="footer-frame179">
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Portal" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-copyright">
+            &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /#stage -->
+  </div><!-- /#scaler -->
+
+  <!-- ================= MOBILE CONTAINER (<= 768px Fluid Responsive) ================= -->
+  <div id="mobile-container">
+    <!-- ================= AMBIENT GLOWS (Matching Figma Mobile 1:1) ================= -->
+    <div class="dp-ambient-glows-container">
+      <div class="dp-mob-ambient-glow dp-mob-glow-1"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-2"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-3"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-4"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-5"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-6"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-7"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-8"></div>
+      <div class="dp-mob-ambient-glow dp-mob-glow-9"></div>
+    </div>
+
+    <!-- Sticky Mobile Header -->
+    <header class="dp-mob-header">
+      <a class="dp-mob-logo" href="index.html" aria-label="Sanciti AI">
+        <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+      </a>
+      <div class="dp-mob-actions">
+        <a class="dp-mob-demo-btn" href="#deploy-playbook-mob">Demo</a>
+        <button class="dp-mob-menu-toggle" aria-label="Toggle navigation" onclick="toggleDpDrawer()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Drawer -->
+    <div class="dp-mob-drawer" id="dpDrawer">
+      <a href="index.html">Home</a>
+      <a href="legmod.html">LegMod</a>
+      <a href="rgen.html">RGen</a>
+      <a href="codegen.html">CodeGen</a>
+      <a href="testai.html">Test AI</a>
+      <a href="deploy.html" class="active">Deploy</a>
+      <a href="#deploy-playbook-mob" style="color:#2AD6DF; font-weight:600;" onclick="toggleDpDrawer()">Get a Free Assessment</a>
+    </div>
+
+    <!-- 1. Mobile Hero -->
+    <section class="dp-mob-section dp-mob-hero">
+      <h1 class="dp-mob-title">
+        <span class="light-italic">Take Every</span> <span class="bold-white">Validated Build</span><br />
+        <span class="bold-white">Through Its</span> <span class="light-italic">Final</span> <span class="bold-white">Movement.</span>
+      </h1>
+      <p class="dp-mob-desc">
+        The last mile of delivery is often the most fragile: manual checks, late approvals, and handoffs between teams that were never fully in sync.
+      </p>
+      <p class="dp-mob-desc">
+        Deploy is Sanciti AI’s release specialist. It takes validated, approved output from the pipeline and supports governed release execution with end-to-end traceability.
+      </p>
+      <div class="dp-mob-btn-row">
+        <a class="dp-mob-btn-primary" href="#deploy-playbook-mob">Book a Demo &rarr;</a>
+        <a class="dp-mob-btn-secondary" href="#deploy-playbook-mob">Download the Playbook</a>
+      </div>
+      <div class="dp-mob-hero-visual">
+        <video class="dp-mob-hero-circle-vid" id="dpHeroVidMob" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti Deploy Logic Ring Video">
+          <source src="assets/vids/circle-animation.webm" type="video/webm">
+          <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+        </video>
+        <canvas id="dpHeroCanvasMob" class="dp-mob-hero-circle-canvas" width="320" height="320"></canvas>
+      </div>
+    </section>
+
+    <!-- 2. Mobile Challenge -->
+    <section class="dp-mob-section">
+      <h2 class="dp-mob-title">
+        <span class="light-italic">When the Final</span><br />
+        <span class="bold-white">Handoff Breaks the Rhythm.</span>
+      </h2>
+      <p class="dp-mob-desc">
+        Release cycles slow down when build, test, approvals, and deployment operate as disconnected steps.
+      </p>
+      <div class="dp-mob-card">
+        <ul class="dp-mob-list">
+          <li>Build, test, security, and release evidence spread across separate tools</li>
+          <li>Late approvals and manual handoffs create avoidable friction</li>
+          <li>Teams need a clear view of whether a build is ready and safe to promote</li>
+          <li>Release decisions must remain fully traceable for enterprise audit</li>
+        </ul>
+      </div>
+      <div class="dp-mob-img-wrap">
+        <img src="assets/img/Deploy/deploy_challenge_spheres.png" alt="Governed Release Visual" />
+      </div>
+    </section>
+
+    <!-- 3. Mobile Lifecycle -->
+    <section class="dp-mob-section">
+      <h2 class="dp-mob-title">
+        <span class="light-italic">Package. Check.</span><br />
+        <span class="light-italic">Approve. Release.</span><br />
+        <span class="bold-white">One Governed Path.</span>
+      </h2>
+
+      <!-- Card 1 -->
+      <div class="dp-mob-stage-card">
+        <div class="dp-mob-stage-banner">
+          <img src="assets/img/Deploy/deploy_stage_package.png" alt="Package" />
+        </div>
+        <div class="dp-mob-stage-body">
+          <span class="dp-mob-what-pill">What Happens</span>
+          <p>Prepares approved, production-ready code and deployment assets for containerized release.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="dp-mob-stage-card">
+        <div class="dp-mob-stage-banner">
+          <img src="assets/img/Deploy/deploy_stage_check.png" alt="Check" />
+        </div>
+        <div class="dp-mob-stage-body">
+          <span class="dp-mob-what-pill">What Happens</span>
+          <p>Confirms the release has completed required testing, security, and quality checks.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="dp-mob-stage-card">
+        <div class="dp-mob-stage-banner">
+          <img src="assets/img/Deploy/deploy_stage_approve.png" alt="Approve" />
+        </div>
+        <div class="dp-mob-stage-body">
+          <span class="dp-mob-what-pill">What Happens</span>
+          <p>Applies human oversight and governance gates so teams review release readiness with evidence.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="dp-mob-stage-card">
+        <div class="dp-mob-stage-banner">
+          <img src="assets/img/Deploy/deploy_stage_release.png" alt="Release" />
+        </div>
+        <div class="dp-mob-stage-body">
+          <span class="dp-mob-what-pill">What Happens</span>
+          <p>Coordinates promotion through existing CI/CD pipelines with an auditable trail to runtime.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Mobile Differentiation (Frame 133) -->
+    <section class="dp-mob-section dp-mob-diff-section">
+      <h2 class="dp-mob-title">
+        <span class="bold-white">Release Is Not a Final Step.</span><br />
+        <span class="light-italic">It Is Part of the Same Score.</span>
+      </h2>
+      <p class="dp-mob-desc">
+        Deploy closes the loop between the work generated upstream and the environment where it creates value. It ensures that release execution is not an isolated operational event, but a governed continuation of the requirement, code, and test evidence already in place.
+      </p>
+
+      <!-- Frame 132 / Frame 113: Mobile 2-Column Table Card -->
+      <div class="dp-mob-diff-table-card">
+        <!-- Frame 119: Header Pills -->
+        <div class="dp-mob-diff-table-header">
+          <div class="dp-mob-diff-pill dp-pill-cap">Capability</div>
+          <div class="dp-mob-diff-pill dp-pill-why">Why It Matters</div>
+        </div>
+
+        <!-- Frame 123: Rows -->
+        <div class="dp-mob-diff-table-body">
+          <!-- Row 1 (Frame 96) -->
+          <div class="dp-mob-diff-trow">
+            <div class="dp-mob-diff-tcol-cap">Validated-build continuity</div>
+            <div class="dp-mob-diff-tcol-why">Carries approved output from CodeGen and TestAI into release without losing the context and evidence gathered upstream.</div>
+          </div>
+
+          <!-- Row 2 (Frame 97) -->
+          <div class="dp-mob-diff-trow">
+            <div class="dp-mob-diff-tcol-cap">Governed approval gates</div>
+            <div class="dp-mob-diff-tcol-why">Keeps accountable teams in control of the decision to promote a release.</div>
+          </div>
+
+          <!-- Row 3 (Frame 96) -->
+          <div class="dp-mob-diff-trow">
+            <div class="dp-mob-diff-tcol-cap">Container-ready packaging</div>
+            <div class="dp-mob-diff-tcol-why">Supports production-ready code and deployment assets for modern, containerized environments.</div>
+          </div>
+
+          <!-- Row 4 (Frame 98) -->
+          <div class="dp-mob-diff-trow">
+            <div class="dp-mob-diff-tcol-cap">CI/CD alignment</div>
+            <div class="dp-mob-diff-tcol-why">Works with existing delivery pipelines rather than requiring teams to replace their established release workflows.</div>
+          </div>
+
+          <!-- Row 5 (Frame 99) -->
+          <div class="dp-mob-diff-trow">
+            <div class="dp-mob-diff-tcol-cap">Requirement-to-release traceability</div>
+            <div class="dp-mob-diff-tcol-why">Maintains a clean chain of custody from the requirement that initiated the work through build, test, approval, and deployment.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Mobile Trust -->
+    <section class="dp-mob-section">
+      <h2 class="dp-mob-title">
+        <span class="bold-white">A Better Basis for</span><br />
+        <span class="light-italic">Every Release Decision.</span>
+      </h2>
+      <div class="dp-mob-trust-items">
+        <div class="dp-mob-trust-item">
+          Validated output from CodeGen and TestAI before release promotion
+        </div>
+        <div class="dp-mob-trust-item">
+          Human approval gates supported by traceable build, test, and security evidence
+        </div>
+        <div class="dp-mob-trust-item">
+          Release execution integrated with existing CI/CD pipelines and container workflows
+        </div>
+      </div>
+      <div class="dp-mob-img-wrap">
+        <img src="assets/img/Deploy/deploy_trust_dome.png" alt="Deploy Trust Dome" />
+      </div>
+    </section>
+
+    <!-- 6. Mobile Case Study -->
+    <section class="dp-mob-section">
+      <div class="dp-mob-case-card">
+        <h2 class="dp-mob-title" style="font-size: 28px;">
+          Legacy Modernization — Monolith to Microservices
+        </h2>
+        <p class="dp-mob-desc">
+          Sanciti AI supported modernizing a monolith into independently deployable microservices with governed release practices.
+        </p>
+        <a class="dp-btn-primary" href="#deploy-playbook-mob">Learn More &rarr;</a>
+      </div>
+    </section>
+
+    <!-- 7. Mobile Compliance -->
+    <section class="dp-mob-section">
+      <h2 class="dp-mob-title">
+        <span class="light-italic">One Governed Core,</span><br />
+        <span class="bold-white">Every Release.</span>
+      </h2>
+      <p class="dp-mob-desc">
+        Deploy operates under the same enterprise controls as every Sanciti AI component.
+      </p>
+      <div class="dp-mob-compliance-scroll">
+        <div class="dp-mob-comp-card">
+          <img src="assets/img/Deploy/deploy_comp_hitrust.png?v=20260907-4" alt="HITRUST" />
+        </div>
+        <div class="dp-mob-comp-card">
+          <img src="assets/img/Deploy/deploy_comp_iso.png?v=20260907-4" alt="ISO 27001" />
+        </div>
+        <div class="dp-mob-comp-card">
+          <img src="assets/img/Deploy/deploy_comp_cmmi.png?v=20260907-4" alt="CMMI Level 3" />
+        </div>
+        <div class="dp-mob-comp-card">
+          <img src="assets/img/Deploy/deploy_comp_owasp.png?v=20260907-4" alt="OWASP &amp; NIST" />
+        </div>
+        <div class="dp-mob-comp-card">
+          <img src="assets/img/Deploy/deploy_comp_single_tenant.png?v=20260907-4" alt="Single-Tenant VPC" />
+        </div>
+        <div class="dp-mob-comp-card">
+          <img src="assets/img/Deploy/deploy_comp_audit_grade.png?v=20260907-4" alt="Audit-Grade Traceability" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Unified Section 8 (Playbook) & 9 (CTA) with continuous atmospheric background matching desktop & Image 2 -->
+    <div class="dp-mob-playbook-cta-wrap" id="deploy-playbook-cta-wrap-mob">
+      <!-- 8. Mobile Playbook Form & Chain Link Graphic -->
+      <div class="dp-mob-chain-vertical-wrap">
+        <img class="dp-mob-chain-vertical-img" src="assets/img/Deploy/deploy_chain_link.png?v=20260907-5" alt="Governed Pipeline Chain Link" />
+      </div>
+
+      <section class="dp-mob-section dp-mob-playbook-section" id="deploy-playbook-mob">
+        <h2 class="dp-mob-title" style="font-size: 30px;">
+          Modernizing the <span class="bold-white">Systems</span><br />
+          You Can't <span class="bold-white">Afford to Break</span>
+        </h2>
+        <p class="dp-mob-desc">
+          A practical playbook for end-to-end legacy modernization—covering risk, hidden logic, and governed release.
+        </p>
+
+        <form class="dp-mob-form" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+          <input type="hidden" name="source" value="deploy-mobile" />
+          <div class="dp-mob-input-group">
+            <label class="dp-mob-input-label">Name</label>
+            <input class="dp-mob-input" name="Name" type="text" required />
+          </div>
+          <div class="dp-mob-input-group">
+            <label class="dp-mob-input-label">Title</label>
+            <input class="dp-mob-input" name="Title" type="text" required />
+          </div>
+          <div class="dp-mob-input-group">
+            <label class="dp-mob-input-label">Email</label>
+            <input class="dp-mob-input" name="Email" type="email" required />
+          </div>
+          <div class="dp-mob-input-group">
+            <label class="dp-mob-input-label">Contact number</label>
+            <input class="dp-mob-input" name="Contact number" type="tel" required />
+          </div>
+          <button class="dp-mob-submit-btn" type="submit">Download the Playbook</button>
+        </form>
+      </section>
+
+      <!-- 9. Mobile CTA -->
+      <section class="dp-mob-section dp-mob-cta-section" id="cta-mob">
+        <h2 class="dp-mob-title">
+          <span class="light-italic">See What It Takes</span><br />
+          To <span class="bold-white">Release</span> in <span class="bold-white">Full Control.</span>
+        </h2>
+        <p class="dp-mob-desc">
+          Bring a release-readiness or deployment challenge to the conversation. See how Deploy can connect validated builds, approval gates, and CI/CD execution into one governed path to production.
+        </p>
+        <a class="dp-mob-btn-primary" href="#deploy-playbook-mob">Book a Demo</a>
+        <div class="dp-mob-cta-loop-wrap">
+          <img class="dp-mob-cta-loop-img" src="assets/img/Deploy/deploy_cta_loop_transparent.png?v=20260907-5" alt="Release Loop Visual" />
+        </div>
+      </section>
+    </div>
+
+    <!-- 10. Mobile Ecosystem -->
+    <section class="dp-mob-section">
+      <h2 class="dp-mob-title">
+        <span class="bold-white">Built Into the Workflow</span><br />
+        <span class="light-italic">Your Teams Already Use.</span>
+      </h2>
+      <p class="dp-mob-desc">
+        Deploy integrates with the pipelines your teams already run, keeping release execution connected to readiness standards.
+      </p>
+      <div class="dp-mob-img-wrap">
+        <img src="assets/img/Deploy/deploy_tools_grid.png?v=20260917-nobg" alt="Deploy Supported Tools" />
+      </div>
+    </section>
+
+    <!-- 11. Mobile Footer (Identical to index.html) -->
+    <footer class="sanciti-footer mobile-footer">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </div>
+        <p class="footer-desc">
+          Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+        </p>
+      </div>
+
+      <div class="footer-frame179">
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Portal" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div><!-- /#mobile-container -->
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Scale desktop stage to fit window width seamlessly without horizontal scrolling
+    function updateScale() {
+      var scaler = document.getElementById('scaler');
+      var stage = document.getElementById('stage');
+      if (!scaler || !stage) return;
+      var targetWidth = parseFloat(stage.getAttribute('data-width')) || 1440;
+      var winWidth = window.innerWidth;
+      if (winWidth > 768) {
+        var scale = winWidth / targetWidth;
+        stage.style.transform = 'scale(' + scale + ')';
+        scaler.style.height = (9177 * scale) + 'px';
+      } else {
+        stage.style.transform = '';
+        scaler.style.height = '';
+      }
+    }
+
+    window.addEventListener('resize', updateScale);
+    window.addEventListener('load', updateScale);
+    updateScale();
+
+    // Drawer Toggle
+    function toggleDpDrawer() {
+      var drawer = document.getElementById('dpDrawer');
+      if (drawer) {
+        drawer.classList.toggle('open');
+      }
+    }
+
+    // Playbook Form Handler
+    async function handlePlaybookDownload(event) {
+      event.preventDefault();
+      var form = event.target;
+
+      if (window.validateFormEmails && !window.validateFormEmails(form)) {
+        return;
+      }
+
+      var formData = new FormData(form);
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
+
+      try {
+        if (submitBtn) {
+          submitBtn.innerText = 'Sending...';
+          submitBtn.disabled = true;
+        }
+
+        var response = await fetch('submit_form.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        var result = await response.json();
+        console.log("Form submission result:", result);
+
+        if (!result.success) {
+          var emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+          if (emailInput && window.showEmailError) {
+            window.showEmailError(emailInput, '✕ Must be a Business email.');
+            emailInput.focus();
+          }
+          if (window.showFormSubmitError) {
+            window.showFormSubmitError(form, '✕ Submission failed. Please verify your business email.');
+          }
+          return;
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Error processing request. Please try again.');
+        }
+        return;
+      } finally {
+        if (submitBtn) {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      if (window.clearFormSubmitError) {
+        window.clearFormSubmitError(form);
+      }
+
+      // Trigger download
+      var link = document.createElement('a');
+      link.href = 'assets/Sanciti Ai _Legacy Modernization_Playbook.pdf';
+      link.download = 'Sanciti Ai _Legacy Modernization_Playbook.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      form.reset();
+
+      setTimeout(function() {
+        window.location.href = 'https://www.sanciti.ai/thank-you/';
+      }, 500);
+    }
+
+    // Hero Circle Animation Transparent Canvas Renderer with Platinum/Cool Cyan Theme
+    (function() {
+      function setupHeroRingCanvas(videoId, canvasId) {
+        var video = document.getElementById(videoId);
+        var canvas = document.getElementById(canvasId);
+        if (!video || !canvas) return;
+        var ctx = canvas.getContext('2d', { willReadFrequently: true });
+        var isRunning = false;
+
+        function renderFrame() {
+          if (!video.paused && !video.ended && video.readyState >= 2) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+              var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+              var d = imgData.data;
+              var len = d.length;
+              for (var i = 0; i < len; i += 4) {
+                var r = d[i], g = d[i + 1], b = d[i + 2];
+                var max = r > g ? (r > b ? r : b) : (g > b ? g : b);
+                if (max < 16) {
+                  d[i + 3] = 0;
+                } else if (max < 40) {
+                  d[i + 3] = Math.round((max - 16) * (255 / 24));
+                }
+                // Shift hue to luminous platinum / oyster-white with cool cyan sheen
+                if (d[i + 3] > 0) {
+                  var brightness = Math.max(r, g, b);
+                  d[i] = Math.min(255, Math.round(brightness * 0.95 + 10));
+                  d[i + 1] = Math.min(255, Math.round(brightness * 1.05 + 15));
+                  d[i + 2] = Math.min(255, Math.round(brightness * 1.12 + 20));
+                }
+              }
+              ctx.putImageData(imgData, 0, 0);
+              video.style.opacity = '0';
+            } catch (e) {
+              video.style.opacity = '1';
+            }
+          }
+          requestAnimationFrame(renderFrame);
+        }
+
+        video.addEventListener('play', function() {
+          if (!isRunning) {
+            isRunning = true;
+            requestAnimationFrame(renderFrame);
+          }
+        });
+
+        if (!video.paused) {
+          isRunning = true;
+          requestAnimationFrame(renderFrame);
+        }
+
+        ['touchstart', 'click', 'scroll'].forEach(function(evt) {
+          window.addEventListener(evt, function() {
+            if (video.paused) {
+              video.play().catch(function() {});
+            }
+          }, { once: true, passive: true });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setupHeroRingCanvas('dpHeroVidDesk', 'dpHeroCanvasDesk');
+          setupHeroRingCanvas('dpHeroVidMob', 'dpHeroCanvasMob');
+        });
+      } else {
+        setupHeroRingCanvas('dpHeroVidDesk', 'dpHeroCanvasDesk');
+        setupHeroRingCanvas('dpHeroVidMob', 'dpHeroCanvasMob');
+      }
+    })();
+  </script>
+</body>
+
+</html>

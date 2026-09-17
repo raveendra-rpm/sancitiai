@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sanciti AI — CodeGen: Autonomous Enterprise Code Generation</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/codegen.css?v=20260905-7" rel="stylesheet" />
+  <link href="assets/css/codegen-mobile.css?v=20260905-9" rel="stylesheet" />
+</head>
+
+<body class="codegen-body">
+
+  <!-- ================= SCALER FOR DESKTOP (1440px Figma Base Stage) ================= -->
+  <div id="scaler">
+    <div id="stage" class="codegen-stage" data-width="1440" style="height: 9356px;">
+
+      <!-- ================= AMBIENT GLOW RASTER OVERLAYS (User-provided Figma PNGs) ================= -->
+      <img class="cg-glow-img" src="assets/img/CodeGen/ambient-glow (1).png" alt="" style="position:absolute; left:0; top:0; width:1440px; pointer-events:none; z-index:1; mix-blend-mode:screen; opacity:0.85;" />
+      <img class="cg-glow-img" src="assets/img/CodeGen/ambient-glow.png" alt="" style="position:absolute; left:0; top:750px; width:1440px; pointer-events:none; z-index:1; mix-blend-mode:screen; opacity:0.75;" />
+      <img class="cg-glow-img" src="assets/img/CodeGen/ambient-glow (3).png" alt="" style="position:absolute; left:0; top:2500px; width:1440px; pointer-events:none; z-index:1; mix-blend-mode:screen; opacity:0.8;" />
+      <img class="cg-glow-img" src="assets/img/CodeGen/ambient-glow (4).png" alt="" style="position:absolute; left:0; top:5400px; width:1149px; pointer-events:none; z-index:1; mix-blend-mode:screen; opacity:0.75;" />
+      <img class="cg-glow-img" src="assets/img/CodeGen/codegen_playbook_cta_bg.png" alt="" style="position:absolute; left:0; top:6749px; width:1440px; height:1525px; pointer-events:none; z-index:1;" />
+
+      <!-- ================= EXACT FIGMA CSS ROOT AMBIENT GLOWS ================= -->
+      <div class="cg-ambient-glow" style="position:absolute; width:1383px; height:1288px; left:-520px; top:256px; background:#3FAEFF; opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+      <div class="cg-ambient-glow" style="position:absolute; width:987px; height:987px; left:902px; top:-265px; background:#3FAEFF; opacity:0.4; filter:blur(355px); pointer-events:none; z-index:1;"></div>
+      <div class="cg-ambient-glow" style="position:absolute; width:900px; height:900px; left:800px; top:1500px; background:rgba(42, 214, 223, 0.2); opacity:0.3; filter:blur(90px); pointer-events:none; z-index:1;"></div>
+      <div class="cg-ambient-glow" style="position:absolute; width:959px; height:963px; left:691px; top:4645px; background:#0104E1; opacity:0.25; filter:blur(90px); pointer-events:none; z-index:1;"></div>
+      <div class="cg-ambient-glow" style="position:absolute; width:1190px; height:1155px; left:-161px; top:7792px; background:rgba(1, 4, 225, 0.4); opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+      <div class="cg-ambient-glow" style="position:absolute; width:1096px; height:1484px; left:171px; top:8286px; background:#0104E1; opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+
+      <!-- ================= NAV BAR (top: 38px, width: 1400px) ================= -->
+      <nav class="codegen-nav" id="desktopNav">
+        <a class="codegen-nav-logo" href="index.html" aria-label="Sanciti AI">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </a>
+        <div class="codegen-nav-menu font-disp">
+          <a class="codegen-nav-link" href="index.html">Home</a>
+          <a class="codegen-nav-link" href="legmod.html">LegMod</a>
+          <a class="codegen-nav-link" href="rgen.html">RGen</a>
+          <a class="codegen-nav-link active" href="codegen.html">CodeGen</a>
+          <a class="codegen-nav-link" href="testai.html">Test AI</a>
+          <a class="codegen-nav-link" href="deploy.html">Deploy</a>
+        </div>
+        <a class="codegen-nav-btn" href="#codegen-playbook">Demo</a>
+      </nav>
+
+      <!-- ================= 1. HERO SECTION (0 - 850px) ================= -->
+      <section class="cg-hero">
+        <!-- Left: Glowing Blue Orbital Cadenza Ring Animation -->
+        <div class="cg-hero-visual">
+          <video class="cg-hero-circle-vid" id="cgHeroVidDesk" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti CodeGen Logic Ring Video">
+            <source src="assets/vids/circle-animation.webm" type="video/webm">
+            <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+          </video>
+          <canvas id="cgHeroCanvasDesk" class="cg-hero-circle-canvas" width="550" height="550"></canvas>
+        </div>
+
+        <!-- Right: Hero Typography Block -->
+        <div class="cg-hero-text-block">
+          <h1 class="cg-hero-heading">
+            <span class="light-italic">From</span> <span class="bold-white">Requirement to</span><br />
+            <span class="bold-white">Production-</span><span class="light-italic">Ready</span><br />
+            <span class="light-italic">Code.</span> <span class="bold-white">In the Same</span><br />
+            <span class="bold-white">Key.</span>
+          </h1>
+          <p class="cg-hero-desc">
+            Every deadline can tempt a shortcut: skipped standards, copied patterns, and code that works today but creates more debt tomorrow.
+          </p>
+          <p class="cg-hero-desc">
+            CodeGen turns RGEN's structured requirements into secure, production-ready code aligned to your architecture, tech stack, and engineering standards. It gives teams a faster path from intent to implementation, with security, story coverage, and human review built into the flow.
+          </p>
+          <div class="cg-hero-cta-row">
+            <a class="cg-btn-primary" href="#codegen-playbook">
+              <span>Book a Demo</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 3L11 8L6 13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a class="cg-btn-secondary" href="#codegen-playbook">
+              <span>Download the Playbook</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 2. CHALLENGE SECTION (800 - 1664px) ================= -->
+      <section class="cg-challenge">
+        <!-- Figma Challenge Section Glows -->
+        <div class="cg-sec-glow" style="position:absolute; width:1465px; height:1364px; left:-560px; top:-17px; background:rgba(1, 4, 225, 0.5); opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+        <div class="cg-sec-glow" style="position:absolute; width:1136px; height:1136px; left:212px; top:431px; background:rgba(42, 214, 223, 0.7); opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+
+        <div class="cg-challenge-left">
+          <h2 class="cg-challenge-heading">
+            <span class="light-italic">When</span> <span class="bold-white">Delivery</span><br />
+            <span class="bold-white">Moves Faster</span> <span class="light-italic">Than</span><br />
+            <span class="bold-white">Consistency.</span>
+          </h2>
+          <p class="cg-challenge-desc">
+            Manual coding, repeated scaffolding, and uneven standards slow delivery while quietly fragmenting the codebase. Teams may be shipping features, but without a shared path from requirement to implementation, every release can introduce new inconsistency and more technical debt.
+          </p>
+          <p class="cg-challenge-desc">
+            The challenge is not simply generating more code. It is generating code that fits the application, traces to the requirement, meets security expectations, and is ready for expert review.
+          </p>
+          <!-- Challenge Glass Card -->
+          <div class="cg-challenge-card">
+            <ul class="cg-challenge-list">
+              <li>Requirements are translated differently across teams and projects</li>
+              <li>Repeated scaffolding consumes engineering time that should go to higher-value work</li>
+              <li>Generated or manually written code can drift from architecture and coding standards</li>
+              <li>Security and quality checks are often applied late, after rework has already begun</li>
+            </ul>
+          </div>
+          <p class="cg-challenge-foot">
+            CodeGen keeps the implementation in time with the requirement, the target architecture, and the controls that govern release.
+          </p>
+        </div>
+
+        <div class="cg-challenge-right">
+          <img class="cg-challenge-spheres" src="assets/img/CodeGen/codegen_blue_spheres.png" alt="Blue Glass Spheres Visual" />
+        </div>
+      </section>
+
+      <!-- ================= 3. HOW IT WORKS / PIPELINE STAGES (1664 - 2700px) ================= -->
+      <section class="cg-how-it-works">
+        <!-- Figma How-It-Works Glows -->
+        <div class="cg-sec-glow" style="position:absolute; width:1383px; height:1288px; left:-1027px; top:421px; background:rgba(63, 174, 255, 0.8); opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+        <div class="cg-sec-glow" style="position:absolute; width:1504px; height:1667px; left:211px; top:-295px; background:rgba(1, 4, 225, 0.8); opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+
+        <!-- 4 Stage Cards Grid -->
+        <div class="cg-stages-grid">
+          <!-- Stage 1: Align -->
+          <div class="cg-stage-card">
+            <div class="cg-stage-banner">
+              <img src="assets/img/CodeGen/stage_banner_align.png" alt="Stage 1: Align" />
+            </div>
+            <div class="cg-stage-content">
+              <div class="cg-stage-badge-row">
+                <span class="cg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="cg-stage-desc">
+                Takes RGEN requirements, application metadata, and target-stack context to establish the right architecture, standards, and project structure before generation begins.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 2: Generate -->
+          <div class="cg-stage-card">
+            <div class="cg-stage-banner">
+              <img src="assets/img/CodeGen/stage_banner_generate.png" alt="Stage 2: Generate" />
+            </div>
+            <div class="cg-stage-content">
+              <div class="cg-stage-badge-row">
+                <span class="cg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="cg-stage-desc">
+                Produces backend services in Spring Boot, Node, or .NET; frontend components in React, Angular, or Vue; database objects; API collections; and deployment assets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 3: Structure -->
+          <div class="cg-stage-card">
+            <div class="cg-stage-banner">
+              <img src="assets/img/CodeGen/stage_banner_structure.png" alt="Stage 3: Structure" />
+            </div>
+            <div class="cg-stage-content">
+              <div class="cg-stage-badge-row">
+                <span class="cg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="cg-stage-desc">
+                Checks story coverage against the originating requirement and evaluates output against OWASP and NIST-aligned quality expectations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stage 4: Sync -->
+          <div class="cg-stage-card">
+            <div class="cg-stage-banner">
+              <img src="assets/img/CodeGen/stage_banner_sync.png" alt="Stage 4: Sync" />
+            </div>
+            <div class="cg-stage-content">
+              <div class="cg-stage-badge-row">
+                <span class="cg-stage-subbadge">What Happens</span>
+              </div>
+              <p class="cg-stage-desc">
+                Runs SAST, SCA, and LLM-level security scans, then holds generated output behind a human review gate before anything moves downstream.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Section Titles -->
+        <div class="cg-how-right">
+          <h2 class="cg-how-title">
+            <span class="light-italic">Align.</span><br />
+            <span class="light-italic">Generate.</span><br />
+            <span class="light-italic">Verify.</span><br />
+            <span class="light-italic">Gate.</span><br />
+            <span class="bold-white">One Controlled</span><br />
+            <span class="bold-white">Path to Score.</span>
+          </h2>
+          <p class="cg-how-desc">
+            CodeGen does more than autocomplete. It uses the requirements captured upstream, aligns to the target stack, generates the assets needed to build, and checks the work before it reaches a developer for review.
+          </p>
+        </div>
+
+        <!-- Full-width Bottom Footnote -->
+        <div class="cg-how-footer-text">
+          The result is implementation that is connected to what the business asked for, shaped for the environment it will run in, and ready for expert oversight.
+        </div>
+      </section>
+
+      <!-- ================= 4. DIFFERENTIATION TABLE (2700 - 4246px) ================= -->
+      <section class="cg-differentiation">
+        <!-- Figma Frame 171 Glow Ellipses -->
+        <div class="cg-frame171-glow" style="position:absolute; width:1883px; height:987px; left:calc(50% - 1883px/2 + 0.5px); top:561px; pointer-events:none; z-index:1;">
+          <div style="position:absolute; width:687px; height:687px; left:1196px; top:181px; background:#0104E1; filter:blur(302px);"></div>
+          <div style="position:absolute; width:987px; height:987px; left:0px; top:0px; background:#0104E1; filter:blur(302px);"></div>
+        </div>
+
+        <div class="cg-diff-header">
+          <h2 class="cg-diff-title">
+            <span class="light-italic">More Than</span> <span class="bold-white">Code</span><br />
+            <span class="bold-white">Generation. A Disciplined</span><br />
+            <span class="bold-white">Build</span> <span class="light-italic">Section.</span>
+          </h2>
+          <p class="cg-diff-intro">
+            CodeGen brings structure to the moment where requirements become working software. It reduces the gap between what was specified and what gets built, while preserving the safeguards enterprise teams need to move with confidence.
+          </p>
+        </div>
+
+        <!-- Comparison Table Card -->
+        <div class="cg-diff-card">
+          <div class="cg-diff-table-head">
+            <div class="cg-diff-pill">Capability</div>
+            <div class="cg-diff-pill">Why It Matters</div>
+          </div>
+
+          <!-- Row 1 -->
+          <div class="cg-diff-row">
+            <div class="cg-diff-capability">Requirement-to-code continuity</div>
+            <div class="cg-diff-matters">Builds directly from RGEN's structured output, so implementation remains connected to business intent and acceptance criteria.</div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="cg-diff-row">
+            <div class="cg-diff-capability">Full-stack generation</div>
+            <div class="cg-diff-matters">Creates backend, frontend, database, API, and deployment assets instead of producing isolated code snippets.</div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="cg-diff-row">
+            <div class="cg-diff-capability">Architecture and stack alignment</div>
+            <div class="cg-diff-matters">Applies application metadata, coding standards, templates, and target-stack context to produce code that fits the environment.</div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="cg-diff-row">
+            <div class="cg-diff-capability">Security and quality controls</div>
+            <div class="cg-diff-matters">Uses OWASP/NIST quality scoring with SAST, SCA, and LLM-level scans before human review.</div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="cg-diff-row">
+            <div class="cg-diff-capability">Human review gates</div>
+            <div class="cg-diff-matters">Keeps developers accountable for final decisions; no generated output is treated as ready to ship without review.</div>
+          </div>
+        </div>
+
+        <div class="cg-diff-bottom-foot">
+          One orchestrator. The right specialist at each stage. One governed path from legacy estate to modern release.
+        </div>
+      </section>
+
+      <!-- ================= 5. OUTCOMES & METRICS (4246 - 5341px) ================= -->
+      <section class="cg-outcomes">
+        <div class="cg-outcomes-header">
+          <h2 class="cg-outcomes-title">
+            <span class="bold-white">Speed</span> <span class="light-italic">With the</span><br />
+            <span class="bold-white">Right Safeguards.</span>
+          </h2>
+          <p class="cg-outcomes-intro">
+            CodeGen is designed to accelerate implementation without treating speed as the only outcome. Output is evaluated against requirements, architecture, security controls, and human review before it progresses.
+          </p>
+        </div>
+
+        <!-- Left Metrics Block -->
+        <div class="cg-outcomes-left">
+          <div class="cg-metric-stat-row">
+            <div class="cg-metric-number">80–90%</div>
+            <div class="cg-metric-subtext">Code output can reach 80–90% completion before developer review, depending on the application context</div>
+          </div>
+          <div class="cg-metric-item">
+            Every generated output is checked for story coverage against the originating requirement
+          </div>
+          <div class="cg-metric-item">
+            OWASP/NIST-aligned quality scoring and SAST, SCA, and LLM-level scans are applied before human approval
+          </div>
+          <div class="cg-metric-footnote">
+            Note: 80–90% refers to the completeness of CodeGen output before developer review, not the proportion of enterprise code written by AI.
+          </div>
+        </div>
+
+        <!-- Right Particle Dome Visual -->
+        <div class="cg-outcomes-right">
+          <img class="cg-particle-dome-img" src="assets/img/CodeGen/codegen_particle_dome.png" alt="Blue Wireframe Particle Dome" />
+        </div>
+      </section>
+
+      <!-- ================= 6. CASE STUDY (5341 - 5700px) ================= -->
+      <section class="cg-case-study">
+        <h2 class="cg-case-title">
+          <span class="bold-white">Legacy Modernization —</span><br />
+          <span class="bold-white">Monolith</span> <span class="light-italic">to</span> <span class="bold-white">Microservices</span>
+        </h2>
+        <p class="cg-case-desc">
+          Sanciti AI reverse-engineered a monolithic application, decomposed it into microservices, defined APIs, and migrated business logic as part of a governed modernization program.
+        </p>
+        <a class="cg-btn-learn-more" href="#codegen-playbook">Learn More</a>
+      </section>
+
+      <!-- ================= 7. ENTERPRISE TRUST & GOVERNANCE (5700 - 6749px) ================= -->
+      <section class="cg-trust">
+        <!-- Figma Trust Section Ambient Glows -->
+        <div class="cg-sec-glow" style="position:absolute; width:891px; height:1065px; left:-342px; top:-972px; background:#0104E1; opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+        <div class="cg-sec-glow" style="position:absolute; width:1236px; height:1152px; left:330px; top:-439px; background:#0104E1; opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+        <div class="cg-sec-glow" style="position:absolute; width:1196px; height:1663px; left:-134px; top:-167px; background:#0104E1; opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+
+        <div class="cg-trust-header">
+          <h2 class="cg-trust-title">
+            <span class="light-italic">One</span> <span class="bold-white">Governed</span> <span class="light-italic">Core,</span><br />
+            <span class="bold-white">Every</span> <span class="light-italic">Build.</span>
+          </h2>
+          <p class="cg-trust-intro">
+            From data protection and human review to auditability and secure deployment, CodeGen operates under the same enterprise controls as every Sanciti AI component. Governance begins before code is released, not after.
+          </p>
+        </div>
+
+        <!-- Draggable / Scrollable Compliance Cards Strip -->
+        <div class="cg-trust-scroll-track cert-scroll">
+          <div class="cg-trust-card">
+            <img src="assets/img/hipaa.png" alt="HIPAA Compliance" />
+          </div>
+          <div class="cg-trust-card">
+            <img src="assets/img/iso.png" alt="ISO 27001 Certified" />
+          </div>
+          <div class="cg-trust-card">
+            <img src="assets/img/cmmi.png" alt="CMMI Level 3" />
+          </div>
+          <div class="cg-trust-card">
+            <img src="assets/img/owasp_nist.png" alt="OWASP and NIST Alignment" />
+          </div>
+          <div class="cg-trust-card">
+            <img src="assets/img/single_tenant.png" alt="Single-Tenant VPC Security" />
+          </div>
+          <div class="cg-trust-card">
+            <img src="assets/img/audit_grade.png" alt="Audit-Grade Traceability" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 8. PLAYBOOK LEAD FORM (6749 - 7601px) ================= -->
+      <section class="cg-playbook" id="codegen-playbook">
+        <!-- Left: Blue Metallic Chain Link Visual -->
+        <div class="cg-playbook-left">
+          <img class="cg-playbook-chain-img" src="assets/img/CodeGen/codegen_chain_link.png?v=20260905-2" alt="Blue Metallic Chain Link" />
+        </div>
+
+        <!-- Right: Lead Capture Form -->
+        <div class="cg-playbook-right">
+          <h2 class="cg-playbook-title">
+            <span class="bold-white">Modernizing</span> <span class="light-italic">the</span> <span class="bold-white">Systems</span><br />
+            <span class="light-italic">You Can't</span> <span class="bold-white">Afford</span> <span class="light-italic">to</span> <span class="bold-white">Break</span>
+          </h2>
+          <p class="cg-playbook-desc">
+            A practical playbook for end-to-end legacy modernization—covering how to assess risk, recover hidden logic, reduce technical debt, plan modernization waves, and validate the journey from legacy code to modern release.
+          </p>
+
+          <form class="cg-playbook-form" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+            <input type="hidden" name="source" value="codegen" />
+
+            <div class="cg-form-group">
+              <label class="cg-form-label">Name</label>
+              <input class="cg-form-input" name="Name" type="text" placeholder="" required />
+            </div>
+
+            <div class="cg-form-group">
+              <label class="cg-form-label">Title</label>
+              <input class="cg-form-input" name="Title" type="text" placeholder="" required />
+            </div>
+
+            <div class="cg-form-group">
+              <label class="cg-form-label">Email</label>
+              <input class="cg-form-input" name="Email" type="email" placeholder="" required />
+            </div>
+
+            <div class="cg-form-group">
+              <label class="cg-form-label">Contact number</label>
+              <input class="cg-form-input" name="Contact number" type="tel" placeholder="" required />
+            </div>
+
+            <div class="cg-form-submit-row">
+              <button type="submit" class="cg-btn-primary">
+                <span>Download the Playbook</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= 9. CONVERSATION CTA / CASE STUDIES (7601 - 8274px) ================= -->
+      <section class="cg-cta-section" id="case-studies">
+        <div class="cg-cta-left">
+          <h2 class="cg-cta-title">
+            <span class="light-italic">See What Your</span><br />
+            <span class="bold-white">Requirements</span><br />
+            <span class="light-italic">Can</span> <span class="bold-white">Become.</span>
+          </h2>
+          <p class="cg-cta-desc">
+            Bring a modernization or delivery challenge to the conversation. See how CodeGen can turn structured requirements into architecture-aligned, security-checked code that is ready for your team to review.
+          </p>
+          <a class="cg-btn-primary" href="#codegen-playbook">Book a Demo</a>
+        </div>
+
+        <div class="cg-cta-right">
+          <img class="cg-cta-loop-img" src="assets/img/CodeGen/codegen_chain_loop_cta.png?v=20260905-2" alt="Blue Chain Loop Visual" />
+        </div>
+      </section>
+
+      <!-- ================= 10. ECOSYSTEM / INTEGRATIONS (8274 - 9156px) ================= -->
+      <section class="cg-ecosystem">
+        <!-- Figma Ecosystem Glow -->
+        <div class="cg-sec-glow" style="position:absolute; width:1096px; height:1484px; left:171px; top:12px; background:#0104E1; opacity:0.4; filter:blur(300px); pointer-events:none; z-index:1;"></div>
+
+        <h2 class="cg-eco-title">
+          <span class="bold-white">Built</span> <span class="light-italic">Into the</span> <span class="bold-white">Workflow</span><br />
+          <span class="light-italic">Your</span> <span class="bold-white">Teams</span> <span class="light-italic">Already</span> <span class="bold-white">Use.</span>
+        </h2>
+
+        <div class="cg-eco-left">
+          <p class="cg-eco-desc">
+            CodeGen meets developers where they already work while keeping generated code connected to enterprise standards, review processes, and CI/CD delivery controls.
+          </p>
+          <p class="cg-eco-backed">
+            Backed by V2Soft—28 years building enterprise IT for regulated industries.
+          </p>
+        </div>
+
+        <div class="cg-eco-right">
+          <img class="cg-tools-grid-img" src="assets/img/CodeGen/codegen_tools_grid.png?v=20260905-2" alt="Supported Developer Tools and Workflows" />
+        </div>
+      </section>
+
+      <!-- ================= 11. FOOTER (Exact Match to index.html) ================= -->
+      <footer class="abs desktop-footer sanciti-footer"
+        style="left:0; top:9156px; width:1440px; height:200px; background:#0D0D0D; border-top:1px solid rgba(255, 255, 255, 0.101961); box-sizing:border-box; padding:40px 18px 40px 43px; display:flex; flex-direction:row; align-items:center; justify-content:space-between;">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+          </div>
+          <p class="footer-desc">
+            Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+          </p>
+        </div>
+
+        <div class="footer-frame179">
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Portal" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-copyright">
+            &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /#stage -->
+  </div><!-- /#scaler -->
+
+  <!-- ================= MOBILE CONTAINER (<= 768px Fluid Responsive) ================= -->
+  <div id="mobile-container">
+    <!-- Sticky Mobile Header -->
+    <header class="cg-mob-header">
+      <a class="cg-mob-logo" href="index.html" aria-label="Sanciti AI">
+        <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+      </a>
+      <div class="cg-mob-actions">
+        <a class="cg-mob-demo-btn" href="#codegen-playbook-mob">Demo</a>
+        <button class="cg-mob-menu-toggle" aria-label="Toggle navigation" onclick="toggleCgDrawer()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Drawer -->
+    <div class="cg-mob-drawer" id="cgDrawer">
+      <a href="index.html">Home</a>
+      <a href="legmod.html">LegMod</a>
+      <a href="rgen.html">RGen</a>
+      <a href="codegen.html" class="active">CodeGen</a>
+      <a href="testai.html">Test AI</a>
+      <a href="deploy.html">Deploy</a>
+      <a href="#codegen-playbook-mob" style="color:#3A75FF; font-weight:600;" onclick="toggleCgDrawer()">Get a Free Assessment</a>
+    </div>
+
+    <!-- 1. Mobile Hero -->
+    <section class="cg-mob-section cg-mob-hero">
+      <h1 class="cg-mob-title">
+        <span class="light-italic">From</span> <span class="bold-white">Requirement to</span><br />
+        <span class="bold-white">Production-</span><span class="light-italic">Ready</span><br />
+        <span class="light-italic">Code.</span> <span class="bold-white">In the Same Key.</span>
+      </h1>
+      <p class="cg-mob-desc">
+        Every deadline can tempt a shortcut: skipped standards, copied patterns, and code that works today but creates more debt tomorrow.
+      </p>
+      <p class="cg-mob-desc">
+        CodeGen turns RGEN's structured requirements into secure, production-ready code aligned to your architecture, tech stack, and engineering standards.
+      </p>
+      <div class="cg-mob-btn-row">
+        <a class="cg-mob-btn-primary" href="#codegen-playbook-mob">Book a Demo &rarr;</a>
+        <a class="cg-mob-btn-secondary" href="#codegen-playbook-mob">Download the Playbook</a>
+      </div>
+      <div class="cg-mob-hero-visual">
+        <video class="cg-mob-hero-circle-vid" id="cgHeroVidMob" autoplay loop muted playsinline webkit-playsinline aria-label="Sanciti CodeGen Logic Ring Video">
+          <source src="assets/vids/circle-animation.webm" type="video/webm">
+          <source src="assets/vids/circle-animation.mp4" type="video/mp4">
+        </video>
+        <canvas id="cgHeroCanvasMob" class="cg-mob-hero-circle-canvas" width="320" height="320"></canvas>
+      </div>
+    </section>
+
+    <!-- 2. Mobile Challenge -->
+    <section class="cg-mob-section">
+      <h2 class="cg-mob-title">
+        <span class="light-italic">When</span> <span class="bold-white">Delivery</span><br />
+        <span class="bold-white">Moves Faster</span> <span class="light-italic">Than</span><br />
+        <span class="bold-white">Consistency.</span>
+      </h2>
+      <p class="cg-mob-desc">
+        Manual coding, repeated scaffolding, and uneven standards slow delivery while quietly fragmenting the codebase.
+      </p>
+      <div class="cg-mob-card">
+        <ul class="cg-challenge-list">
+          <li>Requirements are translated differently across teams and projects</li>
+          <li>Repeated scaffolding consumes engineering time that should go to higher-value work</li>
+          <li>Generated or manually written code can drift from architecture and coding standards</li>
+          <li>Security and quality checks are often applied late, after rework has already begun</li>
+        </ul>
+      </div>
+      <p class="cg-mob-desc">
+        CodeGen keeps the implementation in time with the requirement, the target architecture, and the controls that govern release.
+      </p>
+      <div class="cg-mob-spheres-wrap">
+        <img class="cg-mob-spheres-img" src="assets/img/CodeGen/codegen_blue_spheres.png" alt="Blue Spheres" />
+      </div>
+    </section>
+
+    <!-- 3. Mobile How It Works -->
+    <section class="cg-mob-section">
+      <h2 class="cg-mob-title">
+        <span class="light-italic">Align. Generate.</span><br />
+        <span class="light-italic">Verify. Gate.</span><br />
+        <span class="bold-white">One Controlled</span><br />
+        <span class="bold-white">Path to Score.</span>
+      </h2>
+      <p class="cg-mob-desc">
+        CodeGen does more than autocomplete. It uses requirements captured upstream, aligns to the target stack, generates needed assets, and checks work before developer review.
+      </p>
+
+      <div class="cg-mob-stages-list">
+        <!-- Stage 1 -->
+        <div class="cg-mob-stage-card">
+          <div class="cg-mob-stage-banner">
+            <img src="assets/img/CodeGen/stage_banner_align.png" alt="Align" />
+          </div>
+          <div class="cg-mob-stage-content">
+            <p class="cg-stage-desc">Takes RGEN requirements, application metadata, and target-stack context to establish the right architecture before generation begins.</p>
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="cg-mob-stage-card">
+          <div class="cg-mob-stage-banner">
+            <img src="assets/img/CodeGen/stage_banner_generate.png" alt="Generate" />
+          </div>
+          <div class="cg-mob-stage-content">
+            <p class="cg-stage-desc">Produces backend services in Spring Boot, Node, or .NET; frontend components in React, Angular, or Vue; database objects and API collections.</p>
+          </div>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="cg-mob-stage-card">
+          <div class="cg-mob-stage-banner">
+            <img src="assets/img/CodeGen/stage_banner_structure.png" alt="Structure" />
+          </div>
+          <div class="cg-mob-stage-content">
+            <p class="cg-stage-desc">Checks story coverage against the originating requirement and evaluates output against OWASP and NIST-aligned quality expectations.</p>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="cg-mob-stage-card">
+          <div class="cg-mob-stage-banner">
+            <img src="assets/img/CodeGen/stage_banner_sync.png" alt="Sync" />
+          </div>
+          <div class="cg-mob-stage-content">
+            <p class="cg-stage-desc">Runs SAST, SCA, and LLM-level security scans, then holds generated output behind a human review gate before anything moves downstream.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Mobile Differentiation Table (Figma Frame 133) -->
+    <section class="cg-mob-section cg-mob-diff-section">
+      <div class="cg-mob-diff-frame-wrap">
+        <img class="cg-mob-diff-frame-img" src="assets/img/CodeGen/Frame 133.png" alt="More Than Code Generation. A Disciplined Build Section. Capability vs Why It Matters" />
+      </div>
+    </section>
+
+    <!-- 5. Mobile Outcomes -->
+    <section class="cg-mob-section">
+      <h2 class="cg-mob-title">
+        <span class="bold-white">Speed</span> <span class="light-italic">With the</span><br />
+        <span class="bold-white">Right Safeguards.</span>
+      </h2>
+      <p class="cg-mob-desc">
+        CodeGen is designed to accelerate implementation without treating speed as the only outcome.
+      </p>
+      <div class="cg-mob-metric-number">80–90%</div>
+      <p class="cg-mob-desc" style="font-size:13px; color:rgba(255,255,255,0.7);">
+        90% completion before developer review, depending on the application context.
+      </p>
+      <div class="cg-mob-dome-wrap">
+        <img class="cg-mob-dome-img" src="assets/img/CodeGen/codegen_particle_dome.png" alt="Particle Dome" />
+      </div>
+    </section>
+
+    <!-- 6. Mobile Case Study -->
+    <section class="cg-mob-section">
+      <div class="cg-mob-case-card">
+        <h3 class="cg-mob-title" style="font-size:26px; margin-bottom:12px;">
+          <span class="bold-white">Legacy Modernization —</span><br />
+          <span class="bold-white">Monolith</span> <span class="light-italic">to</span> <span class="bold-white">Microservices</span>
+        </h3>
+        <p class="cg-mob-desc">
+          Sanciti AI reverse-engineered a monolithic application, decomposed it into microservices, defined APIs, and migrated business logic.
+        </p>
+        <a class="cg-btn-learn-more" href="#codegen-playbook-mob">Learn More</a>
+      </div>
+    </section>
+
+    <!-- 7. Mobile Trust -->
+    <section class="cg-mob-section cg-mob-trust-section">
+      <h2 class="cg-mob-title">
+        <span class="light-italic">One</span> <span class="bold-white">Governed Core,</span><br />
+        <span class="bold-white">Every Build.</span>
+      </h2>
+      <p class="cg-mob-desc">
+        From data protection and human review to auditability and secure deployment, CodeGen operates under the same enterprise controls.
+      </p>
+      <div class="cg-mob-trust-scroll">
+        <div class="cg-mob-trust-card">
+          <img src="assets/img/hipaa.png" alt="HIPAA Compliance" />
+        </div>
+        <div class="cg-mob-trust-card">
+          <img src="assets/img/iso.png" alt="ISO 27001 Certified" />
+        </div>
+        <div class="cg-mob-trust-card">
+          <img src="assets/img/cmmi.png" alt="CMMI Level 3" />
+        </div>
+        <div class="cg-mob-trust-card">
+          <img src="assets/img/owasp_nist.png" alt="OWASP and NIST" />
+        </div>
+        <div class="cg-mob-trust-card">
+          <img src="assets/img/single_tenant.png" alt="Single Tenant" />
+        </div>
+        <div class="cg-mob-trust-card">
+          <img src="assets/img/audit_grade.png" alt="Audit Grade" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Frame 76 Sequence: Vertical Chain, Playbook Form, CTA, Chain Loop with Frame 76 Gradient Glow -->
+    <div class="cg-mob-frame76-wrapper">
+      <div class="cg-mob-frame76-glow">
+        <img src="assets/img/CodeGen/Frame 76.png" alt="" />
+      </div>
+
+      <!-- Vertical Chain Graphic (Figma Frame 76 Top - zero gap) -->
+      <div class="cg-mob-chain-vertical-wrap">
+        <img class="cg-mob-chain-vertical-img" src="assets/img/CodeGen/codegen_chain_vertical.png" alt="Sanciti Modernization Chain" />
+      </div>
+
+      <!-- 8. Mobile Playbook Form -->
+      <section class="cg-mob-section cg-mob-playbook-section" id="codegen-playbook-mob">
+        <h2 class="cg-mob-title">
+          <span class="bold-white">Modernizing</span> <span class="light-italic">the</span> <span class="bold-white">Systems</span><br />
+          <span class="light-italic">You Can't</span> <span class="bold-white">Afford</span> <span class="light-italic">to</span> <span class="bold-white">Break</span>
+        </h2>
+        <p class="cg-mob-desc">
+          A practical playbook for end-to-end legacy modernization, covering how to assess risk, recover hidden logic, reduce technical debt, plan modernization waves, and validate the journey from legacy code to modern release.
+        </p>
+
+        <form class="cg-mob-form" action="submit_form.php" method="POST" onsubmit="handlePlaybookDownload(event)">
+          <input type="hidden" name="source" value="codegen-mobile" />
+          <div class="cg-mob-form-group">
+            <label class="cg-form-label">Name</label>
+            <input class="cg-mob-input" name="Name" type="text" required />
+          </div>
+          <div class="cg-mob-form-group">
+            <label class="cg-form-label">Title</label>
+            <input class="cg-mob-input" name="Title" type="text" required />
+          </div>
+          <div class="cg-mob-form-group">
+            <label class="cg-form-label">Email</label>
+            <input class="cg-mob-input" name="Email" type="email" required />
+          </div>
+          <div class="cg-mob-form-group">
+            <label class="cg-form-label">Contact number</label>
+            <input class="cg-mob-input" name="Contact number" type="tel" required />
+          </div>
+          <button type="submit" class="cg-mob-btn-primary cg-mob-playbook-submit" style="margin-top:8px;">Download the Playbook</button>
+        </form>
+      </section>
+
+      <!-- 9. Mobile CTA -->
+      <section class="cg-mob-section cg-mob-cta-section">
+        <h2 class="cg-mob-title">
+          <span class="light-italic">See What Your</span><br />
+          <span class="bold-white">Requirements</span><br />
+          <span class="light-italic">Can</span> <span class="bold-white">Become.</span>
+        </h2>
+        <p class="cg-mob-desc">
+          Bring a modernization or delivery challenge to the conversation. See how CodeGen can turn structured requirements into architecture-aligned, security-checked code that is ready for your team to review.
+        </p>
+        <a class="cg-mob-btn-primary" href="#codegen-playbook-mob">Book a Demo</a>
+        <div class="cg-mob-cta-loop">
+          <img src="assets/img/CodeGen/codegen_chain_loop_cta.png" alt="Chain Loop Visual" />
+        </div>
+      </section>
+    </div>
+
+    <!-- 10. Mobile Ecosystem -->
+    <section class="cg-mob-section">
+      <h2 class="cg-mob-title">
+        <span class="bold-white">Built</span> <span class="light-italic">Into the</span> <span class="bold-white">Workflow</span><br />
+        <span class="light-italic">Your</span> <span class="bold-white">Teams Already Use.</span>
+      </h2>
+      <p class="cg-mob-desc">
+        CodeGen meets developers where they already work while keeping generated code connected to enterprise standards.
+      </p>
+      <p class="cg-eco-backed">
+        Backed by V2Soft—28 years building enterprise IT for regulated industries.
+      </p>
+      <div class="cg-mob-tools-wrap">
+        <img class="cg-mob-tools-img" src="assets/img/CodeGen/codegen_tools_grid.png?v=20260905-2" alt="Tools" />
+      </div>
+    </section>
+
+    <!-- 11. Mobile Footer (Exact Match to index.html) -->
+    <footer class="cg-mob-footer sanciti-footer">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
+        </div>
+        <p class="footer-desc">
+          Sanciti AI is an agentic platform designed to sequence legacy modernization and SDLC automation with enterprise-grade controls.
+        </p>
+      </div>
+
+      <div class="footer-frame179">
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Portal" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copyright">
+          &copy; 2026 Sanciti AI. Backed by V2Soft. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div><!-- /#mobile-container -->
+
+  <script src="assets/js/script.js?v=2.5"></script>
+  <script>
+    async function handlePlaybookDownload(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = event.target;
+      if (window.validateCorporateEmailForm && !window.validateCorporateEmailForm(form)) {
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      }
+
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+      const originalBtnText = submitBtn ? submitBtn.innerText : 'Download the Playbook';
+
+      try {
+        if (submitBtn) {
+          submitBtn.innerText = 'Sending...';
+          submitBtn.disabled = true;
+        }
+
+        // Send POST request to PHP endpoint
+        const response = await fetch('submit_form.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+        console.log("Form submission result:", result);
+
+        if (!result.success) {
+          const emailInput = form.querySelector('input[type="email"], input[name="Email"], input[name="email"]');
+          if (emailInput && window.showEmailError) {
+            window.showEmailError(emailInput, '✕ Must be Business email.');
+            emailInput.focus();
+          }
+          if (window.showFormSubmitError) {
+            window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+          }
+          return;
+        }
+
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        if (window.showFormSubmitError) {
+          window.showFormSubmitError(form, '✕ Your submission failed because of an error.');
+        }
+        return;
+      } finally {
+        if (submitBtn) {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        }
+      }
+
+      if (window.clearFormSubmitError) {
+        window.clearFormSubmitError(form);
+      }
+
+      // Trigger the download
+      const link = document.createElement('a');
+      link.href = 'assets/Sanciti%20Ai%20_Legacy%20Modernization_Playbook.pdf';
+      link.download = 'Sanciti_Ai_Legacy_Modernization_Playbook.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Reset form
+      form.reset();
+
+      // Redirect to thank you page
+      setTimeout(() => {
+        window.location.href = 'https://www.sanciti.ai/thank-you/';
+      }, 500);
+    }
+
+    function toggleCgDrawer() {
+      const drawer = document.getElementById('cgDrawer');
+      if (drawer) {
+        drawer.classList.toggle('open');
+      }
+    }
+
+    // ================= Hero Circle Animation Transparent Canvas Renderer =================
+    // Removes any black background and renders royal blue glowing circle
+    (function() {
+      function setupHeroRingCanvas(videoId, canvasId) {
+        const video = document.getElementById(videoId);
+        const canvas = document.getElementById(canvasId);
+        if (!video || !canvas) return;
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        let isRunning = false;
+
+        function renderFrame() {
+          if (!video.paused && !video.ended && video.readyState >= 2) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            try {
+              const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+              const d = imgData.data;
+              const len = d.length;
+              for (let i = 0; i < len; i += 4) {
+                const r = d[i], g = d[i + 1], b = d[i + 2];
+                const max = r > g ? (r > b ? r : b) : (g > b ? g : b);
+                if (max < 16) {
+                  d[i + 3] = 0;
+                } else if (max < 40) {
+                  d[i + 3] = Math.round((max - 16) * (255 / 24));
+                }
+                // Shift hue to vibrant electric royal blue like Figma
+                if (d[i + 3] > 0) {
+                  d[i] = Math.round(d[i] * 0.4); // reduce red to eliminate purple tint
+                  d[i + 1] = Math.round(d[i + 1] * 0.65); // balanced cyan/green
+                  d[i + 2] = Math.min(255, Math.round(d[i + 2] * 1.2)); // boost vibrant electric blue
+                }
+              }
+              ctx.putImageData(imgData, 0, 0);
+              video.style.opacity = '0';
+            } catch (e) {
+              video.style.opacity = '1';
+            }
+          }
+          requestAnimationFrame(renderFrame);
+        }
+
+        video.addEventListener('play', () => {
+          if (!isRunning) {
+            isRunning = true;
+            requestAnimationFrame(renderFrame);
+          }
+        });
+
+        if (!video.paused) {
+          isRunning = true;
+          requestAnimationFrame(renderFrame);
+        }
+
+        ['touchstart', 'click', 'scroll'].forEach(evt => {
+          window.addEventListener(evt, () => {
+            if (video.paused) {
+              video.play().catch(() => {});
+            }
+          }, { once: true, passive: true });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setupHeroRingCanvas('cgHeroVidDesk', 'cgHeroCanvasDesk');
+          setupHeroRingCanvas('cgHeroVidMob', 'cgHeroCanvasMob');
+        });
+      } else {
+        setupHeroRingCanvas('cgHeroVidDesk', 'cgHeroCanvasDesk');
+        setupHeroRingCanvas('cgHeroVidMob', 'cgHeroCanvasMob');
+      }
+    })();
+  </script>
+</body>
+
+</html>

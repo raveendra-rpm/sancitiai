@@ -648,6 +648,8 @@ body.codegen-body {
   padding: 53px 44px;
   border: 1px solid rgba(100, 130, 255, 0.25);
   box-shadow: 0 8px 60px rgba(30, 40, 220, 0.35);
+  z-index: 5;
+  isolation: isolate;
 }
 
 .cg-diff-table-head {
@@ -675,7 +677,7 @@ body.codegen-body {
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-  border-top: 1px solid #FFFFFF;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .cg-diff-capability {

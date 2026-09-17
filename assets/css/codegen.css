@@ -642,10 +642,12 @@ body.codegen-body {
   height: 930px;
   left: 47px;
   top: 513px;
-  background: rgba(63, 174, 255, 0.3);
+  background: linear-gradient(160deg, #2B3BF0 0%, #1E28D0 35%, #3040F5 70%, #2530E8 100%);
   border-radius: 8px;
   box-sizing: border-box;
   padding: 53px 44px;
+  border: 1px solid rgba(100, 130, 255, 0.25);
+  box-shadow: 0 8px 60px rgba(30, 40, 220, 0.35);
 }
 
 .cg-diff-table-head {

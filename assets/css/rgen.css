@@ -21,7 +21,14 @@ body.rgen-body {
   overflow-x: hidden;
 }
 
-/* Base Stage */
+/* Scaler & Base Stage */
+#scaler {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
 .rgen-stage {
   position: relative;
   width: 1440px;

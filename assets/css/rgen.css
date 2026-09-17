@@ -358,14 +358,22 @@ body.rgen-body {
 
 .rgen-challenge-right {
   position: absolute;
-  width: 800px;
+  width: 780px;
   height: 800px;
-  left: 650px;
+  left: 660px;
   top: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
+}
+
+.rgen-challenge-right img {
+  width: 100%;
+  height: auto;
+  max-height: 800px;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
 /* ================= HOW-IT-WORKS SECTION (1664 - 2700px) ================= */

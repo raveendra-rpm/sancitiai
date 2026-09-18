@@ -457,26 +457,11 @@ body.deploy-body {
 }
 
 .dp-card-stage-pill {
-  position: absolute;
-  left: 15px;
-  top: 13px;
-  padding: 4px 12px;
-  border: 1.5px solid #E8E8E8;
-  border-radius: 99px;
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  font-weight: 300;
-  color: #FFFFFF;
+  display: none;
 }
 
 .dp-card-title {
-  position: absolute;
-  left: 20px;
-  bottom: 12px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 39px;
-  font-weight: 300;
-  color: #FFFFFF;
+  display: none;
 }
 
 .dp-card-body {

@@ -134,7 +134,7 @@
   align-items: center;
   gap: 12px;
 }
- {
+.lm-nav-demo-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;

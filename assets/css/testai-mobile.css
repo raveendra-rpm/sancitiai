@@ -477,14 +477,13 @@
 
   .ta-mob-stage-banner {
     width: 100%;
-    height: 150px;
+    height: auto;
     overflow: hidden;
   }
 
   .ta-mob-stage-banner img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
   }
 

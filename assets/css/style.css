@@ -1731,14 +1731,14 @@ body {
   .mobile-logo {
     display: flex;
     align-items: center;
-    height: 38px;
+    height: 28px;
     text-decoration: none;
   }
 
   .mobile-logo img {
     height: 100%;
     width: auto;
-    max-height: 38px;
+    max-height: 28px;
     object-fit: contain;
   }
 

@@ -458,8 +458,7 @@ body.rgen-body {
   font-size: 10px;
   line-height: 12px;
   color: #FFFFFF;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
+  background: transparent;
   display: inline-flex;
   align-self: flex-start;
 }

@@ -164,7 +164,7 @@ body.deploy-body {
   color: #2AD6DF;
 }
 
-.deploy-nav-demo-btn {
+ {
   padding: 10px 24px;
   background: #2AD6DF;
   border-radius: 20px;
@@ -174,6 +174,7 @@ body.deploy-body {
   color: rgba(7, 7, 14, 0.9);
   text-decoration: none;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .deploy-nav-demo-btn:hover {

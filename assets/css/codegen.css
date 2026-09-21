@@ -116,7 +116,9 @@ body.codegen-body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
+  width: auto;
+  padding: 0 24px;
+  white-space: nowrap;
   height: 38px;
   background: #2AD6DF;
   border: none;

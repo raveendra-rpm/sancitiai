@@ -105,7 +105,7 @@ body.rgen-body {
   color: #2AD6DF;
 }
 
-.rgen-nav-btn {
+ {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -120,6 +120,7 @@ body.rgen-body {
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.25s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .rgen-nav-btn:hover {

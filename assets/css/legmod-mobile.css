@@ -134,7 +134,7 @@
   align-items: center;
   gap: 12px;
 }
-.lm-nav-demo-btn {
+ {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -149,6 +149,7 @@
   text-decoration: none;
   box-sizing: border-box;
   transition: opacity 0.2s;
+  white-space: nowrap;
 }
 .lm-nav-demo-btn:hover {
   opacity: 0.9;

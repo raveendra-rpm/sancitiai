@@ -341,7 +341,8 @@ body.testai-body {
 /* ================= 1. NAV BAR (top: 38px) ================= */
 .testai-nav {
   position: absolute;
-  width: 1400px;
+  width: calc(100% - 40px);
+  max-width: 1400px;
   height: 66px;
   left: 20px;
   top: 38px;

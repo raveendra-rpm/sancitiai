@@ -64,7 +64,8 @@ body.codegen-body {
 /* Navigation Bar */
 .codegen-nav {
   position: absolute;
-  width: 1400px;
+  width: calc(100% - 40px);
+  max-width: 1400px;
   height: 66px;
   left: 20px;
   top: 38px;

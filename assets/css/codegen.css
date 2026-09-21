@@ -508,9 +508,12 @@ body.codegen-body {
 }
 
 .cg-stage-badge-row {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 8px;
+  z-index: 2;
 }
 
 .cg-stage-subbadge {

@@ -470,7 +470,7 @@
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    opacity: 1;
+    opacity: 0.3;
   }
 
   .cg-mob-frame76-glow img {

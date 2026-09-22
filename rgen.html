@@ -36,21 +36,31 @@
       <div class="rgen-glow" style="width:1190px; height:1155px; left:-161px; top:7792px; background:rgba(42,214,223,0.4); opacity:0.35; filter:blur(300px);"></div>
       <div class="rgen-glow" style="width:979px; height:1326px; left:288px; top:8322px; background:#2AD6DF; opacity:0.35; filter:blur(300px);"></div>
 
-      <!-- ================= NAV BAR (top: 38px, width: 1400px) ================= -->
-      <nav class="rgen-nav" id="desktopNav">
-        <a class="rgen-nav-logo" href="index.html" aria-label="Sanciti AI">
-          <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
-        </a>
-        <div class="rgen-nav-menu font-disp">
-          <a class="rgen-nav-link" href="index.html">Home</a>
-          <a class="rgen-nav-link" href="legmod.html">LegMod</a>
-          <a class="rgen-nav-link active" href="rgen.html">RGen</a>
-          <a class="rgen-nav-link" href="codegen.html">CodeGen</a>
-          <a class="rgen-nav-link" href="testai.html">Test AI</a>
-          <a class="rgen-nav-link" href="deploy.html">Deploy</a>
+      <!-- ================= NAV ================= -->
+      <div class="abs desktop-nav" style="left:57px; top:38px; width:1400px; height:66px; z-index:50;">
+        <div class="abs"
+          style="left:0; top:0; width:100%; height:100%; background:rgba(30, 30, 30, 0.65); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid rgba(255, 255, 255, 0.15); border-radius:4px;">
         </div>
-        <a class="rgen-nav-btn" href="#lead-form">Get a Free Assessment</a>
-      </nav>
+        <a class="abs" href="index.html"
+          style="left:59px; top:17px; display:flex; align-items:center; z-index:10;">
+          <img alt="Sanciti AI" src="assets/img/sancitiailogo.png"
+            style="height:32px; width:auto; object-fit:contain;" />
+        </a>
+        <div class="abs font-disp desktop-nav-menu"
+          style="display:flex; align-items:center; left:560px; top:23px; width:600px; font-size:16px; gap:36px; color:#fff;">
+          <span class="nav-link" style="color:rgba(255,255,255,.75); cursor:pointer;" onclick="window.location.href='index.html';">Home</span>
+          <span class="nav-link" style="color:rgba(255,255,255,.75); cursor:pointer;" onclick="window.location.href='legmod.html';">LegMod</span>
+          <span class="nav-link" style="color:#fff; cursor:pointer;" onclick="window.location.href='rgen.html';">RGen</span>
+          <span class="nav-link" style="color:rgba(255,255,255,.75); cursor:pointer;" onclick="window.location.href='codegen.html';">CodeGen</span>
+          <span class="nav-link" style="color:rgba(255,255,255,.75); cursor:pointer;" onclick="window.location.href='testai.html';">Test AI</span>
+          <span class="nav-link" style="color:rgba(255,255,255,.75); cursor:pointer;" onclick="window.location.href='deploy.html';">Deploy</span>
+        </div>
+        <div class="abs pill"
+          style="right:22px; top:11px; padding:0 24px; height:44px; background:#2AD6DF; border-radius:999px; display:flex; align-items:center; justify-content:center; cursor:pointer;"
+          onclick="scrollToAssessment(event)">
+          <span class="font-disp" style="color:#000000; font-size:16px; font-weight:bold; white-space:nowrap;">Get a free Assessment</span>
+        </div>
+      </div>
 
       <!-- ================= 1. HERO SECTION (0 - 800px) ================= -->
       <section class="rgen-hero">

@@ -271,20 +271,42 @@ function scrollToAssessment(e) {
     closeMobileMenu();
     const isMobile = window.innerWidth <= 768;
     if (isMobile) {
-        const newPlaybook = document.getElementById('mobile-playbook-bottom');
-        const oldPlaybook = document.getElementById('playbook');
-        
-        let target = newPlaybook || oldPlaybook;
+        // Try multiple possible mobile playbook form IDs across all pages
+        const mobileTargetIds = [
+            'mobile-playbook-bottom',
+            'playbook',
+            'codegen-playbook-mob',
+            'deploy-playbook-mob',
+            'testai-playbook-mob',
+            'rg-playbook-mob',
+            'lm-playbook-mob'
+        ];
+        let target = null;
+        for (var i = 0; i < mobileTargetIds.length; i++) {
+            target = document.getElementById(mobileTargetIds[i]);
+            if (target) break;
+        }
         if (target) {
             const topPos = Math.max(0, target.offsetTop - (window.innerHeight / 2) + (target.offsetHeight / 2));
             window.scrollTo({ top: topPos, behavior: 'smooth' });
         }
     } else {
+        // Detect design width dynamically from #stage data-width
+        var stage = document.getElementById('stage');
+        var designWidth = 1512;
+        if (stage && stage.dataset.width) {
+            designWidth = parseFloat(stage.dataset.width);
+        }
         const viewport = Math.max(320, window.innerWidth);
-        const scale = viewport / 1512;
+        const scale = viewport / designWidth;
         
         let topPos = 990 * scale; // Default fallback to old playbook position
-        const centeredPlaybook = document.getElementById('centered-playbook');
+        // Try centered-playbook first (the bottom assessment form on all pages)
+        var centeredPlaybook = document.getElementById('centered-playbook');
+        // Fallback: find by class if no ID
+        if (!centeredPlaybook) {
+            centeredPlaybook = document.querySelector('.centered-playbook');
+        }
         const oldPlaybook = document.getElementById('playbook-desktop');
         
         if (centeredPlaybook) {

@@ -268,34 +268,61 @@ function mobileAgentClick(i, e) {
 
 function scrollToAssessment(e) {
     if (e) e.preventDefault();
-    closeMobileMenu();
+    if (typeof closeMobileMenu === 'function') closeMobileMenu();
+    if (typeof toggleCgDrawer === 'function') toggleCgDrawer(true);
+    if (typeof toggleTaDrawer === 'function') toggleTaDrawer(true);
+    if (typeof toggleDpDrawer === 'function') toggleDpDrawer(true);
+    if (typeof toggleRgDrawer === 'function') toggleRgDrawer(true);
+    if (typeof toggleLmDrawer === 'function') toggleLmDrawer(true);
+
     const isMobile = window.innerWidth <= 768;
+    
     if (isMobile) {
-        const newPlaybook = document.getElementById('mobile-playbook-bottom');
-        const oldPlaybook = document.getElementById('playbook');
+        const targetIds = ['mobile-playbook-bottom', 'codegen-playbook-mob', 'testai-playbook-mob', 'deploy-playbook-mob', 'rg-playbook', 'lm-playbook', 'playbook'];
+        let target = null;
+        for (const id of targetIds) {
+            target = document.getElementById(id);
+            if (target) break;
+        }
         
-        let target = newPlaybook || oldPlaybook;
         if (target) {
             const topPos = Math.max(0, target.offsetTop - (window.innerHeight / 2) + (target.offsetHeight / 2));
             window.scrollTo({ top: topPos, behavior: 'smooth' });
         }
     } else {
-        const viewport = Math.max(320, window.innerWidth);
-        const scale = viewport / 1512;
-        
-        let topPos = 990 * scale; // Default fallback to old playbook position
-        const centeredPlaybook = document.getElementById('centered-playbook');
-        const oldPlaybook = document.getElementById('playbook-desktop');
-        
-        if (centeredPlaybook) {
-            const scaledTop = centeredPlaybook.offsetTop * scale;
-            const scaledHeight = centeredPlaybook.offsetHeight * scale;
-            topPos = Math.max(0, scaledTop - (window.innerHeight / 2) + (scaledHeight / 2));
-        } else if (oldPlaybook) {
-            topPos = oldPlaybook.offsetTop * scale;
+        const viewport = Math.max(320, document.documentElement.clientWidth || window.innerWidth);
+        const stage = document.getElementById('stage');
+        let designWidth = 1512;
+        if (stage && stage.dataset.width) {
+            designWidth = parseFloat(stage.dataset.width);
+        } else {
+            if (window.location.pathname.includes('codegen') || window.location.pathname.includes('testai') || window.location.pathname.includes('deploy')) {
+                designWidth = 1440;
+            }
         }
         
-        window.scrollTo({ top: topPos, behavior: 'smooth' });
+        const scale = viewport / designWidth;
+        
+        const targetIds = ['centered-playbook', 'codegen-playbook', 'testai-playbook', 'deploy-playbook', 'lead-form', 'lm-playbook', 'playbook-desktop'];
+        let target = null;
+        for (const id of targetIds) {
+            target = document.getElementById(id);
+            if (target) break;
+        }
+        
+        if (target) {
+            let el = target;
+            let offsetTop = 0;
+            while(el && el.id !== 'stage' && el.id !== 'scaler') {
+                offsetTop += el.offsetTop;
+                el = el.offsetParent;
+            }
+            
+            const scaledTop = offsetTop * scale;
+            const scaledHeight = target.offsetHeight * scale;
+            const topPos = Math.max(0, scaledTop - (window.innerHeight / 2) + (scaledHeight / 2));
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+        }
     }
 }
 

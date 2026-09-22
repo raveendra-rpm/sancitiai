@@ -39,32 +39,40 @@
         </div>
         <div class="lm-ambient-glow lm-glow-bottom"></div>
 
-        <!-- Header Navigation (Sticky 64px) -->
-        <header class="lm-nav">
-            <a class="lm-nav-logo" href="index.html" aria-label="Sanciti AI">
-                <img src="assets/img/sancitiailogo.png" alt="Sanciti AI" />
-            </a>
-            <div class="lm-nav-actions">
-                <a class="lm-nav-demo-btn" href="javascript:void(0)" onclick="scrollToAssessment(event)">Get a Free Assessment</a>
-                <button class="lm-nav-menu-toggle" aria-label="Toggle navigation" onclick="toggleLmDrawer()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
-
-        <!-- Navigation Drawer -->
-        <div class="lm-drawer" id="lmDrawer">
-            <a href="index.html">Home</a>
-            <a href="legmod.html" class="active">LegMod</a>
-            <a href="rgen.html">RGen</a>
-            <a href="codegen.html">CodeGen</a>
-            <a href="testai.html">Test AI</a>
-            <a href="deploy.html">Deploy</a>
-            <a href="#lm-playbook" style="color:#2AD6DF; font-weight:600;" onclick="toggleLmDrawer()">Get a Free
-                Assessment</a>
+        <!-- ================= MOBILE HEADER (< 768px) ================= -->
+  <!-- ================= MOBILE HEADER (< 768px) ================= -->
+  <header class="mobile-header" id="mobileHeader">
+    <div class="mobile-header-inner">
+      <a class="mobile-logo" href="index.html" aria-label="Sanciti AI">
+        <img alt="Sanciti AI" src="assets/img/sancitiailogo.png" />
+      </a>
+      <div class="mobile-header-right">
+        <a class="mobile-demo-btn pill" href="javascript:void(0)" id="mobileDemoBtn" onclick="scrollToAssessment(event)" style="background:var(--cyan);">
+          <span style="color:var(--ink);">Get a free Assessment</span>
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false"
+          onclick="toggleMobileMenu()">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <nav class="mobile-nav-links font-disp">
+        <a href="index.html" class="mobile-nav-item ">Home</a>
+        <a href="legmod.html" class="mobile-nav-item active">LegMod</a>
+        <a href="rgen.html" class="mobile-nav-item ">RGen</a>
+        <a href="codegen.html" class="mobile-nav-item ">CodeGen</a>
+        <a href="testai.html" class="mobile-nav-item ">Test AI</a>
+        <a href="deploy.html" class="mobile-nav-item ">Deploy</a>
+        <div class="mobile-nav-cta pill" onclick="scrollToAssessment(event)" style="background:var(--cyan);">
+          <span style="color:var(--ink);">Get a Free Assessment</span>
         </div>
+      </nav>
+    </div>
+  </header>
 
         <!-- Hero Section -->
         <section class="lm-section lm-hero">

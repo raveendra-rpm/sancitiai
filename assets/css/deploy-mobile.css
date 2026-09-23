@@ -9,6 +9,7 @@
   body {
     margin: 0 !important;
     padding: 0 !important;
+    padding-top: 64px !important;
     overflow-x: hidden;
     background: #000000;
   }

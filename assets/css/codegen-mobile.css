@@ -29,7 +29,7 @@
   }
 
   body.codegen-body {
-    padding-top: 0 !important;
+    padding-top: 64px !important;
     margin: 0 !important;
     width: 100% !important;
     max-width: 100vw !important;

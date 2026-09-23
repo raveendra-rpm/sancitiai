@@ -13,7 +13,7 @@
 @media (max-width: 768px) {
   /* Hide desktop scaler */
   #scaler,
-  .mobile-header {
+  .mobile-header-hidden {
     display: none !important;
   }
 

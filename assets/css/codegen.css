@@ -1303,3 +1303,10 @@ body.codegen-body {
   justify-content: space-between;
   z-index: 50;
 }
+
+/* --- Dynamic Stage Centering Fix --- */
+.codegen-stage { width: 1512px !important; }
+.codegen-stage > * { transform: translateX(36px); }
+.codegen-stage > .desktop-nav,
+.codegen-stage > .mobile-header,
+.codegen-stage > .mobile-header-hidden { transform: none !important; }

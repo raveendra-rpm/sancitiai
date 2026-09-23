@@ -1284,3 +1284,10 @@ body.deploy-body {
   margin: 0;
 }
 
+
+/* --- Dynamic Stage Centering Fix --- */
+.deploy-stage { width: 1512px !important; }
+.deploy-stage > * { transform: translateX(36px); }
+.deploy-stage > .desktop-nav,
+.deploy-stage > .mobile-header,
+.deploy-stage > .mobile-header-hidden { transform: none !important; }

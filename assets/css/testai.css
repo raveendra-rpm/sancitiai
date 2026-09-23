@@ -1477,3 +1477,10 @@ body.testai-body {
   justify-content: space-between;
   z-index: 10;
 }
+
+/* --- Dynamic Stage Centering Fix --- */
+.testai-stage { width: 1512px !important; }
+.testai-stage > * { transform: translateX(36px); }
+.testai-stage > .desktop-nav,
+.testai-stage > .mobile-header,
+.testai-stage > .mobile-header-hidden { transform: none !important; }

@@ -1424,3 +1424,10 @@ body.rgen-body {
   margin: 0;
 }
 
+
+/* --- Dynamic Stage Centering Fix --- */
+.rgen-stage { width: 1512px !important; }
+.rgen-stage > * { transform: translateX(36px); }
+.rgen-stage > .desktop-nav,
+.rgen-stage > .mobile-header,
+.rgen-stage > .mobile-header-hidden { transform: none !important; }

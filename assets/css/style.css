@@ -3355,7 +3355,7 @@ body {
   body.has-mobile-stage #scaler {
     display: none !important;
   }
-  body.has-mobile-stage .mobile-header {
+  body.has-mobile-stage .mobile-header-hidden {
     display: none !important;
   }
   body.has-mobile-stage {

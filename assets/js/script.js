@@ -34,7 +34,7 @@ function fitStage() {
 
 // Make the desktop nav float/stick at the top of the viewport on all pages.
 // Because #stage uses transform:scale(), position:fixed cannot work inside it.
-// Solution: move the nav out of #stage into a fixed wrapper, then scale it to match.
+// Solution: clone the nav, place the clone as a fixed bar at viewport top, hide original.
 function stickyDesktopNav(scale, designWidth) {
     if (window.innerWidth <= 768) {
         // On mobile, hide the sticky wrapper if it exists (mobile uses .mobile-header)
@@ -43,34 +43,70 @@ function stickyDesktopNav(scale, designWidth) {
         return;
     }
 
-    var nav = document.querySelector('#stage .desktop-nav');
     var wrapper = document.getElementById('stickyNavWrapper');
+    var originalNav = document.querySelector('#stage .desktop-nav');
+    // Also check if the original was already moved out (from a previous call)
+    if (!originalNav) originalNav = document.querySelector('.desktop-nav-original-hidden');
 
-    // First call: extract nav from stage and wrap it in a fixed container
-    if (nav && !wrapper) {
+    // First call: clone nav and build the fixed bar
+    if (!wrapper && originalNav) {
+        // Clone the entire nav element
+        var navClone = originalNav.cloneNode(true);
+        navClone.classList.remove('abs');
+        navClone.classList.add('desktop-nav-clone');
+        
+        // Strip the inline positioning that was for #stage layout
+        navClone.style.position = 'relative';
+        navClone.style.top = '0';
+        navClone.style.left = '0';
+        navClone.style.right = 'auto';
+        navClone.style.margin = '0 auto';
+        // Keep width and height from original inline style
+        navClone.style.width = '1400px';
+        navClone.style.height = '66px';
+        navClone.style.zIndex = '10';
+
+        // Build wrapper: a fixed bar at the very top of the viewport
         wrapper = document.createElement('div');
         wrapper.id = 'stickyNavWrapper';
-        wrapper.style.cssText = 'position:fixed; top:0; left:0; width:100%; z-index:99998; pointer-events:none; overflow:visible;';
-        
-        // Inner container mimics stage width + scaling
+        wrapper.style.cssText = [
+            'position: fixed',
+            'top: 0',
+            'left: 0',
+            'width: 100%',
+            'z-index: 99998',
+            'overflow: hidden',
+            'background: rgba(4, 4, 6, 0.92)',
+            'backdrop-filter: blur(20px)',
+            '-webkit-backdrop-filter: blur(20px)',
+            'border-bottom: 1px solid rgba(255, 255, 255, 0.08)',
+            'box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5)'
+        ].join(';') + ';';
+
+        // Inner container: design-width size that gets scaled
         var inner = document.createElement('div');
         inner.id = 'stickyNavInner';
-        inner.style.cssText = 'transform-origin:top left; pointer-events:auto; position:relative; width:' + designWidth + 'px; height:' + (104) + 'px;';
-        
-        // Move the nav element out of stage into the wrapper
-        inner.appendChild(nav);
+        inner.style.cssText = 'transform-origin: top left; width: ' + designWidth + 'px; padding: 12px 0;';
+
+        inner.appendChild(navClone);
         wrapper.appendChild(inner);
         document.body.appendChild(wrapper);
+
+        // Hide the original nav inside #stage so there's no visual duplicate
+        originalNav.style.visibility = 'hidden';
+        originalNav.classList.add('desktop-nav-original-hidden');
     }
 
-    // Show wrapper on desktop (might have been hidden on mobile)
+    // Show wrapper on desktop (might have been hidden on mobile resize)
     if (wrapper) wrapper.style.display = 'block';
 
-    // Update scale on every call (resize etc.)
+    // Update scale on every resize
     var inner = document.getElementById('stickyNavInner');
     if (inner && scale !== undefined) {
         inner.style.transform = 'scale(' + scale + ')';
         inner.style.width = designWidth + 'px';
+        // Set wrapper height to the scaled inner height so it doesn't block scroll
+        wrapper.style.height = (90 * scale) + 'px'; // 66px nav + 12px*2 padding = 90px design
     }
 }
 window.addEventListener('resize', fitStage);

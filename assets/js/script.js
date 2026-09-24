@@ -58,7 +58,9 @@ function stickyDesktopNav() {
     // Build the fixed nav bar from scratch using normal CSS (no transform scaling)
     var bar = document.createElement('div');
     bar.id = 'stickyNavWrapper';
-    bar.innerHTML = '<div style="max-width:92%;width:1400px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;position:relative;">' +
+    bar.innerHTML = '<div id="stickyNavBar" style="max-width:1400px;width:100%;margin:0 auto;height:66px;display:flex;align-items:center;justify-content:space-between;position:relative;' +
+        'background:rgba(30,30,30,0.65);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);' +
+        'border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:0 22px;box-sizing:border-box;">' +
         '<a href="index.html" style="display:flex;align-items:center;text-decoration:none;">' +
             '<img src="assets/img/sancitiailogo.png" alt="Sanciti AI" style="height:28px;width:auto;object-fit:contain;" />' +
         '</a>' +
@@ -66,16 +68,16 @@ function stickyDesktopNav() {
         '<div id="stickyNavCta"></div>' +
     '</div>';
 
-    // Style the wrapper as a fixed bar
+    // Wrapper: transparent, just provides fixed positioning + equal padding
     bar.style.cssText = [
-        'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:60px',
+        'position:fixed', 'top:0', 'left:0', 'width:100%',
+        'padding:20px 56px',
         'z-index:99998',
-        'background:rgba(30,30,30,0.75)',
-        'backdrop-filter:blur(16px)', '-webkit-backdrop-filter:blur(16px)',
-        'border-bottom:1px solid rgba(255,255,255,0.12)',
-        'box-shadow:0 2px 20px rgba(0,0,0,0.4)',
-        'box-sizing:border-box'
+        'box-sizing:border-box',
+        'pointer-events:none'
     ].join(';') + ';';
+    // Make the inner bar clickable
+    bar.querySelector('#stickyNavBar').style.pointerEvents = 'auto';
 
     document.body.appendChild(bar);
 

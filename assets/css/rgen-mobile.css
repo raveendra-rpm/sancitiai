@@ -606,7 +606,9 @@
 }
 .rg-stages-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   width: 100%;
@@ -746,7 +748,6 @@
 }
 .rg-symphony-footnote {
   width: 100%;
-  max-width: 328px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 300;

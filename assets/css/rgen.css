@@ -216,8 +216,6 @@ body.rgen-body {
   align-items: center;
   padding: 12px 24px;
   gap: 8px;
-  width: 173px;
-  height: 43px;
   background: #2AD6DF;
   border-radius: 99px;
   font-family: 'Inter', sans-serif;
@@ -227,6 +225,7 @@ body.rgen-body {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
   transition: transform 0.2s, box-shadow 0.25s;
 }
 
@@ -243,8 +242,6 @@ body.rgen-body {
   align-items: center;
   padding: 12px 24px;
   gap: 8px;
-  width: 227px;
-  height: 43px;
   border: 1.5px solid #2AD6DF;
   border-radius: 99px;
   font-family: 'Inter', sans-serif;
@@ -255,6 +252,7 @@ body.rgen-body {
   text-decoration: none;
   cursor: pointer;
   background: transparent;
+  white-space: nowrap;
   transition: background 0.25s, transform 0.2s;
 }
 

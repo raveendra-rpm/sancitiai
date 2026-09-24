@@ -355,6 +355,7 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
   box-shadow: 0 0 20px rgba(42, 214, 223, 0.45);
   transition: transform 0.2s ease, box-shadow 0.25s ease, opacity 0.2s ease;
 }
@@ -377,6 +378,7 @@
   border: 1.5px solid #2AD6DF;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
   transition: background 0.25s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 .rg-btn-secondary:hover {

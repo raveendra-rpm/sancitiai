@@ -29,85 +29,85 @@ function fitStage() {
     scaler.style.width = '100%';
 
     // Update sticky nav scaling whenever stage is re-fitted
-    stickyDesktopNav(scale, designWidth);
+    stickyDesktopNav();
 }
 
 // Make the desktop nav float/stick at the top of the viewport on all pages.
 // Because #stage uses transform:scale(), position:fixed cannot work inside it.
-// Solution: clone the nav, place the clone as a fixed bar at viewport top, hide original.
-function stickyDesktopNav(scale, designWidth) {
+// Solution: build a completely independent fixed nav bar (no transform tricks).
+function stickyDesktopNav() {
     if (window.innerWidth <= 768) {
-        // On mobile, hide the sticky wrapper if it exists (mobile uses .mobile-header)
-        var existingWrapper = document.getElementById('stickyNavWrapper');
-        if (existingWrapper) existingWrapper.style.display = 'none';
+        var w = document.getElementById('stickyNavWrapper');
+        if (w) w.style.display = 'none';
         return;
     }
 
-    var wrapper = document.getElementById('stickyNavWrapper');
+    // Only build once
+    if (document.getElementById('stickyNavWrapper')) {
+        document.getElementById('stickyNavWrapper').style.display = 'block';
+        return;
+    }
+
     var originalNav = document.querySelector('#stage .desktop-nav');
-    // Also check if the original was already moved out (from a previous call)
-    if (!originalNav) originalNav = document.querySelector('.desktop-nav-original-hidden');
+    if (!originalNav) return;
 
-    // First call: clone nav and build the fixed bar
-    if (!wrapper && originalNav) {
-        // Clone the entire nav element
-        var navClone = originalNav.cloneNode(true);
-        navClone.classList.remove('abs');
-        navClone.classList.add('desktop-nav-clone');
-        
-        // Strip the inline positioning that was for #stage layout
-        navClone.style.position = 'relative';
-        navClone.style.top = '0';
-        navClone.style.left = '0';
-        navClone.style.right = 'auto';
-        navClone.style.margin = '0 auto';
-        // Keep width and height from original inline style
-        navClone.style.width = '1400px';
-        navClone.style.height = '66px';
-        navClone.style.zIndex = '10';
+    // Read active page from current nav links
+    var navLinks = originalNav.querySelectorAll('.desktop-nav-menu .nav-link');
+    var ctaBtn = originalNav.querySelector('.pill');
 
-        // Build wrapper: a fixed bar at the very top of the viewport
-        wrapper = document.createElement('div');
-        wrapper.id = 'stickyNavWrapper';
-        wrapper.style.cssText = [
-            'position: fixed',
-            'top: 0',
-            'left: 0',
-            'width: 100%',
-            'z-index: 99998',
-            'overflow: hidden',
-            'background: rgba(4, 4, 6, 0.92)',
-            'backdrop-filter: blur(20px)',
-            '-webkit-backdrop-filter: blur(20px)',
-            'border-bottom: 1px solid rgba(255, 255, 255, 0.08)',
-            'box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5)'
-        ].join(';') + ';';
+    // Build the fixed nav bar from scratch using normal CSS (no transform scaling)
+    var bar = document.createElement('div');
+    bar.id = 'stickyNavWrapper';
+    bar.innerHTML = '<div style="max-width:92%;width:1400px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;position:relative;">' +
+        '<a href="index.html" style="display:flex;align-items:center;text-decoration:none;">' +
+            '<img src="assets/img/sancitiailogo.png" alt="Sanciti AI" style="height:28px;width:auto;object-fit:contain;" />' +
+        '</a>' +
+        '<nav id="stickyNavLinks" style="display:flex;align-items:center;gap:clamp(16px,2.5vw,36px);font-family:Inter,Roboto,sans-serif;font-size:clamp(13px,1.1vw,16px);"></nav>' +
+        '<div id="stickyNavCta"></div>' +
+    '</div>';
 
-        // Inner container: design-width size that gets scaled
-        var inner = document.createElement('div');
-        inner.id = 'stickyNavInner';
-        inner.style.cssText = 'transform-origin: top left; width: ' + designWidth + 'px; padding: 12px 0;';
+    // Style the wrapper as a fixed bar
+    bar.style.cssText = [
+        'position:fixed', 'top:0', 'left:0', 'width:100%', 'height:60px',
+        'z-index:99998',
+        'background:rgba(30,30,30,0.75)',
+        'backdrop-filter:blur(16px)', '-webkit-backdrop-filter:blur(16px)',
+        'border-bottom:1px solid rgba(255,255,255,0.12)',
+        'box-shadow:0 2px 20px rgba(0,0,0,0.4)',
+        'box-sizing:border-box'
+    ].join(';') + ';';
 
-        inner.appendChild(navClone);
-        wrapper.appendChild(inner);
-        document.body.appendChild(wrapper);
+    document.body.appendChild(bar);
 
-        // Hide the original nav inside #stage so there's no visual duplicate
-        originalNav.style.visibility = 'hidden';
-        originalNav.classList.add('desktop-nav-original-hidden');
+    // Populate nav links
+    var linksContainer = document.getElementById('stickyNavLinks');
+    if (navLinks && linksContainer) {
+        navLinks.forEach(function(link) {
+            var a = document.createElement('span');
+            a.textContent = link.textContent;
+            a.style.cssText = 'color:' + (link.style.color || 'rgba(255,255,255,0.75)') + ';cursor:pointer;white-space:nowrap;';
+            a.className = 'nav-link';
+            // Copy the onclick
+            var onclickAttr = link.getAttribute('onclick');
+            if (onclickAttr) a.setAttribute('onclick', onclickAttr);
+            linksContainer.appendChild(a);
+        });
     }
 
-    // Show wrapper on desktop (might have been hidden on mobile resize)
-    if (wrapper) wrapper.style.display = 'block';
-
-    // Update scale on every resize
-    var inner = document.getElementById('stickyNavInner');
-    if (inner && scale !== undefined) {
-        inner.style.transform = 'scale(' + scale + ')';
-        inner.style.width = designWidth + 'px';
-        // Set wrapper height to the scaled inner height so it doesn't block scroll
-        wrapper.style.height = (90 * scale) + 'px'; // 66px nav + 12px*2 padding = 90px design
+    // Populate CTA button
+    var ctaContainer = document.getElementById('stickyNavCta');
+    if (ctaBtn && ctaContainer) {
+        var cta = document.createElement('div');
+        cta.className = 'pill';
+        cta.style.cssText = 'padding:8px 20px;background:var(--cyan);border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;white-space:nowrap;';
+        cta.innerHTML = '<span class="font-disp" style="color:var(--ink);font-size:clamp(12px,1vw,16px);font-weight:bold;">Get a free Assessment</span>';
+        var ctaOnclick = ctaBtn.getAttribute('onclick');
+        if (ctaOnclick) cta.setAttribute('onclick', ctaOnclick);
+        ctaContainer.appendChild(cta);
     }
+
+    // Hide original nav inside #stage
+    originalNav.style.visibility = 'hidden';
 }
 window.addEventListener('resize', fitStage);
 window.addEventListener('load', fitStage);

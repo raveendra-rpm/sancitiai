@@ -27,6 +27,51 @@ function fitStage() {
         scaler.style.height = (stage.getBoundingClientRect().height) + 'px';
     }
     scaler.style.width = '100%';
+
+    // Update sticky nav scaling whenever stage is re-fitted
+    stickyDesktopNav(scale, designWidth);
+}
+
+// Make the desktop nav float/stick at the top of the viewport on all pages.
+// Because #stage uses transform:scale(), position:fixed cannot work inside it.
+// Solution: move the nav out of #stage into a fixed wrapper, then scale it to match.
+function stickyDesktopNav(scale, designWidth) {
+    if (window.innerWidth <= 768) {
+        // On mobile, hide the sticky wrapper if it exists (mobile uses .mobile-header)
+        var existingWrapper = document.getElementById('stickyNavWrapper');
+        if (existingWrapper) existingWrapper.style.display = 'none';
+        return;
+    }
+
+    var nav = document.querySelector('#stage .desktop-nav');
+    var wrapper = document.getElementById('stickyNavWrapper');
+
+    // First call: extract nav from stage and wrap it in a fixed container
+    if (nav && !wrapper) {
+        wrapper = document.createElement('div');
+        wrapper.id = 'stickyNavWrapper';
+        wrapper.style.cssText = 'position:fixed; top:0; left:0; width:100%; z-index:99998; pointer-events:none; overflow:visible;';
+        
+        // Inner container mimics stage width + scaling
+        var inner = document.createElement('div');
+        inner.id = 'stickyNavInner';
+        inner.style.cssText = 'transform-origin:top left; pointer-events:auto; position:relative; width:' + designWidth + 'px; height:' + (104) + 'px;';
+        
+        // Move the nav element out of stage into the wrapper
+        inner.appendChild(nav);
+        wrapper.appendChild(inner);
+        document.body.appendChild(wrapper);
+    }
+
+    // Show wrapper on desktop (might have been hidden on mobile)
+    if (wrapper) wrapper.style.display = 'block';
+
+    // Update scale on every call (resize etc.)
+    var inner = document.getElementById('stickyNavInner');
+    if (inner && scale !== undefined) {
+        inner.style.transform = 'scale(' + scale + ')';
+        inner.style.width = designWidth + 'px';
+    }
 }
 window.addEventListener('resize', fitStage);
 window.addEventListener('load', fitStage);

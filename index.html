@@ -712,7 +712,7 @@
       </div>
 
       <!-- ================= HERO: ONE PLATFORM (SECTION 2) ================= -->
-      <div class="abs desktop-hero" style="left:0; top:530px; width:1512px; height:600px; z-index:1;">
+      <div class="abs desktop-hero" style="left:0; top:640px; width:1512px; height:550px; z-index:1;">
         <!-- Ambient Glows -->
         <div class="abs glow float-slower pulse"
           style="left:-300px; top:100px; width:650px; height:650px; background:radial-gradient(circle, rgba(115,104,255,.3), transparent 70%); pointer-events:none;">
@@ -722,7 +722,7 @@
         </div>
 
         <!-- Left: One Platform Typography & Description -->
-        <div class="abs reveal" style="left:80px; top:10px; width:720px; display:flex; flex-direction:column; z-index:2;">
+        <div class="abs reveal" style="left:80px; top:20px; width:720px; display:flex; flex-direction:column; z-index:2;">
           <div class="font-disp" style="font-size:62px; line-height:1.12; color:#fff; letter-spacing:-0.5px;">
             <div style="font-weight:200; font-style:italic;">One Platform.</div>
             <div style="font-weight:200; font-style:italic;">Two Enterprise Challenges.</div>
@@ -740,12 +740,14 @@
           </div>
         </div>
 
-        <!-- Right: 5 Animated Glowing Rings Video (Final Video 2) -->
-        <div class="abs reveal" style="left:880px; top:-25px; width:340px; display:flex; justify-content:center; align-items:center; z-index:2;">
-          <video autoplay loop muted playsinline webkit-playsinline
-            style="width:320px; height:auto; object-fit:contain; mix-blend-mode:screen; filter:drop-shadow(0 0 25px rgba(42,214,223,0.35)); pointer-events:none;">
+        <!-- Right: 5 Animated Glowing Rings (Chroma-keyed Transparent Canvas) -->
+        <div class="abs reveal" style="left:880px; top:-10px; width:340px; display:flex; justify-content:center; align-items:center; z-index:2; pointer-events:none;">
+          <video id="heroRingsVid" autoplay loop muted playsinline webkit-playsinline
+            style="position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;">
             <source src="assets/img/Home page new/Final Video 2.mp4" type="video/mp4">
           </video>
+          <canvas id="heroRingsCanvas" width="468" height="796"
+            style="width:320px; height:auto; object-fit:contain; filter:drop-shadow(0 0 25px rgba(42,214,223,0.35)); pointer-events:none;"></canvas>
         </div>
       </div>
 
@@ -2098,6 +2100,72 @@
         window.location.href = 'https://www.sanciti.ai/thank-you/';
       }, 500);
     }
+
+    // Setup Hero 5 Rings Animation with Canvas Chroma-Keying
+    // Completely eliminates any black background/rectangle and renders pure glowing transparent rings
+    (function initDesktopHeroRings() {
+      const video = document.getElementById('heroRingsVid');
+      const canvas = document.getElementById('heroRingsCanvas');
+      if (!video || !canvas) return;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+      // Draw transparent image immediately so there is zero flash of black or delay
+      const img = new Image();
+      img.onload = function() {
+        if (!video.currentTime || video.paused) {
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        }
+      };
+      img.src = 'assets/img/Home page new/rings_transparent.png';
+
+      let isRunning = false;
+      function renderFrame() {
+        if (!video.paused && !video.ended && video.readyState >= 2) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          try {
+            const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const d = imgData.data;
+            const len = d.length;
+            for (let i = 0; i < len; i += 4) {
+              const r = d[i], g = d[i + 1], b = d[i + 2];
+              const max = r > g ? (r > b ? r : b) : (g > b ? g : b);
+              if (max < 22) {
+                d[i + 3] = 0;
+              } else if (max < 50) {
+                d[i + 3] = Math.round((max - 22) * (255 / 28));
+              }
+            }
+            ctx.putImageData(imgData, 0, 0);
+          } catch (e) {
+            // Context error fallback
+          }
+        }
+        requestAnimationFrame(renderFrame);
+      }
+
+      video.addEventListener('play', function() {
+        if (!isRunning) {
+          isRunning = true;
+          requestAnimationFrame(renderFrame);
+        }
+      });
+
+      if (!video.paused) {
+        isRunning = true;
+        requestAnimationFrame(renderFrame);
+      }
+
+      ['touchstart', 'click', 'scroll', 'mousemove'].forEach(function(evt) {
+        window.addEventListener(evt, function() {
+          if (video.paused) {
+            video.play().catch(function() {});
+          }
+        }, { once: true, passive: true });
+      });
+
+      video.play().catch(function() {});
+    })();
   </script>
 </body>
 

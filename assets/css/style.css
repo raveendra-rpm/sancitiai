@@ -4732,3 +4732,170 @@ body {
     width: 100% !important;
   }
 }
+
+/* =========================================================================
+   HOME PAGE - NEW HERO & PLAYBOOK SECTION LAYOUT
+   ========================================================================= */
+
+/* Claude Partner Badge (Universal) */
+.claude-partner-badge {
+  display: inline-flex;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #F7F4EE;
+  z-index: 2;
+}
+
+.claude-partner-badge .badge-accent {
+  background: #EAD2C9;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.claude-partner-badge .badge-info {
+  padding: 7px 14px 6px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.claude-partner-badge .badge-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #1C1917;
+  line-height: 1.15;
+}
+
+.claude-partner-badge .badge-sub {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  color: #44403C;
+  line-height: 1.2;
+}
+
+.claude-partner-badge .badge-network {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #57534E;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+/* Mobile Playbook Book and Glow */
+.mobile-playbook-book-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0 24px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-playbook-book-img {
+  width: 290px;
+  max-width: 85%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.8));
+}
+
+.mobile-playbook-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 700px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.mobile-playbook-glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobile-badge {
+  margin-top: 14px;
+}
+
+/* Desktop Playbook Form Groups & Inputs */
+.desktop-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.desktop-form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.desktop-form-input {
+  height: 44px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.desktop-form-input:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 10px rgba(42, 214, 223, 0.4);
+}
+
+.desktop-playbook-btn {
+  height: 48px;
+  width: 100%;
+  max-width: 280px;
+  background: var(--cyan);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(42, 214, 223, 0.35);
+  align-self: flex-end;
+  justify-self: end;
+  transition: all 0.25s ease;
+}
+
+.desktop-playbook-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 24px rgba(42, 214, 223, 0.55);
+  transform: translateY(-1px);
+}
+
+.desktop-playbook-btn span {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1;
+}

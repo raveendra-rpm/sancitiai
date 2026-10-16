@@ -240,10 +240,10 @@ document.querySelectorAll('.cert-scroll').forEach((strip) => {
             const isMobile = window.innerWidth <= 768;
             if (isMobile) {
                 const scaler = document.getElementById('scaler');
-                const topPos = (scaler ? scaler.offsetTop : 0) + ((8613 - 1790) * scale) - 70;
+                const topPos = (scaler ? scaler.offsetTop : 0) + (((orch.offsetTop || 8063) - 1790) * scale) - 70;
                 window.scrollTo({ top: topPos, behavior: 'smooth' });
             } else {
-                const topPos = 8613 * scale;
+                const topPos = (orch.offsetTop || 8063) * scale;
                 window.scrollTo({ top: topPos, behavior: 'smooth' });
             }
         }

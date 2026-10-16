@@ -634,7 +634,7 @@
         </div>
       </div>
       <!-- ================= MODERNIZING PLAYBOOK (SECTION 1) ================= -->
-      <div id="playbook-desktop" class="abs desktop-playbook" style="left:0; top:120px; width:1512px; height:740px; z-index:2;">
+      <div id="playbook-desktop" class="abs desktop-playbook" style="left:0; top:100px; width:1512px; height:430px; z-index:2;">
         <!-- Ambient Glow -->
         <div class="abs glow float-slow"
           style="left:-160px; top:-60px; width:850px; height:850px; background:radial-gradient(circle, rgba(42,214,223,.18), transparent 70%); pointer-events:none; z-index:0;">
@@ -642,12 +642,12 @@
 
         <!-- Left: Book Cover Mockup & Certified Partner Badge -->
         <div class="abs reveal"
-          style="left:80px; top:10px; width:520px; display:flex; flex-direction:column; align-items:flex-start; z-index:2;">
+          style="left:80px; top:0; width:520px; display:flex; flex-direction:column; align-items:flex-start; z-index:2;">
           <img alt="Modernizing the Systems You Can't Afford to Break" src="assets/img/Home page new/Cover mockup_Desktop 1.png"
-            style="width:490px; height:auto; object-fit:contain; filter: drop-shadow(0 24px 45px rgba(0,0,0,0.9));" />
+            style="width:480px; height:auto; object-fit:contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.9));" />
           
           <!-- Claude Certified Partner Badge -->
-          <div class="claude-partner-badge" style="margin-top:20px; margin-left:35px;">
+          <div class="claude-partner-badge" style="margin-top:14px; margin-left:35px;">
             <div class="badge-accent">
               <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5" fill="#1C1917"/><circle cx="12" cy="12" r="2.5" fill="#1C1917"/><circle cx="18" cy="6" r="2.5" fill="#1C1917"/></svg>
             </div>
@@ -663,17 +663,17 @@
         </div>
 
         <!-- Right: Heading, Subtitle & 2-Column Form -->
-        <div class="abs reveal" style="left:650px; top:10px; width:790px; z-index:2;">
+        <div class="abs reveal" style="left:650px; top:0; width:790px; z-index:2;">
           <div style="text-align:left;">
             <h1 class="font-disp"
-              style="font-size:64px; font-weight:300; color:#ffffff; line-height:1.08; margin:0; letter-spacing:-0.5px;">
+              style="font-size:60px; font-weight:300; color:#ffffff; line-height:1.08; margin:0; letter-spacing:-0.5px;">
               Modernizing the Systems<br />You Can't Afford to Break</h1>
-            <p class="font-body" style="font-size:22px; font-weight:300; color:rgba(255,255,255,.9); margin:18px 0 0 0; line-height:1.35;">
+            <p class="font-body" style="font-size:20px; font-weight:300; color:rgba(255,255,255,.9); margin:14px 0 0 0; line-height:1.35;">
               A practical playbook for end-to-end legacy modernization.</p>
           </div>
 
           <form action="submit_form.php" method="POST"
-            style="display:grid; grid-template-columns:317px 317px; gap:18px 32px; margin-top:38px;"
+            style="display:grid; grid-template-columns:317px 317px; gap:14px 28px; margin-top:28px;"
             onsubmit="handlePlaybookDownload(event)">
             <input type="hidden" name="source" value="index" />
             
@@ -712,65 +712,40 @@
       </div>
 
       <!-- ================= HERO: ONE PLATFORM (SECTION 2) ================= -->
-      <div class="abs desktop-hero" style="left:0; top:880px; width:1512px; height:850px; z-index:1;">
+      <div class="abs desktop-hero" style="left:0; top:530px; width:1512px; height:600px; z-index:1;">
         <!-- Ambient Glows -->
         <div class="abs glow float-slower pulse"
-          style="left:-300px; top:200px; width:650px; height:650px; background:radial-gradient(circle, rgba(115,104,255,.35), transparent 70%); pointer-events:none;">
+          style="left:-300px; top:100px; width:650px; height:650px; background:radial-gradient(circle, rgba(115,104,255,.3), transparent 70%); pointer-events:none;">
         </div>
         <div class="abs glow float-slow"
-          style="right:-100px; top:50px; width:650px; height:650px; background:radial-gradient(circle, rgba(42,214,223,.22), transparent 70%); pointer-events:none;">
+          style="right:-100px; top:0px; width:650px; height:650px; background:radial-gradient(circle, rgba(42,214,223,.2), transparent 70%); pointer-events:none;">
         </div>
 
         <!-- Left: One Platform Typography & Description -->
-        <div class="abs reveal" style="left:80px; top:80px; width:720px; display:flex; flex-direction:column; z-index:2;">
-          <div class="font-disp" style="font-size:64px; line-height:1.12; color:#fff; letter-spacing:-0.5px;">
+        <div class="abs reveal" style="left:80px; top:10px; width:720px; display:flex; flex-direction:column; z-index:2;">
+          <div class="font-disp" style="font-size:62px; line-height:1.12; color:#fff; letter-spacing:-0.5px;">
             <div style="font-weight:200; font-style:italic;">One Platform.</div>
             <div style="font-weight:200; font-style:italic;">Two Enterprise Challenges.</div>
             <div style="font-weight:700;">One Intelligent Score.</div>
           </div>
           <p class="font-body"
-            style="margin:24px 0 0; width:640px; font-size:16px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.9);">
+            style="margin:20px 0 0; width:640px; font-size:16px; font-weight:300; line-height:1.6; color:rgba(255,255,255,.9);">
             Enterprises face two challenges: legacy modernization by technical debt, and fragmented, manual software
             delivery. Sanciti AI solves these with LegMod orchestrator and four specialist agents, RGEN, CodeGen, TestAI,
             and Deploy, across the SDLC for continuous, governed modernization and delivery.
           </p>
           <div class="pill" onclick="scrollToAssessment(event)"
-            style="margin:34px 0 0; width:fit-content; border:2px solid var(--cyan); border-radius:70px; padding:12px 28px; cursor:pointer; background:transparent;">
+            style="margin:28px 0 0; width:fit-content; border:2px solid var(--cyan); border-radius:70px; padding:12px 28px; cursor:pointer; background:transparent;">
             <span class="font-disp" style="font-weight:300; font-size:16px; color:#ffffff;">Get a Free Assessment</span>
           </div>
         </div>
 
-        <!-- Right: 5 Animated Glowing Rings -->
-        <div class="abs" style="left:890px; top:50px; width:450px; height:470px; overflow:visible; z-index:2;">
-          <!-- Ambient Glow behind circles -->
-          <div class="abs glow pulse"
-            style="left:-50px; top:-50px; width:550px; height:570px; background:radial-gradient(circle, rgba(42,214,223,.2), transparent 70%); pointer-events:none;">
-          </div>
-          <!-- ring 1: blue -->
-          <div class="abs hero-ring delay1" style="left:20px; top:15px; width:170px; height:170px;">
-            <img src="assets/img/bluecirclespin.png" alt=""
-              style="width:100%; height:100%; object-fit:contain; animation: spin-cw 16s linear infinite; filter: drop-shadow(0 0 18px rgba(63,110,255,.55));" />
-          </div>
-          <!-- ring 2: light blue -->
-          <div class="abs hero-ring delay2" style="left:225px; top:15px; width:170px; height:170px;">
-            <img src="assets/img/lbluecirclespin.png" alt=""
-              style="width:100%; height:100%; object-fit:contain; animation: spin-ccw 20s linear infinite; filter: drop-shadow(0 0 18px rgba(42,214,223,.55));" />
-          </div>
-          <!-- ring 3: white, centre -->
-          <div class="abs hero-ring delay3" style="left:122px; top:140px; width:170px; height:170px; z-index:3;">
-            <img src="assets/img/whitecirclespin.png" alt=""
-              style="width:100%; height:100%; object-fit:contain; animation: spin-cw 24s linear infinite; filter: drop-shadow(0 0 20px rgba(255,255,255,.45));" />
-          </div>
-          <!-- ring 4: dark blue -->
-          <div class="abs hero-ring delay4" style="left:20px; top:265px; width:170px; height:170px;">
-            <img src="assets/img/dbluecirclespin.png" alt=""
-              style="width:100%; height:100%; object-fit:contain; animation: spin-ccw 18s linear infinite; filter: drop-shadow(0 0 18px rgba(63,110,255,.5));" />
-          </div>
-          <!-- ring 5: teal -->
-          <div class="abs hero-ring delay5" style="left:225px; top:265px; width:170px; height:170px;">
-            <img src="assets/img/greencirclespin.png" alt=""
-              style="width:100%; height:100%; object-fit:contain; animation: spin-cw 22s linear infinite; filter: drop-shadow(0 0 18px rgba(42,214,223,.5));" />
-          </div>
+        <!-- Right: 5 Animated Glowing Rings Video (Final Video 2) -->
+        <div class="abs reveal" style="left:880px; top:-25px; width:340px; display:flex; justify-content:center; align-items:center; z-index:2;">
+          <video autoplay loop muted playsinline webkit-playsinline
+            style="width:320px; height:auto; object-fit:contain; mix-blend-mode:screen; filter:drop-shadow(0 0 25px rgba(42,214,223,0.35)); pointer-events:none;">
+            <source src="assets/img/Home page new/Final Video 2.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
 

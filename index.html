@@ -634,7 +634,7 @@
         </div>
       </div>
       <!-- ================= MODERNIZING PLAYBOOK (SECTION 1) ================= -->
-      <div id="playbook-desktop" class="abs desktop-playbook" style="left:0; top:100px; width:1512px; height:430px; z-index:2;">
+      <div id="playbook-desktop" class="abs desktop-playbook" style="left:0; top:100px; width:1512px; height:500px; z-index:2;">
         <!-- Ambient Glow -->
         <div class="abs glow float-slow"
           style="left:-160px; top:-60px; width:850px; height:850px; background:radial-gradient(circle, rgba(42,214,223,.18), transparent 70%); pointer-events:none; z-index:0;">
@@ -647,7 +647,7 @@
             style="width:480px; height:auto; object-fit:contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.9));" />
           
           <!-- Claude Certified Partner Badge -->
-          <div class="claude-partner-badge" style="margin-top:14px; margin-left:35px;">
+          <div class="claude-partner-badge" style="margin-top:20px; margin-left:60px;">
             <div class="badge-accent">
               <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.5" fill="#1C1917"/><circle cx="12" cy="12" r="2.5" fill="#1C1917"/><circle cx="18" cy="6" r="2.5" fill="#1C1917"/></svg>
             </div>
@@ -663,17 +663,15 @@
         </div>
 
         <!-- Right: Heading, Subtitle & 2-Column Form -->
-        <div class="abs reveal" style="left:650px; top:0; width:790px; z-index:2;">
-          <div style="text-align:left;">
-            <h1 class="font-disp"
-              style="font-size:60px; font-weight:300; color:#ffffff; line-height:1.08; margin:0; letter-spacing:-0.5px;">
+        <div class="abs reveal" style="left:680px; top:0; width:752px; z-index:2;">
+          <div class="desktop-playbook-header">
+            <h1 class="font-disp desktop-playbook-title">
               Modernizing the Systems<br />You Can't Afford to Break</h1>
-            <p class="font-body" style="font-size:20px; font-weight:300; color:rgba(255,255,255,.9); margin:14px 0 0 0; line-height:1.35;">
+            <p class="font-body desktop-playbook-subtitle">
               A practical playbook for end-to-end legacy modernization.</p>
           </div>
 
-          <form action="submit_form.php" method="POST"
-            style="display:grid; grid-template-columns:317px 317px; gap:14px 28px; margin-top:28px;"
+          <form action="submit_form.php" method="POST" class="desktop-playbook-form"
             onsubmit="handlePlaybookDownload(event)">
             <input type="hidden" name="source" value="index" />
             
@@ -697,12 +695,14 @@
               <input class="desktop-form-input font-body" name="Contact number" type="tel" required />
             </div>
 
-            <!-- Row 3: Company & Submit Button -->
-            <div class="desktop-form-group">
+            <!-- Row 3: Company (Col 1 only) -->
+            <div class="desktop-form-group" style="grid-column: 1; grid-row: 3;">
               <label class="desktop-form-label font-body">Company</label>
               <input class="desktop-form-input font-body" name="Company" type="text" required />
             </div>
-            <div style="display:flex; align-items:flex-end;">
+
+            <!-- Row 4: Submit Button (Col 2, flush right) -->
+            <div class="desktop-form-action" style="grid-column: 2; grid-row: 4;">
               <button type="submit" class="desktop-playbook-btn pill">
                 <span>Download the Playbook</span>
               </button>

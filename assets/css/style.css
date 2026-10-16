@@ -4833,26 +4833,60 @@ body {
   margin-top: 14px;
 }
 
-/* Desktop Playbook Form Groups & Inputs */
+/* Desktop Playbook Section Styles */
+.desktop-playbook-header {
+  text-align: right;
+  width: 100%;
+}
+
+.desktop-playbook-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 54px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.14;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.desktop-playbook-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 16px 0 0 0;
+  line-height: 1.35;
+}
+
+.desktop-playbook-form {
+  display: grid;
+  grid-template-columns: 318px 318px;
+  column-gap: 28px;
+  row-gap: 16px;
+  margin-top: 26px;
+  margin-left: auto;
+  width: 664px;
+}
+
 .desktop-form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
   width: 100%;
 }
 
 .desktop-form-label {
   font-family: 'Inter', sans-serif;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 400;
   line-height: 1.2;
 }
 
 .desktop-form-input {
-  height: 44px;
+  height: 42px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.92);
+  background: #ffffff;
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 0 16px;
@@ -4865,37 +4899,42 @@ body {
 }
 
 .desktop-form-input:focus {
-  border-color: var(--cyan);
-  box-shadow: 0 0 10px rgba(42, 214, 223, 0.4);
+  border-color: #73D6DF;
+  box-shadow: 0 0 10px rgba(115, 214, 223, 0.4);
+}
+
+.desktop-form-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 6px;
 }
 
 .desktop-playbook-btn {
   height: 48px;
-  width: 100%;
-  max-width: 280px;
-  background: var(--cyan);
+  width: 275px;
+  background: #73D6DF;
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(42, 214, 223, 0.35);
-  align-self: flex-end;
-  justify-self: end;
+  box-shadow: 0 4px 18px rgba(115, 214, 223, 0.35);
   transition: all 0.25s ease;
 }
 
 .desktop-playbook-btn:hover {
   filter: brightness(1.08);
-  box-shadow: 0 6px 24px rgba(42, 214, 223, 0.55);
+  box-shadow: 0 6px 24px rgba(115, 214, 223, 0.55);
   transform: translateY(-1px);
 }
 
 .desktop-playbook-btn span {
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: #000000;
   line-height: 1;
+  white-space: nowrap;
 }
